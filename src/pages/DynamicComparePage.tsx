@@ -1,0 +1,668 @@
+import React, { useState, useEffect } from 'react'
+import { useParams, Link } from 'react-router-dom'
+import { 
+  CheckCircle2, 
+  XCircle, 
+  ArrowRight, 
+  Percent, 
+  Smartphone, 
+  Fingerprint, 
+  HelpCircle, 
+  Sparkles, 
+  Building2, 
+  Zap, 
+  ChevronDown, 
+  Calculator,
+  Lock,
+  Layers,
+  Award
+} from 'lucide-react'
+import { SchemaMarkup } from '../components/seo/SchemaMarkup'
+
+interface CompetitorData {
+  displayName: string
+  tagline: string
+  badge: string
+  commissionModel: string
+  commissionRate: number
+  playStoreModel: string
+  biometricSupport: string
+  cbtSupport: string
+  settlementTime: string
+  privacyNote: string
+  summaryPill: string
+  heroSubhead: string
+  quote: {
+    text: string
+    author: string
+    role: string
+  }
+}
+
+const COMPETITORS: Record<string, CompetitorData> = {
+  classplus: {
+    displayName: 'Classplus',
+    tagline: 'The 0% Commission Alternative to Classplus',
+    badge: 'Why 1,200+ Institutes Switched from Classplus',
+    commissionModel: '5% to 15% revenue cut on digital courses',
+    commissionRate: 0.08,
+    playStoreModel: 'Shared corporate publisher account',
+    biometricSupport: 'No native offline biometric machine sync',
+    cbtSupport: 'Basic quiz interface without NTA simulation',
+    settlementTime: 'Escrow hold, paid out in T+2 to T+4 days',
+    privacyNote: 'Aggregated ecosystem with platform lead sharing',
+    summaryPill: 'Keep 100% of your earnings with zero commission',
+    heroSubhead: 'Stop giving away 5% to 15% of your course fees and student tuition. Cestrix gives you your own branded mobile app, biometric attendance sync, NTA-standard CBT exams, and direct bank settlement.',
+    quote: {
+      text: 'We paid upwards of ₹45,000 every month in commissions on Classplus. Moving to Cestrix gave us our own Play Store developer listing and 0% commission. The biometric gate sync with instant WhatsApp alerts is unmatched.',
+      author: 'Er. Rajesh Verma',
+      role: 'Director, Apex Science Academy (Patna)'
+    }
+  },
+  teachmint: {
+    displayName: 'Teachmint',
+    tagline: 'The Hybrid Coaching OS Built for Real Classrooms',
+    badge: 'Purpose-Built for Indian Coaching Institutes',
+    commissionModel: 'Software renewal tiers + payment gateway lag',
+    commissionRate: 0.05,
+    playStoreModel: 'Teachmint co-branded application',
+    biometricSupport: 'Primarily in-app QR check-in; no native push API for gate machines',
+    cbtSupport: 'School homework & standard assignment quizzes',
+    settlementTime: 'Standard gateway payouts',
+    privacyNote: 'Broad school user database',
+    summaryPill: 'Offline biometric ERP + NTA CBT tests + WhatsApp fee recovery',
+    heroSubhead: 'While Teachmint is designed as a school LMS and generic live classroom app, Cestrix is purpose-built for competitive coaching centers that require biometric attendance machines, automated WhatsApp fee recovery, NTA CBT exams, and multi-branch control.',
+    quote: {
+      text: 'Teachmint is built for schools with classes 1 to 12. Cestrix understands batch timings, faculty rotations, and NTA computer-based exam practice. Our fee collection rate jumped 40% with WhatsApp dynamic UPI links.',
+      author: 'Dr. Sunita Choudhary',
+      role: 'Founder, Sankalp NEET Institute (Sikar)'
+    }
+  },
+  graphy: {
+    displayName: 'Graphy (Unacademy)',
+    tagline: 'Physical Classroom ERP + Online LMS (Without High Fixed Annual Fees)',
+    badge: 'Affordable Coaching OS Starting at ₹999/mo',
+    commissionModel: 'High annual fixed platform fees + gateway charges',
+    commissionRate: 0.06,
+    playStoreModel: 'High-cost enterprise white-label tier',
+    biometricSupport: 'No physical classroom biometric attendance sync',
+    cbtSupport: 'Video course quizzes; no NTA percentile engine',
+    settlementTime: 'T+2 settlement',
+    privacyNote: 'Corporate EdTech subsidiary',
+    summaryPill: 'Combines offline coaching ERP with online video courses',
+    heroSubhead: 'Graphy is built for solo online course creators and influencers. Cestrix provides the complete operating system for physical coaching campuses: biometric attendance, cash/UPI fee ledgers, and NTA CBT test labs.',
+    quote: {
+      text: 'Graphy charged us astronomical annual renewals while ignoring our physical classroom operations. Cestrix gave us biometric machine integration and WhatsApp fee automation for a fraction of the cost.',
+      author: 'Anand Sharma',
+      role: 'Managing Partner, Pragyan Classes (Jaipur)'
+    }
+  },
+  edmingle: {
+    displayName: 'Edmingle',
+    tagline: 'Intuitive Coaching Management Without Complex Setup',
+    badge: 'Modern, Fast & Free Data Migration',
+    commissionModel: 'Expensive enterprise per-student pricing',
+    commissionRate: 0.05,
+    playStoreModel: 'Custom mobile app at high tier pricing',
+    biometricSupport: 'Limited hardware integration; complex API setup',
+    cbtSupport: 'Standard test engine',
+    settlementTime: 'T+2 settlement',
+    privacyNote: 'B2B enterprise data policy',
+    summaryPill: 'Transparent pricing with zero hidden implementation charges',
+    heroSubhead: 'Avoid complex software contracts and expensive per-student charges. Cestrix offers straightforward, transparent pricing starting at ₹999/month with done-for-you data migration.',
+    quote: {
+      text: 'The ease of use in Cestrix is night and day. Our non-technical receptionists learned Cestrix in one afternoon, and the WhatsApp parent communication has completely eliminated fee follow-up calls.',
+      author: 'Prof. S. K. Jha',
+      role: 'Founder, Champaran Science Classes (Motihari)'
+    }
+  }
+}
+
+export const DynamicComparePage: React.FC = () => {
+  const { competitor } = useParams<{ competitor?: string }>()
+  const rawKey = (competitor || '').toLowerCase().replace('cestrix-vs-', '').trim()
+  
+  const comp: CompetitorData = COMPETITORS[rawKey] || {
+    displayName: competitor ? competitor.charAt(0).toUpperCase() + competitor.slice(1) : 'Competitor',
+    tagline: 'The 0% Commission Modern Coaching Operating System',
+    badge: 'Transparent Alternative with Zero Platform Tax',
+    commissionModel: '5% to 15% revenue share or hidden platform fees',
+    commissionRate: 0.08,
+    playStoreModel: 'Shared publisher or expensive add-on',
+    biometricSupport: 'Limited or no physical classroom hardware integration',
+    cbtSupport: 'Basic quiz interface',
+    settlementTime: 'Delayed payment escrow',
+    privacyNote: 'Aggregated user base',
+    summaryPill: 'Keep 100% of your earnings with your own branded app',
+    heroSubhead: `Compare Cestrix with ${competitor || 'legacy platforms'}. Discover why coaching institutes choose our 0% commission model, physical biometric machine sync, and NTA-standard CBT test engine.`,
+    quote: {
+      text: 'Switching to Cestrix saved us lakhs in software fees and commissions. The platform is rock solid and our parents love the real-time WhatsApp attendance notices.',
+      author: 'Academy Director',
+      role: 'Leading Test Prep Institute'
+    }
+  }
+
+  // Calculator State
+  const [monthlyCollection, setMonthlyCollection] = useState<number>(300000)
+  const lossMonthly = Math.round(monthlyCollection * comp.commissionRate)
+  const lossAnnual = lossMonthly * 12
+
+  // FAQ Accordion State
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
+
+  useEffect(() => {
+    document.title = `Cestrix vs ${comp.displayName} — Why 1,200+ Coaching Institutes Choose Cestrix (0% Commission)`
+  }, [comp.displayName])
+
+  const comparisonRows = [
+    {
+      feature: 'Platform Commission on Course Sales',
+      cestrix: '0% Flat Commission (Keep 100% of your revenue)',
+      cestrixGood: true,
+      other: comp.commissionModel,
+      whyItMatters: `At ₹5,00,000 monthly sales, you save ₹25,000 to ₹50,000 every single month compared to ${comp.displayName}.`
+    },
+    {
+      feature: 'Offline Cash & Direct UPI Tuition Fees',
+      cestrix: '0% Platform Fee (Direct to your bank account)',
+      cestrixGood: true,
+      other: 'Offline receipts often require high tier plans or manual tagging',
+      whyItMatters: 'Over 80% of tuition fees in Indian coaching hubs are collected offline or through direct institute QR codes.'
+    },
+    {
+      feature: 'Google Play & App Store Ownership',
+      cestrix: 'Published under YOUR Institute Developer Account',
+      cestrixGood: true,
+      other: comp.playStoreModel,
+      whyItMatters: 'Your app ratings, reviews, and brand valuation stay 100% yours forever.'
+    },
+    {
+      feature: 'Physical Biometric Machine Sync (eSSL, ZKTeco, Matrix)',
+      cestrix: 'Native Cloud Push API with 5-second WhatsApp entry alerts',
+      cestrixGood: true,
+      other: comp.biometricSupport,
+      whyItMatters: 'Zero proxy attendance at classroom gates without teachers marking manual roll-call.'
+    },
+    {
+      feature: 'NTA-Standard CBT Examination Engine',
+      cestrix: 'Exact JEE Main & NEET UI with negative marking & rank lists',
+      cestrixGood: true,
+      other: comp.cbtSupport,
+      whyItMatters: 'Students practice on the identical layout and sectional timers they will face in real national exams.'
+    },
+    {
+      feature: 'Payment Settlement Time',
+      cestrix: 'Instant direct to your UPI / Bank (Same Day T+0)',
+      cestrixGood: true,
+      other: comp.settlementTime,
+      whyItMatters: 'Immediate operational cash flow to pay faculty salaries and campus rent without escrow delays.'
+    },
+    {
+      feature: 'Student Data Confidentiality Guarantee',
+      cestrix: '100% Non-Disclosure Guarantee in writing. Zero cross-selling.',
+      cestrixGood: true,
+      other: comp.privacyNote,
+      whyItMatters: 'Your student leads and parent phone numbers are never pitched competitor courses.'
+    },
+    {
+      feature: 'Automated WhatsApp Fee Recovery',
+      cestrix: '1-Click Dynamic UPI Links with instant digital GST receipts',
+      cestrixGood: true,
+      other: 'Standard in-app notifications or basic SMS alerts',
+      whyItMatters: 'WhatsApp has a 98% open rate in India. Parents pay within 2 minutes via PhonePe, GPay, or Paytm.'
+    }
+  ]
+
+  const faqs = [
+    {
+      q: `How does Cestrix offer 0% commission compared to ${comp.displayName}?`,
+      a: `Unlike platforms that take a percentage cut of your tuition and digital course sales, Cestrix is a pure B2B SaaS platform. We charge an affordable, predictable monthly subscription starting at ₹999/month. You keep 100% of every rupee paid by students.`
+    },
+    {
+      q: `Can we migrate our active students and courses from ${comp.displayName} without downtime?`,
+      a: `Yes, absolutely. Our dedicated onboarding technical team handles the complete migration of your student rosters, batches, faculty schedules, and past fee registers via standard CSV/Excel templates within 24 to 48 hours at zero downtime.`
+    },
+    {
+      q: 'Will our mobile app be published on our own Google Play Console?',
+      a: `Yes! Cestrix compiles and publishes your custom white-label Android and iOS apps directly under your institute’s own Google Play Console and Apple Developer account. You own your brand equity permanently.`
+    },
+    {
+      q: 'Does Cestrix support physical classroom attendance machines?',
+      a: 'Yes. Cestrix connects natively via local gateway and cloud push API with leading biometric devices (eSSL, ZKTeco, Matrix, Realtime). When a student checks in at the center, parents receive an automated WhatsApp notification within 5 seconds.'
+    }
+  ]
+
+  // Schema data for Rich Snippets
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'SoftwareApplication',
+        'name': `Cestrix Learning — Best ${comp.displayName} Alternative`,
+        'applicationCategory': 'EducationalApplication, BusinessApplication',
+        'operatingSystem': 'Web, Android, iOS',
+        'description': `Compare Cestrix with ${comp.displayName}. 0% commission coaching management software with biometric attendance sync, NTA CBT exams, and white-label mobile apps.`,
+        'offers': {
+          '@type': 'Offer',
+          'price': '999',
+          'priceCurrency': 'INR',
+          'availability': 'https://schema.org/InStock'
+        }
+      },
+      {
+        '@type': 'FAQPage',
+        'mainEntity': faqs.map((f) => ({
+          '@type': 'Question',
+          'name': f.q,
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': f.a
+          }
+        }))
+      }
+    ]
+  }
+
+  return (
+    <div className="bg-slate-50 text-slate-900 min-h-screen">
+      {/* ── JSON-LD Schema Markup Component ── */}
+      <SchemaMarkup data={schemaData} />
+
+      {/* ── Breadcrumb & Top Bar ── */}
+      <div className="bg-[#001D42] text-white border-b border-blue-900/60 py-3 text-xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center gap-2 text-slate-300">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span>/</span>
+            <span>Compare</span>
+            <span>/</span>
+            <span className="text-white font-medium">Cestrix vs {comp.displayName}</span>
+          </div>
+          <div className="flex items-center gap-2 text-amber-300 font-medium">
+            <Sparkles className="w-4 h-4 text-amber-400" />
+            <span>0% Commission Coaching OS • Save Lakhs Every Year</span>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Hero Section ── */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#002D62] via-[#052857] to-[#0a1f3d] text-white pt-16 pb-20 lg:pt-24 lg:pb-28">
+        <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] opacity-10"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-sky-200 mb-6">
+            <Percent className="w-4 h-4 text-emerald-400" />
+            <span>{comp.badge}</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight text-white max-w-4xl mx-auto leading-tight sm:leading-tight">
+            Cestrix vs {comp.displayName}: <br className="hidden sm:inline" />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-300 to-sky-300">
+              Keep 100% of Your Revenue
+            </span> with 0% Commission
+          </h1>
+
+          <p className="mt-6 text-base sm:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
+            {comp.heroSubhead}
+          </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              to={`/book-demo?source=compare-${encodeURIComponent(comp.displayName.toLowerCase())}`}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-base shadow-xl shadow-emerald-900/30 hover:shadow-emerald-900/50 transition-all hover:-translate-y-0.5"
+            >
+              <span>Schedule 1-on-1 Migration Demo</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <a
+              href="#calculator"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-base border border-white/20 backdrop-blur transition-colors"
+            >
+              <Calculator className="w-5 h-5 text-sky-300" />
+              <span>Calculate Your Savings</span>
+            </a>
+          </div>
+
+          {/* Quick Pill Highlights */}
+          <div className="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-left max-w-4xl mx-auto">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-emerald-500/20 text-emerald-300">
+                <CheckCircle2 className="w-5 h-5" />
+              </div>
+              <span className="text-xs sm:text-sm font-medium text-slate-200">0% Commission on All Fees</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-sky-500/20 text-sky-300">
+                <Smartphone className="w-5 h-5" />
+              </div>
+              <span className="text-xs sm:text-sm font-medium text-slate-200">Own Play Store Developer Listing</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-indigo-500/20 text-indigo-300">
+                <Fingerprint className="w-5 h-5" />
+              </div>
+              <span className="text-xs sm:text-sm font-medium text-slate-200">Biometric Machine Push Sync</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-amber-500/20 text-amber-300">
+                <Lock className="w-5 h-5" />
+              </div>
+              <span className="text-xs sm:text-sm font-medium text-slate-200">100% Student Data Privacy</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Commission Savings Calculator Section ── */}
+      <section id="calculator" className="py-16 lg:py-20 bg-white border-b border-slate-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-3">
+              <Calculator className="w-4 h-4" />
+              <span>Real Financial Savings</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-heading font-black text-slate-900 tracking-tight">
+              Calculate Your Revenue Advantage Over {comp.displayName}
+            </h2>
+            <p className="mt-3 text-slate-600 text-sm sm:text-base">
+              Slide your average monthly tuition and digital course collection to calculate how much more you take home with Cestrix.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-slate-900 to-[#002D62] rounded-3xl p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Slider Input */}
+              <div className="lg:col-span-7 space-y-6">
+                <div>
+                  <div className="flex justify-between items-baseline mb-2">
+                    <label className="text-sm font-medium text-slate-300">
+                      Monthly Tuition & Course Fee Collection:
+                    </label>
+                    <span className="text-2xl sm:text-3xl font-heading font-black text-emerald-400">
+                      ₹{monthlyCollection.toLocaleString('en-IN')}
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min={50000}
+                    max={2500000}
+                    step={25000}
+                    value={monthlyCollection}
+                    onChange={(e) => setMonthlyCollection(Number(e.target.value))}
+                    className="w-full h-3 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-400"
+                  />
+                  <div className="flex justify-between text-xs text-slate-400 mt-2">
+                    <span>₹50,000 / mo</span>
+                    <span>₹10,00,000 / mo</span>
+                    <span>₹25,00,000 / mo</span>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-700/60">
+                  <div className="bg-rose-950/40 border border-rose-800/50 rounded-xl p-4">
+                    <div className="text-xs text-rose-300 font-medium">{comp.displayName} Loss</div>
+                    <div className="text-xl sm:text-2xl font-bold text-rose-400 mt-1">
+                      -₹{lossMonthly.toLocaleString('en-IN')}<span className="text-xs text-rose-300/80">/mo</span>
+                    </div>
+                    <div className="text-[11px] text-rose-300/70 mt-1">
+                      Taken out of your fees
+                    </div>
+                  </div>
+
+                  <div className="bg-emerald-950/50 border border-emerald-600/50 rounded-xl p-4">
+                    <div className="text-xs text-emerald-300 font-medium">Cestrix (0% Commission)</div>
+                    <div className="text-xl sm:text-2xl font-bold text-emerald-400 mt-1">
+                      ₹0<span className="text-xs text-emerald-300/80"> commission</span>
+                    </div>
+                    <div className="text-[11px] text-emerald-300/80 mt-1">
+                      100% in your bank account
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Total Savings Highlight */}
+              <div className="lg:col-span-5 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center flex flex-col justify-center">
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-300">
+                  Extra Annual Profit with Cestrix
+                </span>
+                <div className="text-3xl sm:text-5xl font-heading font-black text-white mt-2 tracking-tight">
+                  ₹{lossAnnual.toLocaleString('en-IN')}
+                </div>
+                <p className="text-xs text-slate-300 mt-2">
+                  Reinvest this money into hiring top faculty, digital marketing, or expanding to a new branch campus.
+                </p>
+
+                <div className="mt-6">
+                  <Link
+                    to={`/book-demo?source=calc-${encodeURIComponent(comp.displayName.toLowerCase())}`}
+                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-md transition-colors"
+                  >
+                    <span>Claim Your 0% Commission Setup</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Head-to-Head Comparison Matrix ── */}
+      <section className="py-16 lg:py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#002D62] bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
+              Objective Feature Breakdown
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-black text-slate-900 tracking-tight">
+              Head-to-Head: Cestrix Learning vs. {comp.displayName}
+            </h2>
+            <p className="mt-3 text-slate-600 text-sm sm:text-base">
+              A transparent comparison for coaching directors, academy founders, and education administrators.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-900 text-white text-sm">
+                    <th className="py-5 px-6 font-semibold w-2/5">Capability & Coaching Workflow</th>
+                    <th className="py-5 px-6 font-semibold w-3/10 bg-[#002D62] text-white border-l border-r border-blue-800">
+                      <div className="flex items-center gap-2">
+                        <span className="font-heading font-black text-lg">Cestrix Learning</span>
+                        <span className="text-[10px] bg-emerald-400 text-slate-950 font-bold px-2 py-0.5 rounded-full uppercase">
+                          0% Comm.
+                        </span>
+                      </div>
+                    </th>
+                    <th className="py-5 px-6 font-semibold w-3/10 text-slate-300">
+                      <span className="font-heading font-bold text-lg text-slate-200">{comp.displayName}</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 text-sm">
+                  {comparisonRows.map((item, index) => (
+                    <tr 
+                      key={index}
+                      className={index % 2 === 0 ? 'bg-white' : 'bg-slate-50/70 hover:bg-blue-50/40 transition-colors'}
+                    >
+                      <td className="py-4 px-6 align-top">
+                        <div className="font-bold text-slate-900 text-base">{item.feature}</div>
+                        <div className="text-xs text-slate-500 mt-1 leading-relaxed">{item.whyItMatters}</div>
+                      </td>
+                      <td className="py-4 px-6 align-top bg-blue-50/60 border-l border-r border-blue-100">
+                        <div className="flex items-start gap-2.5">
+                          <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span className="font-semibold text-[#002D62] leading-snug">
+                            {item.cestrix}
+                          </span>
+                        </div>
+                      </td>
+                      <td className="py-4 px-6 align-top text-slate-600">
+                        <div className="flex items-start gap-2.5">
+                          <XCircle className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
+                          <span className="text-slate-700 leading-snug">
+                            {item.other}
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Table Footer Banner */}
+            <div className="bg-gradient-to-r from-[#002D62] to-[#0a1f3d] text-white p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <h3 className="font-heading font-bold text-lg sm:text-xl text-white">
+                  Ready to migrate from {comp.displayName} with zero downtime?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 mt-1">
+                  Our customer success team exports and imports your active student rosters and batches within 48 hours.
+                </p>
+              </div>
+              <Link
+                to={`/book-demo?source=table-${encodeURIComponent(comp.displayName.toLowerCase())}`}
+                className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-md transition-all"
+              >
+                <span>Book 1-on-1 Walkthrough</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Testimonial Quote ── */}
+      <section className="py-16 lg:py-20 bg-white border-b border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-[#002D62] to-[#0a1f3d] rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden">
+            <div className="flex items-center gap-1 text-amber-300 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Award key={i} className="w-5 h-5 fill-current" />
+              ))}
+            </div>
+            <blockquote className="text-lg sm:text-2xl font-serif leading-relaxed italic text-slate-100">
+              "{comp.quote.text}"
+            </blockquote>
+            <div className="mt-6 pt-6 border-t border-white/20 flex items-center justify-between flex-wrap gap-4">
+              <div>
+                <div className="font-heading font-bold text-base sm:text-lg text-white">
+                  {comp.quote.author}
+                </div>
+                <div className="text-xs sm:text-sm text-sky-200">
+                  {comp.quote.role}
+                </div>
+              </div>
+              <span className="text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-3 py-1 rounded-full font-semibold">
+                Verified Institute Partner
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ Section ── */}
+      <section className="py-16 lg:py-20 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#002D62] bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
+              Clear Answers
+            </span>
+            <h2 className="mt-3 text-3xl font-heading font-black text-slate-900 tracking-tight">
+              Frequently Asked Questions: Switching from {comp.displayName}
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, idx) => {
+              const isOpen = openFaq === idx
+              return (
+                <div 
+                  key={idx}
+                  className="border border-slate-200 rounded-xl overflow-hidden transition-all bg-white shadow-xs"
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="w-full py-4 px-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900 hover:text-[#002D62] transition-colors"
+                  >
+                    <span className="text-base sm:text-lg">{faq.q}</span>
+                    <ChevronDown className={`w-5 h-5 shrink-0 transition-transform ${isOpen ? 'rotate-180 text-[#002D62]' : 'text-slate-400'}`} />
+                  </button>
+                  {isOpen && (
+                    <div className="px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Compare Other Alternatives Strip ── */}
+      <section className="py-10 bg-white border-t border-slate-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">
+            Compare Cestrix with Other EdTech Platforms
+          </h3>
+          <div className="flex flex-wrap justify-center gap-3 text-xs">
+            {Object.keys(COMPETITORS).map((key) => (
+              <Link
+                key={key}
+                to={`/compare/${key}`}
+                className={`px-4 py-2 rounded-xl border font-semibold transition-all ${
+                  key === rawKey
+                    ? 'bg-[#002D62] text-white border-[#002D62]'
+                    : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-blue-50 hover:text-[#002D62]'
+                }`}
+              >
+                Cestrix vs {COMPETITORS[key].displayName}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Final Conversion CTA ── */}
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-[#001D42] via-[#002D62] to-[#0a1f3d] text-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold border border-emerald-500/30 mb-4">
+            <Zap className="w-3.5 h-3.5" />
+            Zero Downtime Free Data Migration
+          </span>
+
+          <h2 className="text-3xl sm:text-5xl font-heading font-black tracking-tight text-white max-w-3xl mx-auto">
+            Ready to Keep 100% of Your Hard-Earned Tuition?
+          </h2>
+
+          <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto">
+            Get your own white-label mobile app, biometric attendance sync, and 0% commission fee collections today.
+          </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              to={`/book-demo?source=compare-bottom-${encodeURIComponent(comp.displayName.toLowerCase())}`}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base shadow-xl shadow-emerald-950/40 transition-all hover:-translate-y-0.5"
+            >
+              <span>Book Your Personalized 1-on-1 Demo</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link
+              to="/pricing"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-base border border-white/20 transition-colors"
+            >
+              <span>Explore Transparent Pricing</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+export default DynamicComparePage

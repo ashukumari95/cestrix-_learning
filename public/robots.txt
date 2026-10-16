@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /admin/leads
+
+# High-Intent SEO Sitemaps
+Sitemap: https://cestrixlearning.com/sitemap.xml

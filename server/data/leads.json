@@ -1,0 +1,91 @@
+[
+  {
+    "fullName": "Director Sharma",
+    "instituteName": "Apex IIT Academy",
+    "email": "sharma@apexiit.com",
+    "phone": "9876543210",
+    "city": "Kota",
+    "studentsCount": "250-500",
+    "interestedFeatures": [
+      "ERP",
+      "CBT Tests"
+    ],
+    "preferredDemoDate": "2026-10-12",
+    "additionalRequirements": "Need white label app",
+    "id": "lead-1791780087320-lpje",
+    "status": "New",
+    "createdAt": "2026-10-12T04:41:27.320Z"
+  },
+  {
+    "fullName": "Prof. Sanjay Malhotra",
+    "instituteName": "Vanguard JEE Mentors",
+    "email": "sanjay@vanguardjee.com",
+    "phone": "+91 99887 76655",
+    "city": "Jaipur, Rajasthan",
+    "studentsCount": "250-500",
+    "interestedFeatures": [
+      "CBT Tests & Rankings",
+      "AI Mathematics Doubt Solver"
+    ],
+    "preferredDemoDate": "2026-10-20",
+    "additionalRequirements": "Conduct weekly CBT mock exams for 380 JEE aspirants.",
+    "id": "lead-1791702177573-xxzt",
+    "status": "New",
+    "createdAt": "2026-10-11T07:02:57.573Z"
+  },
+  {
+    "id": "lead-1",
+    "fullName": "Rajesh Sharma",
+    "instituteName": "Apex IIT-JEE Academy",
+    "email": "rajesh@apexiit.com",
+    "phone": "+91 98765 43210",
+    "city": "Kota, Rajasthan",
+    "studentsCount": "500-1000",
+    "interestedFeatures": [
+      "Test Management & OMR",
+      "Student Mobile App",
+      "AI Doubt Solver",
+      "Biometric Attendance"
+    ],
+    "preferredDemoDate": "2026-10-15",
+    "additionalRequirements": "Currently using offline spreadsheets and a legacy OMR reader. Need seamless migration of 650 active students.",
+    "status": "Demo Scheduled",
+    "createdAt": "2026-10-10T09:30:00.000Z"
+  },
+  {
+    "id": "lead-2",
+    "fullName": "Dr. Anita Desai",
+    "instituteName": "Catalyst Medical & NEET Institute",
+    "email": "dr.anita@catalystneet.org",
+    "phone": "+91 98112 34567",
+    "city": "Pune, Maharashtra",
+    "studentsCount": "250-500",
+    "interestedFeatures": [
+      "Online Tests & Rankings",
+      "Fee Collection",
+      "Parent WhatsApp Updates"
+    ],
+    "preferredDemoDate": "2026-10-16",
+    "additionalRequirements": "Looking to automate fee receipt generation and send weekly attendance reports directly to parents.",
+    "status": "New",
+    "createdAt": "2026-10-11T05:15:00.000Z"
+  },
+  {
+    "id": "lead-3",
+    "fullName": "Vikramaditya Rao",
+    "instituteName": "Horizon Math Pioneers",
+    "email": "v.rao@horizonmath.in",
+    "phone": "+91 99001 88223",
+    "city": "Bengaluru, Karnataka",
+    "studentsCount": "100-250",
+    "interestedFeatures": [
+      "AI Mathematics Doubt Solver",
+      "LMS & Video Lectures",
+      "White-Label App"
+    ],
+    "preferredDemoDate": "2026-10-18",
+    "additionalRequirements": "Specialized high-school mathematics coaching. Need step-by-step formula breakdown for students.",
+    "status": "Contacted",
+    "createdAt": "2026-10-09T14:20:00.000Z"
+  }
+]

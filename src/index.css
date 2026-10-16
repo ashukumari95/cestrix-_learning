@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: 219 71% 32%; /* #173F8A */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 222 47% 11%; /* #0F172A */
+    --secondary-foreground: 210 40% 98%;
+    --accent: 173 80% 32%; /* #0D9488 */
+    --accent-foreground: 210 40% 98%;
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 222 47% 11%; /* #0F172A */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%; /* #64748B */
+    --border: 214 32% 91%; /* #E2E8F0 */
+    --ring: 219 71% 32%;
+  }
+
+  * {
+    border-color: #E2E8F0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #FFFFFF;
+    color: #0F172A;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Cestrix Group Official Brand Typography: Bold Geometric Montserrat Headlines */
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+}
+
+/* Cestrix Group Brand Typography & Color Utilities */
+.font-heading {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.font-editorial {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.font-editorial-italic {
+  font-family: 'Montserrat', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.font-sans-ui, .font-body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Cestrix Group Color System */
+.bg-cestrix-dark {
+  background-color: #050B14 !important;
+}
+
+.bg-cestrix-surface {
+  background-color: #0B1121 !important;
+}
+
+.bg-cestrix-navy {
+  background-color: #002D62 !important;
+}
+
+.text-cestrix-cyan {
+  color: #00A3E0 !important;
+}
+
+.text-cestrix-sky {
+  color: #4CA6FF !important;
+}
+
+.border-cestrix-dark {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.border-cestrix-cyan {
+  border-color: rgba(0, 163, 224, 0.3) !important;
+}
+
+/* Direct mapping from legacy #173F8A to official Cestrix Group Navy #002D62 */
+.bg-\[\#173F8A\] {
+  background-color: #002D62 !important;
+}
+
+.hover\:bg-\[\#173F8A\]:hover {
+  background-color: #002D62 !important;
+}
+
+.text-\[\#173F8A\] {
+  color: #002D62 !important;
+}
+
+.hover\:text-\[\#173F8A\]:hover {
+  color: #002D62 !important;
+}
+
+.border-\[\#173F8A\] {
+  border-color: #002D62 !important;
+}
+
+.ring-\[\#173F8A\]\/10 {
+  --tw-ring-color: rgba(0, 45, 98, 0.1) !important;
+}
+
+.focus\:ring-\[\#173F8A\]:focus {
+  --tw-ring-color: #002D62 !important;
+}
+
+/* Custom Utilities for Premium SaaS Visuals */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.subtle-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
+}
+
+.gradient-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(23, 63, 138, 0.08) 0%, rgba(13, 148, 136, 0.04) 50%, transparent 100%);
+}
+
+.hero-sky-glow {
+  background: radial-gradient(70% 60% at 50% 0%, rgba(30, 112, 235, 0.18) 0%, rgba(23, 63, 138, 0.08) 45%, rgba(248, 250, 252, 0) 100%);
+}
+
+.hero-sky-banner {
+  background: linear-gradient(180deg, #0D3E8C 0%, #002D62 55%, #001D45 100%);
+  position: relative;
+}
+
+.cloud-glow-effect {
+  display: none;
+}
+
+.font-serif-italic {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.shadow-premium {
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.07), 0 0 1px 1px rgba(15, 23, 42, 0.04);
+}
+
+.shadow-card {
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 0 1px 1px rgba(226, 232, 240, 0.8);
+}
+
+.shadow-dashboard {
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(226, 232, 240, 0.85);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Infinite Marquee for Social Proof Logos */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-infinite {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.animate-marquee-infinite:hover {
+  animation-play-state: paused;
+}
