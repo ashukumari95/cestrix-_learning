@@ -151,3 +151,5 @@ Visit **`http://localhost:5174/`** in your browser.
    - `GEMINI_API_KEY` = your Google AI Studio API key
    - `GEMINI_MODEL` = `gemini-3.8-flash`
 4. Click **Deploy**. The project will build using `vite build` into `/dist` with zero configuration needed.
+#   c e s t r i x - _ l e a r n i n g  
+ 
