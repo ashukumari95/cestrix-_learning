@@ -134,6 +134,63 @@ const COMPETITORS: Record<string, CompetitorData> = {
       author: 'Prof. S. K. Jha',
       role: 'Founder, Champaran Science Classes (Motihari)'
     }
+  },
+  winuall: {
+    displayName: 'Winuall',
+    tagline: 'High-Performance Coaching OS Without Server Downtime',
+    badge: 'Rock-Solid 99.99% Uptime with Modern GenAI',
+    commissionModel: 'Quote-on-call opaque pricing (₹25,000–₹35,000/yr base + hidden add-on costs)',
+    commissionRate: 0.05,
+    playStoreModel: 'AppX / Winuall co-branded publishing setup',
+    biometricSupport: 'Basic attendance; no low-latency cloud push for turnstiles',
+    cbtSupport: 'Outdated quiz UI prone to lag during peak Sunday mock test surges',
+    settlementTime: 'T+3 escrow settlement',
+    privacyNote: 'Multi-tenant commercial database',
+    summaryPill: 'Blazing-fast test engine + RAG AI doubt resolution without crashes',
+    heroSubhead: 'Tired of Winuall servers crashing or lagging during high-traffic 500-student Sunday mock tests? Cestrix provides high-concurrency cloud architecture, NTA CBT simulation, and transparent flat pricing starting at ₹999/month.',
+    quote: {
+      text: 'Winuall regularly froze whenever 300 students logged in simultaneously for our weekly test. Switching to Cestrix eliminated all latency, and our faculty loves the 1-click WhatsApp attendance integration.',
+      author: 'Vikramaditya Roy',
+      role: 'Head of Academics, Target JEE Institute (Kolkata)'
+    }
+  },
+  rigi: {
+    displayName: 'Rigi & Cosmofeed',
+    tagline: 'Your Own Institutional Asset Without 5%–10% Revenue Cuts',
+    badge: '100% Brand Ownership on Your Own Play Store',
+    commissionModel: 'Heavy 5% to 10% platform revenue cut on every transaction',
+    commissionRate: 0.08,
+    playStoreModel: 'Zero mobile app; only locked links and Telegram/WhatsApp bot gates',
+    biometricSupport: 'No offline campus management, batch scheduling, or biometric hardware',
+    cbtSupport: 'Zero CBT exam simulator or national percentile ranking',
+    settlementTime: 'T+2 to T+4 days payment hold',
+    privacyNote: 'Aggregated consumer monetization platform',
+    summaryPill: 'Own branded mobile app + offline biometric ERP with 0% commission',
+    heroSubhead: 'Rigi and Cosmofeed are payment-locking tools that take a steep 5% to 10% cut of your hard work while giving your institute zero brand valuation or Play Store presence. Cestrix gives you your own dedicated mobile app and keeps 100% of your earnings.',
+    quote: {
+      text: 'We were losing over ₹60,000 every month on Rigi transaction cuts. Cestrix gave us a real coaching operating system with our own Play Store app, biometric gate attendance, and 0% commission for a flat monthly fee.',
+      author: 'Sameer Khan',
+      role: 'Director, Graviton Physics Academy (Lucknow)'
+    }
+  },
+  vidyalaya: {
+    displayName: 'Vidyalaya & Legacy ERPs',
+    tagline: 'The Modern Gen-Z Coaching Platform (Replacing 2010 Clunky Software)',
+    badge: 'Sleek, Fast & Cloud-Native Mobile First Design',
+    commissionModel: 'Heavy upfront software license + annual maintenance contracts (AMC)',
+    commissionRate: 0.03,
+    playStoreModel: 'Outdated template webview app with low student ratings',
+    biometricSupport: 'Old on-premise desktop software requiring local server maintenance',
+    cbtSupport: 'Zero NTA-standard online testing or AI error analysis',
+    settlementTime: 'Manual bank challans or basic gateway redirects',
+    privacyNote: 'Legacy desktop SQL files prone to data loss',
+    summaryPill: 'Modern UI/UX + Anti-Piracy Video DRM + RAG AI Doubt Engine',
+    heroSubhead: 'Legacy software like Vidyalaya and Fedena have clunky 2010-era desktop interfaces with zero video LMS or anti-piracy DRM. Cestrix is modern, lightning fast, and integrates physical biometric ERP with online NTA CBT exams seamlessly.',
+    quote: {
+      text: 'Our students hated the clunky Vidyalaya interface. Moving to Cestrix modernized our coaching institute overnight—clean mobile apps, WhatsApp arrival pings, and DRM-protected video streaming.',
+      author: 'Harishankar Sharma',
+      role: 'Managing Trustee, Drona Competitive Academy (Gwalior)'
+    }
   }
 }
 
