@@ -42,38 +42,57 @@ interface CompetitorData {
 const COMPETITORS: Record<string, CompetitorData> = {
   classplus: {
     displayName: 'Classplus',
-    tagline: 'The 0% Commission Alternative to Classplus',
+    tagline: 'The 0% Commission Alternative to Classplus (No Hidden Credits)',
     badge: 'Why 1,200+ Institutes Switched from Classplus',
-    commissionModel: '5% to 15% revenue cut on digital courses',
+    commissionModel: 'Heavy ₹19,999/yr entry + hidden credits-based system for live classes with steep overages',
     commissionRate: 0.08,
-    playStoreModel: 'Shared corporate publisher account',
+    playStoreModel: 'Shared corporate publisher account with locked-in brand equity',
     biometricSupport: 'No native offline biometric machine sync',
-    cbtSupport: 'Basic quiz interface without NTA simulation',
+    cbtSupport: 'Basic quiz interface without NTA percentile simulation',
     settlementTime: 'Escrow hold, paid out in T+2 to T+4 days',
-    privacyNote: 'Aggregated ecosystem with platform lead sharing',
-    summaryPill: 'Keep 100% of your earnings with zero commission',
-    heroSubhead: 'Stop giving away 5% to 15% of your course fees and student tuition. Cestrix gives you your own branded mobile app, biometric attendance sync, NTA-standard CBT exams, and direct bank settlement.',
+    privacyNote: 'Aggregated ecosystem with platform lead sharing and course cross-selling',
+    summaryPill: 'Truly flat monthly SaaS without hidden live-class credits or overages',
+    heroSubhead: 'Classplus charges ₹19,999/year upfront and locks educators into a restrictive "credits-based" live class system with sudden overage fees. Cestrix gives you a truly unlimited flat SaaS platform, your own branded app, biometric classroom sync, and 0% commission.',
     quote: {
-      text: 'We paid upwards of ₹45,000 every month in commissions on Classplus. Moving to Cestrix gave us our own Play Store developer listing and 0% commission. The biometric gate sync with instant WhatsApp alerts is unmatched.',
+      text: 'We paid upwards of ₹45,000 every month in commissions and unexpected live-class credit overages on Classplus. Moving to Cestrix gave us a predictable flat bill, our own Play Store developer listing, and 100% data confidentiality.',
       author: 'Er. Rajesh Verma',
       role: 'Director, Apex Science Academy (Patna)'
     }
   },
+  learnyst: {
+    displayName: 'Learnyst',
+    tagline: 'The Affordable 0% Commission Alternative to Learnyst',
+    badge: 'Own Branded Mobile App Without the ₹13,499/mo Wall',
+    commissionModel: 'Starts at ₹3,149/mo (Essential) and forces ₹13,499/mo (Premium) just for a branded Android app',
+    commissionRate: 0.04,
+    playStoreModel: 'Locked behind expensive ₹13,499/month enterprise wall',
+    biometricSupport: 'Online-only web LMS; zero physical classroom biometric machine integration',
+    cbtSupport: 'Standard web quizzes; lacks offline center attendance and fee ledger sync',
+    settlementTime: 'Payment gateway account',
+    privacyNote: 'Online course LMS policy',
+    summaryPill: 'White-label mobile app + classroom ERP at 1/3rd the cost of Learnyst',
+    heroSubhead: 'Learnyst charges ₹3,149/month just for base software and forces you to pay ₹13,499/month if you want a branded Android app. Cestrix gives you white-label apps, physical classroom biometric sync, and RAG AI doubts starting at flat ₹999/month.',
+    quote: {
+      text: 'Learnyst quoted us over ₹1.6 Lakhs annually just because our students needed an Android app on the Play Store. Cestrix gave us white-label mobile apps, classroom biometric sync, and automated WhatsApp fee reminders at a fraction of the cost.',
+      author: 'Er. Naveen Mathur',
+      role: 'Director, Zenith IIT-JEE Academy (Kota)'
+    }
+  },
   teachmint: {
     displayName: 'Teachmint',
-    tagline: 'The Hybrid Coaching OS Built for Real Classrooms',
-    badge: 'Purpose-Built for Indian Coaching Institutes',
-    commissionModel: 'Software renewal tiers + payment gateway lag',
+    tagline: 'The Agile Cloud Coaching OS (Without Heavy Hardware Baggage)',
+    badge: 'Purpose-Built for Real Indian Coaching Centers',
+    commissionModel: 'Software renewal tiers + pivoted to ₹1,45,000 Smart Board hardware & complex enterprise quotes',
     commissionRate: 0.05,
     playStoreModel: 'Teachmint co-branded application',
-    biometricSupport: 'Primarily in-app QR check-in; no native push API for gate machines',
+    biometricSupport: 'Primarily in-app QR check-in; no native cloud push API for gate turnstiles',
     cbtSupport: 'School homework & standard assignment quizzes',
     settlementTime: 'Standard gateway payouts',
     privacyNote: 'Broad school user database',
-    summaryPill: 'Offline biometric ERP + NTA CBT tests + WhatsApp fee recovery',
-    heroSubhead: 'While Teachmint is designed as a school LMS and generic live classroom app, Cestrix is purpose-built for competitive coaching centers that require biometric attendance machines, automated WhatsApp fee recovery, NTA CBT exams, and multi-branch control.',
+    summaryPill: 'Cloud-native software with biometric ERP + NTA CBT tests + WhatsApp recovery',
+    heroSubhead: 'Teachmint has pivoted heavily into selling ₹1,45,000 physical interactive smart boards and enterprise school quotes. Cestrix remains the fast, lightweight, and modern cloud alternative built specifically for independent tuition centers and competitive institutes.',
     quote: {
-      text: 'Teachmint is built for schools with classes 1 to 12. Cestrix understands batch timings, faculty rotations, and NTA computer-based exam practice. Our fee collection rate jumped 40% with WhatsApp dynamic UPI links.',
+      text: 'Teachmint became an enterprise-heavy school LMS pushing expensive smart boards. Cestrix understands batch timings, faculty rotations, and NTA computer-based exam practice. Our fee collection rate jumped 40% with WhatsApp dynamic UPI links.',
       author: 'Dr. Sunita Choudhary',
       role: 'Founder, Sankalp NEET Institute (Sikar)'
     }
@@ -99,19 +118,19 @@ const COMPETITORS: Record<string, CompetitorData> = {
   },
   edmingle: {
     displayName: 'Edmingle',
-    tagline: 'Intuitive Coaching Management Without Complex Setup',
-    badge: 'Modern, Fast & Free Data Migration',
-    commissionModel: 'Expensive enterprise per-student pricing',
+    tagline: 'Modern Coaching OS with GenAI (Without the ₹7,499/mo Price Tag)',
+    badge: 'Deep-Tech AI Doubt Solver Accessible to SMBs',
+    commissionModel: 'Core plan starts at an expensive ₹7,499/month for mid-market and enterprise',
     commissionRate: 0.05,
     playStoreModel: 'Custom mobile app at high tier pricing',
     biometricSupport: 'Limited hardware integration; complex API setup',
     cbtSupport: 'Standard test engine',
     settlementTime: 'T+2 settlement',
     privacyNote: 'B2B enterprise data policy',
-    summaryPill: 'Transparent pricing with zero hidden implementation charges',
-    heroSubhead: 'Avoid complex software contracts and expensive per-student charges. Cestrix offers straightforward, transparent pricing starting at ₹999/month with done-for-you data migration.',
+    summaryPill: 'Cutting-edge RAG AI doubt solver & ERP starting at ₹999/month',
+    heroSubhead: 'While Edmingle charges ₹7,499/month for enterprise AI companions, Cestrix brings proprietary RAG-powered doubt resolution (trained directly on your institute notes) and anti-piracy DRM to growing coaching centers at a fraction of the price.',
     quote: {
-      text: 'The ease of use in Cestrix is night and day. Our non-technical receptionists learned Cestrix in one afternoon, and the WhatsApp parent communication has completely eliminated fee follow-up calls.',
+      text: 'Edmingle was completely out of budget for our 300-student center at ₹7,500/month. Cestrix gave us the same advanced AI doubt solving, student error analysis, and automated fee recovery starting at flat ₹999/month.',
       author: 'Prof. S. K. Jha',
       role: 'Founder, Champaran Science Classes (Motihari)'
     }
@@ -210,6 +229,34 @@ export const DynamicComparePage: React.FC = () => {
       cestrixGood: true,
       other: 'Standard in-app notifications or basic SMS alerts',
       whyItMatters: 'WhatsApp has a 98% open rate in India. Parents pay within 2 minutes via PhonePe, GPay, or Paytm.'
+    },
+    {
+      feature: 'Live Class Limits & Overage Costs',
+      cestrix: 'Truly Unlimited Flat SaaS (Zero Credit Deductions or Minute Meters)',
+      cestrixGood: true,
+      other: 'Credits-based live streaming limits with heavy pay-per-minute overage costs',
+      whyItMatters: 'No surprise bills at month-end when your student attendance spikes during revision batches.'
+    },
+    {
+      feature: 'RAG-Powered AI Doubt Solver (Your Institute Notes)',
+      cestrix: 'Custom AI Assistant trained strictly on YOUR coaching notes & DPPs (24/7)',
+      cestrixGood: true,
+      other: 'Generic chatbots or locked behind ₹7,500+/mo enterprise tiers',
+      whyItMatters: 'Students get instant step-by-step doubt resolution strictly matching your faculty’s exact teaching methods.'
+    },
+    {
+      feature: 'Anti-Piracy Video Protection (DRM & Dynamic Watermarking)',
+      cestrix: 'Hardware Widevine DRM + Screen-recording black screen + Student Phone Watermark',
+      cestrixGood: true,
+      other: 'Vulnerable player easily captured by screen-recorder apps or unencrypted links',
+      whyItMatters: 'Guarantees your paid lectures and test answers are never pirated or leaked to Telegram groups.'
+    },
+    {
+      feature: 'API-First Architecture & Webhook Integrations',
+      cestrix: 'Open REST APIs & Webhooks for WhatsApp (Wati/Interakt), CRM & biometric gates',
+      cestrixGood: true,
+      other: 'Closed walled-garden with no custom webhook or data pipeline access',
+      whyItMatters: 'Seamlessly connects your existing marketing automation and campus hardware without vendor lock-in.'
     }
   ]
 
