@@ -17,6 +17,8 @@
     <meta name="author" content="Cestrix Learning Technologies" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="https://learning.cestrixgroup.com/" />
+    <link rel="alternate" type="text/markdown" href="https://learning.cestrixgroup.com/llms.txt" title="LLM Knowledge Standard" />
+    <meta name="ai-content-declaration" content="educational-saas" />
     <meta name="theme-color" content="#002D62" />
     <meta name="apple-mobile-web-app-title" content="Cestrix Learning" />
 
@@ -211,8 +213,17 @@
           "@id": "https://learning.cestrixgroup.com/#website",
           "url": "https://learning.cestrixgroup.com/",
           "name": "Cestrix Learning",
+          "description": "India's #1 Coaching Management Operating System & 0% Commission Alternative to Classplus & Teachmint.",
           "publisher": {
             "@id": "https://learning.cestrixgroup.com/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://learning.cestrixgroup.com/compare?search={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
           }
         }
       ]

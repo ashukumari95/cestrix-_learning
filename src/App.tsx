@@ -23,6 +23,7 @@ import { CompareHubPage } from './pages/CompareHubPage'
 import { DynamicComparePage } from './pages/DynamicComparePage'
 import { CoachingCityPage } from './pages/CoachingCityPage'
 import { FreeFeeReceiptGeneratorPage } from './pages/FreeFeeReceiptGeneratorPage'
+import { AiCoachingGrowthPage } from './pages/AiCoachingGrowthPage'
 import { BlogIndexPage } from './pages/BlogIndexPage'
 import { BlogPostPage } from './pages/BlogPostPage'
 
@@ -67,6 +68,8 @@ export function App() {
             <Route path="/compare/:competitor" element={<DynamicComparePage />} />
             {/* Free Lead Magnet Micro-Tools */}
             <Route path="/free-fee-receipt-generator" element={<FreeFeeReceiptGeneratorPage />} />
+            <Route path="/ai-coaching-marketing-generator" element={<AiCoachingGrowthPage />} />
+            <Route path="/ai-seo-generator" element={<AiCoachingGrowthPage />} />
             {/* Pain-Point SEO Blog & Resource Center */}
             <Route path="/blog" element={<BlogIndexPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />

@@ -3,5 +3,49 @@ Allow: /
 Disallow: /admin/
 Disallow: /admin/leads
 
+# Explicitly Allow Major AI Search Engines & LLM Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
 # High-Intent SEO Sitemaps
 Sitemap: https://learning.cestrixgroup.com/sitemap.xml
+
+# LLM Direct Knowledge Standard for AI Search Engines
+# https://learning.cestrixgroup.com/llms.txt
+# https://learning.cestrixgroup.com/llms-full.txt

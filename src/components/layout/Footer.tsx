@@ -169,6 +169,17 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
+                <Link to="/ai-seo-generator" className="hover:text-emerald-300 transition-colors flex items-center gap-1.5 text-emerald-400 font-medium">
+                  <span>AI Coaching Ad & SEO Generator</span>
+                  <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">AI</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/free-fee-receipt-generator" className="hover:text-white transition-colors text-slate-300">
+                  Fee Receipt Generator (Free)
+                </Link>
+              </li>
+              <li>
                 <Link to="/blog" className="hover:text-white transition-colors flex items-center gap-1.5 text-teal-400 font-medium">
                   <span>Blog & Growth Guides</span>
                   <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-teal-950 text-teal-300 border border-teal-800">New</span>
