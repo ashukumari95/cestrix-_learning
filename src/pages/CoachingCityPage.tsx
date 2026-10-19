@@ -209,7 +209,7 @@ export const CoachingCityPage: React.FC = () => {
     'provider': {
       '@type': 'Organization',
       'name': 'Cestrix Learning Technologies',
-      'url': 'https://cestrixlearning.com/'
+      'url': 'https://learning.cestrixgroup.com/'
     },
     'areaServed': {
       '@type': 'City',

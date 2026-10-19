@@ -37,12 +37,12 @@ export const BlogIndexPage: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'Blog',
     'name': 'Cestrix Learning Coaching Growth Blog',
-    'url': 'https://cestrixlearning.com/blog',
+    'url': 'https://learning.cestrixgroup.com/blog',
     'description': 'Actionable strategies, tech guides, and growth playbooks for coaching institutes and tuition centers in India.',
     'publisher': {
       '@type': 'Organization',
       'name': 'Cestrix Learning Technologies',
-      'logo': 'https://cestrixlearning.com/logo.webp'
+      'logo': 'https://learning.cestrixgroup.com/logo.webp'
     }
   }
 

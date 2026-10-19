@@ -21,7 +21,7 @@ export const SeoEnginePage: React.FC = () => {
   const [configSaved, setConfigSaved] = useState(false)
 
   // On-Page Analyzer State
-  const [analyzeUrl, setAnalyzeUrl] = useState('https://cestrixlearning.com/')
+  const [analyzeUrl, setAnalyzeUrl] = useState('https://learning.cestrixgroup.com/')
   const [analyzeKeyword, setAnalyzeKeyword] = useState('coaching institute management software')
   const [analyzing, setAnalyzing] = useState(false)
   const [analysisResult, setAnalysisResult] = useState<any | null>(null)
@@ -37,7 +37,7 @@ export const SeoEnginePage: React.FC = () => {
   const [contentResult, setContentResult] = useState<any | null>(null)
 
   // Technical Crawler State
-  const [crawlUrl, setCrawlUrl] = useState('https://cestrixlearning.com')
+  const [crawlUrl, setCrawlUrl] = useState('https://learning.cestrixgroup.com')
   const [crawling, setCrawling] = useState(false)
   const [crawlSummary, setCrawlSummary] = useState<any | null>(null)
 
@@ -396,7 +396,7 @@ export const SeoEnginePage: React.FC = () => {
                 <Globe className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                 <input
                   type="text"
-                  placeholder="Enter URL to analyze (e.g. https://cestrixlearning.com/)"
+                  placeholder="Enter URL to analyze (e.g. https://learning.cestrixgroup.com/)"
                   value={analyzeUrl}
                   onChange={e => setAnalyzeUrl(e.target.value)}
                   className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#173F8A]"
@@ -743,7 +743,7 @@ export const SeoEnginePage: React.FC = () => {
                 <Globe className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                 <input
                   type="text"
-                  placeholder="Domain to inspect (e.g. https://cestrixlearning.com)"
+                  placeholder="Domain to inspect (e.g. https://learning.cestrixgroup.com)"
                   value={crawlUrl}
                   onChange={e => setCrawlUrl(e.target.value)}
                   className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#173F8A]"

@@ -4,4 +4,4 @@ Disallow: /admin/
 Disallow: /admin/leads
 
 # High-Intent SEO Sitemaps
-Sitemap: https://cestrixlearning.com/sitemap.xml
+Sitemap: https://learning.cestrixgroup.com/sitemap.xml

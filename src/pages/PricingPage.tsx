@@ -412,7 +412,7 @@ export const PricingPage: React.FC = () => {
           'priceCurrency': 'INR',
           'priceValidUntil': '2027-12-31',
           'availability': 'https://schema.org/InStock',
-          'url': 'https://cestrixlearning.com/pricing'
+          'url': 'https://learning.cestrixgroup.com/pricing'
         }))
       },
       {

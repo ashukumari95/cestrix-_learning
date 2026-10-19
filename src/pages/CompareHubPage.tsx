@@ -54,7 +54,7 @@ export const CompareHubPage: React.FC = () => {
       '@type': 'ListItem',
       'position': index + 1,
       'name': `Cestrix Learning vs ${c.displayName}`,
-      'url': `https://cestrixlearning.com/compare/cestrix-vs-${c.id}`
+      'url': `https://learning.cestrixgroup.com/compare/cestrix-vs-${c.id}`
     }))
   }
 
