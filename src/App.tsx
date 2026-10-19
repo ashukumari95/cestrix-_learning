@@ -19,6 +19,7 @@ import { PrivacyPage } from './pages/PrivacyPage'
 import { TermsPage } from './pages/TermsPage'
 import { CompareClassplusPage } from './pages/CompareClassplusPage'
 import { CompareTeachmintPage } from './pages/CompareTeachmintPage'
+import { CompareHubPage } from './pages/CompareHubPage'
 import { DynamicComparePage } from './pages/DynamicComparePage'
 import { CoachingCityPage } from './pages/CoachingCityPage'
 import { FreeFeeReceiptGeneratorPage } from './pages/FreeFeeReceiptGeneratorPage'
@@ -59,6 +60,8 @@ export function App() {
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
             {/* SEO Competitor Comparison Routes */}
+            <Route path="/compare" element={<CompareHubPage />} />
+            <Route path="/alternatives" element={<CompareHubPage />} />
             <Route path="/compare/cestrix-vs-classplus" element={<CompareClassplusPage />} />
             <Route path="/compare/cestrix-vs-teachmint" element={<CompareTeachmintPage />} />
             <Route path="/compare/:competitor" element={<DynamicComparePage />} />

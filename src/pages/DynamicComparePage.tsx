@@ -14,192 +14,25 @@ import {
   ChevronDown, 
   Calculator,
   Lock,
-  Layers,
-  Award
+  Award,
+  ExternalLink
 } from 'lucide-react'
 import { SchemaMarkup } from '../components/seo/SchemaMarkup'
+import { ALL_COMPETITORS, type CompetitorData } from '../data/competitorsData'
 
-interface CompetitorData {
-  displayName: string
-  tagline: string
-  badge: string
-  commissionModel: string
-  commissionRate: number
-  playStoreModel: string
-  biometricSupport: string
-  cbtSupport: string
-  settlementTime: string
-  privacyNote: string
-  summaryPill: string
-  heroSubhead: string
-  quote: {
-    text: string
-    author: string
-    role: string
-  }
-}
 
-const COMPETITORS: Record<string, CompetitorData> = {
-  classplus: {
-    displayName: 'Classplus',
-    tagline: 'The 0% Commission Alternative to Classplus (No Hidden Credits)',
-    badge: 'Why 1,200+ Institutes Switched from Classplus',
-    commissionModel: 'Heavy ₹19,999/yr entry + hidden credits-based system for live classes with steep overages',
-    commissionRate: 0.08,
-    playStoreModel: 'Shared corporate publisher account with locked-in brand equity',
-    biometricSupport: 'No native offline biometric machine sync',
-    cbtSupport: 'Basic quiz interface without NTA percentile simulation',
-    settlementTime: 'Escrow hold, paid out in T+2 to T+4 days',
-    privacyNote: 'Aggregated ecosystem with platform lead sharing and course cross-selling',
-    summaryPill: 'Truly flat monthly SaaS without hidden live-class credits or overages',
-    heroSubhead: 'Classplus charges ₹19,999/year upfront and locks educators into a restrictive "credits-based" live class system with sudden overage fees. Cestrix gives you a truly unlimited flat SaaS platform, your own branded app, biometric classroom sync, and 0% commission.',
-    quote: {
-      text: 'We paid upwards of ₹45,000 every month in commissions and unexpected live-class credit overages on Classplus. Moving to Cestrix gave us a predictable flat bill, our own Play Store developer listing, and 100% data confidentiality.',
-      author: 'Er. Rajesh Verma',
-      role: 'Director, Apex Science Academy (Patna)'
-    }
-  },
-  learnyst: {
-    displayName: 'Learnyst',
-    tagline: 'The Affordable 0% Commission Alternative to Learnyst',
-    badge: 'Own Branded Mobile App Without the ₹13,499/mo Wall',
-    commissionModel: 'Starts at ₹3,149/mo (Essential) and forces ₹13,499/mo (Premium) just for a branded Android app',
-    commissionRate: 0.04,
-    playStoreModel: 'Locked behind expensive ₹13,499/month enterprise wall',
-    biometricSupport: 'Online-only web LMS; zero physical classroom biometric machine integration',
-    cbtSupport: 'Standard web quizzes; lacks offline center attendance and fee ledger sync',
-    settlementTime: 'Payment gateway account',
-    privacyNote: 'Online course LMS policy',
-    summaryPill: 'White-label mobile app + classroom ERP at 1/3rd the cost of Learnyst',
-    heroSubhead: 'Learnyst charges ₹3,149/month just for base software and forces you to pay ₹13,499/month if you want a branded Android app. Cestrix gives you white-label apps, physical classroom biometric sync, and RAG AI doubts starting at flat ₹999/month.',
-    quote: {
-      text: 'Learnyst quoted us over ₹1.6 Lakhs annually just because our students needed an Android app on the Play Store. Cestrix gave us white-label mobile apps, classroom biometric sync, and automated WhatsApp fee reminders at a fraction of the cost.',
-      author: 'Er. Naveen Mathur',
-      role: 'Director, Zenith IIT-JEE Academy (Kota)'
-    }
-  },
-  teachmint: {
-    displayName: 'Teachmint',
-    tagline: 'The Agile Cloud Coaching OS (Without Heavy Hardware Baggage)',
-    badge: 'Purpose-Built for Real Indian Coaching Centers',
-    commissionModel: 'Software renewal tiers + pivoted to ₹1,45,000 Smart Board hardware & complex enterprise quotes',
-    commissionRate: 0.05,
-    playStoreModel: 'Teachmint co-branded application',
-    biometricSupport: 'Primarily in-app QR check-in; no native cloud push API for gate turnstiles',
-    cbtSupport: 'School homework & standard assignment quizzes',
-    settlementTime: 'Standard gateway payouts',
-    privacyNote: 'Broad school user database',
-    summaryPill: 'Cloud-native software with biometric ERP + NTA CBT tests + WhatsApp recovery',
-    heroSubhead: 'Teachmint has pivoted heavily into selling ₹1,45,000 physical interactive smart boards and enterprise school quotes. Cestrix remains the fast, lightweight, and modern cloud alternative built specifically for independent tuition centers and competitive institutes.',
-    quote: {
-      text: 'Teachmint became an enterprise-heavy school LMS pushing expensive smart boards. Cestrix understands batch timings, faculty rotations, and NTA computer-based exam practice. Our fee collection rate jumped 40% with WhatsApp dynamic UPI links.',
-      author: 'Dr. Sunita Choudhary',
-      role: 'Founder, Sankalp NEET Institute (Sikar)'
-    }
-  },
-  graphy: {
-    displayName: 'Graphy (Unacademy)',
-    tagline: 'Physical Classroom ERP + Online LMS (Without High Fixed Annual Fees)',
-    badge: 'Affordable Coaching OS Starting at ₹999/mo',
-    commissionModel: 'High annual fixed platform fees + gateway charges',
-    commissionRate: 0.06,
-    playStoreModel: 'High-cost enterprise white-label tier',
-    biometricSupport: 'No physical classroom biometric attendance sync',
-    cbtSupport: 'Video course quizzes; no NTA percentile engine',
-    settlementTime: 'T+2 settlement',
-    privacyNote: 'Corporate EdTech subsidiary',
-    summaryPill: 'Combines offline coaching ERP with online video courses',
-    heroSubhead: 'Graphy is built for solo online course creators and influencers. Cestrix provides the complete operating system for physical coaching campuses: biometric attendance, cash/UPI fee ledgers, and NTA CBT test labs.',
-    quote: {
-      text: 'Graphy charged us astronomical annual renewals while ignoring our physical classroom operations. Cestrix gave us biometric machine integration and WhatsApp fee automation for a fraction of the cost.',
-      author: 'Anand Sharma',
-      role: 'Managing Partner, Pragyan Classes (Jaipur)'
-    }
-  },
-  edmingle: {
-    displayName: 'Edmingle',
-    tagline: 'Modern Coaching OS with GenAI (Without the ₹7,499/mo Price Tag)',
-    badge: 'Deep-Tech AI Doubt Solver Accessible to SMBs',
-    commissionModel: 'Core plan starts at an expensive ₹7,499/month for mid-market and enterprise',
-    commissionRate: 0.05,
-    playStoreModel: 'Custom mobile app at high tier pricing',
-    biometricSupport: 'Limited hardware integration; complex API setup',
-    cbtSupport: 'Standard test engine',
-    settlementTime: 'T+2 settlement',
-    privacyNote: 'B2B enterprise data policy',
-    summaryPill: 'Cutting-edge RAG AI doubt solver & ERP starting at ₹999/month',
-    heroSubhead: 'While Edmingle charges ₹7,499/month for enterprise AI companions, Cestrix brings proprietary RAG-powered doubt resolution (trained directly on your institute notes) and anti-piracy DRM to growing coaching centers at a fraction of the price.',
-    quote: {
-      text: 'Edmingle was completely out of budget for our 300-student center at ₹7,500/month. Cestrix gave us the same advanced AI doubt solving, student error analysis, and automated fee recovery starting at flat ₹999/month.',
-      author: 'Prof. S. K. Jha',
-      role: 'Founder, Champaran Science Classes (Motihari)'
-    }
-  },
-  winuall: {
-    displayName: 'Winuall',
-    tagline: 'High-Performance Coaching OS Without Server Downtime',
-    badge: 'Rock-Solid 99.99% Uptime with Modern GenAI',
-    commissionModel: 'Quote-on-call opaque pricing (₹25,000–₹35,000/yr base + hidden add-on costs)',
-    commissionRate: 0.05,
-    playStoreModel: 'AppX / Winuall co-branded publishing setup',
-    biometricSupport: 'Basic attendance; no low-latency cloud push for turnstiles',
-    cbtSupport: 'Outdated quiz UI prone to lag during peak Sunday mock test surges',
-    settlementTime: 'T+3 escrow settlement',
-    privacyNote: 'Multi-tenant commercial database',
-    summaryPill: 'Blazing-fast test engine + RAG AI doubt resolution without crashes',
-    heroSubhead: 'Tired of Winuall servers crashing or lagging during high-traffic 500-student Sunday mock tests? Cestrix provides high-concurrency cloud architecture, NTA CBT simulation, and transparent flat pricing starting at ₹999/month.',
-    quote: {
-      text: 'Winuall regularly froze whenever 300 students logged in simultaneously for our weekly test. Switching to Cestrix eliminated all latency, and our faculty loves the 1-click WhatsApp attendance integration.',
-      author: 'Vikramaditya Roy',
-      role: 'Head of Academics, Target JEE Institute (Kolkata)'
-    }
-  },
-  rigi: {
-    displayName: 'Rigi & Cosmofeed',
-    tagline: 'Your Own Institutional Asset Without 5%–10% Revenue Cuts',
-    badge: '100% Brand Ownership on Your Own Play Store',
-    commissionModel: 'Heavy 5% to 10% platform revenue cut on every transaction',
-    commissionRate: 0.08,
-    playStoreModel: 'Zero mobile app; only locked links and Telegram/WhatsApp bot gates',
-    biometricSupport: 'No offline campus management, batch scheduling, or biometric hardware',
-    cbtSupport: 'Zero CBT exam simulator or national percentile ranking',
-    settlementTime: 'T+2 to T+4 days payment hold',
-    privacyNote: 'Aggregated consumer monetization platform',
-    summaryPill: 'Own branded mobile app + offline biometric ERP with 0% commission',
-    heroSubhead: 'Rigi and Cosmofeed are payment-locking tools that take a steep 5% to 10% cut of your hard work while giving your institute zero brand valuation or Play Store presence. Cestrix gives you your own dedicated mobile app and keeps 100% of your earnings.',
-    quote: {
-      text: 'We were losing over ₹60,000 every month on Rigi transaction cuts. Cestrix gave us a real coaching operating system with our own Play Store app, biometric gate attendance, and 0% commission for a flat monthly fee.',
-      author: 'Sameer Khan',
-      role: 'Director, Graviton Physics Academy (Lucknow)'
-    }
-  },
-  vidyalaya: {
-    displayName: 'Vidyalaya & Legacy ERPs',
-    tagline: 'The Modern Gen-Z Coaching Platform (Replacing 2010 Clunky Software)',
-    badge: 'Sleek, Fast & Cloud-Native Mobile First Design',
-    commissionModel: 'Heavy upfront software license + annual maintenance contracts (AMC)',
-    commissionRate: 0.03,
-    playStoreModel: 'Outdated template webview app with low student ratings',
-    biometricSupport: 'Old on-premise desktop software requiring local server maintenance',
-    cbtSupport: 'Zero NTA-standard online testing or AI error analysis',
-    settlementTime: 'Manual bank challans or basic gateway redirects',
-    privacyNote: 'Legacy desktop SQL files prone to data loss',
-    summaryPill: 'Modern UI/UX + Anti-Piracy Video DRM + RAG AI Doubt Engine',
-    heroSubhead: 'Legacy software like Vidyalaya and Fedena have clunky 2010-era desktop interfaces with zero video LMS or anti-piracy DRM. Cestrix is modern, lightning fast, and integrates physical biometric ERP with online NTA CBT exams seamlessly.',
-    quote: {
-      text: 'Our students hated the clunky Vidyalaya interface. Moving to Cestrix modernized our coaching institute overnight—clean mobile apps, WhatsApp arrival pings, and DRM-protected video streaming.',
-      author: 'Harishankar Sharma',
-      role: 'Managing Trustee, Drona Competitive Academy (Gwalior)'
-    }
-  }
-}
+const COMPETITORS: Record<string, CompetitorData> = ALL_COMPETITORS;
 
 export const DynamicComparePage: React.FC = () => {
   const { competitor } = useParams<{ competitor?: string }>()
   const rawKey = (competitor || '').toLowerCase().replace('cestrix-vs-', '').trim()
   
-  const comp: CompetitorData = COMPETITORS[rawKey] || {
+  const comp: CompetitorData = ALL_COMPETITORS[rawKey] || {
+    id: rawKey || 'competitor',
+    category: 'direct-rivals',
+    categoryLabel: 'Coaching OS & LMS',
     displayName: competitor ? competitor.charAt(0).toUpperCase() + competitor.slice(1) : 'Competitor',
+    officialWebsite: '',
     tagline: 'The 0% Commission Modern Coaching Operating System',
     badge: 'Transparent Alternative with Zero Platform Tax',
     commissionModel: '5% to 15% revenue share or hidden platform fees',
@@ -211,6 +44,11 @@ export const DynamicComparePage: React.FC = () => {
     privacyNote: 'Aggregated user base',
     summaryPill: 'Keep 100% of your earnings with your own branded app',
     heroSubhead: `Compare Cestrix with ${competitor || 'legacy platforms'}. Discover why coaching institutes choose our 0% commission model, physical biometric machine sync, and NTA-standard CBT test engine.`,
+    keyWeaknesses: [
+      'Hidden 5% to 10% commission cuts and sudden live class credit overages',
+      'Vendor lock-in and delayed customer service response'
+    ],
+    cestrixEdge: 'Flat pricing from ₹999/month with 0% platform commission and direct founder WhatsApp support.',
     quote: {
       text: 'Switching to Cestrix saved us lakhs in software fees and commissions. The platform is rock solid and our parents love the real-time WhatsApp attendance notices.',
       author: 'Academy Director',
@@ -394,9 +232,28 @@ export const DynamicComparePage: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] opacity-10"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-sky-200 mb-6">
-            <Percent className="w-4 h-4 text-emerald-400" />
-            <span>{comp.badge}</span>
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
+            {comp.categoryLabel && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 text-sky-200 border border-sky-400/30 text-xs font-semibold">
+                <Building2 className="w-3.5 h-3.5 text-sky-300" />
+                {comp.categoryLabel}
+              </span>
+            )}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-sky-200">
+              <Percent className="w-4 h-4 text-emerald-400" />
+              <span>{comp.badge}</span>
+            </div>
+            {comp.officialWebsite && (
+              <a
+                href={comp.officialWebsite}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-slate-200 hover:text-white border border-white/20 text-xs transition-colors"
+              >
+                <span>Official Site</span>
+                <ExternalLink className="w-3 h-3 text-slate-300" />
+              </a>
+            )}
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight text-white max-w-4xl mx-auto leading-tight sm:leading-tight">
@@ -551,6 +408,52 @@ export const DynamicComparePage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* ── Pain Points & Technical Limitations of Competitor ── */}
+      {comp.keyWeaknesses && comp.keyWeaknesses.length > 0 && (
+        <section className="py-14 bg-white border-b border-slate-200">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <span className="text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-50 px-3.5 py-1.5 rounded-full border border-rose-200">
+                Ground Reality & Technical Flaws
+              </span>
+              <h2 className="mt-3 text-2xl sm:text-3xl font-heading font-black text-slate-900 tracking-tight">
+                Top Frustrations Institutes Face with {comp.displayName}
+              </h2>
+              <p className="mt-2 text-slate-600 text-sm">
+                Real customer feedback and architectural bottlenecks that push coaching founders to switch to Cestrix.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              {comp.keyWeaknesses.map((weakness, i) => (
+                <div key={i} className="flex items-start gap-3.5 p-4 rounded-xl bg-rose-50/70 border border-rose-100">
+                  <XCircle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
+                  <span className="text-sm text-slate-800 font-medium leading-relaxed">{weakness}</span>
+                </div>
+              ))}
+            </div>
+
+            {comp.cestrixEdge && (
+              <div className="p-6 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50 to-sky-50 border border-emerald-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-emerald-600 shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-heading font-bold text-slate-900 text-base">The Cestrix Learning Edge</div>
+                    <p className="text-sm text-slate-700 mt-0.5 leading-relaxed">{comp.cestrixEdge}</p>
+                  </div>
+                </div>
+                <Link
+                  to="/book-demo"
+                  className="shrink-0 text-xs font-bold px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition-colors"
+                >
+                  Switch with Zero Downtime →
+                </Link>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* ── Head-to-Head Comparison Matrix ── */}
       <section className="py-16 lg:py-24 bg-slate-50">
@@ -709,23 +612,40 @@ export const DynamicComparePage: React.FC = () => {
       </section>
 
       {/* ── Compare Other Alternatives Strip ── */}
-      <section className="py-10 bg-white border-t border-slate-200">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">
-            Compare Cestrix with Other EdTech Platforms
+      <section className="py-14 bg-white border-t border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2 block">
+            Complete Competitor Intelligence Directory
+          </span>
+          <h3 className="text-2xl font-heading font-bold text-slate-900 mb-3">
+            Compare Cestrix with 40+ Other EdTech & LMS Platforms
           </h3>
-          <div className="flex flex-wrap justify-center gap-3 text-xs">
-            {Object.keys(COMPETITORS).map((key) => (
+          <p className="text-sm text-slate-600 max-w-2xl mx-auto mb-6">
+            See transparent pricing, commission comparisons, and feature breakdowns across white-label apps, creator tools, institute ERPs, and CBT engines.
+          </p>
+
+          <div className="mb-8">
+            <Link
+              to="/compare"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#002D62] text-white font-semibold text-sm hover:bg-[#001D42] shadow-md transition-all"
+            >
+              <span>Explore All 40+ Alternatives Directory</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-2 text-xs">
+            {Object.keys(ALL_COMPETITORS).slice(0, 20).map((key) => (
               <Link
                 key={key}
                 to={`/compare/${key}`}
-                className={`px-4 py-2 rounded-xl border font-semibold transition-all ${
+                className={`px-3 py-1.5 rounded-lg border font-medium transition-all ${
                   key === rawKey
                     ? 'bg-[#002D62] text-white border-[#002D62]'
                     : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-blue-50 hover:text-[#002D62]'
                 }`}
               >
-                Cestrix vs {COMPETITORS[key].displayName}
+                vs {ALL_COMPETITORS[key].displayName}
               </Link>
             ))}
           </div>

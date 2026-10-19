@@ -120,6 +120,11 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
+                <Link to="/compare" className="text-emerald-400 font-bold hover:text-white transition-colors flex items-center gap-1">
+                  <span>→ 40+ Alternatives Hub</span>
+                </Link>
+              </li>
+              <li>
                 <Link to="/compare/cestrix-vs-classplus" className="hover:text-white transition-colors text-slate-300">
                   Cestrix vs Classplus
                 </Link>
@@ -130,18 +135,28 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/compare/cestrix-vs-classplus#calculator" className="hover:text-emerald-400 transition-colors text-emerald-400/90 text-xs font-medium">
-                  → Commission Calculator
+                <Link to="/compare/winuall" className="hover:text-white transition-colors text-slate-300">
+                  Cestrix vs Winuall
                 </Link>
               </li>
               <li>
-                <Link to="/pricing" className="hover:text-white transition-colors">
-                  Affordable SaaS Pricing
+                <Link to="/compare/learnyst" className="hover:text-white transition-colors text-slate-300">
+                  Cestrix vs Learnyst
                 </Link>
               </li>
               <li>
-                <Link to="/white-label-apps" className="hover:text-white transition-colors">
-                  Own Play Console App
+                <Link to="/compare/graphy" className="hover:text-white transition-colors text-slate-300">
+                  Cestrix vs Graphy
+                </Link>
+              </li>
+              <li>
+                <Link to="/compare/vidyalaya" className="hover:text-white transition-colors text-slate-300">
+                  Cestrix vs Vidyalaya ERP
+                </Link>
+              </li>
+              <li>
+                <Link to="/compare/thinkexam" className="hover:text-white transition-colors text-slate-300">
+                  Cestrix vs ThinkExam CBT
                 </Link>
               </li>
             </ul>
@@ -188,8 +203,81 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Localized Coaching Software Hubs Section (Programmatic SEO Directory) */}
+        {/* Competitor Alternatives & Comparisons Directory (SEO Cluster) */}
         <div className="mt-12 pt-8 border-t border-slate-800">
+          <div className="flex flex-col sm:flex-row items-baseline justify-between gap-2 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+              <span>Coaching Software & EdTech Alternatives (0% Commission)</span>
+              <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800">40+ In-Depth Profiles</span>
+            </h4>
+            <Link to="/compare" className="text-[11px] text-emerald-400 hover:text-white font-medium transition-colors">
+              View All Comparisons Hub →
+            </Link>
+          </div>
+
+          <div className="flex flex-wrap gap-2 text-xs">
+            <Link to="/compare/classplus" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs Classplus
+            </Link>
+            <Link to="/compare/teachmint" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs Teachmint
+            </Link>
+            <Link to="/compare/winuall" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs Winuall
+            </Link>
+            <Link to="/compare/proctur" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs Proctur
+            </Link>
+            <Link to="/compare/learnyst" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs Learnyst
+            </Link>
+            <Link to="/compare/edmingle" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs Edmingle
+            </Link>
+            <Link to="/compare/appx" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs AppX
+            </Link>
+            <Link to="/compare/graphy" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs Graphy
+            </Link>
+            <Link to="/compare/rigi" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs Rigi
+            </Link>
+            <Link to="/compare/tagmango" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs TagMango
+            </Link>
+            <Link to="/compare/cosmofeed" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs Cosmofeed
+            </Link>
+            <Link to="/compare/vidyalaya" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs Vidyalaya
+            </Link>
+            <Link to="/compare/fedena" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs Fedena
+            </Link>
+            <Link to="/compare/thinkexam" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs ThinkExam
+            </Link>
+            <Link to="/compare/conductexam" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs ConductExam
+            </Link>
+            <Link to="/compare/testpress" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs Testpress
+            </Link>
+            <Link to="/compare/tcsion" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs TCS iON
+            </Link>
+            <Link to="/compare/moodle" className="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors">
+              vs Moodle
+            </Link>
+            <Link to="/compare" className="px-2.5 py-1 rounded bg-emerald-900/60 hover:bg-emerald-800 text-emerald-300 hover:text-white transition-colors font-medium">
+              + 22 More Alternatives →
+            </Link>
+          </div>
+        </div>
+
+        {/* Localized Coaching Software Hubs Section (Programmatic SEO Directory) */}
+        <div className="mt-8 pt-8 border-t border-slate-800">
           <div className="flex flex-col sm:flex-row items-baseline justify-between gap-2 mb-4">
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300">
               Coaching Management Software by Education Hub
