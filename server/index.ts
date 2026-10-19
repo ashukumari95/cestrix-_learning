@@ -2,7 +2,6 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import { leadRoutes } from './routes/leadRoutes'
-import { seoRoutes } from './routes/seoRoutes'
 
 dotenv.config()
 
@@ -25,7 +24,6 @@ app.get('/api/health', (_req, res) => {
 
 // Route Handlers
 app.use('/api/leads', leadRoutes)
-app.use('/api/seo', seoRoutes)
 
 // Start Server
 app.listen(PORT, () => {

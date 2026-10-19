@@ -14,7 +14,6 @@ import { AboutPage } from './pages/AboutPage'
 import { ContactPage } from './pages/ContactPage'
 import { BookDemoPage } from './pages/BookDemoPage'
 import { LeadsAdminPage } from './pages/LeadsAdminPage'
-import { SeoEnginePage } from './pages/SeoEnginePage'
 import { PrivacyPage } from './pages/PrivacyPage'
 import { TermsPage } from './pages/TermsPage'
 import { CompareClassplusPage } from './pages/CompareClassplusPage'
@@ -57,7 +56,6 @@ export function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/book-demo" element={<BookDemoPage />} />
             <Route path="/admin/leads" element={<LeadsAdminPage />} />
-            <Route path="/seo-engine" element={<SeoEnginePage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
             {/* SEO Competitor Comparison Routes */}
