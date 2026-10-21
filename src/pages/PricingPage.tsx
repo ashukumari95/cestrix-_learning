@@ -19,18 +19,27 @@ export const PricingPage: React.FC = () => {
   const plans = PRICING_PLANS
 
   // Formstack-Style "I need to..." Core Comparison Rows
+  // Formstack-Style "I need to..." Core Comparison Rows
   const coreFeatureRows = [
     {
       feature: 'Enroll unlimited students with 0% per-student fees',
-      desc: 'Zero extra student surcharges; software never freezes during admission peaks',
+      desc: 'No student caps or per-seat penalties; grow freely without surprise costs',
       starter: true,
       growth: true,
       pro: true,
       enterprise: true
     },
     {
+      feature: 'Manage unlimited campus branches & centers',
+      desc: 'Connect all your branch locations and classrooms under one admin dashboard',
+      starter: 'Unlimited',
+      growth: 'Unlimited',
+      pro: 'Unlimited',
+      enterprise: 'Unlimited'
+    },
+    {
       feature: 'Branded coaching website storefront',
-      desc: 'SEO-ready landing page with course catalog & online admission inquiry capture',
+      desc: 'Modern landing page with course listings and online admission inquiry forms',
       starter: 'inst.cestrix.com',
       growth: 'Subdomain + Store',
       pro: 'Subdomain + Store',
@@ -54,15 +63,15 @@ export const PricingPage: React.FC = () => {
     },
     {
       feature: 'Automated WhatsApp attendance & fee notifications',
-      desc: 'Real-time parent messaging for arrival pings, absent alerts, and fee due links',
+      desc: 'Direct parent messaging for arrival pings, absent alerts, and fee due links',
       starter: 'Free Web QR',
       growth: '500 Meta + QR',
       pro: '1,500 Meta + QR',
       enterprise: '3,000 Meta + QR'
     },
     {
-      feature: 'NTA-grade Computer-Based Test (CBT) simulator',
-      desc: 'Real JEE/NEET exam screen simulation with timers, palettes, and negative marking',
+      feature: 'Computer-Based Test (CBT) exam simulator',
+      desc: 'Practice and mock exams with timers, question palettes, and negative marking',
       starter: false,
       growth: true,
       pro: true,
@@ -135,9 +144,9 @@ export const PricingPage: React.FC = () => {
         {
           name: 'Campus Branches Included',
           desc: 'Physical branch locations managed within a unified organizational dashboard',
-          starter: '1 Branch',
-          growth: 'Up to 2 Branches',
-          pro: 'Up to 3 Branches',
+          starter: 'Unlimited Branches',
+          growth: 'Unlimited Branches',
+          pro: 'Unlimited Branches',
           enterprise: 'Unlimited Branches'
         },
         {
@@ -314,31 +323,31 @@ export const PricingPage: React.FC = () => {
     }
   ]
 
-  // SEO & LLM Authoritative FAQs
+  // Frequently Asked Questions
   const faqs = [
     {
-      q: 'Are students really unlimited on all Cestrix plans?',
-      a: 'Yes! Cestrix eliminates the restrictive per-student seat locks common in traditional coaching apps. All our plans include Unlimited Student Admissions & Records. Your coaching operations, attendance registers, parent pings, and exam simulators will never be locked or charged punitive per-student penalty fees as your academy expands.'
+      q: 'Are students and campus branches really unlimited?',
+      a: 'Yes! All Cestrix plans include unlimited students and unlimited campus branches. You can enroll as many students and manage as many branch centers as you need without extra per-student or per-branch charges.'
     },
     {
-      q: 'Does video lecture streaming incur additional cloud bandwidth fees?',
-      a: 'Zero incremental bandwidth fees are charged for standard video streaming. Cestrix integrates natively with YouTube Unlisted DRM embedding, which gives your coaching 100% free, unlimited HD student watch-hours with zero third-party ads. For direct AWS MP4 lecture uploads, each plan includes dedicated cloud storage (5 GB on Starter, 15 GB on Growth, 35 GB on Pro, and 100 GB on Enterprise).'
+      q: 'How does video storage and lecture streaming work?',
+      a: 'Each plan includes dedicated AWS cloud storage (from 5 GB on Starter to 100 GB on Enterprise) for direct video uploads. You also get free, unlimited streaming by embedding unlisted YouTube videos with zero ads and complete privacy.'
     },
     {
-      q: 'Are there hidden DLT or Meta charges for automated parent WhatsApp notifications?',
-      a: 'No hidden surcharges exist. Growth, Pro, and Enterprise tiers include bundled monthly cloud WhatsApp credits. Additionally, institutes can link their official mobile WhatsApp number directly via our encrypted Web QR gateway to send unlimited, complimentary parent communications completely free of external Meta carrier fees.'
+      q: 'Are there extra charges for WhatsApp notifications?',
+      a: 'No hidden charges. You can connect your institute’s WhatsApp number via our free Web QR gateway to send unlimited messages. Growth, Pro, and Enterprise tiers also include monthly Meta Cloud API credits for automated background alerts.'
     },
     {
-      q: 'How does Cestrix guarantee student data privacy against poaching?',
-      a: 'Cestrix operates strictly as an institutional B2B enterprise software provider and does not sell direct-to-consumer educational courses. Your institute retains 100% legal data ownership. All student telephone numbers, fee records, and personal identifiers are safeguarded with bank-grade 256-bit SSL encryption. We contractually pledge never to share, monetize, or market to your student directory.'
+      q: 'Is our student and financial data secure?',
+      a: 'Yes, 100%. Your data belongs entirely to your institute and is protected with bank-grade 256-bit encryption. We never sell, share, or market to your students or parents.'
     },
     {
-      q: 'What training and data migration support is provided for non-technical administrative staff?',
-      a: 'Our customer success team delivers hands-on, white-glove onboarding assistance. We format, validate, and import your historical paper registers and Excel rosters into Cestrix at zero charge. Furthermore, our specialists conduct live, one-on-one training sessions over Zoom or Google Meet with your accountants and receptionists until your team achieves complete operational proficiency.'
+      q: 'How does onboarding and data migration work?',
+      a: 'We handle the onboarding process for you. Our team helps import your existing student records and fee data from Excel, followed by a live 1-on-1 walkthrough so your staff can start smoothly.'
     },
     {
-      q: 'How does the Google Play Store white-label application setup fee waiver operate on annual billing?',
-      a: 'While white-label Android Play Store application compilation and publishing carries a one-time setup fee of ₹9,999 on monthly billing, Cestrix offers a 100% setup fee waiver on annual plans. When subscribing to the Enterprise plan on an annual billing cycle, the entire ₹9,999 setup fee is completely free (₹0).'
+      q: 'Can we get our own branded mobile app on Google Play Store?',
+      a: 'Yes! The Enterprise plan includes your own white-labeled app published under your coaching’s name on Google Play Store. On annual plans, the ₹9,999 setup fee is completely waived (₹0).'
     }
   ]
 
@@ -412,7 +421,7 @@ export const PricingPage: React.FC = () => {
                     <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Starter</h3>
                   </div>
                   <p className="text-xs text-slate-600 min-h-[38px] leading-relaxed">
-                    Launch modern coaching operations in minutes and simplify how you collect fees & manage students
+                    Student admissions, daily attendance, and fee tracking for individual tutors and growing centers.
                   </p>
 
                   <div className="mt-6 mb-6">
@@ -438,11 +447,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>1 Campus Branch</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Free Institutional Website</span>
+                      <span>Unlimited Campus Branches</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
@@ -454,11 +459,15 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>5 GB Cloud Storage + YouTube DRM</span>
+                      <span>Online Quizzes & Practice Tests</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Offline Tuition Records & Invoices</span>
+                      <span>5 GB Cloud Storage + Free YouTube DRM</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
+                      <span>0% Fee on Cash & Direct UPI</span>
                     </div>
                   </div>
                 </div>
@@ -496,7 +505,7 @@ export const PricingPage: React.FC = () => {
                     <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Growth</h3>
                   </div>
                   <p className="text-xs text-slate-600 min-h-[38px] leading-relaxed">
-                    Everything you need from lecture streaming to computer-based mock tests
+                    Recorded lecture streaming, computer-based mock tests, and automated fee reminders.
                   </p>
 
                   <div className="mt-6 mb-6">
@@ -522,7 +531,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Up to 2 Campus Branches</span>
+                      <span>Unlimited Campus Branches</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
@@ -530,15 +539,15 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Standard CBT Exam Engine & Quizzes</span>
+                      <span>CBT Online Exam Simulator</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Automated Fee Receipts & Reminders</span>
+                      <span>Automated WhatsApp Fee Reminders</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Anti-Piracy DRM Screen Protection</span>
+                      <span>Anti-Piracy Screen Recording Protection</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
@@ -580,7 +589,7 @@ export const PricingPage: React.FC = () => {
                     <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Pro Solutions</h3>
                   </div>
                   <p className="text-xs text-slate-600 min-h-[38px] leading-relaxed">
-                    Full operations: Biometric machine sync, WhatsApp automation, and CBT rankings
+                    Advanced operations with biometric machine sync, WhatsApp alerts, and exam analytics.
                   </p>
 
                   <div className="mt-6 mb-6">
@@ -606,11 +615,11 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Up to 3 Campus Branches</span>
+                      <span>Unlimited Campus Branches</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Biometric Machine Cloud API Sync</span>
+                      <span>Biometric Machine Cloud Sync</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
@@ -618,15 +627,15 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>35 GB AWS Storage + Watermarks</span>
+                      <span>35 GB Cloud Storage with Watermarks</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Student Error Notebook & Remedial Tests</span>
+                      <span>Student Error Notebook & Analytics</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>1,000 Meta Cloud WhatsApp API Credits</span>
+                      <span>1,000 Meta WhatsApp API Credits</span>
                     </div>
                   </div>
                 </div>
@@ -668,7 +677,7 @@ export const PricingPage: React.FC = () => {
                     Enterprise Solutions
                   </h3>
                   <p className="text-xs text-slate-300 min-h-[38px] leading-relaxed">
-                    Find a solution tailored to your multi-campus institute & franchise network
+                    Custom setup for multi-campus coaching institutes and franchise networks.
                   </p>
 
                   <div className="mt-6 mb-6">
@@ -693,7 +702,7 @@ export const PricingPage: React.FC = () => {
                   <div className="space-y-3.5 mb-8">
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-white">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-white">Unlimited Students Across All Campuses</span>
+                      <span className="font-bold text-white">Unlimited Students & Branches</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
@@ -717,7 +726,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Custom SLAs & VIP Onboarding</span>
+                      <span>Free Data Migration & Staff Training</span>
                     </div>
                   </div>
                 </div>
@@ -745,10 +754,10 @@ export const PricingPage: React.FC = () => {
             </div>
             <div>
               <h4 className="text-sm font-extrabold text-slate-900">
-                Evaluate Cestrix with your live student roster: Activate 7-Day Free Access.
+                Try Cestrix Free for 7 Days
               </h4>
               <p className="text-xs text-slate-500 mt-0.5">
-                Full enterprise platform access • Unlimited Students • Zero credit card required • Done-for-you database import
+                Full platform access • Unlimited Students & Branches • No credit card required • Free data import
               </p>
             </div>
           </div>
@@ -799,7 +808,7 @@ export const PricingPage: React.FC = () => {
               </div>
 
               <div className="text-xs text-slate-500 font-medium">
-                * All plans include <strong className="text-slate-900">Unlimited Students</strong> with zero per-student charges
+                * All plans include <strong className="text-slate-900">Unlimited Students & Branches</strong> with zero extra fees
               </div>
             </div>
           </div>
@@ -1088,13 +1097,13 @@ export const PricingPage: React.FC = () => {
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="text-xs font-bold uppercase tracking-wider text-[#173F8A] bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-            Coaching-Tested Infrastructure
+            Platform Features
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-slate-900 tracking-tight mt-3">
-            Everything required to operate an academy profitably.
+            Everything you need to run your coaching institute
           </h2>
           <p className="text-sm text-slate-500 mt-2 max-w-xl mx-auto">
-            Consolidate multiple disconnected tools. Deploy your institutional website, mobile applications, biometric ERP, and CBT test series through one unified operating system.
+            Manage student admissions, biometric attendance, online fees, CBT exams, and recorded video lectures in one unified system.
           </p>
         </div>
 
@@ -1103,9 +1112,9 @@ export const PricingPage: React.FC = () => {
             <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#173F8A] flex items-center justify-center mb-4">
               <Globe size={24} />
             </div>
-            <h3 className="text-lg font-bold text-slate-900">Instant SEO Coaching Website</h3>
+            <h3 className="text-lg font-bold text-slate-900">Coaching Website & Portal</h3>
             <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-              Every academy receives an instant Google SEO-friendly web storefront with course listings, faculty bios, student inquiry forms, and direct parent login portals.
+              Get an instant, search-friendly website with course listings, faculty details, student admission inquiry forms, and student login.
             </p>
           </div>
 
@@ -1113,9 +1122,9 @@ export const PricingPage: React.FC = () => {
             <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-4">
               <DollarSign size={24} />
             </div>
-            <h3 className="text-lg font-bold text-slate-900">Zero Commission on Offline Fees</h3>
+            <h3 className="text-lg font-bold text-slate-900">0% Commission on Offline Fees</h3>
             <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-              Cestrix charges 0% platform take-rate on offline cash, cheque, or direct counter UPI collections. Retain 100% of your tuition revenues.
+              Cestrix charges 0% platform fee on cash, counter payments, and direct UPI collections. Keep 100% of your offline tuition revenue.
             </p>
           </div>
 
@@ -1123,9 +1132,9 @@ export const PricingPage: React.FC = () => {
             <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center mb-4">
               <Lock size={24} />
             </div>
-            <h3 className="text-lg font-bold text-slate-900">Anti-Piracy DRM Video Protection</h3>
+            <h3 className="text-lg font-bold text-slate-900">Protected Video Lectures</h3>
             <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-              Block screen recording utilities and project dynamic floating student phone watermarks so proprietary lectures cannot be distributed without forensic identification.
+              Keep your lecture videos safe with anti-screen recording protection, dynamic student phone watermarks, and secure streaming.
             </p>
           </div>
 
@@ -1133,9 +1142,9 @@ export const PricingPage: React.FC = () => {
             <div className="w-12 h-12 rounded-2xl bg-purple-50 text-purple-700 flex items-center justify-center mb-4">
               <Laptop size={24} />
             </div>
-            <h3 className="text-lg font-bold text-slate-900">Official NTA / CBT Exam Engine</h3>
+            <h3 className="text-lg font-bold text-slate-900">CBT Exam & Quiz Engine</h3>
             <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-              Simulate exact national computer-based test conditions with question palettes, countdown timers, negative marking schemes, and comparative percentile analytics.
+              Conduct online tests with countdown timers, question palettes, negative marking, and instant student performance scorecards.
             </p>
           </div>
 
@@ -1143,9 +1152,9 @@ export const PricingPage: React.FC = () => {
             <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center mb-4">
               <Headset size={24} />
             </div>
-            <h3 className="text-lg font-bold text-slate-900">Done-For-You Migration & Training</h3>
+            <h3 className="text-lg font-bold text-slate-900">Free Data Import & Staff Training</h3>
             <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-              Our engineering specialists clean, format, and upload historical student rosters, while conducting personalized 1-on-1 Zoom onboarding for administrative staff.
+              Our team assists you with formatting and uploading historical student records from Excel, followed by a live 1-on-1 staff walkthrough.
             </p>
           </div>
 
@@ -1153,9 +1162,9 @@ export const PricingPage: React.FC = () => {
             <div className="w-12 h-12 rounded-2xl bg-rose-50 text-rose-700 flex items-center justify-center mb-4">
               <Gift size={24} />
             </div>
-            <h3 className="text-lg font-bold text-slate-900">₹0 App Setup on Annual Contracts</h3>
+            <h3 className="text-lg font-bold text-slate-900">₹0 App Setup on Annual Plans</h3>
             <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-              Save ₹9,999 in initial setup fees. Deploy a standalone white-label Android Play Store application published with zero setup fees on annual subscriptions.
+              Save ₹9,999 in initial setup costs. Publish your own branded Android app on Google Play Store with zero setup fee on annual Enterprise plans.
             </p>
           </div>
         </div>
@@ -1165,16 +1174,16 @@ export const PricingPage: React.FC = () => {
       <section className="py-16 bg-slate-50/70 border-t border-slate-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-            Institutional Leadership Testimonials
+            Testimonials
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-slate-900 tracking-tight mt-2">
-            Trusted by 500+ coaching institutes.
+            Trusted by coaching institutes across India
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-left">
             <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed italic">
-                "Deploying our institutional web storefront (dkmishra.cestrix.com) within minutes catalyzed immediate student inquiries through Google Search. Biometric attendance sync and automated WhatsApp fee reminders elevated our recovery rate to 98% in month one."
+                "Setting up our website and student portal was quick and smooth. Attendance tracking and automated WhatsApp fee reminders have saved our staff hours of manual work every week."
               </p>
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#173F8A] text-white font-bold flex items-center justify-center text-xs">
@@ -1189,7 +1198,7 @@ export const PricingPage: React.FC = () => {
 
             <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed italic">
-                "The CBT Exam Simulator and mistake notebook transformed our NEET medical dropper batches. The examination interface is an exact replica of official NTA computer test environments."
+                "The CBT exam simulator is an exact match for competitive exam practice. Our students get realistic test experience with instant scorecards."
               </p>
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-purple-700 text-white font-bold flex items-center justify-center text-xs">
@@ -1204,7 +1213,7 @@ export const PricingPage: React.FC = () => {
 
             <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed italic">
-                "We migrated to Cestrix Enterprise on an annual plan—the team waived the entire ₹9,999 app setup fee. Our custom domain website and branded Play Store app went live within five working days."
+                "Migrating our student data from Excel was completely hassle-free. Having our own branded app on Google Play Store gives our institute a much more professional presence."
               </p>
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center text-xs">
@@ -1224,13 +1233,13 @@ export const PricingPage: React.FC = () => {
       <section className="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="text-xs font-bold uppercase tracking-wider text-[#173F8A] bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-            Frequently Asked Questions
+            FAQs
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-slate-900 tracking-tight mt-3">
-            Questions regarding plans & infrastructure?
+            Frequently Asked Questions
           </h2>
           <p className="text-sm text-slate-500 mt-2">
-            Clear answers designed for coaching directors, academy principals, and administrative leadership.
+            Simple answers to common questions about plans, features, and setup.
           </p>
         </div>
 
@@ -1266,18 +1275,18 @@ export const PricingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── Section 7: Bottom CTA Banner ── */}
+      {/* ── Section 8: Bottom CTA Banner ── */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-gradient-to-br from-[#0F172A] via-[#173F8A] to-[#0F172A] p-8 sm:p-14 text-center text-white relative overflow-hidden shadow-2xl">
           <div className="relative max-w-3xl mx-auto">
-            <span className="text-[11px] font-black uppercase tracking-wider px-3.5 py-1 rounded-full bg-white/10 text-blue-200 border border-white/20 inline-block mb-4">
-              Integrated Coaching Architecture • ERP + Apps + Web Storefront
+            <span className="text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full bg-white/10 text-blue-200 border border-white/20 inline-block mb-4">
+              Simple & Powerful Coaching Software
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
-              Ready to modernize your coaching operations with Cestrix?
+              Ready to upgrade your coaching institute?
             </h2>
             <p className="mt-4 text-sm sm:text-base text-blue-100/90 leading-relaxed max-w-xl mx-auto">
-              Join 500+ premier academies streamlining unlimited student admissions, automated fee recovery, NTA-grade CBT tests, and encrypted video streaming.
+              Start your 7-day free trial today. Unlimited students, unlimited branches, and all the tools you need to grow your academy.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -1285,19 +1294,19 @@ export const PricingPage: React.FC = () => {
                 to="/book-demo?plan=pro"
                 className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-[#0F172A] font-extrabold text-sm shadow-lg transition-all flex items-center justify-center gap-2"
               >
-                <span>Start 7-Day Free Trial (Pro Edition)</span>
+                <span>Start 7-Day Free Trial</span>
                 <ArrowRight size={16} />
               </Link>
               <Link
                 to="/book-demo"
                 className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/30 backdrop-blur-sm transition-all text-center"
               >
-                Schedule 1-on-1 Executive Briefing
+                Book a Live Demo
               </Link>
             </div>
 
             <p className="mt-6 text-xs text-blue-200/70 font-medium">
-              No credit card required • Production-ready in 2 minutes • Complimentary historical database migration
+              No credit card required • Set up in 2 minutes • Free historical data import
             </p>
           </div>
         </div>

@@ -29,11 +29,11 @@ export const PRICING_PLANS: PricingPlan[] = [
     name: 'Starter',
     badge: 'Starter Batch',
     badgeClass: 'bg-orange-50 text-orange-700 border border-orange-200 font-bold',
-    subtitle: 'Single-tutor classrooms, home tuition centres, and individual faculty batches.',
+    subtitle: 'Attendance, fee receipts, and student app for single tutors and growing coaching centers.',
     monthlyPrice: 999,
     annualPrice: 799,
     studentsCap: 'Unlimited Students',
-    branchesText: '1 Campus Branch',
+    branchesText: 'Unlimited Branches',
     storageText: '5 GB Cloud Storage',
     bandwidthText: 'YouTube DRM + Free Unlimited Streaming',
     whatsappText: 'Unlimited via Web QR Gateway',
@@ -48,13 +48,12 @@ export const PRICING_PLANS: PricingPlan[] = [
     diffTag: 'Core Inclusions:',
     features: [
       'Unlimited Students & Admissions',
-      '1 Campus Branch (Zero Extra Seat Fees)',
-      'Free Institutional Website (inst.cestrix.com)',
-      'Cestrix Student & Parent Mobile Application',
-      'Daily Attendance Logging & Printable QR ID Cards',
-      'Offline Tuition Records & GST-Compliant Invoices',
-      'Online MCQ Practice Tests & PDF Study Material (5 GB)',
-      'Free 1-Click Excel Bulk Student Import'
+      'Unlimited Campus Branches',
+      'Student & Parent Mobile App',
+      'Daily Attendance & Printable QR ID Cards',
+      'Online MCQ Practice Tests',
+      '5 GB Cloud Storage + Free YouTube DRM',
+      '0% Fee on Counter Cash & Direct UPI'
     ]
   },
   {
@@ -62,11 +61,11 @@ export const PRICING_PLANS: PricingPlan[] = [
     name: 'Growth',
     badge: 'Growing Academies',
     badgeClass: 'bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold',
-    subtitle: 'Expanding coaching institutes requiring lecture streaming and computer-based tests.',
+    subtitle: 'Recorded lecture streaming, computer-based mock tests, and automated fee reminders.',
     monthlyPrice: 1999,
     annualPrice: 1499,
     studentsCap: 'Unlimited Students',
-    branchesText: 'Up to 2 Branches',
+    branchesText: 'Unlimited Branches',
     storageText: '15 GB Video Storage',
     bandwidthText: '15 GB CDN + YouTube DRM',
     whatsappText: 'Unlimited Web QR + 500 Meta Cloud API',
@@ -81,13 +80,12 @@ export const PRICING_PLANS: PricingPlan[] = [
     diffTag: 'Everything in Starter, plus:',
     features: [
       'Unlimited Students & Admissions',
-      'Up to 2 Campus Branches',
-      'Free Coaching Website + Integrated Course Storefront',
-      'Encrypted Video Lecture Streaming (15 GB Cloud Storage)',
-      'Standard CBT Exam Engine & Chapter-Wise Quizzes',
-      'Automated Fee Due Reminders & Digital Receipts',
-      'Anti-Piracy DRM Screen Recording Protection',
-      'Complimentary 1-on-1 Staff Training on Zoom'
+      'Unlimited Campus Branches',
+      'Encrypted Video Lecture Streaming',
+      'NTA-Style CBT Online Exam Engine',
+      'Automated WhatsApp Fee Due Reminders',
+      'Anti-Piracy Screen Recording Protection',
+      '15 GB AWS Cloud Storage + 15 GB CDN'
     ]
   },
   {
@@ -95,11 +93,11 @@ export const PRICING_PLANS: PricingPlan[] = [
     name: 'Pro',
     badge: 'Most Popular for Academies',
     badgeClass: 'bg-blue-50 text-[#002D62] border border-blue-200 font-black',
-    subtitle: 'Comprehensive coaching operations: Biometric machine sync, WhatsApp automation, and CBT rankings.',
+    subtitle: 'Biometric machine cloud sync, automated WhatsApp pings, and NTA ranking analytics.',
     monthlyPrice: 2999,
     annualPrice: 2399,
     studentsCap: 'Unlimited Students',
-    branchesText: 'Up to 3 Branches',
+    branchesText: 'Unlimited Branches',
     storageText: '35 GB AWS Storage',
     bandwidthText: '35 GB CDN + YouTube DRM',
     whatsappText: 'Unlimited Web QR + 1,000 Meta Cloud API',
@@ -114,13 +112,12 @@ export const PRICING_PLANS: PricingPlan[] = [
     diffTag: 'Everything in Growth, plus:',
     features: [
       'Unlimited Students & Admissions',
-      'Up to 3 Campus Branches',
-      'SEO-Optimized Coaching Website & Lead Generation Form',
-      'Biometric Fingerprint & Facial Scanner Cloud API Sync',
-      'Automated WhatsApp Parent Notifications (Attendance & Fees)',
-      'Intelligent Student Error Notebook & Remedial Practice',
-      '35 GB AWS Video Streaming with Dynamic DRM Watermarks',
-      'Done-For-You Data Migration & Dedicated Staff Training'
+      'Unlimited Campus Branches',
+      'Real-Time Biometric Machine Cloud Sync',
+      'Automated WhatsApp Parent Alerts',
+      'Student Error & Revision Notebook',
+      '35 GB AWS Video Storage with Watermarks',
+      '1,000 Meta Cloud WhatsApp API Credits'
     ]
   },
   {
@@ -128,7 +125,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     name: 'Enterprise',
     badge: 'White-Label Enterprise',
     badgeClass: 'bg-[#F8E7A2] text-slate-900 border border-amber-300 font-bold',
-    subtitle: 'Dedicated white-label Play Store application, custom domain branding, and multi-campus scale.',
+    subtitle: 'Dedicated Google Play Store app, custom domain, and multi-campus franchise control.',
     monthlyPrice: 6999,
     annualPrice: 5599,
     studentsCap: 'Unlimited Students',
@@ -146,13 +143,13 @@ export const PRICING_PLANS: PricingPlan[] = [
     ctaLink: '/book-demo?plan=enterprise',
     diffTag: 'Enterprise Exclusive:',
     features: [
-      'Unlimited Students Across All Branches & Franchises',
-      'Dedicated Standalone Mobile App on Google Play Store',
-      'Custom Domain Website (yourcoaching.com) with Free SSL',
-      '100 GB Encrypted AWS Cloud Storage + CloudFront CDN',
-      '0% Platform Take-Rate on Digital Course Sales',
-      'Dedicated VIP Account Executive & Guaranteed SLA',
-      'White-Glove Institutional Setup & Onboarding Assistance'
+      'Unlimited Students & Branches',
+      'Dedicated Google Play Store Mobile App',
+      'Custom Domain Website (yourcoaching.com)',
+      '100 GB Encrypted AWS Cloud Storage',
+      '0% Commission on Digital Course Sales',
+      'Dedicated Account Manager & VIP SLA',
+      'Free Historical Data Migration & Training'
     ]
   }
 ]
