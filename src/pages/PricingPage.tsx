@@ -19,7 +19,6 @@ export const PricingPage: React.FC = () => {
   const plans = PRICING_PLANS
 
   // Formstack-Style "I need to..." Core Comparison Rows
-  // Formstack-Style "I need to..." Core Comparison Rows
   const coreFeatureRows = [
     {
       feature: 'Enroll unlimited students with 0% per-student fees',
@@ -32,10 +31,10 @@ export const PricingPage: React.FC = () => {
     {
       feature: 'Manage unlimited campus branches & centers',
       desc: 'Connect all your branch locations and classrooms under one admin dashboard',
-      starter: 'Unlimited',
-      growth: 'Unlimited',
-      pro: 'Unlimited',
-      enterprise: 'Unlimited'
+      starter: true,
+      growth: true,
+      pro: true,
+      enterprise: true
     },
     {
       feature: 'Branded coaching website storefront',
@@ -134,20 +133,20 @@ export const PricingPage: React.FC = () => {
       icon: Building2,
       items: [
         {
-          name: 'Simultaneous Active Student Capacity',
+          name: 'Unlimited Active Student Capacity',
           desc: 'Concurrently enrolled active students (Graduated & archived student histories remain FREE forever)',
-          starter: 'Unlimited Students',
-          growth: 'Unlimited Students',
-          pro: 'Unlimited Students',
-          enterprise: 'Unlimited Students'
+          starter: true,
+          growth: true,
+          pro: true,
+          enterprise: true
         },
         {
-          name: 'Campus Branches Included',
+          name: 'Unlimited Campus Branches Included',
           desc: 'Physical branch locations managed within a unified organizational dashboard',
-          starter: 'Unlimited Branches',
-          growth: 'Unlimited Branches',
-          pro: 'Unlimited Branches',
-          enterprise: 'Unlimited Branches'
+          starter: true,
+          growth: true,
+          pro: true,
+          enterprise: true
         },
         {
           name: 'Admission Rush Overage Protection',
