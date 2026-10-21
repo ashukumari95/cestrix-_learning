@@ -125,7 +125,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     name: 'Enterprise',
     badge: 'White-Label Enterprise',
     badgeClass: 'bg-[#F8E7A2] text-slate-900 border border-amber-300 font-bold',
-    subtitle: 'Dedicated Google Play Store app, custom domain, and multi-campus franchise control.',
+    subtitle: 'Your coaching Play Store app, custom domain, and multi-campus franchise control.',
     monthlyPrice: 6999,
     annualPrice: 5599,
     studentsCap: 'Unlimited Students',
@@ -144,7 +144,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     diffTag: 'Enterprise Exclusive:',
     features: [
       'Unlimited Students & Branches',
-      'Dedicated Google Play Store Mobile App',
+      'Your Coaching App on Google Play Store',
       'Custom Domain Website (yourcoaching.com)',
       '100 GB Encrypted AWS Cloud Storage',
       '0% Commission on Digital Course Sales',

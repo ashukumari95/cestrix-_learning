@@ -40,18 +40,18 @@ export const PricingPage: React.FC = () => {
     {
       feature: 'Branded coaching website storefront',
       desc: 'Modern landing page with course listings and online admission inquiry forms',
-      starter: 'inst.cestrix.com',
-      growth: 'Subdomain + Store',
-      pro: 'Subdomain + Store',
+      starter: 'yourname.cestrix.com',
+      growth: 'yourname.cestrix.com',
+      pro: 'yourname.cestrix.com',
       enterprise: 'yourcoaching.com'
     },
     {
       feature: 'Student & parent mobile application',
       desc: 'Access video lectures, test results, attendance logs, and fee receipts on mobile',
-      starter: 'Shared App',
-      growth: 'Shared App',
-      pro: 'Shared App',
-      enterprise: 'Dedicated Play Store App'
+      starter: 'Cestrix App',
+      growth: 'Cestrix App',
+      pro: 'Cestrix App',
+      enterprise: 'Your Coaching App'
     },
     {
       feature: 'Daily attendance & printable QR photo ID cards',
@@ -706,7 +706,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Dedicated Play Store Mobile App</span>
+                      <span>Your Coaching App on Play Store</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
