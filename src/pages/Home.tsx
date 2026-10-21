@@ -77,7 +77,7 @@ export const Home: React.FC = () => {
                   to="/pricing"
                   className="px-6 py-3.5 rounded-xl bg-white text-[#002D62] hover:bg-slate-50 font-extrabold text-sm shadow-xl shadow-black/15 hover:shadow-2xl transition-all flex items-center gap-2 group"
                 >
-                  <span>Start 14-Day Free Trial</span>
+                  <span>Start 7-Day Free Trial</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
@@ -1976,7 +1976,7 @@ export const Home: React.FC = () => {
               Simple, Predictable Plans for Academies
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Transparent institutional plans starting at just ₹799/month. Zero setup fees, 0% commission on offline cash & UPI tuition, and 14 days free trial.
+              Transparent institutional plans starting at just ₹799/month. Zero setup fees, 0% commission on offline cash & UPI tuition, and 7 days free trial.
             </p>
 
             {/* Yearly / Monthly Toggle */}
@@ -2239,7 +2239,7 @@ export const Home: React.FC = () => {
           <div className="pt-4 border-t border-slate-200/80 flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-xs font-semibold text-slate-600">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              <span>14-Day Full Feature Free Trial</span>
+              <span>7-Day Full Feature Free Trial</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />

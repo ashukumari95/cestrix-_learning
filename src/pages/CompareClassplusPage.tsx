@@ -604,7 +604,7 @@ export const CompareClassplusPage: React.FC = () => {
           <div className="mt-8 flex items-center justify-center gap-6 text-xs text-slate-400">
             <span>✓ No Credit Card Required</span>
             <span>✓ Free Data Migration from Classplus</span>
-            <span>✓ 14-Day Free Trial</span>
+            <span>✓ 7-Day Free Trial</span>
           </div>
         </div>
       </section>

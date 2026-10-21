@@ -1019,7 +1019,7 @@ export const FeaturesPage: React.FC = () => {
             </div>
 
             <p className="mt-6 text-xs text-slate-400">
-              Zero credit card required • Instant 14-day free trial • Free historical data import
+              Zero credit card required • Instant 7-day free trial • Free historical data import
             </p>
           </div>
         </div>

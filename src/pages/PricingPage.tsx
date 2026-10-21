@@ -666,7 +666,7 @@ export const PricingPage: React.FC = () => {
             </div>
             <div>
               <h4 className="text-sm font-extrabold text-slate-900">
-                Evaluate Cestrix with your live student roster: Activate 14-Day Free Access.
+                Evaluate Cestrix with your live student roster: Activate 7-Day Free Access.
               </h4>
               <p className="text-xs text-slate-500 mt-0.5">
                 Full enterprise platform access • Complimentary coaching website • Zero credit card required • Done-for-you database import
@@ -677,7 +677,7 @@ export const PricingPage: React.FC = () => {
             to="/book-demo?plan=trial"
             className="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-black text-white text-xs sm:text-sm font-bold shrink-0 transition-colors shadow-sm flex items-center gap-2"
           >
-            <span>Activate 14-Day Free Trial</span>
+            <span>Activate 7-Day Free Trial</span>
             <ArrowRight size={14} />
           </Link>
         </div>
@@ -1027,7 +1027,7 @@ export const PricingPage: React.FC = () => {
                 to="/book-demo?plan=pro"
                 className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-[#0F172A] font-extrabold text-sm shadow-lg transition-all flex items-center justify-center gap-2"
               >
-                <span>Start 14-Day Free Trial (Pro Edition)</span>
+                <span>Start 7-Day Free Trial (Pro Edition)</span>
                 <ArrowRight size={16} />
               </Link>
               <Link
