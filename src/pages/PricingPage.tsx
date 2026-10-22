@@ -95,11 +95,11 @@ export const PricingPage: React.FC = () => {
         },
         {
           name: 'Mobile App',
-          desc: 'Your coaching name, logo & theme inside student app (Dedicated Play Store APK on Enterprise)',
-          starter: 'Coaching Branded App',
-          growth: 'Coaching Branded App',
-          pro: 'Coaching Branded App',
-          enterprise: 'Dedicated Play Store App'
+          desc: 'Coaching logo & theme inside student app on Starter/Growth; dedicated Google Play Store app on Pro & Enterprise',
+          starter: 'In-App Branding',
+          growth: 'In-App Branding',
+          pro: 'Your Play Store App',
+          enterprise: 'Your Play Store App'
         },
         {
           name: 'Course Selling Storefront',
@@ -281,7 +281,7 @@ export const PricingPage: React.FC = () => {
     },
     {
       q: 'How does Coaching App Branding work across Starter, Growth, Pro, and Enterprise?',
-      a: 'On Starter, Growth, and Pro plans, your students use the mobile app with your institute’s own name, logo, banner, and theme visible throughout their learning experience. On the Enterprise plan, we publish a dedicated, standalone mobile app with your own exclusive APK name directly on the Google Play Store under your coaching developer account.'
+      a: 'On Starter and Growth plans, your students use the mobile app with your institute’s own name, logo, banner, and theme visible throughout their learning experience (In-App Branding). On Pro Solutions and Enterprise plans, you get your own dedicated standalone mobile app published under your coaching’s name directly on the Google Play Store!'
     },
     {
       q: 'How much video can we upload with 5 GB, 15 GB, 35 GB, and 100 GB storage?',
@@ -301,7 +301,7 @@ export const PricingPage: React.FC = () => {
     },
     {
       q: 'Can we get our own branded mobile app on Google Play Store?',
-      a: 'Yes! The Enterprise plan includes your own white-labeled app published under your coaching’s name on Google Play Store. On annual plans, the ₹9,999 setup fee is completely waived (₹0).'
+      a: 'Yes! Both Pro Solutions and Enterprise plans include your own standalone app published under your coaching’s name on the Google Play Store. On annual plans, the ₹9,999 setup fee is completely waived (₹0).'
     }
   ]
 
@@ -408,7 +408,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Coaching Branded Mobile App</span>
+                      <span>In-App Coaching Branding (Logo & Name)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
@@ -503,6 +503,10 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
+                      <span>In-App Coaching Branding (Logo & Name)</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
                       <span>15 GB Storage (~150 hrs lectures)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
@@ -547,21 +551,28 @@ export const PricingPage: React.FC = () => {
             )
           })()}
 
-          {/* 3. PRO SOLUTIONS PLAN CARD (Soft Lavender-Blue Tint) */}
+          {/* 3. PRO SOLUTIONS PLAN CARD (Soft Lavender-Blue Tint with Floating MOST POPULAR Pill) */}
           {(() => {
             const plan = plans.find(p => p.id === 'pro') || plans[2]
             const price = billingCycle === 'YEARLY' ? plan.annualPrice : plan.monthlyPrice
             return (
-              <div className="rounded-3xl p-7 sm:p-8 bg-[#F1F6FE] border border-[#D6E6FD] flex flex-col justify-between shadow-2xs hover:shadow-md transition-all">
+              <div className="rounded-3xl p-7 sm:p-8 bg-[#F1F6FE] border-2 border-[#1E40AF]/30 flex flex-col justify-between shadow-md hover:shadow-xl transition-all relative">
+                {/* Top Floating Badge */}
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                  <span className="bg-[#1E40AF] text-white font-extrabold text-[11px] px-4 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                    MOST POPULAR
+                  </span>
+                </div>
+
                 <div>
-                  <div className="flex items-center gap-2.5 mb-2">
+                  <div className="flex items-center gap-2.5 mb-2 mt-1">
                     <div className="w-8 h-8 rounded-lg bg-[#173F8A] text-white flex items-center justify-center shrink-0">
                       <Building2 size={16} />
                     </div>
                     <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Pro Solutions</h3>
                   </div>
                   <p className="text-xs text-slate-600 min-h-[38px] leading-relaxed">
-                    Advanced operations with biometric machine sync, WhatsApp alerts, and exam analytics.
+                    Your coaching Play Store app, biometric attendance sync, automated WhatsApp, and exam analytics.
                   </p>
 
                   <div className="mt-6 mb-6">
@@ -591,6 +602,10 @@ export const PricingPage: React.FC = () => {
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
                       <span className="font-bold text-[#173F8A]">All Growth features included</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900 bg-blue-100/60 p-2 rounded-lg border border-blue-200/60">
+                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
+                      <span className="font-bold text-[#1E40AF]">Your Own App on Google Play Store</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
@@ -688,19 +703,15 @@ export const PricingPage: React.FC = () => {
                   <div className="space-y-3 mb-8">
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-white">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-amber-300">All Pro features included</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                      <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>100 GB Storage (~1,000+ hrs lectures)</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                      <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Dedicated App on Google Play Store</span>
+                      <span className="font-bold text-amber-300">All Pro features included (Play Store App)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
                       <span>Custom Domain Website (yourcoaching.com)</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
+                      <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
+                      <span>100 GB Storage (~1,000+ hrs lectures)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
@@ -713,6 +724,10 @@ export const PricingPage: React.FC = () => {
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
                       <span>Dedicated Account Manager & Training</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
+                      <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
+                      <span>Priority Custom SLA & API Integrations</span>
                     </div>
                   </div>
                 </div>

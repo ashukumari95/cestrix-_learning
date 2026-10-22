@@ -48,7 +48,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     diffTag: 'Core Inclusions:',
     features: [
       'Unlimited Students & Branches',
-      'Coaching Branded Mobile App',
+      'In-App Coaching Branding (Logo & Name)',
       'Live Classes (Zoom/Meet Integration)',
       'Daily Attendance & QR ID Cards',
       'Online Tests & Course Selling Store',
@@ -80,10 +80,11 @@ export const PRICING_PLANS: PricingPlan[] = [
     diffTag: 'Everything in Starter, plus:',
     features: [
       'All Starter features included',
+      'In-App Coaching Branding (Logo & Name)',
       '15 GB Storage (~150 hrs lectures)',
-      'Recorded Video Lecture Streaming',
-      'Anti-Piracy Video Protection (Watermarks)',
+      'Anti-Piracy Protected Video Streaming',
       'CBT Online Exam Simulator',
+      'Course Selling Storefront (0% cut)',
       'Automated WhatsApp Fee Reminders',
       'Installments & Automated Late Fines'
     ]
@@ -93,7 +94,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     name: 'Pro',
     badge: 'Most Popular for Academies',
     badgeClass: 'bg-blue-50 text-[#002D62] border border-blue-200 font-black',
-    subtitle: 'Biometric machine cloud sync, automated WhatsApp pings, and NTA ranking analytics.',
+    subtitle: 'Your coaching Play Store app, biometric attendance sync, automated WhatsApp, and exam analytics.',
     monthlyPrice: 2999,
     annualPrice: 2399,
     studentsCap: 'Unlimited Students',
@@ -112,6 +113,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     diffTag: 'Everything in Growth, plus:',
     features: [
       'All Growth features included',
+      'Your Own App on Google Play Store',
       '35 GB Storage (~350 hrs lectures)',
       'Biometric Machine Attendance Sync',
       'Automated WhatsApp Parent Alerts',
@@ -125,7 +127,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     name: 'Enterprise',
     badge: 'White-Label Enterprise',
     badgeClass: 'bg-[#F8E7A2] text-slate-900 border border-amber-300 font-bold',
-    subtitle: 'Your coaching Play Store app, custom domain, and multi-campus franchise control.',
+    subtitle: 'Custom domain, multi-campus franchise control, custom payment gateway, and dedicated manager.',
     monthlyPrice: 6999,
     annualPrice: 5599,
     studentsCap: 'Unlimited Students',
@@ -143,8 +145,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     ctaLink: '/book-demo?plan=enterprise',
     diffTag: 'Everything in Pro, plus:',
     features: [
-      'All Pro features included',
-      'Dedicated Play Store App (Your Name)',
+      'All Pro features included (Play Store App)',
       'Custom Domain Website (yourcoaching.com)',
       '100 GB Storage (~1,000+ hrs)',
       'Custom Payment Gateway (Own Account)',
