@@ -2020,29 +2020,29 @@ export const Home: React.FC = () => {
             })}
           </div>
 
-          {/* Competitor Comparison Callout Banner (BoFu SEO & High-Intent Conversion) */}
+          {/* Quick Demo Callout Banner */}
           <div className="mt-10 p-5 rounded-2xl bg-gradient-to-r from-blue-50 via-sky-50 to-emerald-50 border border-blue-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div>
               <div className="flex items-center justify-center sm:justify-start gap-2 text-xs font-bold text-[#002D62] uppercase tracking-wider mb-1">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Evaluating Classplus or Teachmint?</span>
+                <span>Ready to modernize your coaching?</span>
               </div>
               <h3 className="text-sm sm:text-base font-bold text-slate-900">
-                Discover why 1,200+ coaching institutes switched to Cestrix for 0% commission.
+                Experience Cestrix Operating System with a personalized 1-on-1 live walkthrough.
               </h3>
             </div>
             <div className="flex items-center gap-2.5 shrink-0">
               <Link
-                to="/compare/cestrix-vs-classplus"
-                className="px-4 py-2 rounded-xl bg-[#002D62] hover:bg-[#001D42] text-white text-xs font-bold transition-all shadow-xs"
+                to="/book-demo"
+                className="px-5 py-2.5 rounded-xl bg-[#002D62] hover:bg-[#001D42] text-white text-xs font-bold transition-all shadow-xs"
               >
-                Cestrix vs Classplus
+                Book a Free Demo
               </Link>
               <Link
-                to="/compare/cestrix-vs-teachmint"
-                className="px-4 py-2 rounded-xl bg-white hover:bg-slate-100 text-[#002D62] border border-blue-300 text-xs font-bold transition-all shadow-xs"
+                to="/pricing"
+                className="px-5 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-[#002D62] border border-blue-300 text-xs font-bold transition-all shadow-xs"
               >
-                Cestrix vs Teachmint
+                View Transparent Pricing
               </Link>
             </div>
           </div>

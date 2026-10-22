@@ -66,7 +66,7 @@ const CITIES: Record<string, CityData> = {
     coachingCount: '2,800+',
     studentCount: '1.8 Lakh+',
     quote: {
-      text: 'We switched from Classplus to Cestrix and saved over ₹3.5 Lakhs in annual course commissions. Our students now practice on exact NTA-pattern CBT screens.',
+      text: 'We switched from our previous app to Cestrix and saved over ₹3.5 Lakhs in annual course commissions. Our students now practice on exact NTA-pattern CBT screens.',
       author: 'Dr. Alok Shekhawat',
       role: 'Founder, Gurukul Medical Academy (Jaipur)'
     }
@@ -277,10 +277,10 @@ export const CoachingCityPage: React.FC = () => {
               <span>Book Demo for {cityData.name} Coaching</span>
             </Link>
             <Link
-              to="/compare/cestrix-vs-classplus"
+              to="/pricing"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-base border border-white/20 backdrop-blur transition-colors"
             >
-              <span>See 0% Commission Vs Classplus</span>
+              <span>Explore Transparent Pricing</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -394,7 +394,7 @@ export const CoachingCityPage: React.FC = () => {
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <h3 className="font-heading font-bold text-lg text-slate-900">
-                Free Excel & Classplus Migration
+                Free Student Data & Excel Migration
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
                 Our technical onboarding team moves your active student lists, fee ledgers, and batches from Excel sheets or other software within 48 hours at zero downtime.

@@ -173,13 +173,13 @@ YouTube unlisted videos ya basic Vimeo links par padhana band karein. Agar aapka
   {
     slug: 'offline-coaching-ko-online-app-par-kaise-le-jayein-bihar-up',
     title: 'Bihar Aur UP Mein Apni Offline Coaching Ko Online App Par Kaise Le Jayein? (0% Commission Guide)',
-    subtitle: 'Motihari, Patna, Varanasi, aur Gorakhpur ke local teachers kaise Classplus ki 15% commission se bach kar apna branded app launch kar sakte hain.',
+    subtitle: 'Motihari, Patna, Varanasi, aur Gorakhpur ke local teachers kaise heavy platform commission se bach kar apna branded app launch kar sakte hain.',
     metaDescription: 'Bihar aur UP me offline coaching ko online app par kaise le jayein? Jane white label app launch karne ka process, zero commission model, biometric attendance sync, aur NTA CBT test series setup.',
     keywords: [
       'offline coaching to online app bihar up',
       'apna coaching app kaise banaye',
       'white label app for coaching institute',
-      'classplus alternative in patna bihar',
+      'coaching app in patna bihar',
       'hybrid coaching institute management'
     ],
     category: 'Offline to Online',
@@ -225,7 +225,7 @@ Paper print karwane me coaching ka har mahine ₹10,000 se ₹25,000 ka kharcha 
 ---
 
 ### Step 3: Commission Model Se Bachein (Keep 100% of Your Revenue)
-Kayi platforms (jaise Classplus) aapko app dete hain lekin har course aur digital fee par 5% se 15% ka commission kaat lete hain.
+Kayi legacy platforms aapko app dete hain lekin har course aur digital fee par 5% se 15% ka commission kaat lete hain.
 Agar aapka center mahine me ₹5,00,000 collect kar raha hai, toh saal ka **₹3,00,000 se ₹6,00,000** sirf software company ki jeb me chala jata hai!
 
 **Right Approach:** Ek transparent, flat B2B SaaS platform choose karein jaise **Cestrix Learning**, jo:
