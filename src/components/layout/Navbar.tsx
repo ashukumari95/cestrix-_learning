@@ -5,7 +5,7 @@ import {
   Building2, ArrowRight, ShieldCheck, 
   BarChart3, Users, Fingerprint, Receipt
 } from 'lucide-react'
-import cestrixLogo from '../../assets/logo2.webp'
+import cestrixLogo from '../../assets/logo1.png'
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -47,20 +47,12 @@ export const Navbar: React.FC = () => {
             
             {/* 1. LEFT: Official Cestrix Brand Logo ("Cestrix Tech" style from cestrixgroup.com) */}
             <div className="flex items-center flex-1 justify-start">
-              <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group">
+              <Link to="/" className="flex items-center group">
                 <img 
                   src={cestrixLogo} 
-                  alt="Cestrix Learning Logo" 
+                  alt="Cestrix Learning" 
                   className="h-8 sm:h-9 w-auto object-contain group-hover:scale-105 transition-transform" 
                 />
-                <div className="flex items-baseline">
-                  <span className="font-heading font-bold text-xl sm:text-[22px] text-[#002D62] tracking-tight">
-                    Cestrix
-                  </span>
-                  <span className="font-heading font-normal text-xl sm:text-[22px] text-slate-400 tracking-tight ml-1.5">
-                    Learning
-                  </span>
-                </div>
               </Link>
             </div>
 

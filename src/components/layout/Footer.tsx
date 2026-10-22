@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import cestrixLogo from '../../assets/logo2.webp'
+import cestrixLogo from '../../assets/logo1.png'
 
 export const Footer: React.FC = () => {
   return (
@@ -11,20 +11,12 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group">
+            <Link to="/" className="flex items-center group">
               <img 
                 src={cestrixLogo} 
-                alt="Cestrix Learning Logo" 
-                className="h-8 w-auto object-contain brightness-0 invert opacity-95 group-hover:scale-105 transition-transform" 
+                alt="Cestrix Learning" 
+                className="h-8 sm:h-9 w-auto object-contain brightness-0 invert opacity-95 group-hover:scale-105 transition-transform" 
               />
-              <div className="flex items-baseline">
-                <span className="font-heading font-bold text-xl text-white tracking-tight">
-                  Cestrix
-                </span>
-                <span className="font-heading font-normal text-xl text-slate-400 tracking-tight ml-1.5">
-                  Learning
-                </span>
-              </div>
             </Link>
 
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
