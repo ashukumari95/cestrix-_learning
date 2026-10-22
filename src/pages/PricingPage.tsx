@@ -13,176 +13,59 @@ import { SchemaMarkup } from '../components/seo/SchemaMarkup'
 export const PricingPage: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<'MONTHLY' | 'YEARLY'>('YEARLY')
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0)
-  const [showFullMatrix, setShowFullMatrix] = useState<boolean>(false)
 
   // 4 Enterprise-Grade Transparent SaaS Plans (Single Source of Truth)
   const plans = PRICING_PLANS
 
-  // Formstack-Style "I need to..." Core Comparison Rows
-  const coreFeatureRows = [
-    {
-      feature: 'Unlimited Students',
-      desc: 'No student caps or per-seat fees',
-      starter: true,
-      growth: true,
-      pro: true,
-      enterprise: true
-    },
-    {
-      feature: 'Unlimited Branches',
-      desc: 'Manage all branches from one unified dashboard',
-      starter: true,
-      growth: true,
-      pro: true,
-      enterprise: true
-    },
-    {
-      feature: 'Website & Domain',
-      desc: 'Course listings and admission inquiry forms',
-      starter: 'yourname.cestrix.com',
-      growth: 'yourname.cestrix.com',
-      pro: 'yourname.cestrix.com',
-      enterprise: 'yourcoaching.com'
-    },
-    {
-      feature: 'Mobile App',
-      desc: 'Lectures, tests, attendance, and fee receipts on mobile',
-      starter: 'Cestrix App',
-      growth: 'Cestrix App',
-      pro: 'Cestrix App',
-      enterprise: 'Your Coaching App'
-    },
-    {
-      feature: 'Attendance & QR ID Cards',
-      desc: 'Daily attendance tracking and printable student ID cards',
-      starter: true,
-      growth: true,
-      pro: true,
-      enterprise: true
-    },
-    {
-      feature: 'WhatsApp Alerts',
-      desc: 'Attendance alerts and fee due reminders to parents',
-      starter: true,
-      growth: true,
-      pro: true,
-      enterprise: true
-    },
-    {
-      feature: 'CBT Mock Tests',
-      desc: 'Online exams with timer, question palette, and negative marking',
-      starter: false,
-      growth: true,
-      pro: true,
-      enterprise: true
-    },
-    {
-      feature: 'Video Protection & Watermarks',
-      desc: 'Screen recording blocker and student phone watermark on videos',
-      starter: false,
-      growth: true,
-      pro: true,
-      enterprise: true
-    },
-    {
-      feature: 'Storage',
-      desc: 'Encrypted storage for recorded lectures and study notes',
-      starter: '5 GB',
-      growth: '15 GB',
-      pro: '35 GB',
-      enterprise: '100 GB'
-    },
-    {
-      feature: 'Biometric Attendance Sync',
-      desc: 'Direct sync with fingerprint and face scanner machines',
-      starter: false,
-      growth: false,
-      pro: true,
-      enterprise: true
-    },
-    {
-      feature: 'Offline Fee Commission',
-      desc: 'Platform fee on counter cash, offline cheques, and direct UPI',
-      starter: '0%',
-      growth: '0%',
-      pro: '0%',
-      enterprise: '0%'
-    },
-    {
-      feature: 'AI Doubt Solver',
-      desc: 'Students photo-snap difficult questions for step-by-step guidance',
-      starter: false,
-      growth: false,
-      pro: true,
-      enterprise: true
-    },
-    {
-      feature: 'Data Migration & Training',
-      desc: 'Excel student ledger upload and onboarding assistance',
-      starter: 'Self-Service',
-      growth: '1-on-1 Session',
-      pro: 'Live Training',
-      enterprise: 'Dedicated Manager'
-    }
-  ]
-
-  // Deep Semantic Feature Comparison Matrix (Expandable)
+  // Unified Feature Comparison Matrix (Zero Duplicates, Formstack Clean Design)
   const comparisonSections = [
     {
       category: 'Academic Operations & Coaching ERP',
       icon: Building2,
       items: [
         {
-          name: 'Unlimited Active Student Capacity',
-          desc: 'Concurrently enrolled active students (Graduated & archived student histories remain FREE forever)',
+          name: 'Unlimited Students',
+          desc: 'No student caps or per-seat penalties; grow freely without surprise charges',
           starter: true,
           growth: true,
           pro: true,
           enterprise: true
         },
         {
-          name: 'Unlimited Campus Branches Included',
-          desc: 'Physical branch locations managed within a unified organizational dashboard',
+          name: 'Unlimited Branches',
+          desc: 'Manage all branch locations and classrooms under one unified admin dashboard',
           starter: true,
           growth: true,
           pro: true,
           enterprise: true
         },
         {
-          name: 'Admission Rush Overage Protection',
-          desc: 'System resilience during peak intake seasons: software never locks or disrupts operations',
+          name: 'Attendance & QR ID Cards',
+          desc: 'Daily attendance tracking, faculty app check-in, and printable student ID cards',
           starter: true,
           growth: true,
           pro: true,
           enterprise: true
         },
         {
-          name: 'Biometric Machine Hardware Cloud Sync',
-          desc: 'Real-time cloud integration with fingerprint and facial recognition devices without manual export',
+          name: 'Biometric Attendance Sync',
+          desc: 'Real-time sync with fingerprint and facial recognition biometric machines',
           starter: false,
           growth: false,
           pro: true,
           enterprise: true
         },
         {
-          name: 'Manual & QR-Scan Daily Attendance',
-          desc: 'Faculty app check-in, classroom registers, or barcode badge scanning at institute entry gates',
+          name: 'Batch Scheduling & Timetables',
+          desc: 'Manage morning/evening shifts with automatic classroom conflict alerts',
           starter: true,
           growth: true,
           pro: true,
           enterprise: true
         },
         {
-          name: 'Archived Student & Alumni Records',
-          desc: 'Retain historical student fee receipts, academic marks, and certificates at zero incremental cost',
-          starter: true,
-          growth: true,
-          pro: true,
-          enterprise: true
-        },
-        {
-          name: 'Multi-Batch Scheduling & Classroom Mapping',
-          desc: 'Manage multiple morning/evening shifts with automatic classroom conflict and overlap alerts',
+          name: 'Archived Student Records',
+          desc: 'Retain historical student fee receipts, academic marks, and certificates for free',
           starter: true,
           growth: true,
           pro: true,
@@ -191,12 +74,42 @@ export const PricingPage: React.FC = () => {
       ]
     },
     {
-      category: 'Tuition Fee Automation & Financial Transparency',
+      category: 'Website, Mobile App & Communication',
+      icon: Globe,
+      items: [
+        {
+          name: 'Website & Domain',
+          desc: 'Branded public portal with course listings and online admission inquiry forms',
+          starter: 'yourname.cestrix.com',
+          growth: 'yourname.cestrix.com',
+          pro: 'yourname.cestrix.com',
+          enterprise: 'yourcoaching.com'
+        },
+        {
+          name: 'Mobile App',
+          desc: 'Access recorded lectures, mock tests, attendance logs, and fee receipts on mobile',
+          starter: 'Cestrix App',
+          growth: 'Cestrix App',
+          pro: 'Cestrix App',
+          enterprise: 'Your Coaching App'
+        },
+        {
+          name: 'WhatsApp Alerts',
+          desc: 'Automated real-time attendance alerts and fee due reminders to parents',
+          starter: true,
+          growth: true,
+          pro: true,
+          enterprise: true
+        }
+      ]
+    },
+    {
+      category: 'Tuition Fee Automation & Payments',
       icon: DollarSign,
       items: [
         {
           name: 'Offline Fee Commission',
-          desc: 'Zero platform commission on tuition fees collected at your desk, via cheque, or through direct bank transfers',
+          desc: 'Zero platform commission on tuition fees collected at your desk, via cash or direct UPI',
           starter: '0%',
           growth: '0%',
           pro: '0%',
@@ -204,31 +117,31 @@ export const PricingPage: React.FC = () => {
         },
         {
           name: 'Course Sales Platform Fee',
-          desc: 'Transaction fee applied exclusively to self-service digital video courses sold through the app gateway',
+          desc: 'Transaction fee applied exclusively to digital video courses sold through the app',
           starter: '5%',
           growth: '2%',
           pro: '1%',
           enterprise: '0%'
         },
         {
-          name: 'Installment Schedules & Late Fine Automation',
-          desc: 'Automated installment generation, fine recalculation, and direct WhatsApp payment link dispatch',
+          name: 'Installments & Late Fine',
+          desc: 'Automated installment schedules, late fine recalculation, and WhatsApp payment links',
           starter: true,
           growth: true,
           pro: true,
           enterprise: true
         },
         {
-          name: 'GST Tax Invoicing & Input Credit Invoices',
-          desc: 'Audit-ready, GST-compliant fee receipts with itemized tax breakdowns and automated serial numbering',
+          name: 'GST Invoicing',
+          desc: 'Audit-ready, GST-compliant fee receipts with itemized tax breakdowns and serial numbering',
           starter: true,
           growth: true,
           pro: true,
           enterprise: true
         },
         {
-          name: 'Custom Payment Gateway Integration',
-          desc: 'Connect your merchant account with Razorpay, Cashfree, or PayU for direct same-day (T+0) bank settlement',
+          name: 'Custom Payment Gateway',
+          desc: 'Connect Razorpay, Cashfree, or PayU for direct same-day (T+0) bank settlement',
           starter: false,
           growth: false,
           pro: false,
@@ -237,12 +150,12 @@ export const PricingPage: React.FC = () => {
       ]
     },
     {
-      category: 'Video LMS, CDN Streaming & Anti-Piracy DRM',
+      category: 'Video LMS & Storage',
       icon: Video,
       items: [
         {
           name: 'Storage',
-          desc: 'Encrypted cloud storage for recorded lectures, assignments, and curriculum materials',
+          desc: 'Encrypted cloud storage for recorded lectures, assignments, and curriculum notes',
           starter: '5 GB',
           growth: '15 GB',
           pro: '35 GB',
@@ -250,31 +163,23 @@ export const PricingPage: React.FC = () => {
         },
         {
           name: 'Video Streaming',
-          desc: 'CDN streaming and YouTube unlisted integration with zero bandwidth limits',
+          desc: 'Global CDN streaming and YouTube unlisted integration with zero bandwidth limits',
           starter: 'Unlimited YouTube',
           growth: '15 GB CDN + YouTube',
           pro: '35 GB CDN + YouTube',
           enterprise: '100 GB CDN + YouTube'
         },
         {
-          name: 'Anti-Piracy Screen Recording Blocker',
-          desc: 'Hardened media player preventing third-party screen grabbers, HDMI mirrors, and direct stream downloads',
+          name: 'Video Protection & Watermarks',
+          desc: 'Screen recording blocker and dynamic student phone watermark overlay on video playback',
           starter: false,
           growth: true,
           pro: true,
           enterprise: true
         },
         {
-          name: 'Dynamic Student Phone & ID Watermark',
-          desc: 'Moving cryptographic overlay displaying the student’s registered mobile number and name across the screen',
-          starter: false,
-          growth: false,
-          pro: true,
-          enterprise: true
-        },
-        {
-          name: 'Protected PDF Study Material & DPP Uploads',
-          desc: 'Secure hosting for Daily Practice Problems with view-only modes and downloadable restrictions',
+          name: 'Protected PDF & Study Notes',
+          desc: 'Secure hosting for daily practice problems (DPP) with view-only modes and restrictions',
           starter: true,
           growth: true,
           pro: true,
@@ -283,40 +188,62 @@ export const PricingPage: React.FC = () => {
       ]
     },
     {
-      category: 'Exam Engine & CBT Test Simulator',
+      category: 'Exam Engine & AI Doubt Solver',
       icon: Award,
       items: [
         {
-          name: 'Online MCQ & Subjective Practice Quizzes',
-          desc: 'Objective testing module with immediate scorecard generation, answer keys, and explanatory hints',
+          name: 'Online Practice Tests',
+          desc: 'Objective quizzes with immediate scorecard generation, answer keys, and solutions',
           starter: true,
           growth: true,
           pro: true,
           enterprise: true
         },
         {
-          name: 'NTA-Grade Computer-Based Test (CBT) Simulator',
-          desc: 'Exact replication of JEE and NEET computer testing environments with question palettes, timers, and marking schemes',
+          name: 'CBT Exam Simulator',
+          desc: 'NTA-pattern online exams with timers, question palettes, and negative marking',
           starter: false,
           growth: true,
           pro: true,
           enterprise: true
         },
         {
-          name: 'Intelligent Student Error Notebook',
-          desc: 'Automatic repository capturing every incorrectly answered question for focused revision and re-testing',
+          name: 'Student Error Notebook',
+          desc: 'Automatic repository capturing incorrectly answered questions for focused revision',
           starter: false,
           growth: false,
           pro: true,
           enterprise: true
         },
         {
-          name: 'Comparative Rank Percentile & Analytics',
-          desc: 'Batch-wide percentiles, subject-wise accuracy metrics, and comparative topper benchmark charts',
+          name: 'Rank Analytics & Percentile',
+          desc: 'Batch-wide percentiles, subject-wise accuracy metrics, and benchmark leaderboards',
           starter: false,
           growth: 'Batch Rankings',
           pro: true,
           enterprise: true
+        },
+        {
+          name: 'AI Doubt Solver',
+          desc: 'Enrolled students photo-snap difficult questions for step-by-step guidance',
+          starter: false,
+          growth: false,
+          pro: true,
+          enterprise: true
+        }
+      ]
+    },
+    {
+      category: 'Onboarding & Dedicated Support',
+      icon: Headset,
+      items: [
+        {
+          name: 'Data Migration & Training',
+          desc: 'Historical Excel student ledger upload and live 1-on-1 staff onboarding sessions',
+          starter: 'Self-Service',
+          growth: '1-on-1 Session',
+          pro: 'Live Training',
+          enterprise: 'Dedicated Manager'
         }
       ]
     }
@@ -887,176 +814,86 @@ export const PricingPage: React.FC = () => {
               </div>
             </div>
 
-            {/* "I need to..." Formstack Section Header */}
-            <div className="bg-slate-50/80 px-4 py-3 font-bold text-sm text-slate-900 border-b border-slate-200">
-              I need to...
-            </div>
-
-            {/* Core Feature Rows */}
-            <div className="divide-y divide-slate-100">
-              {coreFeatureRows.map((row, rIdx) => (
-                <div
-                  key={rIdx}
-                  className="grid grid-cols-12 py-4 px-2 items-center hover:bg-slate-50/60 transition-colors"
-                >
-                  <div className="col-span-4 pr-3">
-                    <span className="font-semibold text-xs sm:text-sm text-slate-900 block">
-                      {row.feature}
-                    </span>
-                    <span className="text-[11px] text-slate-500 hidden sm:block mt-0.5">
-                      {row.desc}
-                    </span>
-                  </div>
-
-                  {/* Starter Cell */}
-                  <div className="col-span-2 text-center text-xs font-semibold text-slate-700">
-                    {typeof row.starter === 'boolean' ? (
-                      row.starter ? (
-                        <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
-                      ) : (
-                        <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
-                      )
-                    ) : (
-                      <span className="text-slate-800 font-bold">{row.starter}</span>
-                    )}
-                  </div>
-
-                  {/* Growth Cell */}
-                  <div className="col-span-2 text-center text-xs font-semibold text-slate-700">
-                    {typeof row.growth === 'boolean' ? (
-                      row.growth ? (
-                        <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
-                      ) : (
-                        <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
-                      )
-                    ) : (
-                      <span className="text-slate-800 font-bold">{row.growth}</span>
-                    )}
-                  </div>
-
-                  {/* Pro Cell */}
-                  <div className="col-span-2 text-center text-xs font-semibold text-slate-700">
-                    {typeof row.pro === 'boolean' ? (
-                      row.pro ? (
-                        <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
-                      ) : (
-                        <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
-                      )
-                    ) : (
-                      <span className="text-[#173F8A] font-extrabold">{row.pro}</span>
-                    )}
-                  </div>
-
-                  {/* Enterprise Cell */}
-                  <div className="col-span-2 text-center text-xs font-semibold text-slate-700">
-                    {typeof row.enterprise === 'boolean' ? (
-                      row.enterprise ? (
-                        <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
-                      ) : (
-                        <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
-                      )
-                    ) : (
-                      <span className="text-purple-700 font-extrabold">{row.enterprise}</span>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Toggle Full Matrix Button */}
-            <div className="py-6 text-center border-t border-slate-200">
-              <button
-                type="button"
-                onClick={() => setShowFullMatrix(!showFullMatrix)}
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs sm:text-sm transition-all"
-              >
-                <span>{showFullMatrix ? 'Hide Detailed Module Breakdown' : 'View Complete 50+ Module Matrix'}</span>
-                <ChevronDown size={16} className={`transition-transform ${showFullMatrix ? 'rotate-180' : ''}`} />
-              </button>
-            </div>
-
-            {/* Expandable Full Matrix */}
-            {showFullMatrix && (
-              <div className="divide-y divide-slate-200 border-t border-slate-200 animate-in fade-in duration-300">
-                {comparisonSections.map((sec, secIdx) => {
-                  const SecIcon = sec.icon
-                  return (
-                    <div key={secIdx}>
-                      <div className="bg-slate-100/90 px-4 py-3 flex items-center gap-2 border-y border-slate-200 text-slate-900 font-extrabold text-xs sm:text-sm">
-                        <SecIcon size={16} className="text-[#173F8A]" />
-                        <span>{sec.category}</span>
-                      </div>
-
-                      <div className="divide-y divide-slate-100">
-                        {sec.items.map((item, itemIdx) => (
-                          <div
-                            key={itemIdx}
-                            className="grid grid-cols-12 py-3 px-2 text-xs items-center hover:bg-slate-50/60 transition-colors"
-                          >
-                            <div className="col-span-4 pr-3">
-                              <span className="font-semibold text-slate-900 block text-xs sm:text-sm">
-                                {item.name}
-                              </span>
-                              <span className="text-[11px] text-slate-500 hidden sm:block mt-0.5">
-                                {item.desc}
-                              </span>
-                            </div>
-
-                            <div className="col-span-2 text-center text-slate-700 font-medium">
-                              {typeof item.starter === 'boolean' ? (
-                                item.starter ? (
-                                  <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
-                                ) : (
-                                  <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
-                                )
-                              ) : (
-                                <span className="text-slate-800 font-bold">{item.starter}</span>
-                              )}
-                            </div>
-
-                            <div className="col-span-2 text-center text-slate-700 font-medium">
-                              {typeof item.growth === 'boolean' ? (
-                                item.growth ? (
-                                  <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
-                                ) : (
-                                  <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
-                                )
-                              ) : (
-                                <span className="text-slate-800 font-bold">{item.growth}</span>
-                              )}
-                            </div>
-
-                            <div className="col-span-2 text-center text-slate-700 font-medium">
-                              {typeof item.pro === 'boolean' ? (
-                                item.pro ? (
-                                  <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
-                                ) : (
-                                  <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
-                                )
-                              ) : (
-                                <span className="text-[#173F8A] font-bold">{item.pro}</span>
-                              )}
-                            </div>
-
-                            <div className="col-span-2 text-center text-slate-700 font-medium">
-                              {typeof item.enterprise === 'boolean' ? (
-                                item.enterprise ? (
-                                  <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
-                                ) : (
-                                  <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
-                                )
-                              ) : (
-                                <span className="text-purple-700 font-bold">{item.enterprise}</span>
-                              )}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
+            {/* Unified Feature Matrix by Category (Zero Duplicates, Formstack Clean Design) */}
+            <div className="divide-y divide-slate-200">
+              {comparisonSections.map((sec, secIdx) => {
+                const SecIcon = sec.icon
+                return (
+                  <div key={secIdx}>
+                    <div className="bg-slate-50 px-4 py-3 flex items-center gap-2 border-y border-slate-200 text-slate-900 font-extrabold text-xs sm:text-sm">
+                      <SecIcon size={16} className="text-[#173F8A]" />
+                      <span>{sec.category}</span>
                     </div>
-                  )
-                })}
-              </div>
-            )}
+
+                    <div className="divide-y divide-slate-100">
+                      {sec.items.map((item, itemIdx) => (
+                        <div
+                          key={itemIdx}
+                          className="grid grid-cols-12 py-3.5 px-2 text-xs items-center hover:bg-slate-50/60 transition-colors"
+                        >
+                          <div className="col-span-4 pr-3">
+                            <span className="font-semibold text-slate-900 block text-xs sm:text-sm">
+                              {item.name}
+                            </span>
+                            <span className="text-[11px] text-slate-500 hidden sm:block mt-0.5">
+                              {item.desc}
+                            </span>
+                          </div>
+
+                          <div className="col-span-2 text-center text-slate-700 font-medium">
+                            {typeof item.starter === 'boolean' ? (
+                              item.starter ? (
+                                <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
+                              ) : (
+                                <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
+                              )
+                            ) : (
+                              <span className="text-slate-800 font-bold">{item.starter}</span>
+                            )}
+                          </div>
+
+                          <div className="col-span-2 text-center text-slate-700 font-medium">
+                            {typeof item.growth === 'boolean' ? (
+                              item.growth ? (
+                                <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
+                              ) : (
+                                <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
+                              )
+                            ) : (
+                              <span className="text-slate-800 font-bold">{item.growth}</span>
+                            )}
+                          </div>
+
+                          <div className="col-span-2 text-center text-slate-700 font-medium">
+                            {typeof item.pro === 'boolean' ? (
+                              item.pro ? (
+                                <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
+                              ) : (
+                                <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
+                              )
+                            ) : (
+                              <span className="text-[#173F8A] font-bold">{item.pro}</span>
+                            )}
+                          </div>
+
+                          <div className="col-span-2 text-center text-slate-700 font-medium">
+                            {typeof item.enterprise === 'boolean' ? (
+                              item.enterprise ? (
+                                <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
+                              ) : (
+                                <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
+                              )
+                            ) : (
+                              <span className="text-purple-700 font-bold">{item.enterprise}</span>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </div>
       </section>
