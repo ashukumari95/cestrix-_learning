@@ -96,6 +96,22 @@ export const PricingPage: React.FC = () => {
           enterprise: true
         },
         {
+          name: 'Dedicated Parent App & Portal',
+          desc: 'Separate parent login to track daily attendance, test performance scorecards, and payment receipts',
+          starter: true,
+          growth: true,
+          pro: true,
+          enterprise: true
+        },
+        {
+          name: 'Student ID & Certificate Generator',
+          desc: '1-click generation of printable student ID cards with QR barcodes and course completion certificates',
+          starter: true,
+          growth: true,
+          pro: true,
+          enterprise: true
+        },
+        {
           name: 'Archived Student Records',
           desc: 'Retain historical student fee receipts, academic marks, and certificates for free',
           starter: true,
@@ -136,6 +152,14 @@ export const PricingPage: React.FC = () => {
         {
           name: 'App Push & WhatsApp Alerts',
           desc: 'Automated real-time attendance alerts and fee due reminders to parents via App & WhatsApp',
+          starter: true,
+          growth: true,
+          pro: true,
+          enterprise: true
+        },
+        {
+          name: 'Discount Coupons & Promo Codes',
+          desc: 'Create custom promo codes (e.g. DIWALI50, NEET2026) with flat or percentage discounts for course sales',
           starter: true,
           growth: true,
           pro: true,
@@ -224,6 +248,22 @@ export const PricingPage: React.FC = () => {
           growth: true,
           pro: true,
           enterprise: true
+        },
+        {
+          name: 'Single-Device Login (Anti-Piracy)',
+          desc: 'Locks student account to 1 registered device; blocks unauthorized password sharing among friends',
+          starter: false,
+          growth: true,
+          pro: true,
+          enterprise: true
+        },
+        {
+          name: 'In-App Offline Video Downloads',
+          desc: 'Students can download lectures inside the mobile app to watch without internet (encrypted & non-transferable)',
+          starter: false,
+          growth: true,
+          pro: true,
+          enterprise: true
         }
       ]
     },
@@ -268,6 +308,14 @@ export const PricingPage: React.FC = () => {
           desc: 'Enrolled students photo-snap difficult questions for step-by-step guidance',
           starter: false,
           growth: false,
+          pro: true,
+          enterprise: true
+        },
+        {
+          name: 'OMR Sheet Generator & Offline Tests',
+          desc: 'Print standard OMR answer sheets and generate digital rank scorecards for offline pen-and-paper exams',
+          starter: true,
+          growth: true,
           pro: true,
           enterprise: true
         }
@@ -548,6 +596,10 @@ export const PricingPage: React.FC = () => {
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
                       <span>Anti-Piracy Protected Video Streaming</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
+                      <span>Single-Device Login & Offline Downloads</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />

@@ -85,6 +85,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       'In-App Coaching Branding (Logo & Name)',
       '15 GB Storage (~150 hrs lectures)',
       'Anti-Piracy Protected Video Streaming',
+      'Single-Device Login & Offline Downloads',
       'CBT Online Exam Simulator',
       'Course Selling Storefront (0% cut)',
       'Automated WhatsApp Fee Reminders'
