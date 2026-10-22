@@ -329,7 +329,7 @@ export const PricingPage: React.FC = () => {
     },
     {
       q: 'Can we get our own branded mobile app on Google Play Store?',
-      a: 'Yes! Both Pro Solutions and Enterprise plans include your own standalone app published under your coaching’s name on the Google Play Store. On annual plans, the ₹9,999 setup fee is completely waived (₹0).'
+      a: 'Yes! Both Pro Solutions and Enterprise plans include your own standalone app published under your coaching’s name on the Google Play Store. On annual plans, the ₹9,599 setup fee is completely waived (₹0).'
     }
   ]
 
@@ -639,9 +639,14 @@ export const PricingPage: React.FC = () => {
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
                       <span className="font-bold text-[#173F8A]">All Growth features included</span>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900 bg-blue-100/60 p-2 rounded-lg border border-blue-200/60">
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900 bg-blue-100/60 p-2.5 rounded-xl border border-blue-200/60">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-[#1E40AF]">Your Own App on Google Play Store</span>
+                      <div>
+                        <span className="font-bold text-[#1E40AF] block">Your Own App on Google Play Store</span>
+                        <span className="text-[11px] font-semibold text-blue-800">
+                          {billingCycle === 'YEARLY' ? '₹9,599 Setup Fee Waived (100% Free)' : 'One-time ₹9,599 App Setup Fee'}
+                        </span>
+                      </div>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
@@ -1100,7 +1105,7 @@ export const PricingPage: React.FC = () => {
             </div>
             <h3 className="text-lg font-bold text-slate-900">₹0 App Setup on Annual Plans</h3>
             <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-              Save ₹9,999 in initial setup costs. Publish your own branded Android app on Google Play Store with zero setup fee on annual Enterprise plans.
+              Save ₹9,599 in initial setup costs. Publish your own branded Android app on Google Play Store with zero setup fee on annual Pro & Enterprise plans.
             </p>
           </div>
         </div>

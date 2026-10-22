@@ -114,7 +114,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     diffTag: 'Everything in Growth, plus:',
     features: [
       'All Growth features included',
-      'Your Own App on Google Play Store',
+      'Your Own App on Google Play Store (₹9,599 Setup Free on Annual)',
       'Connect Custom Domain (yourcoaching.com)',
       '35 GB Storage (~350 hrs lectures)',
       'Biometric Machine Attendance Sync',
