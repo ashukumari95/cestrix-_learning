@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  Check, CheckCircle2, XCircle, Sparkles, ArrowRight, Building2,
+  Check, CheckCircle2, XCircle, ArrowRight, Building2,
   ChevronDown, Star, Users, Video, DollarSign, Award,
   Lock, Laptop, BookOpen, Layers, ShieldCheck,
   Globe, Gift, HelpCircle, Headset
@@ -664,29 +664,6 @@ export const PricingPage: React.FC = () => {
 
         </div>
 
-        {/* Free Trial Banner Strip */}
-        <div className="mt-12 p-5 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 border border-blue-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#173F8A] text-white flex items-center justify-center shrink-0 shadow-sm">
-              <Sparkles size={20} />
-            </div>
-            <div>
-              <h4 className="text-sm font-extrabold text-slate-900">
-                Try Cestrix Free for 7 Days
-              </h4>
-              <p className="text-xs text-slate-500 mt-0.5">
-                Full platform access • Unlimited Students & Branches • No credit card required • Free data import
-              </p>
-            </div>
-          </div>
-          <Link
-            to="/book-demo?plan=trial"
-            className="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-black text-white text-xs sm:text-sm font-bold shrink-0 transition-colors shadow-sm flex items-center gap-2"
-          >
-            <span>Activate 7-Day Free Trial</span>
-            <ArrowRight size={14} />
-          </Link>
-        </div>
       </section>
 
       {/* ── Section 3: Formstack-Style "Compare Features" Table (Image 3) ── */}
