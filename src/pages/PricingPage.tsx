@@ -183,7 +183,7 @@ export const PricingPage: React.FC = () => {
           starter: '5 GB (~50 hrs)',
           growth: '15 GB (~150 hrs)',
           pro: '35 GB (~350 hrs)',
-          enterprise: '100 GB (~1,000+ hrs)'
+          enterprise: 'Custom (100 GB+)'
         },
         {
           name: 'Video Protection & Watermarks',
@@ -259,7 +259,7 @@ export const PricingPage: React.FC = () => {
           starter: 'Self-Service',
           growth: '1-on-1 Session',
           pro: 'Live Training',
-          enterprise: 'Dedicated Manager'
+          enterprise: 'Dedicated Manager & SLA'
         }
       ]
     }
@@ -679,20 +679,14 @@ export const PricingPage: React.FC = () => {
                   </p>
 
                   <div className="mt-6 mb-6">
-                    <span className="text-xs font-semibold text-slate-400 block mb-1">Custom Pricing</span>
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                        ₹{price.toLocaleString()}
+                    <span className="text-xs font-semibold text-amber-400 block mb-1 uppercase tracking-wider">Custom Tailored Pricing</span>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                        Custom Quote
                       </span>
-                      <div className="text-xs text-slate-400 font-medium leading-tight">
-                        <span>/month</span>
-                        <span className="block text-[11px] text-slate-500">
-                          {billingCycle === 'YEARLY' ? 'paid annually' : 'paid monthly'}
-                        </span>
-                      </div>
                     </div>
-                    <span className="text-[11px] text-amber-300/80 font-medium block mt-1">
-                      Flexible Plans & Custom SLA
+                    <span className="text-[11px] text-slate-400 font-medium block mt-1.5">
+                      Tailored to your campus size, students & custom modules
                     </span>
                   </div>
 
@@ -715,7 +709,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>100 GB Storage (~1,000+ hrs lectures)</span>
+                      <span>Scalable Cloud Storage (100 GB to Multi-TB)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
@@ -727,11 +721,11 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Dedicated Account Manager & Training</span>
+                      <span>Dedicated Account Manager & 24/7 SLA</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Priority Custom SLA & API Integrations</span>
+                      <span>Custom ERP & API Integrations</span>
                     </div>
                   </div>
                 </div>
@@ -742,7 +736,7 @@ export const PricingPage: React.FC = () => {
                     to="/book-demo?plan=enterprise"
                     className="w-full py-4 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-extrabold text-sm text-center shadow-md block transition-all"
                   >
-                    Talk to Our Team
+                    Contact Enterprise Sales
                   </Link>
                 </div>
               </div>
@@ -868,14 +862,14 @@ export const PricingPage: React.FC = () => {
               <div className="col-span-2 px-2">
                 <h4 className="font-bold text-base text-slate-900">Enterprise</h4>
                 <p className="text-[11px] text-slate-500 mt-0.5">
-                  Custom Pricing
+                  Custom Quote
                 </p>
-                <p className="text-[10px] text-slate-400 mb-3">Flexible Plans</p>
+                <p className="text-[10px] text-slate-400 mb-3">Tailored to Scale</p>
                 <Link
                   to="/book-demo?plan=enterprise"
                   className="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-black text-white text-xs font-bold inline-block shadow-2xs transition-all"
                 >
-                  Talk to Team
+                  Contact Sales
                 </Link>
               </div>
             </div>
