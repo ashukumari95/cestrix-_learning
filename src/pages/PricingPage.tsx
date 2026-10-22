@@ -357,15 +357,18 @@ export const PricingPage: React.FC = () => {
                     </div>
                   </div>
 
+                  {/* Diff Tag Header */}
+                  <div className="mb-4 pb-2 border-b border-orange-200/70">
+                    <span className="text-[11px] font-extrabold text-orange-900 uppercase tracking-wider bg-orange-100/90 px-2.5 py-1 rounded-md inline-block">
+                      Core Inclusions:
+                    </span>
+                  </div>
+
                   {/* Bullet Features with Orange Checks */}
-                  <div className="space-y-3.5 mb-8">
+                  <div className="space-y-3 mb-8">
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-slate-900">Unlimited Students</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Unlimited Branches</span>
+                      <span className="font-bold text-slate-900">Unlimited Students & Branches</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
@@ -373,7 +376,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Attendance & QR ID Cards</span>
+                      <span>Daily Attendance & QR ID Cards</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
@@ -381,7 +384,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>5 GB Storage</span>
+                      <span>5 GB Cloud Storage</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
@@ -441,19 +444,30 @@ export const PricingPage: React.FC = () => {
                     </div>
                   </div>
 
+                  {/* Diff Tag Header */}
+                  <div className="mb-4 pb-2 border-b border-emerald-200/70">
+                    <span className="text-[11px] font-extrabold text-emerald-900 uppercase tracking-wider bg-emerald-100/90 px-2.5 py-1 rounded-md inline-block">
+                      Everything in Starter, plus:
+                    </span>
+                  </div>
+
                   {/* Bullet Features with Green Checks */}
-                  <div className="space-y-3.5 mb-8">
+                  <div className="space-y-3 mb-8">
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-slate-900">Unlimited Students</span>
+                      <span className="font-bold text-emerald-900">All Starter features included</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Unlimited Branches</span>
+                      <span>15 GB Cloud Storage (3x Space)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Video Lecture Streaming</span>
+                      <span>Recorded Video Lecture Streaming</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
+                      <span>Anti-Piracy Video Protection (Watermarks)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
@@ -465,11 +479,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Anti-Piracy Video Protection</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>15 GB Storage</span>
+                      <span>Lower 2% Course Platform Fee</span>
                     </div>
                   </div>
                 </div>
@@ -525,19 +535,26 @@ export const PricingPage: React.FC = () => {
                     </div>
                   </div>
 
+                  {/* Diff Tag Header */}
+                  <div className="mb-4 pb-2 border-b border-blue-200/70">
+                    <span className="text-[11px] font-extrabold text-[#173F8A] uppercase tracking-wider bg-blue-100/90 px-2.5 py-1 rounded-md inline-block">
+                      Everything in Growth, plus:
+                    </span>
+                  </div>
+
                   {/* Bullet Features with Blue Checks */}
-                  <div className="space-y-3.5 mb-8">
+                  <div className="space-y-3 mb-8">
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-slate-900">Unlimited Students</span>
+                      <span className="font-bold text-[#173F8A]">All Growth features included</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Unlimited Branches</span>
+                      <span>35 GB Cloud Storage (7x Space)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Biometric Attendance Sync</span>
+                      <span>Biometric Machine Attendance Sync</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
@@ -545,15 +562,15 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>35 GB Storage</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
                       <span>Student Error Notebook & Analytics</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Priority Dedicated Support</span>
+                      <span>AI Doubt Solver for Students</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
+                      <span>Priority Dedicated VIP Support</span>
                     </div>
                   </div>
                 </div>
@@ -616,35 +633,42 @@ export const PricingPage: React.FC = () => {
                     </span>
                   </div>
 
+                  {/* Diff Tag Header */}
+                  <div className="mb-4 pb-2 border-b border-slate-700/80">
+                    <span className="text-[11px] font-extrabold text-amber-300 uppercase tracking-wider bg-[#1E2D40] px-2.5 py-1 rounded-md inline-block border border-amber-400/30">
+                      Everything in Pro, plus:
+                    </span>
+                  </div>
+
                   {/* Bullet Features with Gold/Amber Checks */}
-                  <div className="space-y-3.5 mb-8">
+                  <div className="space-y-3 mb-8">
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-white">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-white">Unlimited Students & Branches</span>
+                      <span className="font-bold text-amber-300">All Pro features included</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Your Coaching App on Play Store</span>
+                      <span>100 GB Cloud Storage (Highest Capacity)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Custom Domain (yourcoaching.com)</span>
+                      <span>Your Coaching App on Google Play Store</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>100 GB Storage</span>
+                      <span>Custom Domain Website (yourcoaching.com)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>0% Commission on Courses</span>
+                      <span>0% Platform Commission on Courses</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Dedicated Account Manager</span>
+                      <span>Multi-Campus Franchise Admin Control</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Free Data Migration & Training</span>
+                      <span>Dedicated Account Manager & Training</span>
                     </div>
                   </div>
                 </div>
@@ -664,6 +688,16 @@ export const PricingPage: React.FC = () => {
 
         </div>
 
+        {/* Quick helper link to jump down to comparison */}
+        <div className="mt-8 text-center">
+          <a
+            href="#compare"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#173F8A] hover:text-blue-800 transition-colors bg-blue-50/80 hover:bg-blue-100/80 px-4 py-2 rounded-full border border-blue-200/60"
+          >
+            <span>Compare all features side-by-side in the detailed matrix</span>
+            <ChevronDown size={15} />
+          </a>
+        </div>
       </section>
 
       {/* ── Section 3: Formstack-Style "Compare Features" Table (Image 3) ── */}

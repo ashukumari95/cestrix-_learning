@@ -70,8 +70,13 @@ export const PricingPreviewSection: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Diff Tag */}
+                <div className="text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-2">
+                  {plan.diffTag}
+                </div>
+
                 {/* Features */}
-                <div className="space-y-2 text-xs text-slate-700 pt-1">
+                <div className="space-y-2 text-xs text-slate-700">
                   {plan.features.slice(0, 5).map((feat, fIdx) => (
                     <div key={fIdx} className="flex items-start gap-2">
                       <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />

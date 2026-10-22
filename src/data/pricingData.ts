@@ -47,12 +47,11 @@ export const PRICING_PLANS: PricingPlan[] = [
     ctaLink: '/book-demo?plan=starter',
     diffTag: 'Core Inclusions:',
     features: [
-      'Unlimited Students',
-      'Unlimited Branches',
+      'Unlimited Students & Branches',
       'Student & Parent Mobile App',
       'Attendance & Printable QR ID Cards',
       'Online Practice Tests',
-      '5 GB Storage',
+      '5 GB Cloud Storage',
       '0% Fee on Cash & Direct UPI'
     ]
   },
@@ -79,13 +78,13 @@ export const PRICING_PLANS: PricingPlan[] = [
     ctaLink: '/book-demo?plan=growth',
     diffTag: 'Everything in Starter, plus:',
     features: [
-      'Unlimited Students',
-      'Unlimited Branches',
-      'Video Lecture Streaming',
+      'All Starter features included',
+      '15 GB Cloud Storage',
+      'Recorded Video Lecture Streaming',
+      'Anti-Piracy Video Protection (Watermarks)',
       'CBT Online Exam Simulator',
       'Automated WhatsApp Fee Reminders',
-      'Anti-Piracy Video Protection',
-      '15 GB Storage'
+      'Lower 2% Course Platform Fee'
     ]
   },
   {
@@ -111,13 +110,13 @@ export const PRICING_PLANS: PricingPlan[] = [
     ctaLink: '/book-demo?plan=pro',
     diffTag: 'Everything in Growth, plus:',
     features: [
-      'Unlimited Students',
-      'Unlimited Branches',
+      'All Growth features included',
+      '35 GB Cloud Storage',
       'Biometric Machine Attendance Sync',
       'Automated WhatsApp Parent Alerts',
       'Student Error Notebook & Analytics',
-      '35 GB Storage',
-      'Priority Dedicated Support'
+      'AI Doubt Solver for Students',
+      'Priority Dedicated VIP Support'
     ]
   },
   {
@@ -141,15 +140,15 @@ export const PRICING_PLANS: PricingPlan[] = [
     ctaText: 'Talk to Enterprise Sales',
     ctaClass: 'bg-white hover:bg-slate-100 text-slate-900 shadow-md',
     ctaLink: '/book-demo?plan=enterprise',
-    diffTag: 'Enterprise Exclusive:',
+    diffTag: 'Everything in Pro, plus:',
     features: [
-      'Unlimited Students & Branches',
+      'All Pro features included',
+      '100 GB Cloud Storage',
       'Your Coaching App on Google Play Store',
       'Custom Domain Website (yourcoaching.com)',
-      '100 GB Storage',
-      '0% Commission on Course Sales',
-      'Dedicated Account Manager',
-      'Free Data Migration & Training'
+      '0% Platform Commission on Courses',
+      'Multi-Campus Franchise Admin Control',
+      'Dedicated Account Manager & Training'
     ]
   }
 ]
