@@ -24,6 +24,30 @@ export const PricingPage: React.FC = () => {
       icon: Building2,
       items: [
         {
+          name: 'Coaching Master Admin Panel',
+          desc: 'Central command for Director & Management: fee records, analytics, admissions, staff control & branches',
+          starter: true,
+          growth: true,
+          pro: true,
+          enterprise: true
+        },
+        {
+          name: 'Dedicated Teacher / Faculty Panel',
+          desc: 'Independent portal & app for teachers to mark attendance, assign DPP/homework, upload notes & live classes with zero fee access',
+          starter: true,
+          growth: true,
+          pro: true,
+          enterprise: true
+        },
+        {
+          name: 'Role-Based Staff Permissions',
+          desc: 'Role separation for Admin, Faculty, Accountant, and Counselor to protect financial privacy and fee records',
+          starter: 'Basic Roles',
+          growth: 'Multi-Staff Access',
+          pro: 'Granular Permissions',
+          enterprise: 'Custom Hierarchy'
+        },
+        {
           name: 'Unlimited Students',
           desc: 'No student caps or per-seat penalties; grow freely without surprise charges',
           starter: true,
@@ -276,6 +300,10 @@ export const PricingPage: React.FC = () => {
       a: 'Yes! All Cestrix plans include unlimited students and unlimited campus branches. You can enroll as many students and manage as many branch centers as you need without extra per-student or per-branch charges.'
     },
     {
+      q: 'Do teachers have a dedicated portal, and can they see our coaching fee collections?',
+      a: 'Zero fee leak guarantee. Cestrix provides a dedicated Teacher & Faculty Panel (accessible via Web & App) strictly separated from your coaching finances. Teachers can schedule classes, mark attendance, share study notes, evaluate tests, and assign homework—with zero access to student fee collections, cash ledgers, profit reports, or bank settings.'
+    },
+    {
       q: 'Can we conduct Live Interactive Classes on Cestrix?',
       a: 'Yes! Cestrix integrates directly with Zoom and Google Meet across all plans. Teachers can schedule and launch live interactive classes with one tap from the teacher app or web portal. Students join directly inside their student app without needing external links, and Cestrix charges zero extra per-hour fees.'
     },
@@ -375,7 +403,7 @@ export const PricingPage: React.FC = () => {
                     <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Starter</h3>
                   </div>
                   <p className="text-xs text-slate-600 min-h-[38px] leading-relaxed">
-                    Student admissions, daily attendance, and fee tracking for individual tutors and growing centers.
+                    Coaching admin dashboard, dedicated teacher panel, and student app for growing institutes.
                   </p>
 
                   <div className="mt-6 mb-6">
@@ -405,6 +433,10 @@ export const PricingPage: React.FC = () => {
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
                       <span className="font-bold text-slate-900">Unlimited Students & Branches</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
+                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
+                      <span className="font-bold text-slate-900">Coaching Admin & Teacher Panels</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
@@ -470,7 +502,7 @@ export const PricingPage: React.FC = () => {
                     <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Growth</h3>
                   </div>
                   <p className="text-xs text-slate-600 min-h-[38px] leading-relaxed">
-                    Recorded lecture streaming, computer-based mock tests, and automated fee reminders.
+                    Role-based staff access, computer-based mock tests, lecture streaming, and WhatsApp reminders.
                   </p>
 
                   <div className="mt-6 mb-6">
@@ -500,6 +532,10 @@ export const PricingPage: React.FC = () => {
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
                       <span className="font-bold text-emerald-900">All Starter features included</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
+                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
+                      <span className="font-bold text-emerald-900">Role-Based Staff Access (Multi-Faculty)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
@@ -572,7 +608,7 @@ export const PricingPage: React.FC = () => {
                     <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Pro Solutions</h3>
                   </div>
                   <p className="text-xs text-slate-600 min-h-[38px] leading-relaxed">
-                    Your coaching Play Store app, biometric attendance sync, automated WhatsApp, and exam analytics.
+                    Your coaching Play Store app, custom domain, biometric attendance, teacher panel, and exam analytics.
                   </p>
 
                   <div className="mt-6 mb-6">
@@ -618,6 +654,10 @@ export const PricingPage: React.FC = () => {
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
                       <span>Biometric Machine Attendance Sync</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
+                      <span className="font-medium text-slate-900">Granular Staff Permissions (No Fee Leak)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />

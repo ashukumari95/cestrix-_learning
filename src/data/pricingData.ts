@@ -29,7 +29,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     name: 'Starter',
     badge: 'Starter Batch',
     badgeClass: 'bg-orange-50 text-orange-700 border border-orange-200 font-bold',
-    subtitle: 'Attendance, fee receipts, and student app for single tutors and growing coaching centers.',
+    subtitle: 'Coaching admin dashboard, dedicated teacher panel, and student app for growing institutes.',
     monthlyPrice: 999,
     annualPrice: 799,
     studentsCap: 'Unlimited Students',
@@ -48,6 +48,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     diffTag: 'Core Inclusions:',
     features: [
       'Unlimited Students & Branches',
+      'Coaching Admin & Teacher Panels',
       'In-App Coaching Branding (Logo & Name)',
       'Live Classes (Zoom/Meet Integration)',
       'Daily Attendance & QR ID Cards',
@@ -61,7 +62,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     name: 'Growth',
     badge: 'Growing Academies',
     badgeClass: 'bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold',
-    subtitle: 'Recorded lecture streaming, computer-based mock tests, and automated fee reminders.',
+    subtitle: 'Role-based staff access, computer-based mock tests, lecture streaming, and WhatsApp reminders.',
     monthlyPrice: 1999,
     annualPrice: 1499,
     studentsCap: 'Unlimited Students',
@@ -80,13 +81,13 @@ export const PRICING_PLANS: PricingPlan[] = [
     diffTag: 'Everything in Starter, plus:',
     features: [
       'All Starter features included',
+      'Role-Based Staff Access (Multi-Faculty)',
       'In-App Coaching Branding (Logo & Name)',
       '15 GB Storage (~150 hrs lectures)',
       'Anti-Piracy Protected Video Streaming',
       'CBT Online Exam Simulator',
       'Course Selling Storefront (0% cut)',
-      'Automated WhatsApp Fee Reminders',
-      'Installments & Automated Late Fines'
+      'Automated WhatsApp Fee Reminders'
     ]
   },
   {
@@ -94,7 +95,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     name: 'Pro',
     badge: 'Most Popular for Academies',
     badgeClass: 'bg-blue-50 text-[#002D62] border border-blue-200 font-black',
-    subtitle: 'Your coaching Play Store app, custom domain, biometric attendance, and exam analytics.',
+    subtitle: 'Your coaching Play Store app, custom domain, biometric attendance, teacher panel, and exam analytics.',
     monthlyPrice: 2999,
     annualPrice: 2399,
     studentsCap: 'Unlimited Students',
@@ -117,6 +118,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       'Connect Custom Domain (yourcoaching.com)',
       '35 GB Storage (~350 hrs lectures)',
       'Biometric Machine Attendance Sync',
+      'Granular Staff Permissions (No Fee Leak)',
       'Automated WhatsApp & App Push Alerts',
       'Student Error Notebook & Analytics',
       'AI Doubt Solver for Students',
