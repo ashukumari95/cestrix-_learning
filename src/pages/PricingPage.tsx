@@ -162,14 +162,6 @@ export const PricingPage: React.FC = () => {
           enterprise: '100 GB'
         },
         {
-          name: 'Video Streaming',
-          desc: 'Global CDN streaming and YouTube unlisted integration with zero bandwidth limits',
-          starter: 'Unlimited YouTube',
-          growth: '15 GB CDN + YouTube',
-          pro: '35 GB CDN + YouTube',
-          enterprise: '100 GB CDN + YouTube'
-        },
-        {
           name: 'Video Protection & Watermarks',
           desc: 'Screen recording blocker and dynamic student phone watermark overlay on video playback',
           starter: false,
@@ -389,7 +381,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>5 GB Storage + YouTube Streaming</span>
+                      <span>5 GB Storage</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
@@ -477,7 +469,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>15 GB Storage + 15 GB CDN</span>
+                      <span>15 GB Storage</span>
                     </div>
                   </div>
                 </div>
@@ -553,7 +545,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>35 GB Storage with Watermarks</span>
+                      <span>35 GB Storage</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
@@ -640,7 +632,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>100 GB Storage + CDN</span>
+                      <span>100 GB Storage</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />

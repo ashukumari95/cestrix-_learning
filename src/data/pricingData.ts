@@ -52,7 +52,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       'Student & Parent Mobile App',
       'Attendance & Printable QR ID Cards',
       'Online Practice Tests',
-      '5 GB Storage + YouTube Streaming',
+      '5 GB Storage',
       '0% Fee on Cash & Direct UPI'
     ]
   },
@@ -67,7 +67,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     studentsCap: 'Unlimited Students',
     branchesText: 'Unlimited Branches',
     storageText: '15 GB Storage',
-    bandwidthText: '15 GB CDN + YouTube',
+    bandwidthText: '15 GB Storage',
     whatsappText: 'Unlimited WhatsApp Alerts',
     commissionBadge: '2% Course Fee',
     commissionSub: '0% Fee on Cash & Direct UPI',
@@ -85,7 +85,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       'CBT Online Exam Simulator',
       'Automated WhatsApp Fee Reminders',
       'Anti-Piracy Video Protection',
-      '15 GB Storage + 15 GB CDN'
+      '15 GB Storage'
     ]
   },
   {
@@ -99,7 +99,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     studentsCap: 'Unlimited Students',
     branchesText: 'Unlimited Branches',
     storageText: '35 GB Storage',
-    bandwidthText: '35 GB CDN + YouTube',
+    bandwidthText: '35 GB Storage',
     whatsappText: 'Unlimited WhatsApp Alerts',
     commissionBadge: '1% Course Fee',
     commissionSub: '0% Fee on Cash & Direct UPI',
@@ -116,7 +116,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       'Biometric Machine Attendance Sync',
       'Automated WhatsApp Parent Alerts',
       'Student Error Notebook & Analytics',
-      '35 GB Storage with Watermarks',
+      '35 GB Storage',
       'Priority Dedicated Support'
     ]
   },
@@ -131,7 +131,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     studentsCap: 'Unlimited Students',
     branchesText: 'Unlimited Branches',
     storageText: '100 GB Storage',
-    bandwidthText: '100 GB CDN + YouTube',
+    bandwidthText: '100 GB Storage',
     whatsappText: 'Unlimited WhatsApp Alerts',
     commissionBadge: '0% Commission',
     commissionSub: 'Direct T+0 Bank Settlement',
@@ -146,7 +146,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       'Unlimited Students & Branches',
       'Your Coaching App on Google Play Store',
       'Custom Domain Website (yourcoaching.com)',
-      '100 GB Storage + CDN',
+      '100 GB Storage',
       '0% Commission on Course Sales',
       'Dedicated Account Manager',
       'Free Data Migration & Training'
