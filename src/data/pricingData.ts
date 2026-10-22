@@ -36,7 +36,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     branchesText: 'Unlimited Branches',
     storageText: '5 GB Cloud Storage',
     bandwidthText: 'YouTube DRM + Free Unlimited Streaming',
-    whatsappText: 'Unlimited via Web QR Gateway',
+    whatsappText: 'Unlimited WhatsApp Alerts',
     commissionBadge: '5% Digital Course Fee',
     commissionSub: '0% Platform Fee on Offline Cash & Direct UPI',
     isPopular: false,
@@ -68,7 +68,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     branchesText: 'Unlimited Branches',
     storageText: '15 GB Video Storage',
     bandwidthText: '15 GB CDN + YouTube DRM',
-    whatsappText: 'Unlimited Web QR + 500 Meta Cloud API',
+    whatsappText: 'Unlimited WhatsApp Alerts',
     commissionBadge: '2% Digital Course Fee',
     commissionSub: '0% Platform Fee on Offline Cash & Direct UPI',
     isPopular: false,
@@ -100,7 +100,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     branchesText: 'Unlimited Branches',
     storageText: '35 GB AWS Storage',
     bandwidthText: '35 GB CDN + YouTube DRM',
-    whatsappText: 'Unlimited Web QR + 1,000 Meta Cloud API',
+    whatsappText: 'Unlimited WhatsApp Alerts',
     commissionBadge: '1% Digital Course Fee',
     commissionSub: '0% Platform Fee on Offline Cash & Direct UPI',
     isPopular: true,
@@ -117,7 +117,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       'Automated WhatsApp Parent Alerts',
       'Student Error & Revision Notebook',
       '35 GB AWS Video Storage with Watermarks',
-      '1,000 Meta Cloud WhatsApp API Credits'
+      'Priority Dedicated Support'
     ]
   },
   {
@@ -132,7 +132,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     branchesText: 'Unlimited Branches',
     storageText: '100 GB AWS Storage',
     bandwidthText: '100 GB CDN + YouTube DRM',
-    whatsappText: 'Unlimited Web QR + 3,000 Meta Cloud API',
+    whatsappText: 'Unlimited WhatsApp Alerts',
     commissionBadge: '0% Commission (Keep 100%)',
     commissionSub: 'Direct T+0 Bank Account Settlement',
     isPopular: false,

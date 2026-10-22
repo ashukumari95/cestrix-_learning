@@ -62,11 +62,11 @@ export const PricingPage: React.FC = () => {
     },
     {
       feature: 'Automated WhatsApp attendance & fee notifications',
-      desc: 'Direct parent messaging for arrival pings, absent alerts, and fee due links',
-      starter: 'Free Web QR',
-      growth: '500 Meta + QR',
-      pro: '1,500 Meta + QR',
-      enterprise: '3,000 Meta + QR'
+      desc: 'Send real-time attendance alerts and fee due reminders to parents',
+      starter: true,
+      growth: true,
+      pro: true,
+      enterprise: true
     },
     {
       feature: 'Computer-Based Test (CBT) exam simulator',
@@ -334,7 +334,7 @@ export const PricingPage: React.FC = () => {
     },
     {
       q: 'Are there extra charges for WhatsApp notifications?',
-      a: 'No hidden charges. You can connect your institute’s WhatsApp number via our free Web QR gateway to send unlimited messages. Growth, Pro, and Enterprise tiers also include monthly Meta Cloud API credits for automated background alerts.'
+      a: 'No hidden charges. Automated WhatsApp alerts for attendance, fee reminders, and announcements are included across all plans with zero per-message charges from Cestrix.'
     },
     {
       q: 'Is our student and financial data secure?',
@@ -634,7 +634,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>1,000 Meta WhatsApp API Credits</span>
+                      <span>Priority Technical Support</span>
                     </div>
                   </div>
                 </div>
