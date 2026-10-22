@@ -108,20 +108,20 @@ export const PricingPage: React.FC = () => {
       icon: DollarSign,
       items: [
         {
-          name: 'Offline Fee Commission',
-          desc: 'Zero platform commission on tuition fees collected at your desk, via cash or direct UPI',
+          name: 'Platform Commission',
+          desc: 'Zero platform commission on courses and tuition fees; 100% of your earnings go to your bank',
           starter: '0%',
           growth: '0%',
           pro: '0%',
           enterprise: '0%'
         },
         {
-          name: 'Course Sales Platform Fee',
-          desc: 'Transaction fee applied exclusively to digital video courses sold through the app',
-          starter: '5%',
-          growth: '2%',
-          pro: '1%',
-          enterprise: '0%'
+          name: 'Online Payment Gateway',
+          desc: '0% on Direct UPI. Standard bank MDR (~1.9%) on cards/netbanking settled directly to your account',
+          starter: 'Direct UPI + PG',
+          growth: 'Direct UPI + PG',
+          pro: 'Direct UPI + PG',
+          enterprise: 'Custom Own PG'
         },
         {
           name: 'Installments & Late Fine',
@@ -243,6 +243,10 @@ export const PricingPage: React.FC = () => {
 
   // Frequently Asked Questions
   const faqs = [
+    {
+      q: 'Does Cestrix charge any commission on student fees or course sales?',
+      a: 'Zero percent. Cestrix charges 0% platform commission across all plans. Tuition fees collected via direct UPI or desk cash have zero charges. For online debit/credit card payments via gateway, standard bank MDR (~1.9%) applies and settles 100% directly into your registered bank account.'
+    },
     {
       q: 'Are students and campus branches really unlimited?',
       a: 'Yes! All Cestrix plans include unlimited students and unlimited campus branches. You can enroll as many students and manage as many branch centers as you need without extra per-student or per-branch charges.'
@@ -388,7 +392,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>0% Fee on Cash & Direct UPI</span>
+                      <span>0% Platform Commission</span>
                     </div>
                   </div>
                 </div>
@@ -479,7 +483,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Lower 2% Course Platform Fee</span>
+                      <span>Installments & Automated Late Fines</span>
                     </div>
                   </div>
                 </div>
@@ -660,7 +664,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>0% Platform Commission on Courses</span>
+                      <span>Custom Payment Gateway (Own Account)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />

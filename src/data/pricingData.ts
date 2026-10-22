@@ -37,8 +37,8 @@ export const PRICING_PLANS: PricingPlan[] = [
     storageText: '5 GB Storage',
     bandwidthText: 'Free YouTube Streaming',
     whatsappText: 'Unlimited WhatsApp Alerts',
-    commissionBadge: '5% Course Fee',
-    commissionSub: '0% Fee on Cash & Direct UPI',
+    commissionBadge: '0% Commission',
+    commissionSub: 'Direct UPI & Bank Settlement',
     isPopular: false,
     isEnterprise: false,
     cardBorder: 'border-[#FCE7DC] hover:border-orange-300 bg-[#FFF8F3] shadow-sm',
@@ -52,7 +52,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       'Attendance & Printable QR ID Cards',
       'Online Practice Tests',
       '5 GB Cloud Storage',
-      '0% Fee on Cash & Direct UPI'
+      '0% Platform Commission'
     ]
   },
   {
@@ -68,8 +68,8 @@ export const PRICING_PLANS: PricingPlan[] = [
     storageText: '15 GB Storage',
     bandwidthText: '15 GB Storage',
     whatsappText: 'Unlimited WhatsApp Alerts',
-    commissionBadge: '2% Course Fee',
-    commissionSub: '0% Fee on Cash & Direct UPI',
+    commissionBadge: '0% Commission',
+    commissionSub: 'Direct UPI & Bank Settlement',
     isPopular: false,
     isEnterprise: false,
     cardBorder: 'border-emerald-200/80 hover:border-emerald-300 bg-[#F0FAF4] shadow-sm',
@@ -84,7 +84,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       'Anti-Piracy Video Protection (Watermarks)',
       'CBT Online Exam Simulator',
       'Automated WhatsApp Fee Reminders',
-      'Lower 2% Course Platform Fee'
+      'Installments & Automated Late Fines'
     ]
   },
   {
@@ -100,8 +100,8 @@ export const PRICING_PLANS: PricingPlan[] = [
     storageText: '35 GB Storage',
     bandwidthText: '35 GB Storage',
     whatsappText: 'Unlimited WhatsApp Alerts',
-    commissionBadge: '1% Course Fee',
-    commissionSub: '0% Fee on Cash & Direct UPI',
+    commissionBadge: '0% Commission',
+    commissionSub: 'Direct UPI & Bank Settlement',
     isPopular: true,
     isEnterprise: false,
     cardBorder: 'border-blue-200/80 hover:border-blue-300 bg-[#F1F6FE] shadow-sm',
@@ -146,7 +146,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       '100 GB Cloud Storage',
       'Your Coaching App on Google Play Store',
       'Custom Domain Website (yourcoaching.com)',
-      '0% Platform Commission on Courses',
+      'Custom Payment Gateway (Own Account)',
       'Multi-Campus Franchise Admin Control',
       'Dedicated Account Manager & Training'
     ]
