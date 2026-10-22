@@ -40,6 +40,14 @@ export const PricingPage: React.FC = () => {
           enterprise: true
         },
         {
+          name: 'Walk-In Inquiry & Lead CRM',
+          desc: 'Track offline walk-in student inquiries, follow-up callbacks, and admission pipeline',
+          starter: true,
+          growth: true,
+          pro: true,
+          enterprise: true
+        },
+        {
           name: 'Attendance & QR ID Cards',
           desc: 'Daily attendance tracking, faculty app check-in, and printable student ID cards',
           starter: true,
@@ -87,11 +95,19 @@ export const PricingPage: React.FC = () => {
         },
         {
           name: 'Mobile App',
-          desc: 'Access recorded lectures, mock tests, attendance logs, and fee receipts on mobile',
-          starter: 'Cestrix App',
-          growth: 'Cestrix App',
-          pro: 'Cestrix App',
-          enterprise: 'Your Coaching App'
+          desc: 'Your coaching name, logo & theme inside student app (Dedicated Play Store APK on Enterprise)',
+          starter: 'Coaching Branded App',
+          growth: 'Coaching Branded App',
+          pro: 'Coaching Branded App',
+          enterprise: 'Dedicated Play Store App'
+        },
+        {
+          name: 'Course Selling Storefront',
+          desc: 'Sell recorded batches, study notes, and test series online with instant payment',
+          starter: true,
+          growth: true,
+          pro: true,
+          enterprise: true
         },
         {
           name: 'WhatsApp Alerts',
@@ -154,12 +170,20 @@ export const PricingPage: React.FC = () => {
       icon: Video,
       items: [
         {
-          name: 'Storage',
+          name: 'Live Interactive Classes',
+          desc: 'Seamless Zoom & Google Meet integration with zero per-hour overages or cuts',
+          starter: true,
+          growth: true,
+          pro: true,
+          enterprise: true
+        },
+        {
+          name: 'Storage (Lectures & Notes)',
           desc: 'Encrypted cloud storage for recorded lectures, assignments, and curriculum notes',
-          starter: '5 GB',
-          growth: '15 GB',
-          pro: '35 GB',
-          enterprise: '100 GB'
+          starter: '5 GB (~50 hrs)',
+          growth: '15 GB (~150 hrs)',
+          pro: '35 GB (~350 hrs)',
+          enterprise: '100 GB (~1,000+ hrs)'
         },
         {
           name: 'Video Protection & Watermarks',
@@ -252,8 +276,16 @@ export const PricingPage: React.FC = () => {
       a: 'Yes! All Cestrix plans include unlimited students and unlimited campus branches. You can enroll as many students and manage as many branch centers as you need without extra per-student or per-branch charges.'
     },
     {
-      q: 'How does video storage and lecture streaming work?',
-      a: 'Each plan includes dedicated AWS cloud storage (from 5 GB on Starter to 100 GB on Enterprise) for direct video uploads. You also get free, unlimited streaming by embedding unlisted YouTube videos with zero ads and complete privacy.'
+      q: 'Can we conduct Live Interactive Classes on Cestrix?',
+      a: 'Yes! Cestrix integrates directly with Zoom and Google Meet across all plans. Teachers can schedule and launch live interactive classes with one tap from the teacher app or web portal. Students join directly inside their student app without needing external links, and Cestrix charges zero extra per-hour fees.'
+    },
+    {
+      q: 'How does Coaching App Branding work across Starter, Growth, Pro, and Enterprise?',
+      a: 'On Starter, Growth, and Pro plans, your students use the mobile app with your institute’s own name, logo, banner, and theme visible throughout their learning experience. On the Enterprise plan, we publish a dedicated, standalone mobile app with your own exclusive APK name directly on the Google Play Store under your coaching developer account.'
+    },
+    {
+      q: 'How much video can we upload with 5 GB, 15 GB, 35 GB, and 100 GB storage?',
+      a: '5 GB holds ~50 hours of HD lectures, 15 GB holds ~150 hours, 35 GB holds ~350 hours, and 100 GB holds ~1,000+ hours. In addition, you get unlimited free streaming by embedding unlisted YouTube videos directly into batches without consuming your plan’s private cloud storage.'
     },
     {
       q: 'Are there extra charges for WhatsApp notifications?',
@@ -376,7 +408,15 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Student & Parent Mobile App</span>
+                      <span>Coaching Branded Mobile App</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
+                      <span>Live Classes (Zoom & Meet Sync)</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
+                      <span>Walk-In Inquiry & Lead CRM</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
@@ -384,11 +424,11 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Online Practice Tests</span>
+                      <span>Online Practice Tests & Course Store</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>5 GB Cloud Storage</span>
+                      <span>5 GB Storage (~50 hrs lectures)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
@@ -463,19 +503,19 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>15 GB Cloud Storage (3x Space)</span>
+                      <span>15 GB Storage (~150 hrs lectures)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Recorded Video Lecture Streaming</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Anti-Piracy Video Protection (Watermarks)</span>
+                      <span>Anti-Piracy Protected Video Streaming</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
                       <span>CBT Online Exam Simulator</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
+                      <span>Course Selling Storefront (0% cut)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
@@ -554,7 +594,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>35 GB Cloud Storage (7x Space)</span>
+                      <span>35 GB Storage (~350 hrs lectures)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
@@ -652,11 +692,11 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>100 GB Cloud Storage (Highest Capacity)</span>
+                      <span>100 GB Storage (~1,000+ hrs lectures)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Your Coaching App on Google Play Store</span>
+                      <span>Dedicated App on Google Play Store</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
