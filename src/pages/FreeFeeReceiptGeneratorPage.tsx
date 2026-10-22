@@ -188,7 +188,7 @@ export const FreeFeeReceiptGeneratorPage: React.FC = () => {
               to="/book-demo?source=receipt-tool-top-pill"
               className="text-emerald-400 hover:text-emerald-300 font-bold underline ml-1"
             >
-              Start 7-Day Free Trial →
+              Try It Free →
             </Link>
           </div>
         </div>
@@ -585,7 +585,7 @@ export const FreeFeeReceiptGeneratorPage: React.FC = () => {
                   to="/book-demo?source=fee-receipt-tool-cta"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs sm:text-sm shadow-md transition-colors"
                 >
-                  <span>Start 7-Day Free Trial (₹999/mo)</span>
+                  <span>Try It Free (₹999/mo)</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link

@@ -1279,7 +1279,7 @@ export const PricingPage: React.FC = () => {
               Ready to upgrade your coaching institute?
             </h2>
             <p className="mt-4 text-sm sm:text-base text-blue-100/90 leading-relaxed max-w-xl mx-auto">
-              Start your 7-day free trial today. Unlimited students, unlimited branches, and all the tools you need to grow your academy.
+              Try it free today. Unlimited students, unlimited branches, and all the tools you need to grow your academy.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -1287,7 +1287,7 @@ export const PricingPage: React.FC = () => {
                 to="/book-demo?plan=pro"
                 className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-[#0F172A] font-extrabold text-sm shadow-lg transition-all flex items-center justify-center gap-2"
               >
-                <span>Start 7-Day Free Trial</span>
+                <span>Try It Free</span>
                 <ArrowRight size={16} />
               </Link>
               <Link
