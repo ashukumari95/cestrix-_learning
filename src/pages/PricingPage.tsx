@@ -21,108 +21,108 @@ export const PricingPage: React.FC = () => {
   // Formstack-Style "I need to..." Core Comparison Rows
   const coreFeatureRows = [
     {
-      feature: 'Enroll unlimited students with 0% per-student fees',
-      desc: 'No student caps or per-seat penalties; grow freely without surprise costs',
+      feature: 'Unlimited Students',
+      desc: 'No student caps or per-seat fees',
       starter: true,
       growth: true,
       pro: true,
       enterprise: true
     },
     {
-      feature: 'Manage unlimited campus branches & centers',
-      desc: 'Connect all your branch locations and classrooms under one admin dashboard',
+      feature: 'Unlimited Branches',
+      desc: 'Manage all branches from one unified dashboard',
       starter: true,
       growth: true,
       pro: true,
       enterprise: true
     },
     {
-      feature: 'Branded coaching website storefront',
-      desc: 'Modern landing page with course listings and online admission inquiry forms',
+      feature: 'Website & Domain',
+      desc: 'Course listings and admission inquiry forms',
       starter: 'yourname.cestrix.com',
       growth: 'yourname.cestrix.com',
       pro: 'yourname.cestrix.com',
       enterprise: 'yourcoaching.com'
     },
     {
-      feature: 'Student & parent mobile application',
-      desc: 'Access video lectures, test results, attendance logs, and fee receipts on mobile',
+      feature: 'Mobile App',
+      desc: 'Lectures, tests, attendance, and fee receipts on mobile',
       starter: 'Cestrix App',
       growth: 'Cestrix App',
       pro: 'Cestrix App',
       enterprise: 'Your Coaching App'
     },
     {
-      feature: 'Daily attendance & printable QR photo ID cards',
-      desc: 'Instant QR code ID card generation for entry gates and turnstile tracking',
+      feature: 'Attendance & QR ID Cards',
+      desc: 'Daily attendance tracking and printable student ID cards',
       starter: true,
       growth: true,
       pro: true,
       enterprise: true
     },
     {
-      feature: 'Automated WhatsApp attendance & fee notifications',
-      desc: 'Send real-time attendance alerts and fee due reminders to parents',
+      feature: 'WhatsApp Alerts',
+      desc: 'Attendance alerts and fee due reminders to parents',
       starter: true,
       growth: true,
       pro: true,
       enterprise: true
     },
     {
-      feature: 'Computer-Based Test (CBT) exam simulator',
-      desc: 'Practice and mock exams with timers, question palettes, and negative marking',
+      feature: 'CBT Mock Tests',
+      desc: 'Online exams with timer, question palette, and negative marking',
       starter: false,
       growth: true,
       pro: true,
       enterprise: true
     },
     {
-      feature: 'Anti-piracy screen recording blocker & watermarks',
-      desc: 'Dynamic moving phone watermark and screen grab protection on video playback',
+      feature: 'Video Protection & Watermarks',
+      desc: 'Screen recording blocker and student phone watermark on videos',
       starter: false,
       growth: true,
       pro: true,
       enterprise: true
     },
     {
-      feature: 'Dedicated AWS Cloud video storage',
-      desc: 'High-speed encrypted lecture storage in addition to unlimited YouTube DRM',
-      starter: '5 GB Storage',
-      growth: '15 GB Storage',
-      pro: '35 GB Storage',
-      enterprise: '100 GB Storage'
+      feature: 'Storage',
+      desc: 'Encrypted storage for recorded lectures and study notes',
+      starter: '5 GB',
+      growth: '15 GB',
+      pro: '35 GB',
+      enterprise: '100 GB'
     },
     {
-      feature: 'Real-time Biometric machine cloud API sync',
-      desc: 'Instant hardware integration with ESS, eSSL & ZKTeco fingerprint/face scanners',
+      feature: 'Biometric Attendance Sync',
+      desc: 'Direct sync with fingerprint and face scanner machines',
       starter: false,
       growth: false,
       pro: true,
       enterprise: true
     },
     {
-      feature: 'Offline fee collection commission rate',
-      desc: 'Take-rate on counter cash, offline cheques, and direct academy UPI payments',
-      starter: '0% (Keep 100%)',
-      growth: '0% (Keep 100%)',
-      pro: '0% (Keep 100%)',
-      enterprise: '0% (Keep 100%)'
+      feature: 'Offline Fee Commission',
+      desc: 'Platform fee on counter cash, offline cheques, and direct UPI',
+      starter: '0%',
+      growth: '0%',
+      pro: '0%',
+      enterprise: '0%'
     },
     {
-      feature: '24/7 AI Mathematics & doubt solver (Gemini AI)',
-      desc: 'Enrolled students photo-snap difficult questions for step-by-step guidance',
+      feature: 'AI Doubt Solver',
+      desc: 'Students photo-snap difficult questions for step-by-step guidance',
       starter: false,
       growth: false,
       pro: true,
       enterprise: true
     },
     {
-      feature: 'Done-for-you data migration & staff training',
-      desc: 'Historical Excel student ledger upload & live 1-on-1 Zoom onboarding sessions',
-      starter: 'Self-Service Wizard',
-      growth: '1-on-1 Zoom Session',
-      pro: 'Unlimited Live Training',
-      enterprise: 'VIP Account Director'
+      feature: 'Data Migration & Training',
+      desc: 'Excel student ledger upload and onboarding assistance',
+      starter: 'Self-Service',
+      growth: '1-on-1 Session',
+      pro: 'Live Training',
+      enterprise: 'Dedicated Manager'
     }
   ]
 
@@ -151,10 +151,10 @@ export const PricingPage: React.FC = () => {
         {
           name: 'Admission Rush Overage Protection',
           desc: 'System resilience during peak intake seasons: software never locks or disrupts operations',
-          starter: 'Free (Zero Lockout)',
-          growth: 'Free (Zero Lockout)',
-          pro: 'Free (Zero Lockout)',
-          enterprise: 'Free (Zero Lockout)'
+          starter: true,
+          growth: true,
+          pro: true,
+          enterprise: true
         },
         {
           name: 'Biometric Machine Hardware Cloud Sync',
@@ -175,10 +175,10 @@ export const PricingPage: React.FC = () => {
         {
           name: 'Archived Student & Alumni Records',
           desc: 'Retain historical student fee receipts, academic marks, and certificates at zero incremental cost',
-          starter: 'Free Forever',
-          growth: 'Free Forever',
-          pro: 'Free Forever',
-          enterprise: 'Free Forever'
+          starter: true,
+          growth: true,
+          pro: true,
+          enterprise: true
         },
         {
           name: 'Multi-Batch Scheduling & Classroom Mapping',
@@ -195,20 +195,20 @@ export const PricingPage: React.FC = () => {
       icon: DollarSign,
       items: [
         {
-          name: 'Offline Cash & Direct UPI Take-Rate',
+          name: 'Offline Fee Commission',
           desc: 'Zero platform commission on tuition fees collected at your desk, via cheque, or through direct bank transfers',
-          starter: '0% (Always Free)',
-          growth: '0% (Always Free)',
-          pro: '0% (Always Free)',
-          enterprise: '0% (Always Free)'
+          starter: '0%',
+          growth: '0%',
+          pro: '0%',
+          enterprise: '0%'
         },
         {
-          name: 'Digital Course Sales Platform Fee',
+          name: 'Course Sales Platform Fee',
           desc: 'Transaction fee applied exclusively to self-service digital video courses sold through the app gateway',
           starter: '5%',
           growth: '2%',
-          pro: '1% (Near-Zero)',
-          enterprise: '0% (Keep 100%)'
+          pro: '1%',
+          enterprise: '0%'
         },
         {
           name: 'Installment Schedules & Late Fine Automation',
@@ -241,20 +241,20 @@ export const PricingPage: React.FC = () => {
       icon: Video,
       items: [
         {
-          name: 'High-Performance Cloud Storage',
-          desc: 'Encrypted AWS S3 cloud storage for recorded lectures, assignments, and curriculum materials',
-          starter: '5 GB Storage',
-          growth: '15 GB Storage',
-          pro: '35 GB Storage',
-          enterprise: '100 GB Storage'
+          name: 'Storage',
+          desc: 'Encrypted cloud storage for recorded lectures, assignments, and curriculum materials',
+          starter: '5 GB',
+          growth: '15 GB',
+          pro: '35 GB',
+          enterprise: '100 GB'
         },
         {
-          name: 'Video Watch-Time & Streaming Bandwidth',
-          desc: 'Global CDN streaming + YouTube Unlisted DRM zero-bandwidth integration (unlimited free HD playback)',
-          starter: 'YouTube DRM (Unlimited)',
-          growth: '15 GB CDN + YouTube DRM',
-          pro: '35 GB CDN + YouTube DRM',
-          enterprise: '100 GB CDN + YouTube DRM'
+          name: 'Video Streaming',
+          desc: 'CDN streaming and YouTube unlisted integration with zero bandwidth limits',
+          starter: 'Unlimited YouTube',
+          growth: '15 GB CDN + YouTube',
+          pro: '35 GB CDN + YouTube',
+          enterprise: '100 GB CDN + YouTube'
         },
         {
           name: 'Anti-Piracy Screen Recording Blocker',
@@ -442,11 +442,11 @@ export const PricingPage: React.FC = () => {
                   <div className="space-y-3.5 mb-8">
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-slate-900">Unlimited Students & Admissions</span>
+                      <span className="font-bold text-slate-900">Unlimited Students</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Unlimited Campus Branches</span>
+                      <span>Unlimited Branches</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
@@ -454,15 +454,15 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Daily Attendance & QR ID Cards</span>
+                      <span>Attendance & QR ID Cards</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Online Quizzes & Practice Tests</span>
+                      <span>Online Practice Tests</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>5 GB Cloud Storage + Free YouTube DRM</span>
+                      <span>5 GB Storage + YouTube Streaming</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
@@ -526,15 +526,15 @@ export const PricingPage: React.FC = () => {
                   <div className="space-y-3.5 mb-8">
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-slate-900">Unlimited Students & Admissions</span>
+                      <span className="font-bold text-slate-900">Unlimited Students</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Unlimited Campus Branches</span>
+                      <span>Unlimited Branches</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Encrypted Video Lecture Streaming</span>
+                      <span>Video Lecture Streaming</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
@@ -546,11 +546,11 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Anti-Piracy Screen Recording Protection</span>
+                      <span>Anti-Piracy Video Protection</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>15 GB Cloud Storage + 15 GB CDN</span>
+                      <span>15 GB Storage + 15 GB CDN</span>
                     </div>
                   </div>
                 </div>
@@ -610,15 +610,15 @@ export const PricingPage: React.FC = () => {
                   <div className="space-y-3.5 mb-8">
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-slate-900">Unlimited Students & Admissions</span>
+                      <span className="font-bold text-slate-900">Unlimited Students</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Unlimited Campus Branches</span>
+                      <span>Unlimited Branches</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Biometric Machine Cloud Sync</span>
+                      <span>Biometric Attendance Sync</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
@@ -626,7 +626,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>35 GB Cloud Storage with Watermarks</span>
+                      <span>35 GB Storage with Watermarks</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
@@ -634,7 +634,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Priority Technical Support</span>
+                      <span>Priority Dedicated Support</span>
                     </div>
                   </div>
                 </div>
@@ -709,23 +709,23 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Custom Domain (yourcoaching.com) + SSL</span>
+                      <span>Custom Domain (yourcoaching.com)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>100 GB Encrypted AWS Storage + CDN</span>
+                      <span>100 GB Storage + CDN</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>0% Platform Commission on Courses</span>
+                      <span>0% Commission on Courses</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Dedicated Customer Success Manager</span>
+                      <span>Dedicated Account Manager</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Free Data Migration & Staff Training</span>
+                      <span>Free Data Migration & Training</span>
                     </div>
                   </div>
                 </div>
