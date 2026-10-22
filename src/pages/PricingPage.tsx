@@ -90,8 +90,8 @@ export const PricingPage: React.FC = () => {
           desc: 'Branded public portal with course listings and online admission inquiry forms',
           starter: 'yourname.cestrix.com',
           growth: 'yourname.cestrix.com',
-          pro: 'yourname.cestrix.com',
-          enterprise: 'yourcoaching.com'
+          pro: 'yourcoaching.com',
+          enterprise: 'yourcoaching.com (Domain Included)'
         },
         {
           name: 'Mobile App',
@@ -110,8 +110,8 @@ export const PricingPage: React.FC = () => {
           enterprise: true
         },
         {
-          name: 'WhatsApp Alerts',
-          desc: 'Automated real-time attendance alerts and fee due reminders to parents',
+          name: 'App Push & WhatsApp Alerts',
+          desc: 'Automated real-time attendance alerts and fee due reminders to parents via App & WhatsApp',
           starter: true,
           growth: true,
           pro: true,
@@ -609,6 +609,10 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
+                      <span>Connect Custom Domain (yourcoaching.com)</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
                       <span>35 GB Storage (~350 hrs lectures)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
@@ -617,7 +621,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Automated WhatsApp Parent Alerts</span>
+                      <span>Automated WhatsApp & App Alerts</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
                       <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
@@ -707,7 +711,7 @@ export const PricingPage: React.FC = () => {
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Custom Domain Website (yourcoaching.com)</span>
+                      <span>Free Custom Domain Included (.com / .in)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
