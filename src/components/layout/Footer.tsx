@@ -146,6 +146,11 @@ export const Footer: React.FC = () => {
                   Live Product Walkthrough
                 </Link>
               </li>
+              <li>
+                <Link to="/compare" className="hover:text-white transition-colors text-slate-300">
+                  Platform Alternatives (Why Cestrix)
+                </Link>
+              </li>
             </ul>
           </div>
 

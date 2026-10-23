@@ -21,6 +21,7 @@ import { FreeFeeReceiptGeneratorPage } from './pages/FreeFeeReceiptGeneratorPage
 import { AiCoachingGrowthPage } from './pages/AiCoachingGrowthPage'
 import { BlogIndexPage } from './pages/BlogIndexPage'
 import { BlogPostPage } from './pages/BlogPostPage'
+import { ComparePage } from './pages/ComparePage'
 
 // Automatically scroll to top on route navigation
 const ScrollToTop = () => {
@@ -54,6 +55,7 @@ export function App() {
             <Route path="/admin/leads" element={<LeadsAdminPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
+            <Route path="/compare" element={<ComparePage />} />
 
             {/* Free Lead Magnet Micro-Tools */}
             <Route path="/free-fee-receipt-generator" element={<FreeFeeReceiptGeneratorPage />} />
