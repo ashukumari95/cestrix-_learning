@@ -1,205 +1,71 @@
 import React, { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { 
-  Search, ShieldCheck, CheckCircle2, XCircle, ArrowRight, 
+  Search, ShieldCheck, CheckCircle2, ArrowRight, 
   Sparkles, Smartphone, Fingerprint, Receipt, Video, 
-  Award, Building2, ChevronRight, X, PhoneCall, Check,
-  Layers, Users, Lock, HelpCircle
+  Award, Building2, ChevronRight, X, Users, Lock, 
+  HelpCircle, FileText, Layers, Quote, Check, Info
 } from 'lucide-react'
 import { SchemaMarkup } from '../components/seo/SchemaMarkup'
-
-interface ComparisonItem {
-  id: string
-  category: string
-  cestrixModule: string
-  moduleDesc: string
-  icon: React.ElementType
-  competitors: {
-    name: string
-    logoText?: string
-    badgeClass?: string
-  }[]
-  featureMatrix: {
-    feature: string
-    cestrix: string | boolean
-    rivals: string | boolean
-    importance: string
-  }[]
-  summary: string
-}
+import { 
+  COMPARE_CATEGORIES, 
+  COMPARISON_MODULES, 
+  POPULAR_MATCHUPS, 
+  WHAT_SETS_US_APART,
+  type ComparisonModule
+} from '../data/compareData'
 
 export const ComparePage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all')
   const [searchQuery, setSearchQuery] = useState<string>('')
-  const [activeTab, setActiveTab] = useState<'popular' | 'all' | 'apart'>('all')
-  const [selectedModalItem, setSelectedModalItem] = useState<ComparisonItem | null>(null)
+  const [selectedModalItem, setSelectedModalItem] = useState<ComparisonModule | null>(null)
 
-  // Categories aligned with coaching institute operations
-  const categories = [
-    { id: 'all', label: 'All Categories' },
-    { id: 'mobile-lms', label: 'Mobile Apps & LMS' },
-    { id: 'erp-attendance', label: 'ERP & Biometric Attendance' },
-    { id: 'fee-commission', label: 'Fee Collection & Ledgers' },
-    { id: 'cbt-testing', label: 'NTA CBT & Exam Engine' },
-    { id: 'growth-ai', label: 'AI Doubt Solver & Comms' }
-  ]
-
-  // Structured directory of modules matching Zoho's clean architecture
-  const comparisons: ComparisonItem[] = [
-    // 1. Mobile Apps & LMS
-    {
-      id: 'branded-app',
-      category: 'mobile-lms',
-      cestrixModule: 'Branded Play Store App',
-      moduleDesc: 'Your academy’s own standalone mobile app published under your developer account with custom splash, logo, and colors.',
-      icon: Smartphone,
-      competitors: [
-        { name: 'Classplus', badgeClass: 'bg-red-50 text-red-700 border-red-200' },
-        { name: 'Teachmint', badgeClass: 'bg-blue-50 text-blue-700 border-blue-200' },
-        { name: 'Appx', badgeClass: 'bg-purple-50 text-purple-700 border-purple-200' }
-      ],
-      summary: 'While competitors publish apps under shared aggregator accounts and retain student control, Cestrix delivers your standalone app with 100% brand equity and 0% commission.',
-      featureMatrix: [
-        { feature: 'Google Play Store Account', cestrix: 'Your Own Developer Console', rivals: 'Shared Aggregator Account', importance: 'Builds permanent institutional valuation' },
-        { feature: 'Commission on Digital Sales', cestrix: '0% (Always Flat SaaS)', rivals: '5% to 15% Revenue Share', importance: 'Save ₹50,000+ monthly in platform cuts' },
-        { feature: 'In-App Video DRM Protection', cestrix: 'Encrypted Offline Downloads', rivals: 'Basic Screen Recording Block', importance: 'Blocks unauthorized screen piracy' },
-        { feature: 'Student Database Portability', cestrix: '1-Click Instant Excel Export', rivals: 'Locked & Vendor Restricted', importance: 'Your student data is 100% yours' }
-      ]
-    },
-    {
-      id: 'video-lms',
-      category: 'mobile-lms',
-      cestrixModule: 'Encrypted Video Lecture LMS',
-      moduleDesc: 'Secure cloud hosting for recorded classroom lectures, chapterwise study materials, and dynamic student watermarks.',
-      icon: Video,
-      competitors: [
-        { name: 'Graphy', badgeClass: 'bg-orange-50 text-orange-700 border-orange-200' },
-        { name: 'Teachable', badgeClass: 'bg-slate-100 text-slate-700 border-slate-200' },
-        { name: 'Thinkific', badgeClass: 'bg-sky-50 text-sky-700 border-sky-200' }
-      ],
-      summary: 'Western and creator tools charge heavy USD monthly fees plus per-user limits. Cestrix is built for Indian academies with generous storage and INR flat pricing.',
-      featureMatrix: [
-        { feature: 'Pricing Currency', cestrix: 'Flat INR (Starts at ₹999/mo)', rivals: 'USD ($99 to $499/mo)', importance: 'No fluctuating dollar charges' },
-        { feature: 'Dynamic Phone Watermark', cestrix: 'Moving Student Phone & Name', rivals: 'Static or Add-on', importance: 'Deters camera piracy' },
-        { feature: 'Zoom & Google Meet Sync', cestrix: 'Included (0 Extra Per-Hour Fees)', rivals: 'Tier-Restricted', importance: 'Direct live interactive lectures' }
-      ]
-    },
-
-    // 2. ERP & Biometric Attendance
-    {
-      id: 'biometric-attendance',
-      category: 'erp-attendance',
-      cestrixModule: 'Physical Biometric Machine Sync',
-      moduleDesc: 'Real-time hardware integration with eSSL, Matrix, and ZKTeco fingerprint and facial recognition turnstiles.',
-      icon: Fingerprint,
-      competitors: [
-        { name: 'Classplus', badgeClass: 'bg-red-50 text-red-700 border-red-200' },
-        { name: 'Teachmint', badgeClass: 'bg-blue-50 text-blue-700 border-blue-200' },
-        { name: 'Winuall', badgeClass: 'bg-amber-50 text-amber-700 border-amber-200' }
-      ],
-      summary: 'Pure online app builders lack physical campus hardware connections. Cestrix connects your physical center gates directly to real-time parent WhatsApp alerts.',
-      featureMatrix: [
-        { feature: 'Hardware LAN / Cloud API Sync', cestrix: 'eSSL, Matrix, Realtime, ZKTeco', rivals: 'Not Supported (App-Only)', importance: 'Automatic attendance without teacher manual calling' },
-        { feature: 'Instant Parent WhatsApp Alert', cestrix: 'Triggered upon biometric punch', rivals: 'Manual Push / Absent', importance: 'Guarantees student safety & parent trust' },
-        { feature: 'QR Student ID Card Generator', cestrix: 'Built-in Printable Generator', rivals: 'Third-party Software Required', importance: 'Instant barcode/QR check-in' }
-      ]
-    },
-    {
-      id: 'multi-branch-erp',
-      category: 'erp-attendance',
-      cestrixModule: 'Multi-Branch Headquarters ERP',
-      moduleDesc: 'Unified management console for institutes operating multiple physical branch locations and franchise centers.',
-      icon: Building2,
-      competitors: [
-        { name: 'Fedena', badgeClass: 'bg-indigo-50 text-indigo-700 border-indigo-200' },
-        { name: 'Vidyalaya', badgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
-        { name: 'Proctur', badgeClass: 'bg-slate-100 text-slate-700 border-slate-200' }
-      ],
-      summary: 'Legacy school ERPs are bulky, slow, and designed for school buses. Cestrix is modern, fast, and purpose-built for competitive coaching networks.',
-      featureMatrix: [
-        { feature: 'Unlimited Branch Campuses', cestrix: 'Included across all plans', rivals: 'Heavily surcharged per campus', importance: 'Scale your institute without license penalties' },
-        { feature: 'Role-Based Financial Privacy', cestrix: 'Accountant, Faculty & Branch Admin', rivals: 'Rigid Legacy Hierarchy', importance: 'Keep fee collections completely confidential' },
-        { feature: 'UI Speed & Modern Dashboard', cestrix: 'Instant SPA (Sub-second load)', rivals: 'Outdated 2010s slow portals', importance: 'Staff adopts it without weeks of training' }
-      ]
-    },
-
-    // 3. Fee Collection & Ledgers
-    {
-      id: 'fee-ledger',
-      category: 'fee-commission',
-      cestrixModule: 'Fee Ledgers & 0% Commission',
-      moduleDesc: 'Audit-ready, GST-compliant tuition fee receipt generator with installment tracking and direct bank settlement.',
-      icon: Receipt,
-      competitors: [
-        { name: 'Classplus', badgeClass: 'bg-red-50 text-red-700 border-red-200' },
-        { name: 'Teachmint', badgeClass: 'bg-blue-50 text-blue-700 border-blue-200' },
-        { name: 'Learnyst', badgeClass: 'bg-teal-50 text-teal-700 border-teal-200' }
-      ],
-      summary: 'Competitors hold your fee collections in escrow or deduct 5% to 15% platform cuts. Cestrix charges 0% commission on offline cash, UPI, and direct bank settlement.',
-      featureMatrix: [
-        { feature: 'Offline Cash & Direct UPI Tuition', cestrix: '0% Platform Commission', rivals: 'Tracked with gateway cuts', importance: 'Retain 100% of your coaching earnings' },
-        { feature: 'Automated WhatsApp Fee Reminders', cestrix: '1-Click Direct UPI Payment Links', rivals: 'Manual Calling / SMS Add-ons', importance: 'Recover up to 28% uncollected dues on time' },
-        { feature: 'GST Serialized Tax Receipts', cestrix: 'Audit-ready PDF generator with QR', rivals: 'Basic Text Invoices', importance: 'Full compliance with chartered accountants' }
-      ]
-    },
-
-    // 4. NTA CBT & Exam Engine
-    {
-      id: 'cbt-exam-engine',
-      category: 'cbt-testing',
-      cestrixModule: 'NTA CBT Mock Test Simulator',
-      moduleDesc: 'Exact JEE & NEET computer-based test simulator with question palettes, negative marking, and All-India percentile rank lists.',
-      icon: Award,
-      competitors: [
-        { name: 'ThinkExam', badgeClass: 'bg-amber-50 text-amber-700 border-amber-200' },
-        { name: 'Testpress', badgeClass: 'bg-rose-50 text-rose-700 border-rose-200' },
-        { name: 'Ginger Webs', badgeClass: 'bg-slate-100 text-slate-700 border-slate-200' }
-      ],
-      summary: 'Standalone test portals force you to purchase an ERP separately. Cestrix combines high-stakes NTA CBT exam simulation inside your complete coaching OS.',
-      featureMatrix: [
-        { feature: 'NTA Exam Screen Interface', cestrix: 'Exact Palette, Timers & Sections', rivals: 'Generic Quiz UI', importance: 'Eliminates student exam hall anxiety' },
-        { feature: 'Student Error Notebook', cestrix: 'Auto-logs wrong answers for revision', rivals: 'Not Available', importance: 'Boosts final student ranks and selections' },
-        { feature: 'OMR Sheet Generation & Grading', cestrix: 'Included for offline paper tests', rivals: 'Separate software required', importance: 'Run both offline and online exams seamlessly' }
-      ]
-    },
-
-    // 5. AI Doubt Solver & Student Growth
-    {
-      id: 'ai-doubt-solver',
-      category: 'growth-ai',
-      cestrixModule: 'AI Doubt Solver & Study Assistant',
-      moduleDesc: 'Enrolled students photo-snap complex textbook questions for step-by-step mathematical reasoning and verified solutions 24/7.',
-      icon: Sparkles,
-      competitors: [
-        { name: 'Legacy ERPs', badgeClass: 'bg-slate-100 text-slate-700 border-slate-200' },
-        { name: 'Basic App Clones', badgeClass: 'bg-blue-50 text-blue-700 border-blue-200' }
-      ],
-      summary: 'While traditional platforms offer only static PDFs, Cestrix empowers your students with an intelligent AI tutor trained exclusively on curriculum concepts.',
-      featureMatrix: [
-        { feature: 'Photo-Snap Question Solving', cestrix: 'Built into Student Mobile App', rivals: 'Not Available', importance: 'Helps students study during late-night hours' },
-        { feature: 'Teacher Review Dashboard', cestrix: 'Faculty can monitor trending doubts', rivals: 'Not Available', importance: 'Identifies difficult topics before classroom tests' },
-        { feature: 'Coaching Brand Containment', cestrix: 'Runs strictly inside your academy app', rivals: 'Third-party redirects', importance: 'Students stay focused on your institute brand' }
-      ]
+  // Map icon strings to Lucide components
+  const getModuleIcon = (iconType: string) => {
+    switch (iconType) {
+      case 'smartphone': return Smartphone
+      case 'video': return Video
+      case 'building': return Building2
+      case 'fingerprint': return Fingerprint
+      case 'receipt': return Receipt
+      case 'award': return Award
+      case 'sparkles': return Sparkles
+      case 'users': return Users
+      case 'file-text': return FileText
+      default: return Layers
     }
-  ]
+  }
 
-  // Filtered comparisons based on search and category
-  const filteredComparisons = useMemo(() => {
-    return comparisons.filter((item) => {
-      const matchesCategory = activeCategory === 'all' || item.category === activeCategory
+  // Filter comparisons based on search and category
+  const filteredModules = useMemo(() => {
+    return COMPARISON_MODULES.filter((item) => {
+      const matchesCategory = activeCategory === 'all' || item.categoryId === activeCategory
       const matchesSearch = 
         searchQuery === '' ||
         item.cestrixModule.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.moduleDesc.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.categoryName.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.competitors.some(c => c.name.toLowerCase().includes(searchQuery.toLowerCase()))
       return matchesCategory && matchesSearch
     })
   }, [activeCategory, searchQuery])
 
+  // Group modules by category for Zoho-style sectioned directory
+  const groupedCategories = useMemo(() => {
+    const categoriesToGroup = activeCategory === 'all'
+      ? COMPARE_CATEGORIES.filter(c => c.id !== 'all')
+      : COMPARE_CATEGORIES.filter(c => c.id === activeCategory)
+
+    return categoriesToGroup.map(cat => ({
+      ...cat,
+      items: filteredModules.filter(m => m.categoryId === cat.id)
+    })).filter(cat => cat.items.length > 0)
+  }, [activeCategory, filteredModules])
+
   const compareSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'Cestrix Learning Solutions & Platform Alternatives',
+    name: 'Cestrix Learning Solutions & Platform Alternatives Directory',
     description: 'Explore how Cestrix Learning Operating System modules compare with legacy coaching apps, traditional ERPs, and standalone exam engines.'
   }
 
@@ -215,25 +81,29 @@ export const ComparePage: React.FC = () => {
         </h1>
         <div className="w-16 h-1 bg-red-500 mx-auto my-6 rounded-full"></div>
         <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-          Growing an educational institution comes with its own unique demands. With dedicated engineering and coaching-first design, we've created a complete operating system for modern academies—admissions, biometric attendance, live classes, NTA CBT exams, and fee collections.
+          Growing an educational institution comes with its own unique demands. With dedicated engineering and coaching-first design, we've created a complete operating system for modern academies—branded mobile apps, biometric attendance, live classes, NTA CBT exams, and fee collections.
         </p>
         <p className="mt-4 text-xs sm:text-sm font-semibold text-slate-500">
           Join the 1,200+ coaching institutes that trust Cestrix with their mission-critical operations.
         </p>
 
-        {/* Clean Line-Art Style Mascot/Illustration Placeholder Graphic */}
-        <div className="mt-10 flex items-center justify-center gap-6 sm:gap-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 shadow-2xs">
+        {/* Feature Pills */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
             <span>0% Platform Commission</span>
           </div>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 shadow-2xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-blue-500"></span>
             <span>Physical Biometric Sync</span>
           </div>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 shadow-2xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-purple-500"></span>
             <span>NTA-Standard CBT Engine</span>
+          </div>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+            <span>Your Own Developer Account</span>
           </div>
         </div>
       </section>
@@ -254,97 +124,44 @@ export const ComparePage: React.FC = () => {
 
           {/* 3 Zoho-Style Matchup Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-left">
-            
-            {/* Card 1: Classplus vs Cestrix */}
-            <div 
-              onClick={() => setSelectedModalItem(comparisons[0])}
-              className="bg-white rounded-2xl p-7 text-slate-900 shadow-2xl hover:shadow-cyan-500/10 hover:-translate-y-1 transition-all cursor-pointer border border-slate-100 flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between pb-5 border-b border-slate-100">
-                  <div className="font-extrabold text-lg text-slate-800 tracking-tight">Classplus</div>
-                  <div className="w-8 h-8 rounded-full bg-black text-white text-[11px] font-black flex items-center justify-center shrink-0">
-                    VS
+            {POPULAR_MATCHUPS.map((matchup) => {
+              const moduleItem = COMPARISON_MODULES.find(m => m.id === matchup.moduleId)
+              return (
+                <div 
+                  key={matchup.id}
+                  onClick={() => moduleItem && setSelectedModalItem(moduleItem)}
+                  className="bg-white rounded-2xl p-7 text-slate-900 shadow-2xl hover:shadow-cyan-500/10 hover:-translate-y-1 transition-all cursor-pointer border border-slate-100 flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between pb-5 border-b border-slate-100">
+                      <div className="font-extrabold text-lg text-slate-800 tracking-tight">
+                        {matchup.rivalName}
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-black text-white text-[11px] font-black flex items-center justify-center shrink-0">
+                        VS
+                      </div>
+                      <div className="font-black text-lg text-[#002D62] tracking-tight">
+                        {matchup.cestrixModule}
+                      </div>
+                    </div>
+
+                    <div className="mt-5 space-y-2">
+                      <span className={`text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded border ${matchup.badgeClass}`}>
+                        {matchup.tagline}
+                      </span>
+                      <p className="text-xs text-slate-600 leading-relaxed pt-1">
+                        {matchup.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="font-black text-lg text-[#002D62] tracking-tight">Cestrix App</div>
-                </div>
 
-                <div className="mt-5 space-y-2">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">
-                    0% Commission Model
-                  </span>
-                  <p className="text-xs text-slate-600 leading-relaxed pt-1">
-                    Your standalone Play Store app with your developer name. Keep 100% of your tuition fees with zero commission deductions.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#002D62] group-hover:text-blue-700">
-                <span>View Feature Breakdown</span>
-                <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-
-            {/* Card 2: Teachmint vs Cestrix */}
-            <div 
-              onClick={() => setSelectedModalItem(comparisons[2])}
-              className="bg-white rounded-2xl p-7 text-slate-900 shadow-2xl hover:shadow-cyan-500/10 hover:-translate-y-1 transition-all cursor-pointer border border-slate-100 flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between pb-5 border-b border-slate-100">
-                  <div className="font-extrabold text-lg text-slate-800 tracking-tight">Teachmint</div>
-                  <div className="w-8 h-8 rounded-full bg-black text-white text-[11px] font-black flex items-center justify-center shrink-0">
-                    VS
+                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#002D62] group-hover:text-blue-700">
+                    <span>View Feature Breakdown</span>
+                    <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </div>
-                  <div className="font-black text-lg text-[#002D62] tracking-tight">Cestrix ERP</div>
                 </div>
-
-                <div className="mt-5 space-y-2">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-blue-100 text-blue-800">
-                    Physical Hardware Sync
-                  </span>
-                  <p className="text-xs text-slate-600 leading-relaxed pt-1">
-                    Connect real-time biometric turnstile machines directly to parent WhatsApp alerts for complete offline campus security.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#002D62] group-hover:text-blue-700">
-                <span>View Feature Breakdown</span>
-                <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-
-            {/* Card 3: ThinkExam / Testpress vs Cestrix */}
-            <div 
-              onClick={() => setSelectedModalItem(comparisons[4])}
-              className="bg-white rounded-2xl p-7 text-slate-900 shadow-2xl hover:shadow-cyan-500/10 hover:-translate-y-1 transition-all cursor-pointer border border-slate-100 flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between pb-5 border-b border-slate-100">
-                  <div className="font-extrabold text-lg text-slate-800 tracking-tight">ThinkExam</div>
-                  <div className="w-8 h-8 rounded-full bg-black text-white text-[11px] font-black flex items-center justify-center shrink-0">
-                    VS
-                  </div>
-                  <div className="font-black text-lg text-[#002D62] tracking-tight">Cestrix CBT</div>
-                </div>
-
-                <div className="mt-5 space-y-2">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-purple-100 text-purple-800">
-                    Full ERP + CBT Test Engine
-                  </span>
-                  <p className="text-xs text-slate-600 leading-relaxed pt-1">
-                    Combined NTA test interface, negative marking analytics, student error notebook, and OMR generator in one system.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#002D62] group-hover:text-blue-700">
-                <span>View Feature Breakdown</span>
-                <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-
+              )
+            })}
           </div>
         </div>
       </section>
@@ -358,7 +175,7 @@ export const ComparePage: React.FC = () => {
             All comparisons
           </h2>
           <p className="mt-2 text-sm text-slate-500">
-            Search by coaching module or legacy platform to evaluate architectural differences
+            Browse our complete directory of 19 coaching modules and direct alternative breakdowns
           </p>
 
           {/* Search Bar Input (Zoho Clean Style) */}
@@ -368,13 +185,14 @@ export const ComparePage: React.FC = () => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Browse by module, feature, or platform name..."
+              placeholder="Browse by module, feature, or platform name (e.g. Classplus, Biometric, OMR)..."
               className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#002D62] focus:border-transparent shadow-xs transition-all placeholder:text-slate-400"
             />
             {searchQuery && (
               <button 
                 onClick={() => setSearchQuery('')}
                 className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                aria-label="Clear search"
               >
                 <X size={16} />
               </button>
@@ -382,16 +200,19 @@ export const ComparePage: React.FC = () => {
           </div>
         </div>
 
-        {/* Directory Layout: Left Sidebar + Right Rows */}
+        {/* Directory Layout: Left Sidebar + Right Grouped Rows */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start mt-12">
           
           {/* Left Category Sidebar (Zoho Layout) */}
           <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200 sticky top-24">
-            <div className="text-xs font-extrabold uppercase tracking-wider text-slate-500 px-3 pb-3 border-b border-slate-200/80 mb-2">
-              Academy Modules
+            <div className="text-xs font-extrabold uppercase tracking-wider text-slate-500 px-3 pb-3 border-b border-slate-200/80 mb-2 flex items-center justify-between">
+              <span>Academy Modules</span>
+              <span className="text-[10px] bg-slate-200 text-slate-700 px-1.5 py-0.5 rounded font-bold">
+                {COMPARISON_MODULES.length}
+              </span>
             </div>
             <nav className="space-y-1 text-sm font-semibold">
-              {categories.map((cat) => (
+              {COMPARE_CATEGORIES.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
@@ -401,18 +222,27 @@ export const ComparePage: React.FC = () => {
                       : 'text-slate-600 hover:bg-slate-200/70 hover:text-slate-900'
                   }`}
                 >
-                  <span>{cat.label}</span>
-                  {activeCategory === cat.id && (
-                    <ChevronRight size={14} className="text-white shrink-0" />
-                  )}
+                  <span className="truncate pr-2">{cat.name}</span>
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
+                      activeCategory === cat.id 
+                        ? 'bg-white/20 text-white' 
+                        : 'bg-slate-200/80 text-slate-600'
+                    }`}>
+                      {cat.count}
+                    </span>
+                    {activeCategory === cat.id && (
+                      <ChevronRight size={14} className="text-white shrink-0" />
+                    )}
+                  </div>
                 </button>
               ))}
             </nav>
           </div>
 
-          {/* Right Clean Comparison Rows (Zoho Clean Rows) */}
-          <div className="lg:col-span-3 space-y-4">
-            {filteredComparisons.length === 0 ? (
+          {/* Right Clean Comparison Rows (Zoho Multi-Category Sections) */}
+          <div className="lg:col-span-3 space-y-10">
+            {groupedCategories.length === 0 ? (
               <div className="p-12 text-center bg-slate-50 rounded-2xl border border-slate-200">
                 <HelpCircle className="w-10 h-10 text-slate-400 mx-auto mb-3" />
                 <h3 className="text-base font-bold text-slate-800">No matching comparison found</h3>
@@ -425,58 +255,80 @@ export const ComparePage: React.FC = () => {
                 </button>
               </div>
             ) : (
-              filteredComparisons.map((item) => {
-                const IconComponent = item.icon
-                return (
-                  <div
-                    key={item.id}
-                    onClick={() => setSelectedModalItem(item)}
-                    className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 hover:border-[#002D62]/40 hover:shadow-md transition-all cursor-pointer group"
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                      
-                      {/* Left: Cestrix Module */}
-                      <div className="flex items-start gap-3.5 sm:max-w-md">
-                        <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#002D62] flex items-center justify-center shrink-0 border border-blue-100 group-hover:scale-105 transition-transform">
-                          <IconComponent size={20} />
-                        </div>
-                        <div>
-                          <h3 className="font-bold text-slate-900 text-base sm:text-lg group-hover:text-[#002D62] transition-colors flex items-center gap-2">
-                            <span>{item.cestrixModule}</span>
-                          </h3>
-                          <p className="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">
-                            {item.moduleDesc}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Center: VS Badge */}
-                      <div className="flex items-center gap-2 sm:gap-3 self-center sm:self-auto">
-                        <span className="w-6 h-6 rounded-full bg-slate-100 text-slate-600 font-extrabold text-[10px] flex items-center justify-center border border-slate-200">
-                          vs
-                        </span>
-
-                        {/* Right: Competitor Pills */}
-                        <div className="flex flex-wrap items-center gap-1.5">
-                          {item.competitors.map((comp) => (
-                            <span 
-                              key={comp.name} 
-                              className={`text-[11px] font-bold px-2.5 py-1 rounded-lg border ${comp.badgeClass || 'bg-slate-50 text-slate-700 border-slate-200'}`}
-                            >
-                              {comp.name}
-                            </span>
-                          ))}
-                        </div>
-
-                        <div className="pl-2 hidden sm:block text-slate-300 group-hover:text-[#002D62] group-hover:translate-x-1 transition-all">
-                          <ArrowRight size={18} />
-                        </div>
-                      </div>
-
+              groupedCategories.map((group) => (
+                <div key={group.id} className="space-y-3">
+                  
+                  {/* Category Title Header (like Zoho "Sales", "Finance", etc.) */}
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                    <div>
+                      <h3 className="text-xl font-extrabold text-slate-900 tracking-tight">
+                        {group.name}
+                      </h3>
+                      <p className="text-xs text-slate-500 mt-0.5">{group.shortDesc}</p>
                     </div>
+                    <span className="text-xs font-bold text-slate-400">
+                      {group.items.length} {group.items.length === 1 ? 'module' : 'modules'}
+                    </span>
                   </div>
-                )
-              })
+
+                  {/* Modules inside this category */}
+                  <div className="space-y-3">
+                    {group.items.map((item) => {
+                      const IconComponent = getModuleIcon(item.iconType)
+                      return (
+                        <div
+                          key={item.id}
+                          onClick={() => setSelectedModalItem(item)}
+                          className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 hover:border-[#002D62]/40 hover:shadow-md transition-all cursor-pointer group"
+                        >
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            
+                            {/* Left: Cestrix Module */}
+                            <div className="flex items-start gap-3.5 sm:max-w-md">
+                              <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#002D62] flex items-center justify-center shrink-0 border border-blue-100 group-hover:scale-105 transition-transform">
+                                <IconComponent size={20} />
+                              </div>
+                              <div>
+                                <h4 className="font-bold text-slate-900 text-base sm:text-lg group-hover:text-[#002D62] transition-colors flex items-center gap-2">
+                                  <span>{item.cestrixModule}</span>
+                                </h4>
+                                <p className="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">
+                                  {item.moduleDesc}
+                                </p>
+                              </div>
+                            </div>
+
+                            {/* Center: VS Badge */}
+                            <div className="flex items-center gap-2 sm:gap-3 self-center sm:self-auto">
+                              <span className="w-6 h-6 rounded-full bg-slate-100 text-slate-600 font-extrabold text-[10px] flex items-center justify-center border border-slate-200 shrink-0">
+                                vs
+                              </span>
+
+                              {/* Right: Competitor Pills */}
+                              <div className="flex flex-wrap items-center gap-1.5">
+                                {item.competitors.map((comp) => (
+                                  <span 
+                                    key={comp.id} 
+                                    className={`text-[11px] font-bold px-2.5 py-1 rounded-lg border ${comp.badgeColor}`}
+                                  >
+                                    {comp.name}
+                                  </span>
+                                ))}
+                              </div>
+
+                              <div className="pl-2 hidden sm:block text-slate-300 group-hover:text-[#002D62] group-hover:translate-x-1 transition-all shrink-0">
+                                <ArrowRight size={18} />
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+
+                </div>
+              ))
             )}
           </div>
 
@@ -488,14 +340,14 @@ export const ComparePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
-            {/* Left Column: Title & Graphic Card */}
+            {/* Left Column: Title & Trust Box */}
             <div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
                 What sets us apart
               </h2>
               <div className="w-12 h-1 bg-red-500 my-4 rounded-full"></div>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-8">
-                Cestrix Learning is built specifically around the ground realities of Indian coaching centers, franchise networks, and test-prep academies. We reject commission-taking models and lock-in practices.
+                Cestrix Learning is built specifically around the ground realities of Indian coaching centers, franchise networks, and test-prep academies. We reject commission-taking models, locked student databases, and vendor lock-in practices.
               </p>
 
               {/* Trust Box */}
@@ -523,64 +375,31 @@ export const ComparePage: React.FC = () => {
 
             {/* Right Column: 5 Numbered Principles (Zoho Style 01 - 05) */}
             <div className="space-y-6">
-              
-              <div className="flex items-start gap-4">
-                <span className="text-lg font-black text-red-500 font-mono shrink-0">01.</span>
-                <div>
-                  <h3 className="text-base font-bold text-slate-900">0% Platform Commission Guarantee</h3>
-                  <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
-                    Tuition fees collected via offline desk cash or direct UPI have zero platform fees. Gateway payments settle directly into your bank account.
-                  </p>
+              {WHAT_SETS_US_APART.map((pillar) => (
+                <div key={pillar.num} className="flex items-start gap-4 pt-4 first:pt-0 border-t first:border-t-0 border-slate-200/70">
+                  <span className="text-lg font-black text-red-500 font-mono shrink-0">
+                    {pillar.num}.
+                  </span>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-base font-bold text-slate-900">{pillar.title}</h3>
+                    </div>
+                    <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+                      {pillar.desc}
+                    </p>
+                    <span className="inline-block mt-1 text-[11px] font-semibold text-[#002D62]">
+                      ✓ {pillar.highlight}
+                    </span>
+                  </div>
                 </div>
-              </div>
-
-              <div className="flex items-start gap-4 pt-4 border-t border-slate-200/70">
-                <span className="text-lg font-black text-red-500 font-mono shrink-0">02.</span>
-                <div>
-                  <h3 className="text-base font-bold text-slate-900">Physical Biometric Turnstile Sync</h3>
-                  <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
-                    Native integration with eSSL and ZKTeco machines automatically pings parents on WhatsApp the exact second a student punches in.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 pt-4 border-t border-slate-200/70">
-                <span className="text-lg font-black text-red-500 font-mono shrink-0">03.</span>
-                <div>
-                  <h3 className="text-base font-bold text-slate-900">Your Own Play Store Developer Account</h3>
-                  <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
-                    We publish your branded mobile app under your coaching’s own Google Play developer listing, protecting your long-term institutional valuation.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 pt-4 border-t border-slate-200/70">
-                <span className="text-lg font-black text-red-500 font-mono shrink-0">04.</span>
-                <div>
-                  <h3 className="text-base font-bold text-slate-900">1-Click Database Portability</h3>
-                  <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
-                    Never fear vendor lock-in. Export your complete student lists, fee ledgers, and question banks in standard Excel format anytime.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 pt-4 border-t border-slate-200/70">
-                <span className="text-lg font-black text-red-500 font-mono shrink-0">05.</span>
-                <div>
-                  <h3 className="text-base font-bold text-slate-900">Unified Multi-Branch Headquarters</h3>
-                  <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
-                    Manage 2 to 50+ campuses with granular role-based permissions, protecting staff and financial records across branches.
-                  </p>
-                </div>
-              </div>
-
+              ))}
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* ── SECTION 5: REAL CUSTOMER QUOTE (ZOHO IMAGE 5: TESTIMONIAL) ── */}
+      {/* ── SECTION 5: REAL CUSTOMER QUOTES (ZOHO IMAGE 5: TESTIMONIAL) ── */}
       <section className="py-16 bg-white border-t border-slate-200 text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs uppercase font-extrabold tracking-widest text-slate-400 mb-6">
@@ -588,16 +407,16 @@ export const ComparePage: React.FC = () => {
           </p>
           
           <div className="w-16 h-16 rounded-full bg-slate-900 text-white font-black text-xl flex items-center justify-center mx-auto mb-6 shadow-md border-2 border-white ring-4 ring-slate-100">
-            RV
+            <Quote size={24} className="text-amber-400" />
           </div>
 
           <blockquote className="text-lg sm:text-xl font-medium text-slate-800 leading-relaxed italic">
-            "The data privacy and zero commission model Cestrix promised was really a class apart from legacy edtech providers. Our fees settle 100% directly into our registered bank account without surprise cuts."
+            "The data privacy and zero commission model Cestrix promised was really a class apart from legacy edtech providers. Our fees settle 100% directly into our registered bank account without surprise cuts, and the physical biometric turnstiles work flawlessly."
           </blockquote>
 
           <div className="mt-4">
             <div className="font-bold text-slate-900 text-sm">Er. Rajesh Verma</div>
-            <div className="text-xs text-slate-500">Managing Director, Apex Science Academy (Patna)</div>
+            <div className="text-xs text-slate-500">Managing Director, Apex IIT-JEE Academy (Kota)</div>
           </div>
         </div>
       </section>
@@ -606,7 +425,7 @@ export const ComparePage: React.FC = () => {
       <section className="py-8 bg-slate-50 border-t border-slate-200/80">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-[11px] text-slate-500 leading-relaxed max-w-4xl mx-auto">
-            All third-party product names, trademarks, and logos (such as Classplus, Teachmint, Graphy, ThinkExam, etc.) are the property of their respective owners and are used here solely for identification, nominative comparison, and informational purposes. Their use does not imply any affiliation, sponsorship, or endorsement.
+            All third-party product names, trademarks, and logos (such as Classplus, Teachmint, Graphy, ThinkExam, Teachable, Fedena, etc.) are the property of their respective owners and are used here solely for identification, nominative comparison, and informational purposes. Their use does not imply any affiliation, sponsorship, or endorsement.
           </p>
         </div>
       </section>
@@ -640,27 +459,57 @@ export const ComparePage: React.FC = () => {
       {/* ── MODAL: SIDE-BY-SIDE FEATURE MATRIX (INTERACTIVE DRAWER) ── */}
       {selectedModalItem && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs animate-in fade-in duration-200">
-          <div className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto relative">
+          <div className="bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto relative">
             
             {/* Close Button */}
             <button 
               onClick={() => setSelectedModalItem(null)}
               className="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition-colors"
+              aria-label="Close modal"
             >
               <X size={18} />
             </button>
 
             {/* Modal Header */}
             <div className="pr-8">
-              <span className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded bg-blue-100 text-[#002D62]">
-                Architectural Breakdown
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded bg-blue-100 text-[#002D62]">
+                  {selectedModalItem.categoryName}
+                </span>
+                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  Cestrix Edge
+                </span>
+              </div>
+              
               <h3 className="text-2xl font-bold text-slate-900 mt-2">
                 {selectedModalItem.cestrixModule}
               </h3>
-              <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                {selectedModalItem.summary}
+              <p className="text-xs font-semibold text-[#002D62] mt-0.5">
+                {selectedModalItem.tagline}
               </p>
+              <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                {selectedModalItem.cestrixAdvantage}
+              </p>
+            </div>
+
+            {/* Metric Highlights */}
+            <div className="grid grid-cols-2 gap-3 mt-5 p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+              <div>
+                <span className="text-[10px] font-extrabold uppercase text-slate-400">
+                  {selectedModalItem.metrics.label1}
+                </span>
+                <div className="text-lg font-black text-emerald-700">
+                  {selectedModalItem.metrics.value1}
+                </div>
+              </div>
+              <div>
+                <span className="text-[10px] font-extrabold uppercase text-slate-400">
+                  {selectedModalItem.metrics.label2}
+                </span>
+                <div className="text-lg font-black text-[#002D62]">
+                  {selectedModalItem.metrics.value2}
+                </div>
+              </div>
             </div>
 
             {/* Feature Comparison Table */}
@@ -668,7 +517,7 @@ export const ComparePage: React.FC = () => {
               <table className="w-full text-left border-collapse text-xs">
                 <thead>
                   <tr className="bg-slate-100 border-b border-slate-200 text-slate-700 font-bold">
-                    <th className="py-3 px-3.5">Capability</th>
+                    <th className="py-3 px-3.5">Capability & Feature</th>
                     <th className="py-3 px-3.5 bg-blue-50/80 text-[#002D62]">Cestrix Learning</th>
                     <th className="py-3 px-3.5 text-slate-600">Traditional Rivals</th>
                   </tr>
@@ -678,13 +527,15 @@ export const ComparePage: React.FC = () => {
                     <tr key={idx} className="hover:bg-slate-50/60 transition-colors">
                       <td className="py-3 px-3.5 font-semibold text-slate-800">
                         {row.feature}
-                        <span className="block text-[10px] text-slate-400 font-normal mt-0.5">{row.importance}</span>
+                        <span className="block text-[10px] text-slate-400 font-normal mt-0.5">
+                          {row.whyItMatters}
+                        </span>
                       </td>
                       <td className="py-3 px-3.5 bg-blue-50/40 font-bold text-emerald-700">
                         {row.cestrix}
                       </td>
                       <td className="py-3 px-3.5 text-slate-600">
-                        {row.rivals}
+                        {row.competitorValue}
                       </td>
                     </tr>
                   ))}
@@ -692,10 +543,36 @@ export const ComparePage: React.FC = () => {
               </table>
             </div>
 
+            {/* Competitor Key Weaknesses */}
+            <div className="mt-5 p-4 rounded-xl bg-red-50/50 border border-red-100">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-red-900 mb-2">
+                <Info size={14} className="text-red-600 shrink-0" />
+                <span>Common Frustrations with Traditional Providers:</span>
+              </div>
+              <ul className="space-y-1.5 text-xs text-red-800/90 pl-5 list-disc">
+                {selectedModalItem.keyWeaknesses.map((w, idx) => (
+                  <li key={idx} className="leading-relaxed">{w}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Customer Quote */}
+            <div className="mt-5 p-4 rounded-xl bg-slate-50 border border-slate-200">
+              <p className="text-xs text-slate-700 italic">
+                "{selectedModalItem.testimonial.quote}"
+              </p>
+              <div className="mt-2 text-[11px] font-bold text-slate-900 flex items-center justify-between">
+                <span>{selectedModalItem.testimonial.author}</span>
+                <span className="text-slate-500 font-normal">
+                  {selectedModalItem.testimonial.institute}, {selectedModalItem.testimonial.city}
+                </span>
+              </div>
+            </div>
+
             {/* Action Bar */}
             <div className="mt-6 pt-5 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
               <div className="text-xs text-slate-500 font-medium">
-                Want to test this in your campus?
+                Want to test this module live with your institute data?
               </div>
               <div className="flex items-center gap-2 w-full sm:w-auto">
                 <Link
