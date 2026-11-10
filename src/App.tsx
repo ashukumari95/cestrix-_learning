@@ -22,6 +22,7 @@ import { AiCoachingGrowthPage } from './pages/AiCoachingGrowthPage'
 import { BlogIndexPage } from './pages/BlogIndexPage'
 import { BlogPostPage } from './pages/BlogPostPage'
 import { ComparePage } from './pages/ComparePage'
+import { CanonicalTag } from './components/seo/CanonicalTag'
 
 // Automatically scroll to top on route navigation
 const ScrollToTop = () => {
@@ -36,6 +37,7 @@ export function App() {
   return (
     <Router>
       <ScrollToTop />
+      <CanonicalTag />
       <div className="flex flex-col min-h-screen bg-white text-[#0F172A] selection:bg-[#173F8A] selection:text-white">
         <Navbar />
         <main className="flex-grow">

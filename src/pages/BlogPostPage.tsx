@@ -47,7 +47,7 @@ export const BlogPostPage: React.FC = () => {
       'name': 'Cestrix Learning Technologies',
       'logo': {
         '@type': 'ImageObject',
-        'url': 'https://learning.cestrixgroup.com/logo.webp'
+        'url': 'https://learning.cestrixgroup.com/logo.png'
       }
     },
     'datePublished': '2026-10-16',

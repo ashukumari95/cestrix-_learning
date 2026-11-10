@@ -42,10 +42,10 @@ export const metadata: Metadata = {
       '0% commission Classplus alternative. Unify biometric attendance, NTA CBT exams, and WhatsApp fee recovery for your institute.',
     images: [
       {
-        url: '/logo.webp',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Cestrix Learning Logo',
+        alt: 'Cestrix Learning — #1 Coaching Management Operating System',
       },
     ],
   },
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: 'Cestrix Learning — Coaching Management Software & ERP',
     description:
       'The complete operating system for competitive coaching institutes. Biometric sync, NTA tests, and 0% commission.',
-    images: ['/logo.webp'],
+    images: ['/og-image.png'],
   },
 };
 
@@ -67,8 +67,8 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     'name': 'Cestrix Learning Technologies',
-    'url': 'https://cestrixlearning.com/',
-    'logo': 'https://cestrixlearning.com/logo.webp',
+    'url': 'https://learning.cestrixgroup.com/',
+    'logo': 'https://learning.cestrixgroup.com/logo.png',
     'sameAs': [
       'https://www.linkedin.com/company/cestrix',
       'https://twitter.com/cestrixlearning',

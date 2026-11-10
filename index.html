@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Favicon & Brand Icons -->
-    <link rel="icon" type="image/webp" href="/logo.webp" />
-    <link rel="apple-touch-icon" href="/logo.webp" />
-    <link rel="shortcut icon" href="/logo.webp" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
 
     <!-- Primary SEO Meta Tags -->
     <title>Cestrix Learning — #1 Coaching Management Software | 0% Commission Classplus Alternative</title>
@@ -16,7 +18,18 @@
     <meta name="keywords" content="white label app for coaching institute in india, coaching ERP with biometric attendance sync, classplus alternative with 0% commission, teachmint alternative for coaching, best app builder for offline coachings, affordable coaching management software pricing, coaching institute management software, coaching ERP India, coaching LMS, online test series software, NTA CBT exam platform, student admissions CRM" />
     <meta name="author" content="Cestrix Learning Technologies" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <link rel="canonical" href="https://learning.cestrixgroup.com/" />
+    <link rel="canonical" id="canonical-url" href="https://learning.cestrixgroup.com/" />
+    <script>
+      (function() {
+        try {
+          var p = (window.location.pathname || '/').toLowerCase().replace(/\/+$/, '') || '/';
+          if (p === '/home') p = '/';
+          if (p === '/alternatives' || p.indexOf('/compare/') === 0) p = '/compare';
+          var c = document.getElementById('canonical-url');
+          if (c) c.href = p === '/' ? 'https://learning.cestrixgroup.com/' : 'https://learning.cestrixgroup.com' + p;
+        } catch (e) {}
+      })();
+    </script>
     <link rel="alternate" type="text/markdown" href="https://learning.cestrixgroup.com/llms.txt" title="LLM Knowledge Standard" />
     <meta name="ai-content-declaration" content="educational-saas" />
     <meta name="theme-color" content="#002D62" />
@@ -29,10 +42,11 @@
     <meta property="og:url" content="https://learning.cestrixgroup.com/" />
     <meta property="og:title" content="Cestrix Learning — #1 Coaching Management Software & Operating System" />
     <meta property="og:description" content="0% commission Classplus alternative. Unify biometric attendance, NTA CBT test engine, WhatsApp fee recovery, and branded iOS/Android apps for your coaching institute." />
-    <meta property="og:image" content="https://learning.cestrixgroup.com/logo.webp" />
+    <meta property="og:image" content="https://learning.cestrixgroup.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Cestrix Learning Coaching Operating System" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Cestrix Learning — #1 Coaching Management Operating System" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -41,7 +55,8 @@
     <meta name="twitter:url" content="https://learning.cestrixgroup.com/" />
     <meta name="twitter:title" content="Cestrix Learning — 0% Commission Coaching Management Software" />
     <meta name="twitter:description" content="White-label app for coaching institutes in India. Biometric attendance sync, automated WhatsApp fee recovery, and NTA CBT test engine." />
-    <meta name="twitter:image" content="https://learning.cestrixgroup.com/logo.webp" />
+    <meta name="twitter:image" content="https://learning.cestrixgroup.com/og-image.png" />
+    <meta name="twitter:image:alt" content="Cestrix Learning — #1 Coaching Management Operating System" />
 
     <!-- Structured Data JSON-LD Schema (Organization, SoftwareApplication, Product/Offers, FAQPage) -->
     <script type="application/ld+json">
@@ -56,8 +71,10 @@
           "url": "https://learning.cestrixgroup.com/",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://learning.cestrixgroup.com/logo.webp",
-            "caption": "Cestrix Learning Logo"
+            "url": "https://learning.cestrixgroup.com/logo.png",
+            "width": 394,
+            "height": 115,
+            "caption": "Cestrix Learning Official Logo"
           },
           "sameAs": [
             "https://www.linkedin.com/company/cestrix",
@@ -131,7 +148,7 @@
           "@type": "Product",
           "@id": "https://learning.cestrixgroup.com/#product",
           "name": "Cestrix Coaching Management Software & White-Label App",
-          "image": "https://learning.cestrixgroup.com/logo.webp",
+          "image": "https://learning.cestrixgroup.com/og-image.png",
           "description": "All-in-one EdTech SaaS operating system for competitive coaching institutes and tuition centers in India.",
           "brand": {
             "@type": "Brand",

@@ -1,1 +1,4 @@
-/*    /index.html   200
+/logo.webp     /logo.png    301!
+/alternatives  /compare     301!
+/compare/*     /compare     301!
+/*             /index.html  200

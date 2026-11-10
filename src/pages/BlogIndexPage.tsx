@@ -42,7 +42,7 @@ export const BlogIndexPage: React.FC = () => {
     'publisher': {
       '@type': 'Organization',
       'name': 'Cestrix Learning Technologies',
-      'logo': 'https://learning.cestrixgroup.com/logo.webp'
+      'logo': 'https://learning.cestrixgroup.com/logo.png'
     }
   }
 

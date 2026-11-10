@@ -1,4 +1,21 @@
 {
+  "redirects": [
+    {
+      "source": "/logo.webp",
+      "destination": "/logo.png",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/compare/(.+)",
+      "destination": "/compare",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
