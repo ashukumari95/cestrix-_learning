@@ -38,7 +38,7 @@ export const PrivacyPage: React.FC = () => {
         <section className="space-y-3">
           <h2 className="text-xl font-bold text-slate-900">4. Contact Data Protection Officer</h2>
           <p>
-            For privacy compliance inquiries or data deletion requests, contact our Data Protection Office at: <a href="mailto:privacy@cestrixlearning.com" className="text-[#173F8A] font-semibold hover:underline">privacy@cestrixlearning.com</a>.
+            For privacy compliance inquiries or data deletion requests, contact our Data Protection Office at: <a href="mailto:info@cestrixgroup.com" className="text-[#173F8A] font-semibold hover:underline">info@cestrixgroup.com</a> or call +91 77650 16973.
           </p>
         </section>
       </div>

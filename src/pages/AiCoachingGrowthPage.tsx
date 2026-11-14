@@ -62,7 +62,7 @@ Fresh batches starting this Monday! Limited 45 seats per classroom.
 • 🎯 *Direct Faculty Mentorship:* Small batch size with individual attention.
 
 📍 *Campus Address:* Main Education Hub, ${city}
-📞 *Call / WhatsApp for Free Demo Class:* +91 98765 43210
+📞 *Call / WhatsApp for Free Demo Class:* +91 77650 16973
 🌐 *Apply Online:* https://${instituteName.toLowerCase().replace(/[^a-z0-9]/g, '')}.com`,
 
     whatsappFeeReminder: `Namaste Parents 🙏,
@@ -79,7 +79,7 @@ The monthly tuition installment for the ongoing academic term is due.
 upi://pay?pa=fees@bank&pn=${encodeURIComponent(instituteName)}
 
 _Digital GST receipt will be sent automatically to your WhatsApp immediately after payment._
-For fee queries, please reach our accounts desk at +91 98765 43210.`,
+For fee queries, please reach our accounts desk at +91 77650 16973.`,
 
     socialAdCopy: `🚀 Give your child the competitive edge in ${city}! 
 Admissions are now open at ${instituteName} for ${category} (2026-27 Batch).
@@ -122,7 +122,7 @@ Admissions are officially open for our exclusive Target Batch in ${city}.
 • Personal student performance tracking with parent WhatsApp reports.
 
 📍 *Center Location:* Main Academic Hub, ${city}
-📲 *Book Free Diagnostic Test / Counseling:* +91 98765 43210`,
+📲 *Book Free Diagnostic Test / Counseling:* +91 77650 16973`,
 
         whatsappFeeReminder: `Respected Parents 🙏,
 
@@ -141,7 +141,7 @@ Instant digital receipt is generated upon payment. Thank you for your continued 
 🌟 Highlights: ${uniquePoints}
 
 🎯 Don't compromise on your dream rank. Join the premier batch today.
-📲 Call: +91 98765 43210 | 📍 Campus: ${city}
+📲 Call: +91 77650 16973 | 📍 Campus: ${city}
 
 #CoachingIn${city.replace(/\s+/g, '')} #${category.replace(/[^a-zA-Z]/g, '')} #BestCoaching${city.replace(/\s+/g, '')}`,
 

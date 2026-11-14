@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { 
-  Calendar, CheckCircle2, AlertCircle, 
-  ArrowRight, ShieldCheck, Clock, 
-  Users, Building2, Sparkles, Loader2
-} from 'lucide-react'
+import { CheckCircle2, AlertCircle, ArrowRight, ShieldCheck, Loader2 } from 'lucide-react'
 
 interface FormData {
   fullName: string
@@ -29,7 +25,7 @@ export const BookDemoPage: React.FC = () => {
     phone: '',
     city: '',
     studentsCount: '100-250',
-    interestedFeatures: ['Smart Biometric Attendance', 'CBT Tests & Rankings'],
+    interestedFeatures: ['Smart Biometric Attendance', 'Automated Fee Receipts & UPI'],
     preferredDemoDate: new Date(Date.now() + 86400000 * 2).toISOString().split('T')[0],
     additionalRequirements: defaultPlan ? `Interested primarily in the ${defaultPlan.toUpperCase()} plan.` : ''
   })
@@ -64,7 +60,6 @@ export const BookDemoPage: React.FC = () => {
     e.preventDefault()
     setErrorMessage(null)
 
-    // Validation
     if (!formData.fullName.trim() || !formData.instituteName.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.city.trim()) {
       setErrorMessage('Please complete all required fields.')
       return
@@ -102,288 +97,197 @@ export const BookDemoPage: React.FC = () => {
   }
 
   return (
-    <div className="py-12 sm:py-20 bg-[#F8FAFC] min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#173F8A] bg-blue-50 px-3 py-1 rounded-full border border-blue-200/60">
-            Personalized Discovery Session
-          </span>
-          <h1 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-[#0F172A] mt-4 tracking-tight font-normal leading-[1.12]">
-            See Cestrix Learning in Action.
+    <div className="py-12 sm:py-16 bg-[#F8FAFC] min-h-screen font-sans">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Minimal Corporate Header */}
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <h1 className="text-3xl sm:text-4xl text-slate-900 font-bold tracking-tight">
+            Book a Free Live Demo
           </h1>
-          <p className="mt-3 text-base text-slate-600 leading-relaxed">
-            Schedule a 30-minute tailored walkthrough with our education technology consultants. We'll demonstrate how Cestrix streamlines your specific batch, testing, and fee workflows.
+          <p className="mt-3 text-sm sm:text-base text-slate-600">
+            See how Cestrix Learning can digitize your coaching operations, automate fee collection, and scale your brand.
           </p>
         </div>
 
-        {/* Form Container */}
-        <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+        <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
           {successLead ? (
-            /* Success State */
-            <div className="p-8 sm:p-14 text-center space-y-6 animate-in fade-in duration-300">
-              <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-sm">
+            <div className="p-10 sm:p-16 text-center space-y-5">
+              <div className="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-4">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
-                  Inquiry Registered
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">
-                  Thank You, {successLead.fullName}!
-                </h2>
-                <p className="text-sm text-slate-600 max-w-lg mx-auto mt-2 leading-relaxed">
-                  Your demo request for <strong>{successLead.instituteName}</strong> has been received by our enterprise sales desk. Reference ID: <code className="font-mono bg-slate-100 px-2 py-0.5 rounded text-[#173F8A]">{successLead.id}</code>.
-                </p>
-              </div>
-
-              {/* Confirmation Details Card */}
-              <div className="max-w-md mx-auto p-5 rounded-2xl bg-slate-50 border border-slate-200 text-left text-xs space-y-2.5">
-                <div className="flex justify-between border-b border-slate-200/60 pb-2">
-                  <span className="text-slate-500">Contact Email:</span>
-                  <span className="font-semibold text-slate-900">{successLead.email}</span>
-                </div>
-                <div className="flex justify-between border-b border-slate-200/60 pb-2">
-                  <span className="text-slate-500">Phone:</span>
-                  <span className="font-semibold text-slate-900">{successLead.phone}</span>
-                </div>
-                <div className="flex justify-between border-b border-slate-200/60 pb-2">
-                  <span className="text-slate-500">Preferred Date:</span>
-                  <span className="font-semibold text-[#173F8A]">{successLead.preferredDemoDate}</span>
-                </div>
-                <div className="flex justify-between border-b border-slate-200/60 pb-2">
-                  <span className="text-slate-500">Student Cohort:</span>
-                  <span className="font-semibold text-slate-900">{successLead.studentsCount} Students</span>
-                </div>
-                <div>
-                  <span className="text-slate-500">Interested Capabilities:</span>
-                  <div className="flex flex-wrap gap-1 mt-1.5">
-                    {successLead.interestedFeatures.map((f: string, i: number) => (
-                      <span key={i} className="px-2 py-0.5 rounded bg-blue-50 text-[#173F8A] text-[10px] font-semibold">
-                        {f}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <h2 className="text-2xl font-bold text-slate-900">
+                Demo Request Received
+              </h2>
+              <p className="text-slate-600 max-w-md mx-auto">
+                Thank you, {successLead.fullName}. Our team will contact you shortly to confirm your walkthrough for <strong>{successLead.instituteName}</strong>.
+              </p>
+              <div className="pt-6">
                 <Link
                   to="/"
-                  className="px-6 py-2.5 rounded-xl bg-[#173F8A] text-white text-xs font-bold hover:bg-[#0f2c61] transition-colors"
+                  className="inline-flex justify-center px-6 py-2.5 rounded-lg bg-[#173F8A] text-white text-sm font-semibold hover:bg-[#12316A] transition-colors"
                 >
                   Return to Homepage
-                </Link>
-                <Link
-                  to="/admin/leads"
-                  className="px-6 py-2.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold hover:bg-slate-200 transition-colors"
-                >
-                  View in Admin Lead Pipeline
                 </Link>
               </div>
             </div>
           ) : (
-            /* Active Form State */
-            <form onSubmit={handleSubmit} className="p-6 sm:p-10 space-y-8">
+            <form onSubmit={handleSubmit} className="p-6 sm:p-10">
               {errorMessage && (
-                <div className="p-4 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800 flex items-center gap-2">
-                  <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
+                <div className="mb-8 p-4 rounded-lg bg-red-50 border border-red-200 text-sm text-red-700 flex items-center gap-3">
+                  <AlertCircle className="w-5 h-5 shrink-0" />
                   <span>{errorMessage}</span>
                 </div>
               )}
 
-              {/* Section 1: Contact Information */}
-              <div>
-                <h3 className="text-base font-bold text-slate-900 flex items-center gap-2 mb-4">
-                  <Users className="w-4 h-4 text-[#173F8A]" />
-                  <span>1. Contact & Institute Details</span>
-                </h3>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Dr. Rajesh Sharma"
-                      value={formData.fullName}
-                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full px-3.5 py-2 text-xs sm:text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#173F8A] focus:border-transparent transition-all"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">
-                      Coaching Institute Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Apex IIT-JEE Academy"
-                      value={formData.instituteName}
-                      onChange={(e) => setFormData({ ...formData, instituteName: e.target.value })}
-                      className="w-full px-3.5 py-2 text-xs sm:text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#173F8A] focus:border-transparent transition-all"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">
-                      Work / Official Email *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="director@apexiit.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3.5 py-2 text-xs sm:text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#173F8A] focus:border-transparent transition-all"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">
-                      Mobile / WhatsApp Number *
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="+91 98765 43210"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3.5 py-2 text-xs sm:text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#173F8A] focus:border-transparent transition-all"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">
-                      City / Location *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Kota, Rajasthan"
-                      value={formData.city}
-                      onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                      className="w-full px-3.5 py-2 text-xs sm:text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#173F8A] focus:border-transparent transition-all"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">
-                      Approximate Student Count
-                    </label>
-                    <select
-                      value={formData.studentsCount}
-                      onChange={(e) => setFormData({ ...formData, studentsCount: e.target.value })}
-                      className="w-full px-3.5 py-2 text-xs sm:text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#173F8A] focus:border-transparent bg-white"
-                    >
-                      <option value="Under 100">Under 100 Students</option>
-                      <option value="100-250">100 - 250 Students</option>
-                      <option value="250-500">250 - 500 Students</option>
-                      <option value="500-1000">500 - 1,000 Students</option>
-                      <option value="1000+">1,000+ Students (Multi-Branch)</option>
-                    </select>
+              <div className="space-y-8">
+                {/* 1. Institute & Contact Details */}
+                <div className="space-y-5">
+                  <h3 className="text-base font-semibold text-slate-900 border-b border-slate-100 pb-2">
+                    Contact Information
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="space-y-1">
+                      <label className="block text-xs font-semibold text-slate-700">Full Name <span className="text-red-500">*</span></label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Dr. Rajesh Sharma"
+                        value={formData.fullName}
+                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                        className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-[#173F8A] focus:border-[#173F8A] bg-white transition-colors"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="block text-xs font-semibold text-slate-700">Institute Name <span className="text-red-500">*</span></label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Apex Academy"
+                        value={formData.instituteName}
+                        onChange={(e) => setFormData({ ...formData, instituteName: e.target.value })}
+                        className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-[#173F8A] focus:border-[#173F8A] bg-white transition-colors"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="block text-xs font-semibold text-slate-700">Mobile Number <span className="text-red-500">*</span></label>
+                      <input
+                        type="tel"
+                        required
+                        placeholder="+91 98765 43210"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-[#173F8A] focus:border-[#173F8A] bg-white transition-colors"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="block text-xs font-semibold text-slate-700">City / Location <span className="text-red-500">*</span></label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g. Patna, Bihar"
+                        value={formData.city}
+                        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                        className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-[#173F8A] focus:border-[#173F8A] bg-white transition-colors"
+                      />
+                    </div>
+                    <div className="space-y-1 sm:col-span-2">
+                      <label className="block text-xs font-semibold text-slate-700">Official Email <span className="text-red-500">*</span></label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="director@institute.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-[#173F8A] focus:border-[#173F8A] bg-white transition-colors"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Section 2: Features of Interest */}
-              <div>
-                <h3 className="text-base font-bold text-slate-900 flex items-center gap-2 mb-3">
-                  <Sparkles className="w-4 h-4 text-[#0D9488]" />
-                  <span>2. Features You Want to Explore in the Demo</span>
-                </h3>
+                {/* 2. Operational Needs */}
+                <div className="space-y-5 pt-2">
+                  <h3 className="text-base font-semibold text-slate-900 border-b border-slate-100 pb-2">
+                    What features are you most interested in?
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
+                    {featureOptions.map((feat, i) => {
+                      const isChecked = formData.interestedFeatures.includes(feat)
+                      return (
+                        <label key={i} className="flex items-start gap-3 cursor-pointer group">
+                          <div className="relative flex items-center justify-center mt-0.5">
+                            <input
+                              type="checkbox"
+                              checked={isChecked}
+                              onChange={() => handleFeatureToggle(feat)}
+                              className="peer appearance-none w-4 h-4 border border-slate-300 rounded bg-white checked:bg-[#173F8A] checked:border-[#173F8A] transition-colors cursor-pointer"
+                            />
+                            <CheckCircle2 className="w-3 h-3 text-white absolute pointer-events-none opacity-0 peer-checked:opacity-100" strokeWidth={3} />
+                          </div>
+                          <span className="text-sm text-slate-700 group-hover:text-slate-900">{feat}</span>
+                        </label>
+                      )
+                    })}
+                  </div>
+                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  {featureOptions.map((feat, i) => {
-                    const isChecked = formData.interestedFeatures.includes(feat)
-                    return (
-                      <label
-                        key={i}
-                        className={`flex items-center gap-2.5 p-3 rounded-xl border text-xs cursor-pointer transition-all ${
-                          isChecked
-                            ? 'bg-blue-50/70 border-[#173F8A] text-[#173F8A] font-semibold'
-                            : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
-                        }`}
+                {/* 3. Scheduling */}
+                <div className="space-y-5 pt-2">
+                  <h3 className="text-base font-semibold text-slate-900 border-b border-slate-100 pb-2">
+                    Scheduling Details
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="space-y-1">
+                      <label className="block text-xs font-semibold text-slate-700">Select Demo Date <span className="text-red-500">*</span></label>
+                      <input
+                        type="date"
+                        required
+                        value={formData.preferredDemoDate}
+                        onChange={(e) => setFormData({ ...formData, preferredDemoDate: e.target.value })}
+                        className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-[#173F8A] focus:border-[#173F8A] bg-white transition-colors"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="block text-xs font-semibold text-slate-700">Current Student Strength</label>
+                      <select
+                        value={formData.studentsCount}
+                        onChange={(e) => setFormData({ ...formData, studentsCount: e.target.value })}
+                        className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-[#173F8A] focus:border-[#173F8A] bg-white transition-colors"
                       >
-                        <input
-                          type="checkbox"
-                          checked={isChecked}
-                          onChange={() => handleFeatureToggle(feat)}
-                          className="w-4 h-4 rounded text-[#173F8A] focus:ring-[#173F8A]"
-                        />
-                        <span>{feat}</span>
-                      </label>
-                    )
-                  })}
-                </div>
-              </div>
-
-              {/* Section 3: Scheduling & Requirements */}
-              <div>
-                <h3 className="text-base font-bold text-slate-900 flex items-center gap-2 mb-3">
-                  <Calendar className="w-4 h-4 text-[#173F8A]" />
-                  <span>3. Preferred Demo Date & Specific Requirements</span>
-                </h3>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">
-                      Preferred Date for Walkthrough
-                    </label>
-                    <input
-                      type="date"
-                      value={formData.preferredDemoDate}
-                      onChange={(e) => setFormData({ ...formData, preferredDemoDate: e.target.value })}
-                      className="w-full px-3.5 py-2 text-xs sm:text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#173F8A] focus:border-transparent bg-white"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">
-                      Current Software or Excel Setup (Optional)
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="e.g. Currently using offline Excel registers and biometric machine"
-                      value={formData.additionalRequirements}
-                      onChange={(e) => setFormData({ ...formData, additionalRequirements: e.target.value })}
-                      className="w-full px-3.5 py-2 text-xs sm:text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#173F8A] focus:border-transparent"
-                    />
+                        <option value="Under 100">Startup (Under 100)</option>
+                        <option value="100-250">Growing (100 - 250)</option>
+                        <option value="250-500">Established (250 - 500)</option>
+                        <option value="500-1000">Large Batch (500 - 1,000)</option>
+                        <option value="1000+">Enterprise (1,000+ Students)</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Consent & Privacy Notice */}
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-[11px] text-slate-500 leading-relaxed flex items-start gap-2.5">
-                <ShieldCheck className="w-4 h-4 text-[#0D9488] shrink-0 mt-0.5" />
-                <span>
-                  <strong>Privacy Notice:</strong> By submitting this demo request, you consent to receiving product demonstration communications from Cestrix Learning. We maintain strict non-disclosure practices and never share institute contact details.
-                </span>
-              </div>
-
-              {/* Submit Button */}
-              <div>
+              {/* Submit Section */}
+              <div className="mt-10 pt-6 border-t border-slate-100 flex flex-col items-center">
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 rounded-xl bg-[#173F8A] hover:bg-[#0f2c61] text-white font-bold text-sm sm:text-base shadow-lg shadow-[#173F8A]/25 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="w-full sm:w-auto min-w-[240px] py-3 px-6 rounded-lg bg-[#173F8A] hover:bg-[#12316A] text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                      <span>Submitting to Sales Desk...</span>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Submitting...</span>
                     </>
                   ) : (
                     <>
-                      <span>Confirm & Book Free Product Demo</span>
+                      <span>Book Free Live Demo</span>
                       <ArrowRight className="w-4 h-4" />
                     </>
                   )}
                 </button>
+                <div className="mt-4 flex items-center justify-center gap-1.5 text-xs text-slate-500">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                  <span>No credit card required. Your data is secure.</span>
+                </div>
               </div>
             </form>
           )}

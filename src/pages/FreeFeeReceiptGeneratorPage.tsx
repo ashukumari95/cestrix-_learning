@@ -42,7 +42,7 @@ export const FreeFeeReceiptGeneratorPage: React.FC = () => {
   const [instituteName, setInstituteName] = useState('Apex Science Academy')
   const [instituteTagline, setInstituteTagline] = useState('Premier Institute for IIT-JEE & NEET')
   const [instituteAddress, setInstituteAddress] = useState('Near Balua Chowk, Main Road, Motihari / Patna')
-  const [institutePhone, setInstitutePhone] = useState('+91 98765 43210')
+  const [institutePhone, setInstitutePhone] = useState('+91 77650 16973')
 
   const [studentName, setStudentName] = useState('Rahul Kumar')
   const [studentRoll, setStudentRoll] = useState('ASA-2026-042')
@@ -262,7 +262,7 @@ export const FreeFeeReceiptGeneratorPage: React.FC = () => {
                     value={institutePhone}
                     onChange={(e) => setInstitutePhone(e.target.value)}
                     className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#002D62]"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 77650 16973"
                   />
                 </div>
               </div>

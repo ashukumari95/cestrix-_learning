@@ -76,7 +76,8 @@ export default function RootLayout({
     'contactPoint': {
       '@type': 'ContactPoint',
       'contactType': 'sales & customer support',
-      'email': 'support@cestrixlearning.com',
+      'telephone': '+91-7765016973',
+      'email': 'info@cestrixgroup.com',
       'areaServed': 'IN',
       'availableLanguage': ['English', 'Hindi'],
     },
