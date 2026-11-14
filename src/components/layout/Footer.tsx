@@ -145,11 +145,6 @@ export const Footer: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-6">
 
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-xs text-slate-500 text-center sm:text-left">
-            <span className="flex items-center gap-1.5 font-medium text-slate-400">
-              <ShieldCheck className="w-4 h-4 text-emerald-500" />
-              ISO 27001 Certified & GDPR Compliant
-            </span>
-            <span className="hidden sm:inline-block text-slate-700">|</span>
             <span>© {new Date().getFullYear()} Cestrix Group. All rights reserved.</span>
           </div>
 
