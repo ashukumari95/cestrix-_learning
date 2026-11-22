@@ -9,8 +9,10 @@ import {
 
 import { PRICING_PLANS } from '../data/pricingData'
 import { SchemaMarkup } from '../components/seo/SchemaMarkup'
+import { useDemoModal } from '../context/DemoModalContext'
 
 export const PricingPage: React.FC = () => {
+  const { openDemoModal, openCheckoutModal } = useDemoModal()
   const [billingCycle, setBillingCycle] = useState<'MONTHLY' | 'YEARLY'>('YEARLY')
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0)
 
@@ -533,18 +535,20 @@ export const PricingPage: React.FC = () => {
 
                 {/* Bottom Action Buttons */}
                 <div className="space-y-2.5">
-                  <Link
-                    to="/book-demo?plan=growth"
-                    className="w-full py-3.5 rounded-xl bg-[#004098] hover:bg-[#003070] text-white font-bold text-sm text-center shadow-sm block transition-all"
+                  <button
+                    type="button"
+                    onClick={() => openCheckoutModal('growth')}
+                    className="w-full py-3.5 rounded-xl bg-[#004098] hover:bg-[#003070] text-white font-bold text-sm text-center shadow-sm block transition-all cursor-pointer"
                   >
                     Buy Now
-                  </Link>
-                  <Link
-                    to="/book-demo?plan=trial"
-                    className="w-full py-3 rounded-xl border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold text-sm text-center block transition-all"
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => openDemoModal('growth')}
+                    className="w-full py-3 rounded-xl border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold text-sm text-center block transition-all cursor-pointer"
                   >
                     Try It Free
-                  </Link>
+                  </button>
                 </div>
               </div>
             )
@@ -667,18 +671,20 @@ export const PricingPage: React.FC = () => {
 
                 {/* Bottom Action Buttons */}
                 <div className="space-y-2.5">
-                  <Link
-                    to="/book-demo?plan=pro"
-                    className="w-full py-3.5 rounded-xl bg-[#009FA8] hover:bg-[#00878F] text-white font-extrabold text-sm text-center shadow-lg block transition-all"
+                  <button
+                    type="button"
+                    onClick={() => openCheckoutModal('pro')}
+                    className="w-full py-3.5 rounded-xl bg-[#009FA8] hover:bg-[#00878F] text-white font-extrabold text-sm text-center shadow-lg block transition-all cursor-pointer"
                   >
                     Buy Now
-                  </Link>
-                  <Link
-                    to="/book-demo?plan=trial"
-                    className="w-full py-3 rounded-xl border-2 border-white/30 text-white hover:bg-white/10 font-bold text-sm text-center block transition-all"
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => openDemoModal('pro')}
+                    className="w-full py-3 rounded-xl border-2 border-white/30 text-white hover:bg-white/10 font-bold text-sm text-center block transition-all cursor-pointer"
                   >
                     Try It Free
-                  </Link>
+                  </button>
                 </div>
               </div>
             )
@@ -765,12 +771,13 @@ export const PricingPage: React.FC = () => {
 
                 {/* Bottom Action Button */}
                 <div className="pt-2">
-                  <Link
-                    to="/book-demo?plan=custom"
-                    className="w-full py-4 rounded-xl bg-slate-900 hover:bg-black text-white font-extrabold text-sm text-center shadow-md block transition-all"
+                  <button
+                    type="button"
+                    onClick={() => openDemoModal('custom')}
+                    className="w-full py-4 rounded-xl bg-slate-900 hover:bg-black text-white font-extrabold text-sm text-center shadow-md block transition-all cursor-pointer"
                   >
                     Contact Enterprise
-                  </Link>
+                  </button>
                 </div>
               </div>
             )
