@@ -36,7 +36,7 @@ export const FinalCtaSection: React.FC = () => {
             to="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl transition-all"
           >
-            <span>Contact Sales</span>
+            <span>Contact Enterprise</span>
           </Link>
         </div>
 

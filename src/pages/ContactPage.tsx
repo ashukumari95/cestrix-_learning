@@ -41,7 +41,7 @@ export const ContactPage: React.FC = () => {
                   <Mail className="w-5 h-5 text-[#173F8A]" />
                 </div>
                 <div>
-                  <div className="font-bold text-slate-900 mb-0.5">Enterprise Sales & Demos</div>
+                  <div className="font-bold text-slate-900 mb-0.5">Enterprise & Demos</div>
                   <a href="mailto:info@cestrixgroup.com" className="text-[#173F8A] hover:underline">info@cestrixgroup.com</a>
                 </div>
               </div>

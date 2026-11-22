@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-3.5 pt-2 text-sm">
               <a href="tel:+917765016973" className="flex items-center gap-3 hover:text-blue-400 transition-colors group">
                 <Phone className="w-4 h-4 text-slate-500 group-hover:text-blue-400" />
-                <span>+91 77650 16973 (Sales)</span>
+                <span>+91 77650 16973</span>
               </a>
               <a href="mailto:info@cestrixgroup.com" className="flex items-center gap-3 hover:text-blue-400 transition-colors group">
                 <Mail className="w-4 h-4 text-slate-500 group-hover:text-blue-400" />

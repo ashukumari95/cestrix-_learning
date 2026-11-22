@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: 'Is it suitable for small or single-branch coaching institutes?',
-    a: 'Yes. Cestrix Learning is modular and scales seamlessly from single-classroom tuition centers with 50 students up to multi-branch networks with thousands of learners. The Starter tier provides the essential automation small centers need to replace paper registers and Excel sheets without requiring in-house IT staff.'
+    a: 'Yes. Cestrix Learning is modular and scales seamlessly from single-classroom tuition centers with 50 students up to multi-branch networks with thousands of learners. The Growth tier provides the essential automation small centers need to replace paper registers and Excel sheets without requiring in-house IT staff.'
   },
   {
     q: 'Can we manage multiple branches and franchises from one place?',

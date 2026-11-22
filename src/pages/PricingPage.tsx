@@ -26,23 +26,20 @@ export const PricingPage: React.FC = () => {
         {
           name: 'Coaching Master Admin Panel',
           desc: 'Central command for Director & Management: fee records, analytics, admissions, staff control & branches',
-          starter: true,
-          growth: true,
-          pro: true,
-          enterprise: true
+          growth: 'Web Browser Panel',
+          pro: 'Web + Android APK',
+          enterprise: 'Web + Custom APK'
         },
         {
-          name: 'Dedicated Teacher / Faculty Panel',
+          name: 'Dedicated Teacher & Parent Panel',
           desc: 'Independent portal & app for teachers to mark attendance, assign DPP/homework, upload notes & live classes with zero fee access',
-          starter: true,
-          growth: true,
-          pro: true,
-          enterprise: true
+          growth: 'Web Portal Only',
+          pro: 'Android APK + Web',
+          enterprise: 'Android/iOS APK + Web'
         },
         {
           name: 'Role-Based Staff Permissions',
           desc: 'Role separation for Admin, Faculty, Accountant, and Counselor to protect financial privacy and fee records',
-          starter: 'Basic Roles',
           growth: 'Multi-Staff Access',
           pro: 'Granular Permissions',
           enterprise: 'Custom Hierarchy'
@@ -50,7 +47,6 @@ export const PricingPage: React.FC = () => {
         {
           name: 'Unlimited Students',
           desc: 'No student caps or per-seat penalties; grow freely without surprise charges',
-          starter: true,
           growth: true,
           pro: true,
           enterprise: true
@@ -58,7 +54,6 @@ export const PricingPage: React.FC = () => {
         {
           name: 'Unlimited Branches',
           desc: 'Manage all branch locations and classrooms under one unified admin dashboard',
-          starter: true,
           growth: true,
           pro: true,
           enterprise: true
@@ -66,15 +61,13 @@ export const PricingPage: React.FC = () => {
         {
           name: 'Walk-In Inquiry & Lead CRM',
           desc: 'Track offline walk-in student inquiries, follow-up callbacks, and admission pipeline',
-          starter: true,
           growth: true,
           pro: true,
           enterprise: true
         },
         {
           name: 'Attendance & QR ID Cards',
-          desc: 'Daily attendance tracking, faculty app check-in, and printable student ID cards',
-          starter: true,
+          desc: 'Daily attendance tracking, faculty check-in, and printable student ID cards',
           growth: true,
           pro: true,
           enterprise: true
@@ -82,7 +75,6 @@ export const PricingPage: React.FC = () => {
         {
           name: 'Biometric Attendance Sync',
           desc: 'Real-time sync with fingerprint and facial recognition biometric machines',
-          starter: false,
           growth: false,
           pro: true,
           enterprise: true
@@ -90,23 +82,20 @@ export const PricingPage: React.FC = () => {
         {
           name: 'Batch Scheduling & Timetables',
           desc: 'Manage morning/evening shifts with automatic classroom conflict alerts',
-          starter: true,
           growth: true,
           pro: true,
           enterprise: true
         },
         {
-          name: 'Dedicated Parent App & Portal',
+          name: 'Dedicated Parent Portal & App',
           desc: 'Separate parent login to track daily attendance, test performance scorecards, and payment receipts',
-          starter: true,
-          growth: true,
-          pro: true,
-          enterprise: true
+          growth: 'Web Portal Only',
+          pro: 'Mobile App + Web',
+          enterprise: 'Mobile App + Web'
         },
         {
           name: 'Student ID & Certificate Generator',
           desc: '1-click generation of printable student ID cards with QR barcodes and course completion certificates',
-          starter: true,
           growth: true,
           pro: true,
           enterprise: true
@@ -114,7 +103,6 @@ export const PricingPage: React.FC = () => {
         {
           name: 'Archived Student Records',
           desc: 'Retain historical student fee receipts, academic marks, and certificates for free',
-          starter: true,
           growth: true,
           pro: true,
           enterprise: true
@@ -126,25 +114,29 @@ export const PricingPage: React.FC = () => {
       icon: Globe,
       items: [
         {
+          name: 'Student Mobile App (Play Store)',
+          desc: 'Dedicated branded mobile application for students published on Google Play Store',
+          growth: false,
+          pro: 'Your Play Store App',
+          enterprise: 'Play Store + iOS App'
+        },
+        {
+          name: 'Staff & Teacher Mobile APKs',
+          desc: 'Independent Android APK applications for teachers and management staff for on-the-go tracking',
+          growth: false,
+          pro: 'Included (Android APKs)',
+          enterprise: 'Custom APKs & iOS'
+        },
+        {
           name: 'Website & Domain',
           desc: 'Branded public portal with course listings and online admission inquiry forms',
-          starter: 'yourname.cestrix.com',
           growth: 'yourname.cestrix.com',
           pro: 'yourcoaching.com',
           enterprise: 'yourcoaching.com (Domain Included)'
         },
         {
-          name: 'Mobile App',
-          desc: 'Coaching logo & theme inside student app on Starter/Growth; dedicated Google Play Store app on Pro & Enterprise',
-          starter: 'In-App Branding',
-          growth: 'In-App Branding',
-          pro: 'Your Play Store App',
-          enterprise: 'Your Play Store App'
-        },
-        {
           name: 'Course Selling Storefront',
           desc: 'Sell recorded batches, study notes, and test series online with instant payment',
-          starter: true,
           growth: true,
           pro: true,
           enterprise: true
@@ -152,15 +144,13 @@ export const PricingPage: React.FC = () => {
         {
           name: 'App Push & WhatsApp Alerts',
           desc: 'Automated real-time attendance alerts and fee due reminders to parents via App & WhatsApp',
-          starter: true,
-          growth: true,
-          pro: true,
-          enterprise: true
+          growth: 'WhatsApp Alerts',
+          pro: 'WhatsApp + App Push',
+          enterprise: 'WhatsApp + App Push'
         },
         {
           name: 'Discount Coupons & Promo Codes',
           desc: 'Create custom promo codes (e.g. DIWALI50, NEET2026) with flat or percentage discounts for course sales',
-          starter: true,
           growth: true,
           pro: true,
           enterprise: true
@@ -260,8 +250,7 @@ export const PricingPage: React.FC = () => {
         {
           name: 'In-App Offline Video Downloads',
           desc: 'Students can download lectures inside the mobile app to watch without internet (encrypted & non-transferable)',
-          starter: false,
-          growth: true,
+          growth: false,
           pro: true,
           enterprise: true
         }
@@ -349,19 +338,19 @@ export const PricingPage: React.FC = () => {
     },
     {
       q: 'Do teachers have a dedicated portal, and can they see our coaching fee collections?',
-      a: 'Zero fee leak guarantee. Cestrix provides a dedicated Teacher & Faculty Panel (accessible via Web & App) strictly separated from your coaching finances. Teachers can schedule classes, mark attendance, share study notes, evaluate tests, and assign homework—with zero access to student fee collections, cash ledgers, profit reports, or bank settings.'
+      a: 'Zero fee leak guarantee. Cestrix provides a dedicated Teacher & Parent Panel (Web Portal on Growth; Dedicated Android APK + Web Portal on Pro) strictly separated from your coaching finances. Teachers can schedule classes, mark attendance, share study notes, evaluate tests, and assign homework—with zero access to student fee collections, cash ledgers, profit reports, or bank settings.'
     },
     {
       q: 'Can we conduct Live Interactive Classes on Cestrix?',
-      a: 'Yes! Cestrix integrates directly with Zoom and Google Meet across all plans. Teachers can schedule and launch live interactive classes with one tap from the teacher app or web portal. Students join directly inside their student app without needing external links, and Cestrix charges zero extra per-hour fees.'
+      a: 'Yes! Cestrix integrates directly with Zoom and Google Meet across all plans. Teachers can schedule and launch live interactive classes with one tap from the teacher app or web portal. Students join directly inside their student portal or mobile app without needing external links, and Cestrix charges zero extra per-hour fees.'
     },
     {
-      q: 'How does Coaching App Branding work across Starter, Growth, Pro, and Enterprise?',
-      a: 'On Starter and Growth plans, your students use the mobile app with your institute’s own name, logo, banner, and theme visible throughout their learning experience (In-App Branding). On Pro Solutions and Enterprise plans, you get your own dedicated standalone mobile app published under your coaching’s name directly on the Google Play Store!'
+      q: 'Growth aur Pro plan me panels aur app ka kya difference hai?',
+      a: 'Growth plan me coaching operate karne ke liye Admin & Teacher Web Panels milte hain (PC/Laptop browser se complete coaching chala sakte hain) jisme student mobile app shamil nahi hai (students web portal se access karte hain). Pro Solutions plan me aapko staff ke liye dedicated Android APKs (Admin APK + Teacher APK) milte hain aur aapke coaching ke naam se branded Student Mobile App Google Play Store par live publish ki jaati hai!'
     },
     {
-      q: 'How much video can we upload with 5 GB, 15 GB, 35 GB, and 100 GB storage?',
-      a: '5 GB holds ~50 hours of HD lectures, 15 GB holds ~150 hours, 35 GB holds ~350 hours, and 100 GB holds ~1,000+ hours. In addition, you get unlimited free streaming by embedding unlisted YouTube videos directly into batches without consuming your plan’s private cloud storage.'
+      q: 'How much video can we upload with 15 GB, 35 GB, and 100 GB+ storage?',
+      a: '15 GB holds ~150 hours of HD lectures, 35 GB holds ~350 hours, and 100 GB+ holds ~1,000+ hours. In addition, you get unlimited free streaming by embedding unlisted YouTube videos directly into batches without consuming your plan’s private cloud storage.'
     },
     {
       q: 'Are there extra charges for WhatsApp notifications?',
@@ -377,7 +366,7 @@ export const PricingPage: React.FC = () => {
     },
     {
       q: 'Can we get our own branded mobile app on Google Play Store?',
-      a: 'Yes! Both Pro Solutions and Enterprise plans include your own standalone app published under your coaching’s name on the Google Play Store. On annual plans, the ₹9,599 setup fee is completely waived (₹0).'
+      a: 'Yes! Both Pro Solutions and Custom plans include your own standalone app published under your coaching’s name on the Google Play Store. On annual plans, the ₹9,599 setup fee is completely waived (₹0).'
     }
   ]
 
@@ -394,16 +383,20 @@ export const PricingPage: React.FC = () => {
 
       {/* ── Section 1: Hero Header (Formstack Clean Style) ── */}
       <section className="pt-16 sm:pt-24 pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold uppercase tracking-wider text-slate-700 mb-4">
+          <span className="w-2 h-2 rounded-full bg-[#009FA8] animate-pulse"></span>
+          <span>Plans & Pricing</span>
+        </div>
         <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-slate-900 tracking-tight leading-[1.14]">
-          Cestrix Pricing Plans
+          Choose the plan that fits <span className="text-[#004098]">your coaching.</span>
         </h1>
         <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
           Start with what you need. Scale when you’re ready.
         </p>
 
-        {/* ── Annual Incentive + Pill Switcher (Formstack Layout) ── */}
+        {/* ── Annual Incentive + Pill Switcher ── */}
         <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-end gap-3 max-w-6xl mx-auto">
-          <span className="text-emerald-700 font-semibold text-xs sm:text-sm">
+          <span className="text-[#009FA8] font-semibold text-xs sm:text-sm">
             Save 2 months with annual plans
           </span>
           <div className="inline-flex items-center p-1 bg-slate-100 rounded-full border border-slate-200 shadow-2xs">
@@ -433,31 +426,35 @@ export const PricingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── Section 2: 4 Formstack-Style Clean Pricing Cards ── */}
+      {/* ── Section 2: 3 Clean High-Converting Pricing Cards ── */}
       <section className="pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
           
-          {/* 1. STARTER PLAN CARD (Warm Peach Tint) */}
+          {/* 1. GROWTH PLAN CARD (Clean White with Cestrix Accents) */}
           {(() => {
-            const plan = plans.find(p => p.id === 'starter') || plans[0]
+            const plan = plans.find(p => p.id === 'growth') || plans[0]
             const price = billingCycle === 'YEARLY' ? plan.annualPrice : plan.monthlyPrice
             return (
-              <div className="rounded-3xl p-7 sm:p-8 bg-[#FFF8F3] border border-[#FCE6D8] flex flex-col justify-between shadow-2xs hover:shadow-md transition-all">
+              <div className="rounded-3xl p-7 sm:p-8 bg-white border border-slate-200 flex flex-col justify-between shadow-2xs hover:shadow-md transition-all">
                 <div>
                   <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center shrink-0">
-                      <BookOpen size={16} />
+                    <div className="w-8 h-8 rounded-lg bg-teal-50 text-[#009FA8] border border-teal-200/60 flex items-center justify-center shrink-0">
+                      <Layers size={16} />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Starter</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Growth</h3>
                   </div>
-                  <p className="text-xs text-slate-600 min-h-[38px] leading-relaxed">
-                    Coaching admin dashboard, dedicated teacher panel, and student app for growing institutes.
+                  <p className="text-xs text-slate-500 min-h-[38px] leading-relaxed">
+                    Web browser panels for coaching admin & teachers. Manage admissions, tests, and fees without a mobile app.
                   </p>
 
-                  <div className="mt-6 mb-6">
-                    <span className="text-xs font-semibold text-slate-500 block mb-1">Starting at</span>
+                  <div className="mt-5 mb-3">
+                    {billingCycle === 'YEARLY' && (
+                      <span className="text-xs text-slate-400 font-medium line-through block mb-1">
+                        ₹1,999/month
+                      </span>
+                    )}
                     <div className="flex items-baseline gap-1.5">
-                      <span className="text-5xl sm:text-6xl font-black text-[#D96B43] tracking-tight">
+                      <span className="text-5xl sm:text-6xl font-black text-slate-900 tracking-tight">
                         ₹{price.toLocaleString()}
                       </span>
                       <div className="text-xs text-slate-500 font-medium leading-tight">
@@ -469,49 +466,66 @@ export const PricingPage: React.FC = () => {
                     </div>
                   </div>
 
+                  {/* Highlight Info Box (like reference image) */}
+                  <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 flex items-center justify-between mb-6">
+                    <span>{billingCycle === 'YEARLY' ? 'Min. Billed ₹17,988/Year · ₹0 Setup Fee' : 'Monthly Flexible Billing · No Lock-in'}</span>
+                  </div>
+
                   {/* Diff Tag Header */}
-                  <div className="mb-4 pb-2 border-b border-orange-200/70">
-                    <span className="text-[11px] font-extrabold text-orange-900 uppercase tracking-wider bg-orange-100/90 px-2.5 py-1 rounded-md inline-block">
-                      Core Inclusions:
+                  <div className="mb-4 pb-2 border-b border-slate-100">
+                    <span className="text-[11px] font-extrabold text-slate-500 uppercase tracking-wider">
+                      WHAT'S INCLUDED:
                     </span>
                   </div>
 
-                  {/* Bullet Features with Orange Checks */}
+                  {/* Bullet Features with Logo Teal Checks */}
                   <div className="space-y-3 mb-8">
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
-                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-slate-900">Unlimited Students & Branches</span>
+                      <Check size={16} className="text-[#009FA8] stroke-[3] shrink-0 mt-0.5" />
+                      <span className="font-bold text-slate-900">Admin Web Panel</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
-                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-slate-900">Coaching Admin & Teacher Panels</span>
+                      <Check size={16} className="text-[#009FA8] stroke-[3] shrink-0 mt-0.5" />
+                      <span className="font-bold text-slate-900">Teacher & Parent Web Panel (Browser)</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 bg-slate-50 p-2 rounded-xl border border-slate-200">
+                      <XCircle size={16} className="text-slate-400 stroke-[2.5] shrink-0 mt-0.5" />
+                      <span className="text-slate-700 font-medium text-xs">Student Mobile App: Not Included (Web Access Only)</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
+                      <Check size={16} className="text-[#009FA8] stroke-[3] shrink-0 mt-0.5" />
+                      <span className="font-bold text-slate-900">Unlimited Students</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>In-App Coaching Branding (Logo & Name)</span>
+                      <Check size={16} className="text-[#009FA8] stroke-[3] shrink-0 mt-0.5" />
+                      <span className="font-medium text-slate-900">Role-Based Staff Access (Multi-Faculty)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
+                      <Check size={16} className="text-[#009FA8] stroke-[3] shrink-0 mt-0.5" />
                       <span>Live Classes (Zoom & Meet Sync)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Walk-In Inquiry & Lead CRM</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
+                      <Check size={16} className="text-[#009FA8] stroke-[3] shrink-0 mt-0.5" />
                       <span>Daily Attendance & QR ID Cards</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Online Practice Tests & Course Store</span>
+                      <Check size={16} className="text-[#009FA8] stroke-[3] shrink-0 mt-0.5" />
+                      <span>CBT Online Exam Simulator (Web)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
-                      <span>5 GB Storage (~50 hrs lectures)</span>
+                      <Check size={16} className="text-[#009FA8] stroke-[3] shrink-0 mt-0.5" />
+                      <span>Course Selling Storefront (0% cut)</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#D96B43] stroke-[3] shrink-0 mt-0.5" />
+                      <Check size={16} className="text-[#009FA8] stroke-[3] shrink-0 mt-0.5" />
+                      <span>15 GB Storage (~150 hrs lectures)</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#009FA8] stroke-[3] shrink-0 mt-0.5" />
+                      <span>Automated WhatsApp Fee Reminders</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#009FA8] stroke-[3] shrink-0 mt-0.5" />
                       <span>0% Platform Commission</span>
                     </div>
                   </div>
@@ -520,111 +534,8 @@ export const PricingPage: React.FC = () => {
                 {/* Bottom Action Buttons */}
                 <div className="space-y-2.5">
                   <Link
-                    to="/book-demo?plan=starter"
-                    className="w-full py-3.5 rounded-xl bg-[#D97D54] hover:bg-[#C26B43] text-white font-bold text-sm text-center shadow-sm block transition-all"
-                  >
-                    Buy Now
-                  </Link>
-                  <Link
-                    to="/book-demo?plan=trial"
-                    className="w-full py-3 rounded-xl border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold text-sm text-center block transition-all"
-                  >
-                    Try It Free
-                  </Link>
-                </div>
-              </div>
-            )
-          })()}
-
-          {/* 2. GROWTH PLAN CARD (Soft Mint Tint) */}
-          {(() => {
-            const plan = plans.find(p => p.id === 'growth') || plans[1]
-            const price = billingCycle === 'YEARLY' ? plan.annualPrice : plan.monthlyPrice
-            return (
-              <div className="rounded-3xl p-7 sm:p-8 bg-[#F0FAF4] border border-[#D1F2DD] flex flex-col justify-between shadow-2xs hover:shadow-md transition-all">
-                <div>
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center shrink-0">
-                      <Layers size={16} />
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Growth</h3>
-                  </div>
-                  <p className="text-xs text-slate-600 min-h-[38px] leading-relaxed">
-                    Role-based staff access, computer-based mock tests, lecture streaming, and WhatsApp reminders.
-                  </p>
-
-                  <div className="mt-6 mb-6">
-                    <span className="text-xs font-semibold text-slate-500 block mb-1">Starting at</span>
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="text-5xl sm:text-6xl font-black text-[#0D824B] tracking-tight">
-                        ₹{price.toLocaleString()}
-                      </span>
-                      <div className="text-xs text-slate-500 font-medium leading-tight">
-                        <span>/month</span>
-                        <span className="block text-[11px] text-slate-400">
-                          {billingCycle === 'YEARLY' ? 'paid annually' : 'paid monthly'}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Diff Tag Header */}
-                  <div className="mb-4 pb-2 border-b border-emerald-200/70">
-                    <span className="text-[11px] font-extrabold text-emerald-900 uppercase tracking-wider bg-emerald-100/90 px-2.5 py-1 rounded-md inline-block">
-                      Everything in Starter, plus:
-                    </span>
-                  </div>
-
-                  {/* Bullet Features with Green Checks */}
-                  <div className="space-y-3 mb-8">
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
-                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-emerald-900">All Starter features included</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
-                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-emerald-900">Role-Based Staff Access (Multi-Faculty)</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>In-App Coaching Branding (Logo & Name)</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>15 GB Storage (~150 hrs lectures)</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Anti-Piracy Protected Video Streaming</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Single-Device Login & Offline Downloads</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>CBT Online Exam Simulator</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Course Selling Storefront (0% cut)</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Automated WhatsApp Fee Reminders</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#0D824B] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Installments & Automated Late Fines</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Action Buttons */}
-                <div className="space-y-2.5">
-                  <Link
                     to="/book-demo?plan=growth"
-                    className="w-full py-3.5 rounded-xl bg-[#0D824B] hover:bg-[#0A6B3D] text-white font-bold text-sm text-center shadow-sm block transition-all"
+                    className="w-full py-3.5 rounded-xl bg-[#004098] hover:bg-[#003070] text-white font-bold text-sm text-center shadow-sm block transition-all"
                   >
                     Buy Now
                   </Link>
@@ -639,97 +550,116 @@ export const PricingPage: React.FC = () => {
             )
           })()}
 
-          {/* 3. PRO SOLUTIONS PLAN CARD (Soft Lavender-Blue Tint with Floating MOST POPULAR Pill) */}
+          {/* 2. PRO SOLUTIONS PLAN CARD (Hero Centerpiece - Dark Card with ★ MOST POPULAR) */}
           {(() => {
-            const plan = plans.find(p => p.id === 'pro') || plans[2]
+            const plan = plans.find(p => p.id === 'pro') || plans[1]
             const price = billingCycle === 'YEARLY' ? plan.annualPrice : plan.monthlyPrice
             return (
-              <div className="rounded-3xl p-7 sm:p-8 bg-[#F1F6FE] border-2 border-[#1E40AF]/30 flex flex-col justify-between shadow-md hover:shadow-xl transition-all relative">
+              <div className="rounded-3xl p-7 sm:p-8 bg-[#071326] border-2 border-[#009FA8]/60 flex flex-col justify-between shadow-2xl transition-all relative scale-[1.03] z-10 text-white">
                 {/* Top Floating Badge */}
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="bg-[#1E40AF] text-white font-extrabold text-[11px] px-4 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                    MOST POPULAR
+                  <span className="bg-[#009FA8] text-white font-extrabold text-[11px] px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md flex items-center gap-1.5">
+                    <span>★</span>
+                    <span>MOST POPULAR</span>
                   </span>
                 </div>
 
                 <div>
                   <div className="flex items-center gap-2.5 mb-2 mt-1">
-                    <div className="w-8 h-8 rounded-lg bg-[#173F8A] text-white flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-[#004098] text-white flex items-center justify-center shrink-0">
                       <Building2 size={16} />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Pro Solutions</h3>
+                    <h3 className="text-2xl font-bold text-white tracking-tight">Pro Solutions</h3>
                   </div>
-                  <p className="text-xs text-slate-600 min-h-[38px] leading-relaxed">
-                    Your coaching Play Store app, custom domain, biometric attendance, teacher panel, and exam analytics.
+                  <p className="text-xs text-slate-300 min-h-[38px] leading-relaxed">
+                    Staff Mobile APKs + Your Own Branded Student App published on Google Play Store.
                   </p>
 
-                  <div className="mt-6 mb-6">
-                    <span className="text-xs font-semibold text-slate-500 block mb-1">Starting at</span>
+                  <div className="mt-5 mb-3">
+                    {billingCycle === 'YEARLY' && (
+                      <span className="text-xs text-slate-500 font-medium line-through block mb-1">
+                        ₹2,999/month
+                      </span>
+                    )}
                     <div className="flex items-baseline gap-1.5">
-                      <span className="text-5xl sm:text-6xl font-black text-[#1E40AF] tracking-tight">
+                      <span className="text-5xl sm:text-6xl font-black text-[#00D2D3] tracking-tight">
                         ₹{price.toLocaleString()}
                       </span>
-                      <div className="text-xs text-slate-500 font-medium leading-tight">
+                      <div className="text-xs text-slate-400 font-medium leading-tight">
                         <span>/month</span>
-                        <span className="block text-[11px] text-slate-400">
+                        <span className="block text-[11px] text-slate-500">
                           {billingCycle === 'YEARLY' ? 'paid annually' : 'paid monthly'}
                         </span>
                       </div>
                     </div>
                   </div>
 
-                  {/* Diff Tag Header */}
-                  <div className="mb-4 pb-2 border-b border-blue-200/70">
-                    <span className="text-[11px] font-extrabold text-[#173F8A] uppercase tracking-wider bg-blue-100/90 px-2.5 py-1 rounded-md inline-block">
-                      Everything in Growth, plus:
+                  {/* Highlight Info Box (like reference image) */}
+                  <div className="p-2.5 rounded-xl bg-white/10 border border-white/15 text-xs font-semibold text-[#00D2D3] flex items-center justify-between mb-6">
+                    <span>{billingCycle === 'YEARLY' ? '★ ₹9,599 Play Store Setup Waived (100% Free)' : 'Min. Billed ₹2,999/Month + One-Time Setup'}</span>
+                  </div>
+
+                  {/* Sub-tag & Diff Header */}
+                  <div className="mb-2">
+                    <span className="text-[11px] font-bold text-[#38BDF8] uppercase tracking-wider block">
+                      → Everything in Growth, plus:
+                    </span>
+                  </div>
+                  <div className="mb-4 pb-2 border-b border-slate-700/80">
+                    <span className="text-[11px] font-extrabold text-slate-400 uppercase tracking-wider">
+                      PRO APK & PLAY STORE SUITE:
                     </span>
                   </div>
 
-                  {/* Bullet Features with Blue Checks */}
+                  {/* Bullet Features with Glowing Cyan Checks */}
                   <div className="space-y-3 mb-8">
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
-                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-[#173F8A]">All Growth features included</span>
-                    </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900 bg-blue-100/60 p-2.5 rounded-xl border border-blue-200/60">
-                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-white bg-white/10 p-2.5 rounded-xl border border-white/15">
+                      <Check size={16} className="text-[#00D2D3] stroke-[3] shrink-0 mt-0.5" />
                       <div>
-                        <span className="font-bold text-[#1E40AF] block">Your Own App on Google Play Store</span>
-                        <span className="text-[11px] font-semibold text-blue-800">
+                        <span className="font-bold text-white block">Your Own Student App on Google Play Store</span>
+                        <span className="text-[11px] font-semibold text-[#00D2D3]">
                           {billingCycle === 'YEARLY' ? '₹9,599 Setup Fee Waived (100% Free)' : 'One-time ₹9,599 App Setup Fee'}
                         </span>
                       </div>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Connect Custom Domain (yourcoaching.com)</span>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-white">
+                      <Check size={16} className="text-[#00D2D3] stroke-[3] shrink-0 mt-0.5" />
+                      <span className="font-bold text-white">Teacher & Parent Mobile App (Android APK)</span>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span>35 GB Storage (~350 hrs lectures)</span>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-white">
+                      <Check size={16} className="text-[#00D2D3] stroke-[3] shrink-0 mt-0.5" />
+                      <span className="font-bold text-white">Admin Management Mobile App (Android APK)</span>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
+                      <Check size={16} className="text-[#00D2D3] stroke-[3] shrink-0 mt-0.5" />
                       <span>Biometric Machine Attendance Sync</span>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-medium text-slate-900">Granular Staff Permissions (No Fee Leak)</span>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
+                      <Check size={16} className="text-[#00D2D3] stroke-[3] shrink-0 mt-0.5" />
+                      <span>Connect Custom Domain (yourcoaching.com)</span>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
+                      <Check size={16} className="text-[#00D2D3] stroke-[3] shrink-0 mt-0.5" />
+                      <span>35 GB Storage (~350 hrs lectures)</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
+                      <Check size={16} className="text-[#00D2D3] stroke-[3] shrink-0 mt-0.5" />
+                      <span className="font-medium text-white">Granular Staff Permissions (No Fee Leak)</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
+                      <Check size={16} className="text-[#00D2D3] stroke-[3] shrink-0 mt-0.5" />
                       <span>Automated WhatsApp & App Alerts</span>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
+                      <Check size={16} className="text-[#00D2D3] stroke-[3] shrink-0 mt-0.5" />
                       <span>Student Error Notebook & Analytics</span>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
+                      <Check size={16} className="text-[#00D2D3] stroke-[3] shrink-0 mt-0.5" />
                       <span>AI Doubt Solver for Students</span>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <Check size={16} className="text-[#1E40AF] stroke-[3] shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
+                      <Check size={16} className="text-[#00D2D3] stroke-[3] shrink-0 mt-0.5" />
                       <span>Priority Dedicated VIP Support</span>
                     </div>
                   </div>
@@ -739,13 +669,13 @@ export const PricingPage: React.FC = () => {
                 <div className="space-y-2.5">
                   <Link
                     to="/book-demo?plan=pro"
-                    className="w-full py-3.5 rounded-xl bg-[#4D82C4] hover:bg-[#3D71B2] text-white font-bold text-sm text-center shadow-sm block transition-all"
+                    className="w-full py-3.5 rounded-xl bg-[#009FA8] hover:bg-[#00878F] text-white font-extrabold text-sm text-center shadow-lg block transition-all"
                   >
                     Buy Now
                   </Link>
                   <Link
                     to="/book-demo?plan=trial"
-                    className="w-full py-3 rounded-xl border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold text-sm text-center block transition-all"
+                    className="w-full py-3 rounded-xl border-2 border-white/30 text-white hover:bg-white/10 font-bold text-sm text-center block transition-all"
                   >
                     Try It Free
                   </Link>
@@ -754,31 +684,23 @@ export const PricingPage: React.FC = () => {
             )
           })()}
 
-          {/* 4. ENTERPRISE SOLUTIONS CARD (Formstack Dark Sleek Card with Floating FLEXIBLE Pill) */}
+          {/* 3. CUSTOM (Clean White Card) */}
           {(() => {
-            const plan = plans.find(p => p.id === 'enterprise') || plans[3]
-            const price = billingCycle === 'YEARLY' ? plan.annualPrice : plan.monthlyPrice
+            const plan = plans.find(p => p.id === 'custom') || plans.find(p => p.id === 'enterprise') || plans[2]
             return (
-              <div className="rounded-3xl p-7 sm:p-8 bg-[#131F2E] border border-slate-800 text-white flex flex-col justify-between relative shadow-xl">
-                {/* Top Floating Badge */}
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="bg-[#FCE8A6] text-slate-900 font-extrabold text-[11px] px-4 py-1 rounded-full uppercase tracking-wider shadow-xs">
-                    FLEXIBLE
-                  </span>
-                </div>
-
+              <div className="rounded-3xl p-7 sm:p-8 bg-white border border-slate-200 text-slate-900 flex flex-col justify-between shadow-2xs hover:shadow-md transition-all">
                 <div>
-                  <h3 className="text-2xl font-bold text-[#E8BA64] tracking-tight mb-2 mt-1">
-                    Enterprise Solutions
+                  <h3 className="text-2xl font-bold text-slate-900 tracking-tight mb-2 mt-1">
+                    Custom Quote
                   </h3>
-                  <p className="text-xs text-slate-300 min-h-[38px] leading-relaxed">
-                    Custom setup for multi-campus coaching institutes and franchise networks.
+                  <p className="text-xs text-slate-500 min-h-[38px] leading-relaxed">
+                    Custom setup for multi-campus coaching institutes, franchise networks, and universities.
                   </p>
 
-                  <div className="mt-6 mb-6">
-                    <span className="text-xs font-semibold text-amber-400 block mb-1 uppercase tracking-wider">Custom Tailored Pricing</span>
+                  <div className="mt-5 mb-3">
+                    <span className="text-xs font-semibold text-slate-400 block mb-1 uppercase tracking-wider">Custom Tailored Pricing</span>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                      <span className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight">
                         Custom Quote
                       </span>
                     </div>
@@ -787,41 +709,55 @@ export const PricingPage: React.FC = () => {
                     </span>
                   </div>
 
-                  {/* Diff Tag Header */}
-                  <div className="mb-4 pb-2 border-b border-slate-700/80">
-                    <span className="text-[11px] font-extrabold text-amber-300 uppercase tracking-wider bg-[#1E2D40] px-2.5 py-1 rounded-md inline-block border border-amber-400/30">
-                      Everything in Pro, plus:
+                  {/* Highlight Info Box (like reference image) */}
+                  <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 flex items-center justify-between mb-6">
+                    <span>Unlimited Students & Multi-Campus Branches</span>
+                  </div>
+
+                  {/* Sub-tag & Diff Header */}
+                  <div className="mb-2">
+                    <span className="text-[11px] font-bold text-[#004098] uppercase tracking-wider block">
+                      → Everything in Pro, plus:
+                    </span>
+                  </div>
+                  <div className="mb-4 pb-2 border-b border-slate-100">
+                    <span className="text-[11px] font-extrabold text-slate-500 uppercase tracking-wider">
+                      ENTERPRISE FEATURES:
                     </span>
                   </div>
 
-                  {/* Bullet Features with Gold/Amber Checks */}
+                  {/* Bullet Features with Royal Blue Checks */}
                   <div className="space-y-3 mb-8">
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-white">
-                      <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span className="font-bold text-amber-300">All Pro features included (Play Store App)</span>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-900">
+                      <Check size={16} className="text-[#004098] stroke-[3] shrink-0 mt-0.5" />
+                      <span className="font-bold text-[#004098]">Play Store Android App + Apple iOS App</span>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                      <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#004098] stroke-[3] shrink-0 mt-0.5" />
+                      <span>Custom APKs for Multi-Branch Admins & Staff</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#004098] stroke-[3] shrink-0 mt-0.5" />
                       <span>Free Custom Domain Included (.com / .in)</span>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                      <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#004098] stroke-[3] shrink-0 mt-0.5" />
                       <span>Scalable Cloud Storage (100 GB to Multi-TB)</span>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                      <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
-                      <span>Custom Payment Gateway (Own Account)</span>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#004098] stroke-[3] shrink-0 mt-0.5" />
+                      <span>Custom Payment Gateway (Direct T+0 Settlement)</span>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                      <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#004098] stroke-[3] shrink-0 mt-0.5" />
                       <span>Multi-Campus Franchise Admin Control</span>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                      <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#004098] stroke-[3] shrink-0 mt-0.5" />
                       <span>Dedicated Account Manager & 24/7 SLA</span>
                     </div>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                      <Check size={16} className="text-[#E8BA64] stroke-[3] shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <Check size={16} className="text-[#004098] stroke-[3] shrink-0 mt-0.5" />
                       <span>Custom ERP & API Integrations</span>
                     </div>
                   </div>
@@ -830,10 +766,10 @@ export const PricingPage: React.FC = () => {
                 {/* Bottom Action Button */}
                 <div className="pt-2">
                   <Link
-                    to="/book-demo?plan=enterprise"
-                    className="w-full py-4 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-extrabold text-sm text-center shadow-md block transition-all"
+                    to="/book-demo?plan=custom"
+                    className="w-full py-4 rounded-xl bg-slate-900 hover:bg-black text-white font-extrabold text-sm text-center shadow-md block transition-all"
                   >
-                    Contact Enterprise Sales
+                    Contact Enterprise
                   </Link>
                 </div>
               </div>
@@ -898,34 +834,17 @@ export const PricingPage: React.FC = () => {
 
           {/* Formstack Clean Table Container */}
           <div className="border-t border-slate-200">
-            {/* Sticky Table Header (Forms, Suite, Salesforce, Enterprise) */}
-            <div className="grid grid-cols-12 py-6 border-b border-slate-200 text-center items-end bg-white">
+            {/* Sticky Table Header (Growth, Pro Solutions, Custom) */}
+            <div className="grid grid-cols-10 py-6 border-b border-slate-200 text-center items-end bg-white">
               <div className="col-span-4 text-left font-bold text-slate-400 uppercase text-xs tracking-wider">
                 Capabilities
-              </div>
-
-              {/* Starter Column */}
-              <div className="col-span-2 px-2">
-                <h4 className="font-bold text-base text-slate-900">Starter</h4>
-                <p className="text-[11px] text-slate-500 mt-0.5">
-                  ₹{billingCycle === 'YEARLY' ? plans[0].annualPrice : plans[0].monthlyPrice}/mo
-                </p>
-                <p className="text-[10px] text-slate-400 mb-3">
-                  {billingCycle === 'YEARLY' ? 'paid annually' : 'paid monthly'}
-                </p>
-                <Link
-                  to="/book-demo?plan=starter"
-                  className="px-4 py-1.5 rounded-lg bg-slate-900 hover:bg-black text-white text-xs font-bold inline-block shadow-2xs transition-all"
-                >
-                  Buy Now
-                </Link>
               </div>
 
               {/* Growth Column */}
               <div className="col-span-2 px-2">
                 <h4 className="font-bold text-base text-slate-900">Growth</h4>
                 <p className="text-[11px] text-slate-500 mt-0.5">
-                  ₹{billingCycle === 'YEARLY' ? plans[1].annualPrice : plans[1].monthlyPrice}/mo
+                  ₹{billingCycle === 'YEARLY' ? plans[0].annualPrice : plans[0].monthlyPrice}/mo
                 </p>
                 <p className="text-[10px] text-slate-400 mb-3">
                   {billingCycle === 'YEARLY' ? 'paid annually' : 'paid monthly'}
@@ -940,33 +859,33 @@ export const PricingPage: React.FC = () => {
 
               {/* Pro Column */}
               <div className="col-span-2 px-2">
-                <h4 className="font-bold text-base text-slate-900">Pro Solutions</h4>
+                <h4 className="font-bold text-base text-[#004098]">Pro Solutions</h4>
                 <p className="text-[11px] text-slate-500 mt-0.5">
-                  ₹{billingCycle === 'YEARLY' ? plans[2].annualPrice : plans[2].monthlyPrice}/mo
+                  ₹{billingCycle === 'YEARLY' ? plans[1].annualPrice : plans[1].monthlyPrice}/mo
                 </p>
                 <p className="text-[10px] text-slate-400 mb-3">
                   {billingCycle === 'YEARLY' ? 'paid annually' : 'paid monthly'}
                 </p>
                 <Link
                   to="/book-demo?plan=pro"
-                  className="px-4 py-1.5 rounded-lg bg-slate-900 hover:bg-black text-white text-xs font-bold inline-block shadow-2xs transition-all"
+                  className="px-4 py-1.5 rounded-lg bg-[#004098] hover:bg-[#00337A] text-white text-xs font-bold inline-block shadow-2xs transition-all"
                 >
                   Buy Now
                 </Link>
               </div>
 
-              {/* Enterprise Column */}
+              {/* Custom Column */}
               <div className="col-span-2 px-2">
-                <h4 className="font-bold text-base text-slate-900">Enterprise</h4>
+                <h4 className="font-bold text-base text-slate-900">Custom</h4>
                 <p className="text-[11px] text-slate-500 mt-0.5">
                   Custom Quote
                 </p>
                 <p className="text-[10px] text-slate-400 mb-3">Tailored to Scale</p>
                 <Link
-                  to="/book-demo?plan=enterprise"
+                  to="/book-demo?plan=custom"
                   className="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-black text-white text-xs font-bold inline-block shadow-2xs transition-all"
                 >
-                  Contact Sales
+                  Contact Enterprise
                 </Link>
               </div>
             </div>
@@ -978,7 +897,7 @@ export const PricingPage: React.FC = () => {
                 return (
                   <div key={secIdx}>
                     <div className="bg-slate-50 px-4 py-3 flex items-center gap-2 border-y border-slate-200 text-slate-900 font-extrabold text-xs sm:text-sm">
-                      <SecIcon size={16} className="text-[#173F8A]" />
+                      <SecIcon size={16} className="text-[#004098]" />
                       <span>{sec.category}</span>
                     </div>
 
@@ -986,7 +905,7 @@ export const PricingPage: React.FC = () => {
                       {sec.items.map((item, itemIdx) => (
                         <div
                           key={itemIdx}
-                          className="grid grid-cols-12 py-3.5 px-2 text-xs items-center hover:bg-slate-50/60 transition-colors"
+                          className="grid grid-cols-10 py-3.5 px-2 text-xs items-center hover:bg-slate-50/60 transition-colors"
                         >
                           <div className="col-span-4 pr-3">
                             <span className="font-semibold text-slate-900 block text-xs sm:text-sm">
@@ -998,21 +917,9 @@ export const PricingPage: React.FC = () => {
                           </div>
 
                           <div className="col-span-2 text-center text-slate-700 font-medium">
-                            {typeof item.starter === 'boolean' ? (
-                              item.starter ? (
-                                <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
-                              ) : (
-                                <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
-                              )
-                            ) : (
-                              <span className="text-slate-800 font-bold">{item.starter}</span>
-                            )}
-                          </div>
-
-                          <div className="col-span-2 text-center text-slate-700 font-medium">
                             {typeof item.growth === 'boolean' ? (
                               item.growth ? (
-                                <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
+                                <CheckCircle2 className="w-5 h-5 text-[#009FA8] mx-auto" />
                               ) : (
                                 <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
                               )
@@ -1024,24 +931,24 @@ export const PricingPage: React.FC = () => {
                           <div className="col-span-2 text-center text-slate-700 font-medium">
                             {typeof item.pro === 'boolean' ? (
                               item.pro ? (
-                                <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
+                                <CheckCircle2 className="w-5 h-5 text-[#004098] mx-auto" />
                               ) : (
                                 <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
                               )
                             ) : (
-                              <span className="text-[#173F8A] font-bold">{item.pro}</span>
+                              <span className="text-[#004098] font-bold">{item.pro}</span>
                             )}
                           </div>
 
                           <div className="col-span-2 text-center text-slate-700 font-medium">
                             {typeof item.enterprise === 'boolean' ? (
                               item.enterprise ? (
-                                <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" />
+                                <CheckCircle2 className="w-5 h-5 text-slate-900 mx-auto" />
                               ) : (
                                 <XCircle className="w-5 h-5 text-slate-300 mx-auto" />
                               )
                             ) : (
-                              <span className="text-purple-700 font-bold">{item.enterprise}</span>
+                              <span className="text-slate-900 font-bold">{item.enterprise}</span>
                             )}
                           </div>
                         </div>
