@@ -3,7 +3,7 @@ import { X, CheckCircle2, ShieldCheck, Lock, Loader2, AlertCircle, ArrowRight, Q
 
 declare global {
   interface Window {
-    Razorpay: any
+    Cashfree: any
   }
 }
 
@@ -66,7 +66,6 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
   // Pricing Calculations
   const isYearly = billingCycle === 'YEARLY'
-  const baseMonthly = selectedPlan === 'growth' ? 1499 : 2399
   const basePrice = isYearly
     ? selectedPlan === 'growth'
       ? 17988
@@ -78,12 +77,12 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   const gstAmount = Math.round(basePrice * 0.18)
   const totalAmount = basePrice + gstAmount
 
-  // Dynamically load Razorpay SDK
-  const loadRazorpay = (): Promise<boolean> => {
+  // Dynamically load Cashfree SDK
+  const loadCashfreeSdk = (): Promise<boolean> => {
     return new Promise((resolve) => {
-      if (window.Razorpay) return resolve(true)
+      if (window.Cashfree) return resolve(true)
       const script = document.createElement('script')
-      script.src = 'https://checkout.razorpay.com/v1/checkout.js'
+      script.src = 'https://sdk.cashfree.com/js/v3/cashfree.js'
       script.onload = () => resolve(true)
       script.onerror = () => resolve(false)
       document.body.appendChild(script)
@@ -115,7 +114,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
       city: city.trim() || 'India',
       studentsCount: '100-250',
       interestedFeatures: [
-        `Plan Checkout: ${selectedPlan.toUpperCase()} (${billingCycle})`,
+        `Cashfree Checkout: ${selectedPlan.toUpperCase()} (${billingCycle})`,
         'Direct Online Buy'
       ],
       additionalRequirements: `Direct Buy intent for ${selectedPlan.toUpperCase()} plan (Total ₹${totalAmount}). GSTIN: ${gstin || 'None'}.`
@@ -129,64 +128,79 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
       }).catch(() => {})
     } catch {}
 
-    const isLoaded = await loadRazorpay()
-
-    // Razorpay Key: from env or standard merchant key
-    const razorpayKey = (import.meta as any).env?.VITE_RAZORPAY_KEY_ID || 'rzp_live_placeholder'
-
-    if (!isLoaded || razorpayKey === 'rzp_live_placeholder') {
-      // If Razorpay live key is not yet set in environment, show instant direct UPI QR / invoice option
-      setLoading(false)
-      setShowUpiFallback(true)
-      return
-    }
-
-    const options = {
-      key: razorpayKey,
-      amount: totalAmount * 100, // amount in paise
-      currency: 'INR',
-      name: 'Cestrix Learning Technologies',
-      description: `${selectedPlan === 'growth' ? 'Growth Plan' : 'Pro Solutions'} (${billingCycle}) Subscription`,
-      image: '/favicon-192x192.png',
-      prefill: {
-        name: name.trim(),
-        email: email.trim(),
-        contact: phone.trim()
-      },
-      notes: {
-        institute: instituteName.trim() || 'Coaching Institute',
-        city: city.trim(),
-        plan: selectedPlan,
-        billing: billingCycle
-      },
-      theme: {
-        color: '#004098'
-      },
-      handler: function (response: any) {
-        setLoading(false)
-        setPaymentSuccess({
-          paymentId: response.razorpay_payment_id,
-          orderId: response.razorpay_order_id || `ORD-${Date.now().toString().slice(-6)}`,
-          amount: totalAmount,
-          plan: selectedPlan === 'growth' ? 'Growth Plan' : 'Pro Solutions Plan'
-        })
-      },
-      modal: {
-        ondismiss: function () {
-          setLoading(false)
-        }
-      }
-    }
-
     try {
-      const rzp = new window.Razorpay(options)
-      rzp.on('payment.failed', function (response: any) {
-        setLoading(false)
-        setError(response.error?.description || 'Payment was cancelled or failed. Please try again or pay via UPI.')
+      // 1. Create Cashfree Order on Backend
+      let orderRes = await fetch('/api/payments/cashfree/create-order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount: totalAmount,
+          customerName: name.trim(),
+          customerEmail: email.trim(),
+          customerPhone: phone.trim(),
+          planName: selectedPlan === 'growth' ? 'Growth' : 'Pro Solutions',
+          billingCycle
+        })
       })
-      rzp.open()
-    } catch (err) {
+
+      // Fallback to serverless endpoint if needed
+      if (orderRes.status === 404) {
+        orderRes = await fetch('/api/cashfree-order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            amount: totalAmount,
+            customerName: name.trim(),
+            customerEmail: email.trim(),
+            customerPhone: phone.trim(),
+            planName: selectedPlan === 'growth' ? 'Growth' : 'Pro Solutions',
+            billingCycle
+          })
+        })
+      }
+
+      const orderData = await orderRes.json()
+
+      if (!orderRes.ok || !orderData.payment_session_id) {
+        throw new Error(orderData.message || 'Failed to initialize Cashfree payment session.')
+      }
+
+      // 2. Load SDK and trigger Cashfree modal checkout
+      await loadCashfreeSdk()
+
+      if (!window.Cashfree) {
+        throw new Error('Cashfree payment SDK could not be loaded.')
+      }
+
+      const cashfree = window.Cashfree({
+        mode: (orderData.environment || 'PRODUCTION').toLowerCase()
+      })
+
+      cashfree
+        .checkout({
+          paymentSessionId: orderData.payment_session_id,
+          redirectTarget: '_modal'
+        })
+        .then((result: any) => {
+          setLoading(false)
+          if (result.error) {
+            setError(result.error.message || 'Payment was cancelled or failed.')
+          }
+          if (result.paymentDetails) {
+            setPaymentSuccess({
+              orderId: orderData.order_id,
+              amount: totalAmount,
+              plan: selectedPlan === 'growth' ? 'Growth Plan' : 'Pro Solutions Plan'
+            })
+          }
+        })
+        .catch((err: any) => {
+          setLoading(false)
+          setError(err?.message || 'Payment modal closed.')
+        })
+    } catch (err: any) {
       setLoading(false)
+      setError(err?.message || 'Unable to open payment gateway. You can also pay via direct UPI QR.')
       setShowUpiFallback(true)
     }
   }
@@ -229,8 +243,8 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
             <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-left space-y-1.5 max-w-xs mx-auto">
               <div className="flex justify-between">
-                <span className="text-slate-500">Transaction ID:</span>
-                <span className="font-mono font-bold text-slate-800">{paymentSuccess.paymentId}</span>
+                <span className="text-slate-500">Order ID:</span>
+                <span className="font-mono font-bold text-slate-800">{paymentSuccess.orderId}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Amount Paid:</span>
@@ -252,7 +266,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                 onClick={onClose}
                 className="w-full py-3 rounded-xl bg-[#004098] hover:bg-[#003070] text-white font-bold text-sm shadow-md transition-all"
               >
-                Go to Dashboard
+                Done
               </button>
             </div>
           </div>
@@ -261,7 +275,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
           <div className="space-y-4">
             <div className="text-center pr-6">
               <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#009FA8] bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-200">
-                0% Gateway Fee · Instant Activation
+                Direct UPI Mode · Instant Activation
               </span>
               <h3 className="text-xl font-bold text-slate-900 tracking-tight mt-1">
                 Direct UPI / Bank Transfer
@@ -293,7 +307,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             <div className="space-y-2">
               <a
                 href={`https://wa.me/917765016973?text=${encodeURIComponent(
-                  `Hello Cestrix Team, I want to complete my payment of ₹${totalAmount.toLocaleString()} for ${selectedPlan.toUpperCase()} Plan (${billingCycle}) for institute ${instituteName || name}. Phone: ${phone}. Please send me the direct payment link.`
+                  `Hello Cestrix Team, I want to complete my payment of ₹${totalAmount.toLocaleString()} for ${selectedPlan.toUpperCase()} Plan (${billingCycle}) for institute ${instituteName || name}. Phone: ${phone}. Please send me the payment confirmation.`
                 )}`}
                 target="_blank"
                 rel="noreferrer"
@@ -308,7 +322,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                 onClick={() => setShowUpiFallback(false)}
                 className="w-full py-2 text-xs font-medium text-slate-500 hover:text-slate-800 transition-colors"
               >
-                ← Back to Card / Gateway Options
+                ← Back to Cashfree Online Gateway
               </button>
             </div>
           </div>
@@ -319,7 +333,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             <div className="mb-4 pr-6">
               <div className="flex items-center gap-1.5 text-xs font-semibold text-emerald-600 mb-1">
                 <Lock size={12} className="stroke-[2.5]" />
-                <span>100% Secure 256-bit Encrypted Checkout</span>
+                <span>Cashfree Secured 256-bit Encrypted Checkout</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
                 Activate Your Cestrix OS
@@ -518,7 +532,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                   {loading ? (
                     <>
                       <Loader2 size={16} className="animate-spin" />
-                      <span>Opening Secure Gateway...</span>
+                      <span>Connecting to Cashfree Gateway...</span>
                     </>
                   ) : (
                     <>
@@ -533,10 +547,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               <div className="pt-2 flex items-center justify-center gap-3 text-[10px] text-slate-400">
                 <span className="flex items-center gap-1">
                   <ShieldCheck size={12} className="text-emerald-600" />
-                  UPI, Cards, NetBanking, EMI
+                  Cashfree PG · UPI, Cards, NetBanking, EMI
                 </span>
                 <span>•</span>
-                <span>Zero Hidden Fees</span>
+                <span>100% Secure</span>
               </div>
             </form>
           </div>

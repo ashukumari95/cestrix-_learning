@@ -18,6 +18,14 @@
   ],
   "rewrites": [
     {
+      "source": "/api/payments/cashfree/create-order",
+      "destination": "/api/cashfree-order.js"
+    },
+    {
+      "source": "/api/cashfree-order",
+      "destination": "/api/cashfree-order.js"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

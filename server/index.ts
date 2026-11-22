@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import { leadRoutes } from './routes/leadRoutes'
+import { paymentRoutes } from './routes/paymentRoutes'
 
 dotenv.config()
 
@@ -24,6 +25,7 @@ app.get('/api/health', (_req, res) => {
 
 // Route Handlers
 app.use('/api/leads', leadRoutes)
+app.use('/api/payments/cashfree', paymentRoutes)
 
 // Start Server
 app.listen(PORT, () => {
