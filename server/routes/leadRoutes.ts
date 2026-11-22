@@ -18,10 +18,10 @@ leadRoutes.post('/', (req: Request, res: Response) => {
     } = req.body
 
     // Server-side validation
-    if (!fullName || !instituteName || !email || !phone || !city) {
+    if (!fullName || !email || !phone) {
       return res.status(400).json({
         success: false,
-        message: 'Missing required contact information. Please complete all required fields.'
+        message: 'Missing required contact information. Please provide your Name, Mobile, and Email.'
       })
     }
 
@@ -35,10 +35,10 @@ leadRoutes.post('/', (req: Request, res: Response) => {
 
     const lead = LeadService.createLead({
       fullName,
-      instituteName,
+      instituteName: instituteName || 'Coaching Institute',
       email,
       phone,
-      city,
+      city: city || 'India',
       studentsCount: studentsCount || 'Under 100',
       interestedFeatures: Array.isArray(interestedFeatures) ? interestedFeatures : [],
       preferredDemoDate: preferredDemoDate || new Date().toISOString().split('T')[0],

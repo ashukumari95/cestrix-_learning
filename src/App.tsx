@@ -23,6 +23,7 @@ import { BlogIndexPage } from './pages/BlogIndexPage'
 import { BlogPostPage } from './pages/BlogPostPage'
 import { ComparePage } from './pages/ComparePage'
 import { CanonicalTag } from './components/seo/CanonicalTag'
+import { DemoModalProvider } from './context/DemoModalContext'
 
 // Automatically scroll to top on route navigation
 const ScrollToTop = () => {
@@ -36,43 +37,45 @@ const ScrollToTop = () => {
 export function App() {
   return (
     <Router>
-      <ScrollToTop />
-      <CanonicalTag />
-      <div className="flex flex-col min-h-screen bg-white text-[#0F172A] selection:bg-[#173F8A] selection:text-white">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/features" element={<FeaturesPage />} />
-            <Route path="/solutions" element={<SolutionsPage />} />
-            <Route path="/solutions/coaching-institutes" element={<SingleBranchPage />} />
-            <Route path="/solutions/multi-branch" element={<MultiBranchPage />} />
-            <Route path="/ai-learning" element={<AiLearningPage />} />
-            <Route path="/white-label-apps" element={<WhiteLabelAppsPage />} />
-            <Route path="/pricing" element={<PricingPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/book-demo" element={<BookDemoPage />} />
-            <Route path="/admin/leads" element={<LeadsAdminPage />} />
-            <Route path="/privacy" element={<PrivacyPage />} />
-            <Route path="/terms" element={<TermsPage />} />
-            <Route path="/compare" element={<ComparePage />} />
+      <DemoModalProvider>
+        <ScrollToTop />
+        <CanonicalTag />
+        <div className="flex flex-col min-h-screen bg-white text-[#0F172A] selection:bg-[#173F8A] selection:text-white">
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/features" element={<FeaturesPage />} />
+              <Route path="/solutions" element={<SolutionsPage />} />
+              <Route path="/solutions/coaching-institutes" element={<SingleBranchPage />} />
+              <Route path="/solutions/multi-branch" element={<MultiBranchPage />} />
+              <Route path="/ai-learning" element={<AiLearningPage />} />
+              <Route path="/white-label-apps" element={<WhiteLabelAppsPage />} />
+              <Route path="/pricing" element={<PricingPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/book-demo" element={<BookDemoPage />} />
+              <Route path="/admin/leads" element={<LeadsAdminPage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/compare" element={<ComparePage />} />
 
-            {/* Free Lead Magnet Micro-Tools */}
-            <Route path="/free-fee-receipt-generator" element={<FreeFeeReceiptGeneratorPage />} />
-            <Route path="/ai-coaching-marketing-generator" element={<AiCoachingGrowthPage />} />
-            <Route path="/ai-seo-generator" element={<AiCoachingGrowthPage />} />
-            {/* Pain-Point SEO Blog & Resource Center */}
-            <Route path="/blog" element={<BlogIndexPage />} />
-            <Route path="/blog/:slug" element={<BlogPostPage />} />
-            {/* Localized City Programmatic SEO Routes */}
-            <Route path="/coaching-software-in-:city" element={<CoachingCityPage />} />
-            <Route path="*" element={<Home />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+              {/* Free Lead Magnet Micro-Tools */}
+              <Route path="/free-fee-receipt-generator" element={<FreeFeeReceiptGeneratorPage />} />
+              <Route path="/ai-coaching-marketing-generator" element={<AiCoachingGrowthPage />} />
+              <Route path="/ai-seo-generator" element={<AiCoachingGrowthPage />} />
+              {/* Pain-Point SEO Blog & Resource Center */}
+              <Route path="/blog" element={<BlogIndexPage />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
+              {/* Localized City Programmatic SEO Routes */}
+              <Route path="/coaching-software-in-:city" element={<CoachingCityPage />} />
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </DemoModalProvider>
     </Router>
   )
 }
