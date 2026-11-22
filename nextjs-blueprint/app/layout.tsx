@@ -6,7 +6,7 @@ import '@/styles/globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://cestrixlearning.com'),
   title: {
-    default: 'Cestrix Learning — #1 Coaching Management Software | 0% Commission',
+    default: 'Cestrix Learning — Coaching Management Software | 0% Commission',
     template: '%s | Cestrix Learning',
   },
   description:
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Cestrix Learning — #1 Coaching Management Operating System',
+        alt: 'Cestrix Learning — Coaching Management Operating System',
       },
     ],
   },

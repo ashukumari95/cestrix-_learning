@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       canonical: `https://cestrixlearning.com/coaching-software-in-${city}`,
     },
     openGraph: {
-      title: `#1 Coaching Software in ${cityName} — Cestrix Learning`,
+      title: `Coaching Software in ${cityName} — Cestrix Learning`,
       description: `Automate your ${cityName} coaching institute with biometric attendance sync, automated WhatsApp fee recovery, and 0% commission.`,
       url: `https://cestrixlearning.com/coaching-software-in-${city}`,
       images: ['https://cestrixlearning.com/logo.webp'],

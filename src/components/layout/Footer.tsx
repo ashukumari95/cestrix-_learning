@@ -40,7 +40,7 @@ export const Footer: React.FC = () => {
             </Link>
 
             <p className="text-sm leading-relaxed text-slate-400">
-              Cestrix Learning is a unified Coaching Management Software (CMS) designed to help educators scale. Automate fee collection, manage biometric attendance, and launch your own white-labeled app with 0% platform commission.
+              Unified coaching operating system empowering educators with 0% platform commission, biometric attendance hardware sync, CBT exam simulator, and custom-branded mobile apps.
             </p>
 
             <div className="space-y-3.5 pt-2 text-sm">
