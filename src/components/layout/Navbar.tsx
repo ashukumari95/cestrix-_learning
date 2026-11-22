@@ -122,12 +122,12 @@ export const Navbar: React.FC = () => {
                     to="/features" 
                     className={`flex items-center gap-1.5 px-4 sm:px-5 py-2 text-sm font-semibold rounded-full transition-all ${
                       featuresDropdown || location.pathname === '/features'
-                        ? 'bg-white text-[#D92662] shadow-xs' 
-                        : 'text-slate-700 hover:text-[#D92662] hover:bg-white/70'
+                        ? 'bg-white text-[#004098] shadow-xs' 
+                        : 'text-slate-700 hover:text-[#004098] hover:bg-white/70'
                     }`}
                   >
                     <span>Features</span>
-                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${featuresDropdown ? 'rotate-180 text-[#D92662]' : 'text-slate-400'}`} />
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${featuresDropdown ? 'rotate-180 text-[#004098]' : 'text-slate-400'}`} />
                   </Link>
                 </div>
 
@@ -228,13 +228,13 @@ export const Navbar: React.FC = () => {
                               key={item.name}
                               to={item.href}
                               onClick={() => setFeaturesDropdown(false)}
-                              className="flex items-center gap-3.5 group text-slate-800 hover:text-[#D92662] transition-colors py-0.5"
+                              className="flex items-center gap-3.5 group text-slate-800 hover:text-[#004098] transition-colors py-0.5"
                             >
                               <Icon 
-                                className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" 
+                                className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" 
                                 strokeWidth={2.2} 
                               />
-                              <span className="text-[14px] font-medium text-slate-800 group-hover:text-[#D92662] group-hover:font-semibold transition-colors leading-normal">
+                              <span className="text-[14px] font-medium text-slate-800 group-hover:text-[#004098] group-hover:font-semibold transition-colors leading-normal">
                                 {item.name}
                               </span>
                             </Link>
@@ -260,33 +260,33 @@ export const Navbar: React.FC = () => {
               <Link 
                 to="/features#crm" 
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-rose-50 hover:text-[#D92662]"
+                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-blue-50 hover:text-[#004098]"
               >
-                <Search className="w-3.5 h-3.5 text-[#D92662] shrink-0" strokeWidth={2.2} />
+                <Search className="w-3.5 h-3.5 text-[#004098] shrink-0" strokeWidth={2.2} />
                 <span>Admissions CRM</span>
               </Link>
               <Link 
                 to="/features#cbt" 
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-rose-50 hover:text-[#D92662]"
+                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-blue-50 hover:text-[#004098]"
               >
-                <CheckSquare className="w-3.5 h-3.5 text-[#D92662] shrink-0" strokeWidth={2.2} />
+                <CheckSquare className="w-3.5 h-3.5 text-[#004098] shrink-0" strokeWidth={2.2} />
                 <span>NTA CBT Exams</span>
               </Link>
               <Link 
                 to="/features#biometric" 
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-rose-50 hover:text-[#D92662]"
+                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-blue-50 hover:text-[#004098]"
               >
-                <Fingerprint className="w-3.5 h-3.5 text-[#D92662] shrink-0" strokeWidth={2.2} />
+                <Fingerprint className="w-3.5 h-3.5 text-[#004098] shrink-0" strokeWidth={2.2} />
                 <span>Biometric Sync</span>
               </Link>
               <Link 
                 to="/features#fees" 
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-rose-50 hover:text-[#D92662]"
+                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-blue-50 hover:text-[#004098]"
               >
-                <CreditCard className="w-3.5 h-3.5 text-[#D92662] shrink-0" strokeWidth={2.2} />
+                <CreditCard className="w-3.5 h-3.5 text-[#004098] shrink-0" strokeWidth={2.2} />
                 <span>Fee ERP & Ledger</span>
               </Link>
             </div>
@@ -294,7 +294,7 @@ export const Navbar: React.FC = () => {
             <Link 
               to="/features" 
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-1.5 text-xs font-bold text-[#D92662] hover:underline"
+              className="block px-3 py-1.5 text-xs font-bold text-[#004098] hover:underline"
             >
               View All 12 Modules in Detail →
             </Link>

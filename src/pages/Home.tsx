@@ -100,175 +100,57 @@ export const Home: React.FC = () => {
 
             </div>
 
-            {/* Right Column: Floating Crisp Admin Dashboard Card */}
-            <div className="lg:col-span-7">
-              <div className="bg-white rounded-2xl shadow-2xl border border-slate-200/80 overflow-hidden transform lg:translate-x-2 transition-transform duration-500">
+            {/* Right Column: High-Impact Coaching Solution Visual (Coaching Problems Solved) */}
+            <div className="lg:col-span-7 relative flex items-center justify-center">
+              {/* Ambient Glow */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-400/20 via-teal-400/20 to-indigo-500/20 rounded-3xl blur-2xl -z-10" />
 
-                {/* Dashboard Top Header Bar */}
-                <div className="px-5 py-3.5 bg-slate-50/90 border-b border-slate-200 flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-3">
-                    <div className="flex gap-1.5">
-                      <span className="w-2.5 h-2.5 rounded-full bg-rose-400" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-                    </div>
+              {/* Main Visual Container */}
+              <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-white/25 bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-sm group">
+                <img
+                  src="/hero-coaching-solution.jpg"
+                  alt="Cestrix Learning - Coaching Management Problems Solved"
+                  className="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.02]"
+                />
+
+                {/* Floating Badge 1: Automated Fee Collection (Top Left) */}
+                <div className="absolute top-3 left-3 sm:top-5 sm:left-5 bg-white/95 backdrop-blur-md px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                    <CreditCard className="w-5 h-5 text-emerald-600" />
                   </div>
-
-                  {/* Top Interactive Tabs */}
-                  <div className="flex items-center gap-1 bg-slate-200/70 p-0.5 rounded-lg text-[11px] font-semibold">
-                    <button
-                      onClick={() => setHeroTab('overview')}
-                      className={`px-2.5 py-1 rounded-md transition-colors ${heroTab === 'overview' ? 'bg-white text-[#002D62] shadow-xs' : 'text-slate-600 hover:text-slate-900'
-                        }`}
-                    >
-                      Overview
-                    </button>
-                    <button
-                      onClick={() => setHeroTab('batches')}
-                      className={`px-2.5 py-1 rounded-md transition-colors ${heroTab === 'batches' ? 'bg-white text-[#002D62] shadow-xs' : 'text-slate-600 hover:text-slate-900'
-                        }`}
-                    >
-                      Batches
-                    </button>
-                    <button
-                      onClick={() => setHeroTab('attendance')}
-                      className={`px-2.5 py-1 rounded-md transition-colors ${heroTab === 'attendance' ? 'bg-white text-[#002D62] shadow-xs' : 'text-slate-600 hover:text-slate-900'
-                        }`}
-                    >
-                      Biometric
-                    </button>
+                  <div>
+                    <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-emerald-700 flex items-center gap-1">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Problem Solved: Fee Defaulters
+                    </div>
+                    <div className="text-xs sm:text-sm font-extrabold text-slate-900 mt-0.5">
+                      100% Automated Fee Collection
+                    </div>
                   </div>
                 </div>
 
-                {/* Dashboard Inner Layout */}
-                <div className="grid grid-cols-12 divide-x divide-slate-100">
-
-                  {/* Left Mini Sidebar */}
-                  <div className="col-span-3 bg-slate-50/50 p-4 hidden md:block space-y-4 border-r border-slate-100 text-xs">
-                    <div className="text-[10px] uppercase font-bold tracking-wider text-slate-400 px-2">
-                      Daily Operation
+                {/* Floating Badge 2: Attendance Proxy Solved (Bottom Left) */}
+                <div className="absolute bottom-3 left-3 sm:bottom-5 sm:left-5 bg-white/95 backdrop-blur-md px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-blue-50 text-[#004098] flex items-center justify-center shrink-0">
+                    <Fingerprint className="w-5 h-5 text-[#004098]" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#004098] flex items-center gap-1">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#004098]" /> Zero-Proxy Biometric Sync
                     </div>
-                    <nav className="space-y-1">
-                      {[
-                        { label: 'Dashboard', icon: LayoutDashboard, active: true },
-                        { label: 'Student Roster', icon: Users, active: false },
-                        { label: 'Attendance', icon: Fingerprint, active: false },
-                        { label: 'CBT Tests', icon: BarChart3, active: false },
-                        { label: 'Fee Invoices', icon: Receipt, active: false },
-                        { label: 'Digital LMS', icon: BookOpen, active: false },
-                      ].map((item) => (
-                        <div
-                          key={item.label}
-                          className={`flex items-center gap-2.5 px-2.5 py-2 rounded-lg font-medium transition-colors ${item.active ? 'bg-blue-50 text-[#002D62] font-semibold' : 'text-slate-600 hover:bg-slate-100'
-                            }`}
-                        >
-                          <item.icon className="w-3.5 h-3.5 shrink-0" />
-                          <span className="truncate">{item.label}</span>
-                        </div>
-                      ))}
-                    </nav>
-
-                    <div className="pt-4 border-t border-slate-200/80">
-                      <div className="text-[10px] uppercase font-bold tracking-wider text-slate-400 px-2 mb-2">
-                        System Health
-                      </div>
-                      <div className="bg-emerald-50 text-emerald-800 p-2 rounded-lg text-[11px] flex items-center gap-1.5">
-                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <span>Biometrics Synced</span>
-                      </div>
+                    <div className="text-xs sm:text-sm font-extrabold text-slate-900 mt-0.5">
+                      Instant WhatsApp Alert to Parents
                     </div>
                   </div>
+                </div>
 
-                  {/* Main Dashboard Panel */}
-                  <div className="col-span-12 md:col-span-9 p-5 sm:p-6 space-y-5">
-
-                    {/* Top KPI Cards Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
-                      <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/70">
-                        <div className="text-[11px] text-slate-500 font-medium">Enrolled Students</div>
-                        <div className="text-xl font-extrabold text-slate-900 mt-1">1,420</div>
-                        <div className="text-[10px] text-emerald-600 font-semibold mt-0.5">↑ 14% this semester</div>
-                      </div>
-
-                      <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/70">
-                        <div className="text-[11px] text-slate-500 font-medium">Today's Attendance</div>
-                        <div className="text-xl font-extrabold text-slate-900 mt-1">94.8%</div>
-                        <div className="text-[10px] text-slate-500 font-medium mt-0.5">1,346 Checked In</div>
-                      </div>
-
-                      <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/70 col-span-2 sm:col-span-1">
-                        <div className="text-[11px] text-slate-500 font-medium">Fee Realization</div>
-                        <div className="text-xl font-extrabold text-slate-900 mt-1">₹18.4L</div>
-                        <div className="text-[10px] text-emerald-600 font-semibold mt-0.5">91.2% Collected</div>
-                      </div>
-                    </div>
-
-                    {/* Bar Chart Overview: Bookings & Test Attendance */}
-                    <div className="p-4 rounded-xl border border-slate-200/70 bg-white">
-                      <div className="flex items-center justify-between mb-3 text-xs">
-                        <div>
-                          <span className="font-bold text-slate-900">Attendance & CBT Turnout</span>
-                          <span className="text-slate-400 ml-2">Last 7 Days</span>
-                        </div>
-                        <span className="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">
-                          Peak: 98.2%
-                        </span>
-                      </div>
-
-                      {/* Bar chart representation */}
-                      <div className="grid grid-cols-7 gap-2 items-end h-24 pt-2 border-b border-slate-100">
-                        {[
-                          { day: 'Mon', h: '75%', val: '92%' },
-                          { day: 'Tue', h: '88%', val: '95%' },
-                          { day: 'Wed', h: '94%', val: '98%' },
-                          { day: 'Thu', h: '82%', val: '94%' },
-                          { day: 'Fri', h: '90%', val: '96%' },
-                          { day: 'Sat', h: '98%', val: '99%' },
-                          { day: 'Sun', h: '70%', val: '88%' }
-                        ].map((bar, i) => (
-                          <div key={bar.day} className="flex flex-col items-center gap-1.5 group cursor-pointer">
-                            <div className="w-full bg-slate-100 rounded-t-md h-18 flex items-end">
-                              <div
-                                style={{ height: bar.h }}
-                                className={`w-full rounded-t-md transition-all ${i === 5 ? 'bg-[#002D62]' : 'bg-[#002D62]/40 group-hover:bg-[#002D62]/70'
-                                  }`}
-                              />
-                            </div>
-                            <span className="text-[10px] text-slate-500">{bar.day}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Live Batches Table */}
-                    <div className="border border-slate-200/70 rounded-xl overflow-hidden">
-                      <div className="px-3.5 py-2.5 bg-slate-50/80 border-b border-slate-200/70 flex items-center justify-between text-xs">
-                        <span className="font-bold text-slate-800">Live Classroom Batches</span>
-                        <span className="text-[11px] text-slate-500">4 Active Sessions</span>
-                      </div>
-
-                      <div className="divide-y divide-slate-100 text-xs">
-                        {[
-                          { name: 'JEE Advanced 2026-A', faculty: 'Prof. V. Sharma (Physics)', count: '84 students', status: 'In Session', stColor: 'text-emerald-700 bg-emerald-50' },
-                          { name: 'NEET Target-1 Intensive', faculty: 'Dr. S. Kulkarni (Biology)', count: '92 students', status: 'In Session', stColor: 'text-emerald-700 bg-emerald-50' },
-                          { name: 'Foundation Class 10-B', faculty: 'Mrs. R. Iyer (Maths)', count: '65 students', status: 'Starts 11:30', stColor: 'text-blue-700 bg-blue-50' }
-                        ].map((batch) => (
-                          <div key={batch.name} className="p-3 flex items-center justify-between hover:bg-slate-50/80 transition-colors">
-                            <div>
-                              <div className="font-semibold text-slate-900">{batch.name}</div>
-                              <div className="text-[11px] text-slate-500">{batch.faculty}</div>
-                            </div>
-                            <div className="flex items-center gap-3">
-                              <span className="text-slate-600 text-[11px] hidden sm:inline">{batch.count}</span>
-                              <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${batch.stColor}`}>
-                                {batch.status}
-                              </span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
+                {/* Floating Badge 3: White-Label Student App (Bottom Right) */}
+                <div className="hidden sm:flex absolute bottom-3 right-3 sm:bottom-5 sm:right-5 bg-[#071326]/90 text-white backdrop-blur-md px-3.5 py-2.5 rounded-xl shadow-xl border border-white/10 items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#009FA8] text-white flex items-center justify-center shrink-0">
+                    <Smartphone className="w-4 h-4 text-white" />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-[10px] font-bold text-teal-300">Your Own Mobile App</div>
+                    <div className="text-xs font-bold text-white">0% Platform Cut</div>
                   </div>
                 </div>
 

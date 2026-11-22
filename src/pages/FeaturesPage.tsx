@@ -73,20 +73,20 @@ export const FeaturesPage: React.FC = () => {
                   Admissions & Growth
                 </h3>
                 <div className="space-y-4 lg:space-y-5">
-                  <a href="#crm" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <Search className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#crm" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <Search className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Walk-In Admissions CRM</span>
                   </a>
-                  <a href="#crm" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <Users className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#crm" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <Users className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Course & Batch Allocations</span>
                   </a>
-                  <a href="#website" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <Globe className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#website" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <Globe className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Free Coaching Website</span>
                   </a>
-                  <a href="#crm" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <MessageSquare className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#crm" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <MessageSquare className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">WhatsApp Lead Inquiries</span>
                   </a>
                 </div>
@@ -98,20 +98,20 @@ export const FeaturesPage: React.FC = () => {
                   Academic & Exams
                 </h3>
                 <div className="space-y-4 lg:space-y-5">
-                  <a href="#cbt" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <CheckSquare className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#cbt" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <CheckSquare className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">NTA CBT Exam Simulator</span>
                   </a>
-                  <a href="#ai" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <Sparkles className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#ai" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <Sparkles className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">AI Question Paper Studio</span>
                   </a>
-                  <a href="#mistake" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <BookOpen className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#mistake" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <BookOpen className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Student Mistake Notebook</span>
                   </a>
-                  <a href="#lms" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <Video className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#lms" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <Video className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Video LMS & DPP Notes</span>
                   </a>
                 </div>
@@ -123,20 +123,20 @@ export const FeaturesPage: React.FC = () => {
                   Campus Operations
                 </h3>
                 <div className="space-y-4 lg:space-y-5">
-                  <a href="#biometric" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <Fingerprint className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#biometric" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <Fingerprint className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Biometric Attendance Sync</span>
                   </a>
-                  <a href="#biometric" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <Bell className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#biometric" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <Bell className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Automated WhatsApp Alerts</span>
                   </a>
-                  <a href="#scheduling" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <Calendar className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#scheduling" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <Calendar className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Timetable & Room Conflicts</span>
                   </a>
-                  <a href="#faculty" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <GraduationCap className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#faculty" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <GraduationCap className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Teacher & Staff Workspace</span>
                   </a>
                 </div>
@@ -148,20 +148,20 @@ export const FeaturesPage: React.FC = () => {
                   Finance & Controls
                 </h3>
                 <div className="space-y-4 lg:space-y-5">
-                  <a href="#fees" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <CreditCard className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#fees" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <CreditCard className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Fee ERP & Installments</span>
                   </a>
-                  <Link to="/free-fee-receipt-generator" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <Receipt className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <Link to="/free-fee-receipt-generator" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <Receipt className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">GST Invoice & Receipts</span>
                   </Link>
-                  <a href="#multi-branch" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <Building2 className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#multi-branch" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <Building2 className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Multi-Branch HQ Control</span>
                   </a>
-                  <a href="#mobile-app" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
-                    <Smartphone className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                  <a href="#mobile-app" className="flex items-center gap-3.5 text-slate-800 hover:text-[#004098] group transition-colors">
+                    <Smartphone className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
                     <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Branded Student App</span>
                   </a>
                 </div>
