@@ -68,101 +68,101 @@ export const FeaturesPage: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               
               {/* Pillar 1 */}
-              <div className="space-y-3.5">
-                <div className="text-sm font-bold text-slate-900 pb-2 border-b border-slate-100">
+              <div className="space-y-6">
+                <h3 className="text-[15px] font-bold text-slate-900 tracking-tight">
                   Admissions & Growth
-                </div>
-                <div className="space-y-3">
-                  <a href="#crm" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <Search className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">Walk-In Admissions CRM</span>
+                </h3>
+                <div className="space-y-4 lg:space-y-5">
+                  <a href="#crm" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <Search className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Walk-In Admissions CRM</span>
                   </a>
-                  <a href="#crm" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <Users className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">Course & Batch Allocations</span>
+                  <a href="#crm" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <Users className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Course & Batch Allocations</span>
                   </a>
-                  <a href="#website" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <Globe className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">Free Coaching Website</span>
+                  <a href="#website" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <Globe className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Free Coaching Website</span>
                   </a>
-                  <a href="#crm" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <MessageSquare className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">WhatsApp Lead Inquiries</span>
+                  <a href="#crm" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <MessageSquare className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">WhatsApp Lead Inquiries</span>
                   </a>
                 </div>
               </div>
 
               {/* Pillar 2 */}
-              <div className="space-y-3.5">
-                <div className="text-sm font-bold text-slate-900 pb-2 border-b border-slate-100">
+              <div className="space-y-6">
+                <h3 className="text-[15px] font-bold text-slate-900 tracking-tight">
                   Academic & Exams
-                </div>
-                <div className="space-y-3">
-                  <a href="#cbt" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <CheckSquare className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">NTA CBT Exam Simulator</span>
+                </h3>
+                <div className="space-y-4 lg:space-y-5">
+                  <a href="#cbt" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <CheckSquare className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">NTA CBT Exam Simulator</span>
                   </a>
-                  <a href="#ai" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <Sparkles className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">AI Question Paper Studio</span>
+                  <a href="#ai" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <Sparkles className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">AI Question Paper Studio</span>
                   </a>
-                  <a href="#mistake" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <BookOpen className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">Student Mistake Notebook</span>
+                  <a href="#mistake" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <BookOpen className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Student Mistake Notebook</span>
                   </a>
-                  <a href="#lms" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <Video className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">Video LMS & DPP Notes</span>
+                  <a href="#lms" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <Video className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Video LMS & DPP Notes</span>
                   </a>
                 </div>
               </div>
 
               {/* Pillar 3 */}
-              <div className="space-y-3.5">
-                <div className="text-sm font-bold text-slate-900 pb-2 border-b border-slate-100">
+              <div className="space-y-6">
+                <h3 className="text-[15px] font-bold text-slate-900 tracking-tight">
                   Campus Operations
-                </div>
-                <div className="space-y-3">
-                  <a href="#biometric" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <Fingerprint className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">Biometric Attendance Sync</span>
+                </h3>
+                <div className="space-y-4 lg:space-y-5">
+                  <a href="#biometric" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <Fingerprint className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Biometric Attendance Sync</span>
                   </a>
-                  <a href="#biometric" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <Bell className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">Automated WhatsApp Alerts</span>
+                  <a href="#biometric" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <Bell className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Automated WhatsApp Alerts</span>
                   </a>
-                  <a href="#scheduling" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <Calendar className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">Timetable & Room Conflicts</span>
+                  <a href="#scheduling" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <Calendar className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Timetable & Room Conflicts</span>
                   </a>
-                  <a href="#faculty" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <GraduationCap className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">Teacher & Staff Workspace</span>
+                  <a href="#faculty" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <GraduationCap className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Teacher & Staff Workspace</span>
                   </a>
                 </div>
               </div>
 
               {/* Pillar 4 */}
-              <div className="space-y-3.5">
-                <div className="text-sm font-bold text-slate-900 pb-2 border-b border-slate-100">
+              <div className="space-y-6">
+                <h3 className="text-[15px] font-bold text-slate-900 tracking-tight">
                   Finance & Controls
-                </div>
-                <div className="space-y-3">
-                  <a href="#fees" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <CreditCard className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">Fee ERP & Installments</span>
+                </h3>
+                <div className="space-y-4 lg:space-y-5">
+                  <a href="#fees" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <CreditCard className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Fee ERP & Installments</span>
                   </a>
-                  <Link to="/free-fee-receipt-generator" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <Receipt className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">GST Invoice & Receipts</span>
+                  <Link to="/free-fee-receipt-generator" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <Receipt className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">GST Invoice & Receipts</span>
                   </Link>
-                  <a href="#multi-branch" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <Building2 className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">Multi-Branch HQ Control</span>
+                  <a href="#multi-branch" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <Building2 className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Multi-Branch HQ Control</span>
                   </a>
-                  <a href="#mobile-app" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
-                    <Smartphone className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="text-[13px] font-medium group-hover:font-semibold">Branded Student App</span>
+                  <a href="#mobile-app" className="flex items-center gap-3.5 text-slate-800 hover:text-[#D92662] group transition-colors">
+                    <Smartphone className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" strokeWidth={2.2} />
+                    <span className="text-[14px] font-medium group-hover:font-semibold leading-normal">Branded Student App</span>
                   </a>
                 </div>
               </div>

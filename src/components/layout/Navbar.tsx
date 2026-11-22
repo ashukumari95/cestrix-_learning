@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { 
   Menu, X, ArrowRight, Receipt, ChevronDown,
@@ -52,6 +52,7 @@ export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [featuresDropdown, setFeaturesDropdown] = useState(false)
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const location = useLocation()
 
   useEffect(() => {
@@ -70,7 +71,19 @@ export const Navbar: React.FC = () => {
   useEffect(() => {
     setIsOpen(false)
     setFeaturesDropdown(false)
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
   }, [location.pathname])
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    setFeaturesDropdown(true)
+  }
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setFeaturesDropdown(false)
+    }, 180)
+  }
 
   return (
     <>
@@ -99,79 +112,29 @@ export const Navbar: React.FC = () => {
             <div className="hidden lg:flex items-center justify-center flex-shrink-0">
               <nav className="flex items-center gap-1.5 bg-slate-100/90 backdrop-blur-md p-1.5 rounded-full border border-slate-200/90 shadow-sm">
                 
-                {/* Features with Onsite-style Mega-Menu Dropdown */}
+                {/* Features Pill Button */}
                 <div 
                   className="relative"
-                  onMouseEnter={() => setFeaturesDropdown(true)}
-                  onMouseLeave={() => setFeaturesDropdown(false)}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <Link 
                     to="/features" 
                     className={`flex items-center gap-1.5 px-4 sm:px-5 py-2 text-sm font-semibold rounded-full transition-all ${
                       featuresDropdown || location.pathname === '/features'
-                        ? 'bg-white text-[#004098] shadow-xs' 
-                        : 'text-slate-700 hover:text-[#004098] hover:bg-white/70'
+                        ? 'bg-white text-[#D92662] shadow-xs' 
+                        : 'text-slate-700 hover:text-[#D92662] hover:bg-white/70'
                     }`}
                   >
                     <span>Features</span>
-                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${featuresDropdown ? 'rotate-180 text-[#004098]' : 'text-slate-400'}`} />
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${featuresDropdown ? 'rotate-180 text-[#D92662]' : 'text-slate-400'}`} />
                   </Link>
-
-                  {/* Mega Menu Dropdown (Exact 4-Column SaaS Layout like Onsite) */}
-                  {featuresDropdown && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-[940px] max-w-[94vw] pt-2.5 z-50 animate-in fade-in slide-in-from-top-1 duration-200">
-                      <div className="bg-white rounded-2xl shadow-2xl border border-slate-200/90 p-7 lg:p-8">
-                        <div className="grid grid-cols-4 gap-7">
-                          {featureCategories.map((col) => (
-                            <div key={col.title} className="space-y-4">
-                              <div className="text-sm font-bold text-slate-900 pb-2 border-b border-slate-100">
-                                {col.title}
-                              </div>
-                              <div className="space-y-3.5">
-                                {col.items.map((item) => {
-                                  const Icon = item.icon
-                                  return (
-                                    <Link
-                                      key={item.name}
-                                      to={item.href}
-                                      onClick={() => setFeaturesDropdown(false)}
-                                      className="flex items-center gap-3 text-slate-700 hover:text-[#004098] group transition-colors"
-                                    >
-                                      <Icon className="w-4 h-4 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-all shrink-0" />
-                                      <span className="text-[13px] font-medium group-hover:font-semibold transition-all leading-tight">
-                                        {item.name}
-                                      </span>
-                                    </Link>
-                                  )
-                                })}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-
-                        {/* Bottom Banner */}
-                        <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs px-1">
-                          <div className="flex items-center gap-2 text-slate-500 font-medium">
-                            <span className="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
-                            <span>All 12 Modules Included with 0% Platform Commission</span>
-                          </div>
-                          <Link
-                            to="/features"
-                            onClick={() => setFeaturesDropdown(false)}
-                            className="font-bold text-[#004098] hover:text-[#009FA8] flex items-center gap-1 group"
-                          >
-                            <span>Explore All 12 Modules in Detail</span>
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
 
                 {/* Pricing */}
                 <Link 
                   to="/pricing" 
+                  onMouseEnter={() => setFeaturesDropdown(false)}
                   className={`px-4 sm:px-5 py-2 text-sm font-semibold rounded-full transition-all ${
                     location.pathname === '/pricing' 
                       ? 'bg-white text-[#004098] shadow-xs' 
@@ -184,6 +147,7 @@ export const Navbar: React.FC = () => {
                 {/* Blog / Resources */}
                 <Link 
                   to="/blog" 
+                  onMouseEnter={() => setFeaturesDropdown(false)}
                   className={`px-4 sm:px-5 py-2 text-sm font-semibold rounded-full transition-all ${
                     location.pathname.startsWith('/blog')
                       ? 'bg-white text-[#004098] shadow-xs' 
@@ -196,6 +160,7 @@ export const Navbar: React.FC = () => {
                 {/* About Us */}
                 <Link 
                   to="/about" 
+                  onMouseEnter={() => setFeaturesDropdown(false)}
                   className={`px-4 sm:px-5 py-2 text-sm font-semibold rounded-full transition-all ${
                     location.pathname === '/about' 
                       ? 'bg-white text-[#004098] shadow-xs' 
@@ -240,6 +205,50 @@ export const Navbar: React.FC = () => {
           </div>
         </div>
 
+        {/* ── Desktop Mega Menu Dropdown: Centered on screen container, exactly like Onsite ── */}
+        {featuresDropdown && (
+          <div 
+            className="hidden lg:block absolute top-full left-0 right-0 w-full z-50 animate-in fade-in slide-in-from-top-1 duration-200"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="bg-white rounded-b-2xl shadow-2xl border-x border-b border-slate-200/90 px-8 py-9 sm:px-12 sm:py-10">
+                <div className="grid grid-cols-4 gap-8 lg:gap-12">
+                  {featureCategories.map((col) => (
+                    <div key={col.title} className="space-y-6">
+                      <h3 className="text-[15px] font-bold text-slate-900 tracking-tight">
+                        {col.title}
+                      </h3>
+                      <div className="space-y-4 lg:space-y-5">
+                        {col.items.map((item) => {
+                          const Icon = item.icon
+                          return (
+                            <Link
+                              key={item.name}
+                              to={item.href}
+                              onClick={() => setFeaturesDropdown(false)}
+                              className="flex items-center gap-3.5 group text-slate-800 hover:text-[#D92662] transition-colors py-0.5"
+                            >
+                              <Icon 
+                                className="w-5 h-5 text-[#D92662] group-hover:scale-110 transition-transform shrink-0" 
+                                strokeWidth={2.2} 
+                              />
+                              <span className="text-[14px] font-medium text-slate-800 group-hover:text-[#D92662] group-hover:font-semibold transition-colors leading-normal">
+                                {item.name}
+                              </span>
+                            </Link>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Mobile Dropdown Menu */}
         {isOpen && (
           <div className="lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3 animate-in fade-in duration-200">
@@ -251,33 +260,33 @@ export const Navbar: React.FC = () => {
               <Link 
                 to="/features#crm" 
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-blue-50 hover:text-[#004098]"
+                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-rose-50 hover:text-[#D92662]"
               >
-                <Search className="w-3.5 h-3.5 text-[#004098] shrink-0" />
+                <Search className="w-3.5 h-3.5 text-[#D92662] shrink-0" strokeWidth={2.2} />
                 <span>Admissions CRM</span>
               </Link>
               <Link 
                 to="/features#cbt" 
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-blue-50 hover:text-[#004098]"
+                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-rose-50 hover:text-[#D92662]"
               >
-                <CheckSquare className="w-3.5 h-3.5 text-[#004098] shrink-0" />
+                <CheckSquare className="w-3.5 h-3.5 text-[#D92662] shrink-0" strokeWidth={2.2} />
                 <span>NTA CBT Exams</span>
               </Link>
               <Link 
                 to="/features#biometric" 
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-blue-50 hover:text-[#004098]"
+                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-rose-50 hover:text-[#D92662]"
               >
-                <Fingerprint className="w-3.5 h-3.5 text-[#004098] shrink-0" />
+                <Fingerprint className="w-3.5 h-3.5 text-[#D92662] shrink-0" strokeWidth={2.2} />
                 <span>Biometric Sync</span>
               </Link>
               <Link 
                 to="/features#fees" 
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-blue-50 hover:text-[#004098]"
+                className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-rose-50 hover:text-[#D92662]"
               >
-                <CreditCard className="w-3.5 h-3.5 text-[#004098] shrink-0" />
+                <CreditCard className="w-3.5 h-3.5 text-[#D92662] shrink-0" strokeWidth={2.2} />
                 <span>Fee ERP & Ledger</span>
               </Link>
             </div>
@@ -285,7 +294,7 @@ export const Navbar: React.FC = () => {
             <Link 
               to="/features" 
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-1.5 text-xs font-bold text-[#004098] hover:underline"
+              className="block px-3 py-1.5 text-xs font-bold text-[#D92662] hover:underline"
             >
               View All 12 Modules in Detail →
             </Link>
