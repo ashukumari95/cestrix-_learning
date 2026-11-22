@@ -100,60 +100,18 @@ export const Home: React.FC = () => {
 
             </div>
 
-            {/* Right Column: High-Impact Coaching Solution Visual (Coaching Problems Solved) */}
+            {/* Right Column: High-Impact Custom Coaching Solution Visual (3D SaaS Artwork) */}
             <div className="lg:col-span-7 relative flex items-center justify-center">
               {/* Ambient Glow */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-400/20 via-teal-400/20 to-indigo-500/20 rounded-3xl blur-2xl -z-10" />
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-teal-400/20 to-indigo-500/20 rounded-3xl blur-2xl -z-10" />
 
               {/* Main Visual Container */}
-              <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-white/25 bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-sm group">
+              <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/5 backdrop-blur-sm group">
                 <img
-                  src="/hero-coaching-solution.jpg"
-                  alt="Cestrix Learning - Coaching Management Problems Solved"
-                  className="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.02]"
+                  src="/hero-coaching-illustration.jpg"
+                  alt="Cestrix Learning - Coaching Operating System"
+                  className="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.01]"
                 />
-
-                {/* Floating Badge 1: Automated Fee Collection (Top Left) */}
-                <div className="absolute top-3 left-3 sm:top-5 sm:left-5 bg-white/95 backdrop-blur-md px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
-                    <CreditCard className="w-5 h-5 text-emerald-600" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-emerald-700 flex items-center gap-1">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Problem Solved: Fee Defaulters
-                    </div>
-                    <div className="text-xs sm:text-sm font-extrabold text-slate-900 mt-0.5">
-                      100% Automated Fee Collection
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating Badge 2: Attendance Proxy Solved (Bottom Left) */}
-                <div className="absolute bottom-3 left-3 sm:bottom-5 sm:left-5 bg-white/95 backdrop-blur-md px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-blue-50 text-[#004098] flex items-center justify-center shrink-0">
-                    <Fingerprint className="w-5 h-5 text-[#004098]" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#004098] flex items-center gap-1">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#004098]" /> Zero-Proxy Biometric Sync
-                    </div>
-                    <div className="text-xs sm:text-sm font-extrabold text-slate-900 mt-0.5">
-                      Instant WhatsApp Alert to Parents
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating Badge 3: White-Label Student App (Bottom Right) */}
-                <div className="hidden sm:flex absolute bottom-3 right-3 sm:bottom-5 sm:right-5 bg-[#071326]/90 text-white backdrop-blur-md px-3.5 py-2.5 rounded-xl shadow-xl border border-white/10 items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#009FA8] text-white flex items-center justify-center shrink-0">
-                    <Smartphone className="w-4 h-4 text-white" />
-                  </div>
-                  <div className="text-left">
-                    <div className="text-[10px] font-bold text-teal-300">Your Own Mobile App</div>
-                    <div className="text-xs font-bold text-white">0% Platform Cut</div>
-                  </div>
-                </div>
-
               </div>
             </div>
 
