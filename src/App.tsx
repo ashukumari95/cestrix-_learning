@@ -25,12 +25,22 @@ import { ComparePage } from './pages/ComparePage'
 import { CanonicalTag } from './components/seo/CanonicalTag'
 import { DemoModalProvider } from './context/DemoModalContext'
 
-// Automatically scroll to top on route navigation
+// Automatically scroll to top on route navigation, or scroll to hash if present
 const ScrollToTop = () => {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+    if (hash) {
+      setTimeout(() => {
+        const id = hash.replace('#', '')
+        const element = document.getElementById(id)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [pathname, hash])
   return null
 }
 

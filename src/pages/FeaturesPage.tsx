@@ -6,7 +6,7 @@ import {
   ShieldCheck, Check, Globe, BookOpen, Clock, FileText, 
   Bot, Award, Zap, Printer, MessageSquare, CheckCircle2,
   Calendar, Lock, Search, BarChart3, Database, Shield,
-  QrCode, UserCheck, HelpCircle, Share2, DollarSign, Bell
+  QrCode, UserCheck, HelpCircle, Share2, DollarSign, Bell, Receipt
 } from 'lucide-react'
 
 export const FeaturesPage: React.FC = () => {
@@ -50,7 +50,7 @@ export const FeaturesPage: React.FC = () => {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-slate-700">
             <span className="px-3.5 py-1.5 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center gap-2">
-              <CheckSquare size={14} className="text-[#173F8A]" /> NTA CBT Exam Simulator
+              <CheckSquare size={14} className="text-[#004098]" /> NTA CBT Exam Simulator
             </span>
             <span className="px-3.5 py-1.5 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center gap-2">
               <Fingerprint size={14} className="text-emerald-600" /> Biometric Cloud Sync
@@ -61,6 +61,113 @@ export const FeaturesPage: React.FC = () => {
             <span className="px-3.5 py-1.5 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center gap-2">
               <Globe size={14} className="text-purple-600" /> Free Branded Website
             </span>
+          </div>
+
+          {/* ── 4-Column Feature Architecture Matrix (Onsite-inspired) ── */}
+          <div className="mt-12 max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200/90 p-6 sm:p-8 text-left">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+              
+              {/* Pillar 1 */}
+              <div className="space-y-3.5">
+                <div className="text-sm font-bold text-slate-900 pb-2 border-b border-slate-100">
+                  Admissions & Growth
+                </div>
+                <div className="space-y-3">
+                  <a href="#crm" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <Search className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">Walk-In Admissions CRM</span>
+                  </a>
+                  <a href="#crm" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <Users className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">Course & Batch Allocations</span>
+                  </a>
+                  <a href="#website" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <Globe className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">Free Coaching Website</span>
+                  </a>
+                  <a href="#crm" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <MessageSquare className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">WhatsApp Lead Inquiries</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Pillar 2 */}
+              <div className="space-y-3.5">
+                <div className="text-sm font-bold text-slate-900 pb-2 border-b border-slate-100">
+                  Academic & Exams
+                </div>
+                <div className="space-y-3">
+                  <a href="#cbt" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <CheckSquare className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">NTA CBT Exam Simulator</span>
+                  </a>
+                  <a href="#ai" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <Sparkles className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">AI Question Paper Studio</span>
+                  </a>
+                  <a href="#mistake" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <BookOpen className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">Student Mistake Notebook</span>
+                  </a>
+                  <a href="#lms" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <Video className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">Video LMS & DPP Notes</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Pillar 3 */}
+              <div className="space-y-3.5">
+                <div className="text-sm font-bold text-slate-900 pb-2 border-b border-slate-100">
+                  Campus Operations
+                </div>
+                <div className="space-y-3">
+                  <a href="#biometric" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <Fingerprint className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">Biometric Attendance Sync</span>
+                  </a>
+                  <a href="#biometric" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <Bell className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">Automated WhatsApp Alerts</span>
+                  </a>
+                  <a href="#scheduling" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <Calendar className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">Timetable & Room Conflicts</span>
+                  </a>
+                  <a href="#faculty" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <GraduationCap className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">Teacher & Staff Workspace</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Pillar 4 */}
+              <div className="space-y-3.5">
+                <div className="text-sm font-bold text-slate-900 pb-2 border-b border-slate-100">
+                  Finance & Controls
+                </div>
+                <div className="space-y-3">
+                  <a href="#fees" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <CreditCard className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">Fee ERP & Installments</span>
+                  </a>
+                  <Link to="/free-fee-receipt-generator" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <Receipt className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">GST Invoice & Receipts</span>
+                  </Link>
+                  <a href="#multi-branch" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <Building2 className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">Multi-Branch HQ Control</span>
+                  </a>
+                  <a href="#mobile-app" className="flex items-center gap-2.5 text-slate-700 hover:text-[#004098] group transition-colors">
+                    <Smartphone className="w-4 h-4 text-[#004098] group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-[13px] font-medium group-hover:font-semibold">Branded Student App</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
