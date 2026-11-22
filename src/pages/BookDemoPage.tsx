@@ -7,8 +7,10 @@ export const BookDemoPage: React.FC = () => {
   const defaultPlan = searchParams.get('plan') || ''
 
   const [name, setName] = useState('')
+  const [instituteName, setInstituteName] = useState('')
   const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
+  const [city, setCity] = useState('')
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -18,7 +20,7 @@ export const BookDemoPage: React.FC = () => {
     setError(null)
 
     if (!name.trim() || !phone.trim() || !email.trim()) {
-      setError('Please fill in all fields.')
+      setError('Please fill in Name, Phone, and Email.')
       return
     }
 
@@ -26,13 +28,15 @@ export const BookDemoPage: React.FC = () => {
 
     const payload = {
       fullName: name.trim(),
-      instituteName: 'Coaching Institute',
+      instituteName: instituteName.trim() || 'Coaching Institute',
       email: email.trim(),
       phone: phone.trim(),
-      city: 'India',
+      city: city.trim() || 'India',
       studentsCount: '100-250',
       interestedFeatures: ['Smart Biometric Attendance', 'Automated Fee Receipts & UPI'],
-      additionalRequirements: defaultPlan ? `Inquired for ${defaultPlan.toUpperCase()} plan.` : 'Inquired via Book Demo page.'
+      additionalRequirements: defaultPlan
+        ? `Inquired for ${defaultPlan.toUpperCase()} plan. Institute: ${instituteName || 'Not specified'}, City: ${city || 'Not specified'}.`
+        : `Inquired via Book Demo page. Institute: ${instituteName || 'Not specified'}, City: ${city || 'Not specified'}.`
     }
 
     try {
@@ -66,7 +70,7 @@ export const BookDemoPage: React.FC = () => {
 
   return (
     <div className="min-h-[85vh] bg-slate-900/60 flex items-center justify-center p-4 sm:p-6 py-16">
-      <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 max-w-[440px] w-full relative border border-slate-100">
+      <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-7 max-w-[440px] w-full relative border border-slate-100">
         {submitted ? (
           <div className="text-center py-6 space-y-3">
             <div className="w-12 h-12 rounded-full bg-teal-50 text-[#009FA8] border border-teal-200 flex items-center justify-center mx-auto">
@@ -88,31 +92,31 @@ export const BookDemoPage: React.FC = () => {
         ) : (
           <div>
             {/* Header */}
-            <div className="mb-5">
+            <div className="mb-4">
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
                 Book Free 10 Min Demo
               </h3>
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-xs text-slate-500 mt-0.5">
                 Fill the form to see the product live
               </p>
-              <div className="text-xs font-semibold text-[#004098] mt-1.5 flex items-center gap-1.5">
+              <div className="text-xs font-semibold text-[#004098] mt-1 flex items-center gap-1.5">
                 <span>Trusted by 10,000+ Coaching institutes</span>
                 <span className="text-amber-400">⭐⭐⭐⭐⭐</span>
               </div>
             </div>
 
             {error && (
-              <div className="mb-4 p-2.5 rounded-lg bg-red-50 border border-red-200 text-red-600 text-xs flex items-center gap-2">
+              <div className="mb-3 p-2.5 rounded-lg bg-red-50 border border-red-200 text-red-600 text-xs flex items-center gap-2">
                 <AlertCircle size={14} className="shrink-0" />
                 <span>{error}</span>
               </div>
             )}
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3">
               {/* Name */}
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
                   Name
                 </label>
                 <input
@@ -121,17 +125,31 @@ export const BookDemoPage: React.FC = () => {
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Name"
                   required
-                  className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#004098] focus:border-transparent text-sm placeholder:text-slate-400 transition-all"
+                  className="w-full px-3.5 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#004098] focus:border-transparent text-sm placeholder:text-slate-400 transition-all"
+                />
+              </div>
+
+              {/* Institute Name */}
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  Institute Name
+                </label>
+                <input
+                  type="text"
+                  value={instituteName}
+                  onChange={(e) => setInstituteName(e.target.value)}
+                  placeholder="Institute / Coaching Name"
+                  className="w-full px-3.5 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#004098] focus:border-transparent text-sm placeholder:text-slate-400 transition-all"
                 />
               </div>
 
               {/* Phone/Mobile */}
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
                   Phone/Mobile <span className="text-red-500">*</span>
                 </label>
                 <div className="flex items-center rounded-lg border border-slate-300 focus-within:ring-2 focus-within:ring-[#004098] focus-within:border-transparent overflow-hidden transition-all">
-                  <div className="flex items-center gap-1 px-3 py-2.5 bg-slate-50 border-r border-slate-200 text-sm select-none shrink-0">
+                  <div className="flex items-center gap-1 px-3 py-2 bg-slate-50 border-r border-slate-200 text-sm select-none shrink-0">
                     <span className="text-base leading-none">🇮🇳</span>
                     <span className="text-xs font-medium text-slate-600">+91</span>
                   </div>
@@ -142,14 +160,14 @@ export const BookDemoPage: React.FC = () => {
                     placeholder="Mobile Number"
                     required
                     maxLength={10}
-                    className="w-full px-3.5 py-2.5 text-sm focus:outline-none placeholder:text-slate-400"
+                    className="w-full px-3 py-2 text-sm focus:outline-none placeholder:text-slate-400"
                   />
                 </div>
               </div>
 
               {/* Email */}
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
                   Email <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -158,7 +176,21 @@ export const BookDemoPage: React.FC = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email Address"
                   required
-                  className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#004098] focus:border-transparent text-sm placeholder:text-slate-400 transition-all"
+                  className="w-full px-3.5 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#004098] focus:border-transparent text-sm placeholder:text-slate-400 transition-all"
+                />
+              </div>
+
+              {/* City */}
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  City
+                </label>
+                <input
+                  type="text"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  placeholder="City"
+                  className="w-full px-3.5 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#004098] focus:border-transparent text-sm placeholder:text-slate-400 transition-all"
                 />
               </div>
 
