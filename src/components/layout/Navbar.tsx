@@ -139,6 +139,22 @@ export const Navbar: React.FC = () => {
             <div className="hidden lg:flex items-center justify-center flex-shrink-0">
               <nav className="flex items-center gap-1.5 bg-slate-100/90 backdrop-blur-md p-1.5 rounded-full border border-slate-200/90 shadow-sm">
                 
+                {/* Home */}
+                <Link 
+                  to="/" 
+                  onMouseEnter={() => {
+                    setFeaturesDropdown(false)
+                    setResourcesDropdown(false)
+                  }}
+                  className={`px-4 sm:px-5 py-2 text-sm font-semibold rounded-full transition-all ${
+                    location.pathname === '/' 
+                      ? 'bg-white text-[#004098] shadow-xs font-bold' 
+                      : 'text-slate-700 hover:text-[#004098] hover:bg-white/70'
+                  }`}
+                >
+                  Home
+                </Link>
+
                 {/* Features Pill Button */}
                 <div 
                   className="relative"
@@ -367,6 +383,15 @@ export const Navbar: React.FC = () => {
             </div>
 
             <div className="border-t border-slate-100 pt-2 space-y-1">
+              <Link 
+                to="/" 
+                onClick={() => setIsOpen(false)}
+                className={`block px-3 py-2 text-sm font-medium rounded-lg ${
+                  location.pathname === '/' ? 'text-[#004098] bg-blue-50 font-bold' : 'text-slate-800 hover:bg-slate-50'
+                }`}
+              >
+                Home
+              </Link>
               <Link 
                 to="/pricing" 
                 onClick={() => setIsOpen(false)}
