@@ -25,7 +25,10 @@
         try {
           var p = (window.location.pathname || '/').toLowerCase().replace(/\/+$/, '') || '/';
           if (p === '/home') p = '/';
-          if (p === '/alternatives' || p.indexOf('/compare/') === 0) p = '/compare';
+          if (p === '/alternatives' || p.indexOf('/compare/') === 0 || p === '/features-comparison') p = '/compare';
+          if (p === '/case-study') p = '/case-studies';
+          if (p === '/free-fee-receipt-generator') p = '/features/fee-receipts';
+          if (p === '/features') p = '/features/admissions-crm';
           var c = document.getElementById('canonical-url');
           if (c) c.href = p === '/' ? 'https://learning.cestrixgroup.com/' : 'https://learning.cestrixgroup.com' + p;
         } catch (e) {}

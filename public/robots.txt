@@ -3,7 +3,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /admin/leads
 
-# Explicitly Allow Major AI Search Engines & LLM Crawlers
+# Explicitly Allow Major Search Engines & LLM Crawlers
 User-agent: Googlebot
 Allow: /
 
@@ -45,6 +45,7 @@ Allow: /
 
 # High-Intent SEO Sitemaps
 Sitemap: https://learning.cestrixgroup.com/sitemap.xml
+Host: https://learning.cestrixgroup.com
 
 # LLM Direct Knowledge Standard for AI Search Engines
 # https://learning.cestrixgroup.com/llms.txt
