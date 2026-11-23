@@ -11,8 +11,8 @@ export const FeatureDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>()
   
   if (!slug || !featuresDetailData[slug]) {
-    // If invalid slug, fallback to /features
-    return <Navigate to="/features" replace />
+    // If invalid slug, fallback to default feature
+    return <Navigate to="/features/admissions-crm" replace />
   }
 
   const feature = featuresDetailData[slug]
@@ -36,7 +36,7 @@ export const FeatureDetailPage: React.FC = () => {
           <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-6">
             <Link to="/" className="hover:text-[#004098] transition-colors">Home</Link>
             <ChevronRight size={12} className="text-slate-400" />
-            <Link to="/features" className="hover:text-[#004098] transition-colors">Features</Link>
+            <span className="text-slate-400">Features</span>
             <ChevronRight size={12} className="text-slate-400" />
             <span className="text-[#004098] font-bold">{feature.category}</span>
           </div>
@@ -332,10 +332,10 @@ export const FeatureDetailPage: React.FC = () => {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              to="/features"
+              to="/pricing"
               className="px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 backdrop-blur-sm transition-all"
             >
-              <span>Explore All Features</span>
+              <span>View Pricing Plans</span>
             </Link>
           </div>
         </div>

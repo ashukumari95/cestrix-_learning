@@ -1264,7 +1264,7 @@ export const Home: React.FC = () => {
 
               <div className="pt-2">
                 <Link
-                  to="/features"
+                  to="/features/cbt-exam-simulator"
                   className="inline-flex items-center gap-2 text-sm font-bold text-[#002D62] hover:text-[#0D3E8C] group"
                 >
                   <span>Discover CBT Test Engine</span>

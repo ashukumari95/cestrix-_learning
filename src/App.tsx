@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { Navbar } from './components/layout/Navbar'
 import { Footer } from './components/layout/Footer'
 import { Home } from './pages/Home'
-import { FeaturesPage } from './pages/FeaturesPage'
 import { FeatureDetailPage } from './pages/FeatureDetailPage'
 import { SolutionsPage } from './pages/SolutionsPage'
 import { SingleBranchPage } from './pages/SingleBranchPage'
@@ -57,7 +56,7 @@ export function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/features" element={<FeaturesPage />} />
+              <Route path="/features" element={<Navigate to="/features/admissions-crm" replace />} />
               <Route path="/features/:slug" element={<FeatureDetailPage />} />
               <Route path="/solutions" element={<SolutionsPage />} />
               <Route path="/solutions/coaching-institutes" element={<SingleBranchPage />} />

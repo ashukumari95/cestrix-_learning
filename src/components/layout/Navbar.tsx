@@ -118,17 +118,18 @@ export const Navbar: React.FC = () => {
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <Link 
-                    to="/features" 
-                    className={`flex items-center gap-1.5 px-4 sm:px-5 py-2 text-sm font-semibold rounded-full transition-all ${
-                      featuresDropdown || location.pathname === '/features'
+                  <button 
+                    type="button"
+                    onClick={() => setFeaturesDropdown(!featuresDropdown)}
+                    className={`flex items-center gap-1.5 px-4 sm:px-5 py-2 text-sm font-semibold rounded-full transition-all cursor-pointer ${
+                      featuresDropdown || location.pathname.startsWith('/features')
                         ? 'bg-white text-[#004098] shadow-xs' 
                         : 'text-slate-700 hover:text-[#004098] hover:bg-white/70'
                     }`}
                   >
                     <span>Features</span>
                     <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${featuresDropdown ? 'rotate-180 text-[#004098]' : 'text-slate-400'}`} />
-                  </Link>
+                  </button>
                 </div>
 
                 {/* Pricing */}
@@ -258,7 +259,7 @@ export const Navbar: React.FC = () => {
 
             <div className="grid grid-cols-2 gap-2">
               <Link 
-                to="/features#crm" 
+                to="/features/admissions-crm" 
                 onClick={() => setIsOpen(false)}
                 className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-blue-50 hover:text-[#004098]"
               >
@@ -266,7 +267,7 @@ export const Navbar: React.FC = () => {
                 <span>Admissions CRM</span>
               </Link>
               <Link 
-                to="/features#cbt" 
+                to="/features/cbt-exam-simulator" 
                 onClick={() => setIsOpen(false)}
                 className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-blue-50 hover:text-[#004098]"
               >
@@ -274,7 +275,7 @@ export const Navbar: React.FC = () => {
                 <span>NTA CBT Exams</span>
               </Link>
               <Link 
-                to="/features#biometric" 
+                to="/features/biometric-attendance" 
                 onClick={() => setIsOpen(false)}
                 className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-blue-50 hover:text-[#004098]"
               >
@@ -282,7 +283,7 @@ export const Navbar: React.FC = () => {
                 <span>Biometric Sync</span>
               </Link>
               <Link 
-                to="/features#fees" 
+                to="/features/fee-erp" 
                 onClick={() => setIsOpen(false)}
                 className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-xs font-medium text-slate-700 hover:bg-blue-50 hover:text-[#004098]"
               >
@@ -290,14 +291,6 @@ export const Navbar: React.FC = () => {
                 <span>Fee ERP & Ledger</span>
               </Link>
             </div>
-
-            <Link 
-              to="/features" 
-              onClick={() => setIsOpen(false)}
-              className="block px-3 py-1.5 text-xs font-bold text-[#004098] hover:underline"
-            >
-              View All 12 Modules in Detail →
-            </Link>
 
             <div className="border-t border-slate-100 pt-2 space-y-1">
               <Link 

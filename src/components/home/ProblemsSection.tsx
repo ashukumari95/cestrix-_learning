@@ -12,42 +12,48 @@ const problems = [
     pain: 'Paper registers, WhatsApp groups, and fragmented Excel sheets lead to lost records and admission delays.',
     solution: 'Centralized cloud student repository with automated profile tracking, enrollment history, and batch allocation in one click.',
     icon: FileSpreadsheet,
-    tag: 'Records & Admissions'
+    tag: 'Records & Admissions',
+    href: '/features/admissions-crm'
   },
   {
     title: 'Manual Attendance Tracking',
     pain: 'Calling out roll numbers in every batch consumes 15 minutes of every lecture with zero reliable absent notifications.',
     solution: 'Plug-and-play biometric & RFID integration. Instant logging with automatic SMS/WhatsApp absent alerts to parents.',
     icon: Fingerprint,
-    tag: 'Smart Attendance'
+    tag: 'Smart Attendance',
+    href: '/features/biometric-attendance'
   },
   {
     title: 'Unorganized Tests & Results',
     pain: 'Physical test paper evaluation and manual score entry takes days, delaying crucial performance feedback.',
     solution: 'Instant Computer-Based Testing (CBT) and OMR reader with automated percentile, answer keys, and batch rank lists.',
     icon: Award,
-    tag: 'Examinations & Ranks'
+    tag: 'Examinations & Ranks',
+    href: '/features/cbt-exam-simulator'
   },
   {
     title: 'Fee Collection Difficulties',
     pain: 'Awkward phone call follow-ups, untracked cash slips, and missed installment dues eating into operating cash flow.',
     solution: 'Automated installment schedules, payment gateway links via WhatsApp, and instant GST invoice generation.',
     icon: CreditCard,
-    tag: 'Fee Management'
+    tag: 'Fee Management',
+    href: '/features/fee-erp'
   },
   {
     title: 'Poor Parent Communication',
     pain: 'Parents only hear from institutes when fees are due or during terminal crisis meetings, harming trust.',
     solution: 'Dedicated Parent Portal & WhatsApp automation delivering weekly attendance, test scores, and lecture notes automatically.',
     icon: MessageSquareOff,
-    tag: 'Parent Engagement'
+    tag: 'Parent Engagement',
+    href: '/features/whatsapp-attendance-alerts'
   },
   {
     title: 'Lack of Student Visibility',
     pain: 'Teachers and directors cannot pinpoint why a student is slipping until after bad board or entrance exam results.',
     solution: 'AI-powered weak topic detection that identifies conceptual errors in math & sciences in real-time with remedial practice.',
     icon: EyeOff,
-    tag: 'Academic Insights'
+    tag: 'Academic Insights',
+    href: '/features/student-mistake-notebook'
   }
 ]
 
@@ -113,7 +119,7 @@ export const ProblemsSection: React.FC = () => {
                 <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
                   <span className="text-slate-400 font-medium">Automated & Connected</span>
                   <Link 
-                    to="/features" 
+                    to={item.href || '/features/admissions-crm'} 
                     className="text-[#173F8A] font-semibold flex items-center gap-1 hover:underline"
                   >
                     <span>See Module</span>

@@ -128,7 +128,7 @@ export const SolutionsPage: React.FC = () => {
             </div>
             <div className="pt-6 mt-6 border-t border-slate-200">
               <Link
-                to="/features"
+                to="/features/admissions-crm"
                 className="inline-flex items-center gap-2 text-sm font-bold text-[#173F8A] hover:underline"
               >
                 <span>View Tuition Modules →</span>

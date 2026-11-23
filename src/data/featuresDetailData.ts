@@ -1364,3 +1364,11 @@ export const featuresDetailData: Record<string, FeatureItemData> = {
     ]
   }
 }
+
+// Aliases for seamless linking and legacy/footer references
+featuresDetailData['fee-management'] = featuresDetailData['fee-erp']
+featuresDetailData['white-label-app'] = featuresDetailData['mobile-app']
+featuresDetailData['cbt-tests'] = featuresDetailData['cbt-exam-simulator']
+featuresDetailData['lms-video'] = featuresDetailData['video-lms']
+featuresDetailData['parent-app'] = featuresDetailData['whatsapp-attendance-alerts']
+
