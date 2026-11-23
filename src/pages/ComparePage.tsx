@@ -8,7 +8,11 @@ import {
   ChevronUp, 
   FileText, 
   Clock, 
-  AlertCircle 
+  AlertCircle,
+  ShieldCheck,
+  Award,
+  Sparkles,
+  Lock
 } from 'lucide-react'
 import { SchemaMarkup } from '../components/seo/SchemaMarkup'
 
@@ -455,7 +459,176 @@ export const ComparePage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 4. DETAIL MODAL (WHEN USER CLICKS 'LEARN MORE') ── */}
+      {/* ── 4. WHY CHOOSE CESTRIX SECTION (EXACT ZOHO BLUEPRINT) ── */}
+      <section className="bg-white pt-10 pb-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 text-center">
+          
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Why choose Cestrix?
+          </h2>
+
+          <div className="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed max-w-3xl mx-auto text-center">
+            <p>
+              Informed by a privacy-first engineering culture, governed by strong zero-commission ethical standards, and built specifically for physical and hybrid Indian coaching institutes, Cestrix stands at the forefront of coaching operating systems. We offer carefully-crafted tools that allow you to accelerate operational efficiency and deliver tangible value to your students and parents every single day.
+            </p>
+            <p>
+              Whether we are eliminating manual fee follow-ups with automated WhatsApp UPI links, stopping lecture piracy with Google Widevine hardware DRM, or synchronizing physical biometric gate turnstiles in real-time, Cestrix runs on a transparent flat-fee model. We promise to offer you complete student data isolation, zero competing course sales, and dedicated engineering support so your institute can scale with uncompromised trust.
+            </p>
+          </div>
+
+          {/* Dark Navy Stats Container (Exact Zoho Stats Layout) */}
+          <div className="pt-4">
+            <div className="bg-[#0A2552] rounded-3xl p-8 sm:p-12 text-white shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left">
+              
+              {/* Left: 4 Metrics in 2x2 Grid */}
+              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                
+                {/* Metric 1 */}
+                <div className="space-y-1.5">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-[#F59E0B] tracking-tight">
+                    0%
+                  </div>
+                  <div className="text-xs sm:text-sm text-slate-200 font-medium leading-snug">
+                    Platform revenue cut or course sales commission — zero cuts forever.
+                  </div>
+                </div>
+
+                {/* Metric 2 */}
+                <div className="space-y-1.5">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-[#F59E0B] tracking-tight">
+                    15min
+                  </div>
+                  <div className="text-xs sm:text-sm text-slate-200 font-medium leading-snug">
+                    Guaranteed max response time with dedicated coaching support.
+                  </div>
+                </div>
+
+                {/* Metric 3 */}
+                <div className="space-y-1.5">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-[#F59E0B] tracking-tight">
+                    500+
+                  </div>
+                  <div className="text-xs sm:text-sm text-slate-200 font-medium leading-snug">
+                    Coaching centers and multi-branch campuses operating on Cestrix.
+                  </div>
+                </div>
+
+                {/* Metric 4 */}
+                <div className="space-y-1.5">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-[#F59E0B] tracking-tight">
+                    99.9%
+                  </div>
+                  <div className="text-xs sm:text-sm text-slate-200 font-medium leading-snug">
+                    Biometric punch delivery rate to parent WhatsApp within 1 second.
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Right: Embedded Deep Navy Card */}
+              <div className="lg:col-span-5 bg-[#061836] rounded-2xl p-8 sm:p-10 border border-blue-400/10 flex flex-col items-center justify-center text-center shadow-inner">
+                <div className="text-4xl sm:text-5xl font-extrabold text-[#F59E0B] tracking-tight">
+                  150,000+
+                </div>
+                <div className="text-xs sm:text-sm text-slate-200 font-medium mt-3 max-w-[220px] leading-relaxed">
+                  Students and parents receiving automated attendance, test results, and fee slips.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── 5. AWARDS & INDUSTRY RECOGNITION (EXACT ZOHO AWARDS ROW) ── */}
+      <section className="bg-white pb-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-center">
+          
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Awards & Recognition
+          </h2>
+
+          {/* 5 Clean Card Badges */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+            
+            {/* Badge 1: Coaching Tech Leader */}
+            <div className="bg-[#0B1528] text-white p-5 rounded-2xl flex flex-col justify-between items-center text-center h-[175px] shadow-sm border border-slate-800">
+              <div className="w-8 h-8 rounded-full bg-amber-400/20 text-amber-400 flex items-center justify-center font-bold text-sm">
+                ★
+              </div>
+              <div className="space-y-1">
+                <div className="text-[10px] font-bold text-amber-400 uppercase tracking-wider">2026 LEADER</div>
+                <div className="text-xs font-bold leading-tight text-white">Coaching ERP<br />Excellence</div>
+              </div>
+              <div className="text-[9px] text-slate-400">EdTech India Summit</div>
+            </div>
+
+            {/* Badge 2: Meta Cloud API Verified */}
+            <div className="bg-[#002D62] text-white p-5 rounded-2xl flex flex-col justify-between items-center text-center h-[175px] shadow-sm border border-blue-800">
+              <div className="w-8 h-8 rounded-full bg-blue-500/20 text-blue-300 flex items-center justify-center font-black text-sm">
+                M
+              </div>
+              <div className="space-y-1">
+                <div className="text-[10px] font-bold text-blue-300 uppercase tracking-wider">OFFICIAL API</div>
+                <div className="text-xs font-bold leading-tight text-white">Meta WhatsApp<br />Cloud API</div>
+              </div>
+              <div className="text-[9px] text-blue-200">BSP Integrated</div>
+            </div>
+
+            {/* Badge 3: Widevine DRM Certified */}
+            <div className="bg-slate-50 text-slate-900 p-5 rounded-2xl flex flex-col justify-between items-center text-center h-[175px] border border-slate-200 shadow-xs">
+              <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm">
+                <ShieldCheck className="w-4 h-4" />
+              </div>
+              <div className="space-y-1">
+                <div className="text-[10px] font-bold text-emerald-700 uppercase tracking-wider">GOOGLE DRM</div>
+                <div className="text-xs font-bold leading-tight text-slate-900">Widevine L1/L3<br />Anti-Piracy</div>
+              </div>
+              <div className="text-[9px] text-slate-500">Hardware Encrypted</div>
+            </div>
+
+            {/* Badge 4: 4.9 Rating */}
+            <div className="bg-slate-900 text-white p-5 rounded-2xl flex flex-col justify-between items-center text-center h-[175px] shadow-sm border border-slate-800">
+              <div className="flex items-center gap-0.5 text-amber-400 text-xs">
+                {'★★★★★'}
+              </div>
+              <div className="space-y-1">
+                <div className="text-2xl font-black text-white">4.9<span className="text-xs text-amber-400">/5</span></div>
+                <div className="text-xs font-bold leading-tight text-slate-200">Director Choice<br />Rating</div>
+              </div>
+              <div className="text-[9px] text-slate-400">Verified Reviews</div>
+            </div>
+
+            {/* Badge 5: Data Privacy Champion */}
+            <div className="bg-[#0052CC] text-white p-5 rounded-2xl flex flex-col justify-between items-center text-center h-[175px] shadow-sm border border-blue-400/20 col-span-2 sm:col-span-1">
+              <div className="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center font-bold text-xs">
+                ✓
+              </div>
+              <div className="space-y-1">
+                <div className="text-[10px] font-bold text-amber-300 uppercase tracking-wider">100% PRIVATE</div>
+                <div className="text-xs font-bold leading-tight text-white">Student Data<br />Isolation</div>
+              </div>
+              <div className="text-[9px] text-blue-100">Zero Cross-Selling</div>
+            </div>
+
+          </div>
+
+          {/* Bottom Conversion Prompt */}
+          <div className="pt-6">
+            <Link
+              to="/book-demo"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#0052CC] hover:bg-[#0040A8] text-white text-xs sm:text-sm font-bold tracking-wider uppercase shadow-md transition-all"
+            >
+              <span>Schedule a Free 15-Minute Platform Tour</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── 6. DETAIL MODAL (WHEN USER CLICKS 'LEARN MORE') ── */}
       {selectedModalItem && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150">
           <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-6">
