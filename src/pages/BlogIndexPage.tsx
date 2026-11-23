@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { 
-  BookOpen, 
   ArrowRight, 
   Clock, 
-  Sparkles, 
   Tag, 
   Search, 
   Receipt, 
@@ -53,15 +51,11 @@ export const BlogIndexPage: React.FC = () => {
 
       {/* ── Breadcrumb & Top Bar ── */}
       <div className="bg-[#001D42] text-white border-b border-blue-900/60 py-3 text-xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
           <div className="flex items-center gap-2 text-slate-300">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
             <span className="text-white font-medium">Resources & Blog</span>
-          </div>
-          <div className="flex items-center gap-1.5 text-amber-300 font-semibold">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Actionable Growth Playbooks for Indian Coaching Centers</span>
           </div>
         </div>
       </div>
@@ -69,11 +63,6 @@ export const BlogIndexPage: React.FC = () => {
       {/* ── Hero Section ── */}
       <section className="bg-gradient-to-b from-[#002D62] via-[#052857] to-[#0a1f3d] text-white py-16 lg:py-20 border-b border-blue-900">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-sky-200 text-xs font-semibold border border-white/20 mb-4">
-            <BookOpen className="w-3.5 h-3.5" />
-            <span>Coaching Operations & Growth Playbook</span>
-          </div>
-
           <h1 className="text-3xl sm:text-5xl font-heading font-black tracking-tight text-white max-w-3xl mx-auto leading-tight">
             Knowledge Base for Modern Coaching Leaders
           </h1>
