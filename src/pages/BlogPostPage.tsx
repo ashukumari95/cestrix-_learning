@@ -200,11 +200,10 @@ export const BlogPostPage: React.FC = () => {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              to="/free-fee-receipt-generator"
+              to="/pricing"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/20 transition-colors"
             >
-              <Receipt className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Use Free Receipt Generator</span>
+              <span>View Pricing Plans</span>
             </Link>
           </div>
         </div>

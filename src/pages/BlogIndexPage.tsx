@@ -5,7 +5,6 @@ import {
   Clock, 
   Tag, 
   Search, 
-  Receipt, 
   ShieldCheck, 
   Smartphone,
   ChevronRight
@@ -104,29 +103,6 @@ export const BlogIndexPage: React.FC = () => {
               {cat}
             </button>
           ))}
-        </div>
-
-        {/* Free Lead Magnet Callout Card */}
-        <div className="mb-12 bg-gradient-to-r from-emerald-600 via-teal-700 to-[#002D62] rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="space-y-2 text-center sm:text-left">
-            <span className="inline-block px-3 py-1 rounded-full bg-white/20 text-xs font-bold uppercase tracking-wider">
-              Free Coaching Tool
-            </span>
-            <h2 className="text-xl sm:text-2xl font-heading font-black">
-              Try Our Free Coaching Fee Receipt Generator
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-100 max-w-xl">
-              Create professional, GST-compliant fee receipts with auto-calculated words and 1-click WhatsApp sharing to parents. No signup required.
-            </p>
-          </div>
-          <Link
-            to="/free-fee-receipt-generator"
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-slate-900 font-bold text-sm hover:bg-slate-100 transition-colors shadow-lg"
-          >
-            <Receipt className="w-4 h-4 text-emerald-600" />
-            <span>Generate Free Receipt</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
 
         {/* Article Cards Grid */}

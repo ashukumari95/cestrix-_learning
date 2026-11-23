@@ -57,10 +57,6 @@ const ROUTE_SEO: Record<string, RouteSeo> = {
     title: 'Book Free 10-Minute Live Demo — Cestrix Learning',
     description: "Schedule a personalized 10-minute live demo of Cestrix Coaching Management Software tailored to your institute's batches, exams, and student size."
   },
-  '/free-fee-receipt-generator': {
-    title: 'Free Coaching Fee Receipt Generator with QR — Cestrix Learning',
-    description: 'Create and download professional, computerized student fee receipts with QR codes and your coaching branding. 100% free tool for educators.'
-  },
   '/blog': {
     title: 'Coaching Business & Growth Blog — Cestrix Learning',
     description: 'Actionable guides, marketing playbooks, and operating strategies for coaching owners, directors, and independent educators across India.'

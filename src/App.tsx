@@ -17,7 +17,6 @@ import { LeadsAdminPage } from './pages/LeadsAdminPage'
 import { PrivacyPage } from './pages/PrivacyPage'
 import { TermsPage } from './pages/TermsPage'
 import { CoachingCityPage } from './pages/CoachingCityPage'
-import { FreeFeeReceiptGeneratorPage } from './pages/FreeFeeReceiptGeneratorPage'
 import { AiCoachingGrowthPage } from './pages/AiCoachingGrowthPage'
 import { BlogIndexPage } from './pages/BlogIndexPage'
 import { BlogPostPage } from './pages/BlogPostPage'
@@ -73,7 +72,7 @@ export function App() {
               <Route path="/compare" element={<ComparePage />} />
 
               {/* Free Lead Magnet Micro-Tools */}
-              <Route path="/free-fee-receipt-generator" element={<FreeFeeReceiptGeneratorPage />} />
+              <Route path="/free-fee-receipt-generator" element={<Navigate to="/features/fee-receipts" replace />} />
               <Route path="/ai-coaching-marketing-generator" element={<AiCoachingGrowthPage />} />
               <Route path="/ai-seo-generator" element={<AiCoachingGrowthPage />} />
               {/* Pain-Point SEO Blog & Resource Center */}

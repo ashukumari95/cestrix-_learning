@@ -308,17 +308,6 @@ export const Navbar: React.FC = () => {
                 <span>Blog & Growth Guides</span>
               </Link>
               <Link 
-                to="/free-fee-receipt-generator" 
-                onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 text-sm font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100/80 rounded-lg flex items-center justify-between"
-              >
-                <span className="flex items-center gap-2">
-                  <Receipt className="w-4 h-4 text-emerald-600" />
-                  <span>Free Fee Receipt Tool</span>
-                </span>
-                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-200 text-emerald-900">100% Free</span>
-              </Link>
-              <Link 
                 to="/about" 
                 onClick={() => setIsOpen(false)}
                 className="block px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
