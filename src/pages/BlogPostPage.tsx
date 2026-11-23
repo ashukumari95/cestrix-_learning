@@ -17,9 +17,16 @@ import {
 import { BLOG_POSTS, type BlogPost } from '../data/blogData'
 import { SchemaMarkup } from '../components/seo/SchemaMarkup'
 
+const SLUG_ALIASES: Record<string, string> = {
+  'coaching-institute-ki-pending-fees-kaise-recover-karein': 'how-coaching-institutes-recover-pending-fees-whatsapp-automation',
+  'online-video-lectures-piracy-screen-recording-kaise-roke': 'how-to-prevent-video-lecture-piracy-screen-recording-drm',
+  'offline-coaching-ko-online-app-par-kaise-le-jayein-bihar-up': 'how-to-launch-branded-coaching-mobile-app-zero-commission'
+}
+
 export const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>()
-  const post = BLOG_POSTS.find((p) => p.slug === slug)
+  const resolvedSlug = slug && SLUG_ALIASES[slug] ? SLUG_ALIASES[slug] : slug
+  const post = BLOG_POSTS.find((p) => p.slug === resolvedSlug)
 
   if (!post) {
     return <Navigate to="/blog" replace />
