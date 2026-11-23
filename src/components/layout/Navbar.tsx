@@ -5,7 +5,8 @@ import {
   Search, Users, Globe, MessageSquare,
   CheckSquare, Sparkles, BookOpen, Video,
   Fingerprint, Bell, Calendar, GraduationCap,
-  CreditCard, Building2, Smartphone, TrendingUp, ArrowLeftRight
+  CreditCard, Building2, Smartphone, TrendingUp, ArrowLeftRight,
+  Award, ShieldCheck
 } from 'lucide-react'
 import cestrixLogo from '../../assets/logo1.png'
 
@@ -48,24 +49,45 @@ const featureCategories = [
   }
 ]
 
-const resourceItems = [
+const resourceCategories = [
   {
-    name: 'About',
+    title: 'About Cestrix',
     href: '/about',
-    desc: 'Our mission, educational values & operating philosophy',
-    icon: Building2
+    items: [
+      { name: 'Company Mission & Story', href: '/about', icon: Building2 },
+      { name: 'Coaching-First Philosophy', href: '/about', icon: Award },
+      { name: 'Contact & Support Team', href: '/contact', icon: MessageSquare }
+    ]
   },
   {
-    name: 'Case Study',
+    title: 'Case Studies',
     href: '/case-studies',
-    desc: 'Real growth stories: fee recovery, anti-piracy, and CBT automation',
-    icon: TrendingUp
+    items: [
+      { name: 'All Institute Case Studies', href: '/case-studies', icon: TrendingUp },
+      { name: 'Fee Recovery (Patna)', href: '/case-studies', icon: Receipt },
+      { name: 'Anti-Piracy DRM (Kota)', href: '/case-studies', icon: ShieldCheck },
+      { name: 'CBT Mock Exams (Lucknow)', href: '/case-studies', icon: CheckSquare }
+    ]
   },
   {
-    name: 'Features Comparison',
+    title: 'Features Comparison',
     href: '/compare',
-    desc: 'See how Cestrix compares directly with legacy alternatives',
-    icon: ArrowLeftRight
+    items: [
+      { name: 'Full Platform Directory', href: '/compare', icon: ArrowLeftRight },
+      { name: 'Cestrix vs Classplus', href: '/compare', icon: CheckSquare },
+      { name: 'Cestrix vs Teachmint', href: '/compare', icon: Sparkles },
+      { name: 'Cestrix vs Classpro', href: '/compare', icon: Search }
+    ]
+  },
+  {
+    title: 'Knowledge & Growth',
+    href: '/blog',
+    items: [
+      { name: 'Coaching Growth Blog', href: '/blog', icon: BookOpen },
+      { name: 'WhatsApp Fee Recovery', href: '/blog/how-coaching-institutes-recover-pending-fees-whatsapp-automation', icon: Receipt },
+      { name: 'Anti-Piracy DRM Playbook', href: '/blog/how-to-prevent-video-lecture-piracy-screen-recording-drm', icon: ShieldCheck },
+      { name: 'Schedule a Live Demo', href: '/book-demo', icon: ArrowRight }
+    ]
   }
 ]
 
@@ -204,7 +226,7 @@ export const Navbar: React.FC = () => {
                   Blog
                 </Link>
 
-                {/* Resources Dropdown (About, Case Study, Features Comparison) */}
+                {/* Resources Pill Button */}
                 <div 
                   className="relative"
                   onMouseEnter={handleResMouseEnter}
@@ -222,50 +244,6 @@ export const Navbar: React.FC = () => {
                     <span>Resources</span>
                     <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${resourcesDropdown ? 'rotate-180 text-[#004098]' : 'text-slate-400'}`} />
                   </button>
-
-                  {/* Dropdown Card */}
-                  {resourcesDropdown && (
-                    <div 
-                      className="absolute top-full right-0 mt-3 w-80 sm:w-88 bg-white rounded-2xl shadow-xl border border-slate-200/90 p-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150"
-                      onMouseEnter={handleResMouseEnter}
-                      onMouseLeave={handleResMouseLeave}
-                    >
-                      <div className="space-y-1">
-                        {resourceItems.map((item) => {
-                          const Icon = item.icon
-                          const isActive = location.pathname === item.href
-                          return (
-                            <Link
-                              key={item.name}
-                              to={item.href}
-                              onClick={() => setResourcesDropdown(false)}
-                              className={`flex items-start gap-3 p-2.5 rounded-xl transition-all group ${
-                                isActive 
-                                  ? 'bg-blue-50/80 text-[#004098]' 
-                                  : 'hover:bg-slate-50 text-slate-800 hover:text-[#004098]'
-                              }`}
-                            >
-                              <div className={`p-2 rounded-lg shrink-0 transition-colors ${
-                                isActive 
-                                  ? 'bg-blue-100 text-[#004098]' 
-                                  : 'bg-slate-100 text-slate-600 group-hover:bg-blue-100 group-hover:text-[#004098]'
-                              }`}>
-                                <Icon className="w-4 h-4" strokeWidth={2.2} />
-                              </div>
-                              <div className="min-w-0">
-                                <div className="text-sm font-bold leading-snug group-hover:text-[#004098] transition-colors">
-                                  {item.name}
-                                </div>
-                                <div className="text-xs text-slate-500 font-normal leading-relaxed mt-0.5">
-                                  {item.desc}
-                                </div>
-                              </div>
-                            </Link>
-                          )
-                        })}
-                      </div>
-                    </div>
-                  )}
                 </div>
 
               </nav>
@@ -326,6 +304,54 @@ export const Navbar: React.FC = () => {
                               key={item.name}
                               to={item.href}
                               onClick={() => setFeaturesDropdown(false)}
+                              className="flex items-center gap-3.5 group text-slate-800 hover:text-[#004098] transition-colors py-0.5"
+                            >
+                              <Icon 
+                                className="w-5 h-5 text-[#004098] group-hover:text-[#009FA8] group-hover:scale-110 transition-transform shrink-0" 
+                                strokeWidth={2.2} 
+                              />
+                              <span className="text-[14px] font-medium text-slate-800 group-hover:text-[#004098] group-hover:font-semibold transition-colors leading-normal">
+                                {item.name}
+                              </span>
+                            </Link>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── Desktop Mega Menu Dropdown: Resources (Exact same clear format as Features) ── */}
+        {resourcesDropdown && (
+          <div 
+            className="hidden lg:block absolute top-full left-0 right-0 w-full z-50 animate-in fade-in slide-in-from-top-1 duration-200"
+            onMouseEnter={handleResMouseEnter}
+            onMouseLeave={handleResMouseLeave}
+          >
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="bg-white rounded-b-2xl shadow-2xl border-x border-b border-slate-200/90 px-8 py-9 sm:px-12 sm:py-10">
+                <div className="grid grid-cols-4 gap-8 lg:gap-12">
+                  {resourceCategories.map((col) => (
+                    <div key={col.title} className="space-y-6">
+                      <Link
+                        to={col.href}
+                        onClick={() => setResourcesDropdown(false)}
+                        className="text-[15px] font-bold text-slate-900 tracking-tight hover:text-[#004098] transition-colors block"
+                      >
+                        {col.title}
+                      </Link>
+                      <div className="space-y-4 lg:space-y-5">
+                        {col.items.map((item) => {
+                          const Icon = item.icon
+                          return (
+                            <Link
+                              key={item.name}
+                              to={item.href}
+                              onClick={() => setResourcesDropdown(false)}
                               className="flex items-center gap-3.5 group text-slate-800 hover:text-[#004098] transition-colors py-0.5"
                             >
                               <Icon 
