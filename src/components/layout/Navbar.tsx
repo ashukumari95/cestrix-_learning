@@ -5,7 +5,7 @@ import {
   Search, Users, Globe, MessageSquare,
   CheckSquare, Sparkles, BookOpen, Video,
   Fingerprint, Bell, Calendar, GraduationCap,
-  CreditCard, Building2, Smartphone
+  CreditCard, Building2, Smartphone, TrendingUp, ArrowLeftRight
 } from 'lucide-react'
 import cestrixLogo from '../../assets/logo1.png'
 
@@ -48,11 +48,34 @@ const featureCategories = [
   }
 ]
 
+const resourceItems = [
+  {
+    name: 'About',
+    href: '/about',
+    desc: 'Our mission, educational values & operating philosophy',
+    icon: Building2
+  },
+  {
+    name: 'Case Study',
+    href: '/case-studies',
+    desc: 'Real growth stories: fee recovery, anti-piracy, and CBT automation',
+    icon: TrendingUp
+  },
+  {
+    name: 'Features Comparison',
+    href: '/compare',
+    desc: 'See how Cestrix compares directly with legacy alternatives',
+    icon: ArrowLeftRight
+  }
+]
+
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [featuresDropdown, setFeaturesDropdown] = useState(false)
+  const [resourcesDropdown, setResourcesDropdown] = useState(false)
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const resTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const location = useLocation()
 
   useEffect(() => {
@@ -67,21 +90,38 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close mobile drawer and dropdown on route change
+  // Close mobile drawer and dropdowns on route change
   useEffect(() => {
     setIsOpen(false)
     setFeaturesDropdown(false)
+    setResourcesDropdown(false)
     if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    if (resTimeoutRef.current) clearTimeout(resTimeoutRef.current)
   }, [location.pathname])
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    if (resTimeoutRef.current) clearTimeout(resTimeoutRef.current)
+    setResourcesDropdown(false)
     setFeaturesDropdown(true)
   }
 
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setFeaturesDropdown(false)
+    }, 180)
+  }
+
+  const handleResMouseEnter = () => {
+    if (resTimeoutRef.current) clearTimeout(resTimeoutRef.current)
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    setFeaturesDropdown(false)
+    setResourcesDropdown(true)
+  }
+
+  const handleResMouseLeave = () => {
+    resTimeoutRef.current = setTimeout(() => {
+      setResourcesDropdown(false)
     }, 180)
   }
 
@@ -135,7 +175,10 @@ export const Navbar: React.FC = () => {
                 {/* Pricing */}
                 <Link 
                   to="/pricing" 
-                  onMouseEnter={() => setFeaturesDropdown(false)}
+                  onMouseEnter={() => {
+                    setFeaturesDropdown(false)
+                    setResourcesDropdown(false)
+                  }}
                   className={`px-4 sm:px-5 py-2 text-sm font-semibold rounded-full transition-all ${
                     location.pathname === '/pricing' 
                       ? 'bg-white text-[#004098] shadow-xs' 
@@ -145,10 +188,13 @@ export const Navbar: React.FC = () => {
                   Pricing
                 </Link>
 
-                {/* Blog / Resources */}
+                {/* Blog */}
                 <Link 
                   to="/blog" 
-                  onMouseEnter={() => setFeaturesDropdown(false)}
+                  onMouseEnter={() => {
+                    setFeaturesDropdown(false)
+                    setResourcesDropdown(false)
+                  }}
                   className={`px-4 sm:px-5 py-2 text-sm font-semibold rounded-full transition-all ${
                     location.pathname.startsWith('/blog')
                       ? 'bg-white text-[#004098] shadow-xs' 
@@ -158,18 +204,69 @@ export const Navbar: React.FC = () => {
                   Blog
                 </Link>
 
-                {/* About Us */}
-                <Link 
-                  to="/about" 
-                  onMouseEnter={() => setFeaturesDropdown(false)}
-                  className={`px-4 sm:px-5 py-2 text-sm font-semibold rounded-full transition-all ${
-                    location.pathname === '/about' 
-                      ? 'bg-white text-[#004098] shadow-xs' 
-                      : 'text-slate-700 hover:text-[#004098] hover:bg-white/70'
-                  }`}
+                {/* Resources Dropdown (About, Case Study, Features Comparison) */}
+                <div 
+                  className="relative"
+                  onMouseEnter={handleResMouseEnter}
+                  onMouseLeave={handleResMouseLeave}
                 >
-                  About Us
-                </Link>
+                  <button 
+                    type="button"
+                    onClick={() => setResourcesDropdown(!resourcesDropdown)}
+                    className={`flex items-center gap-1.5 px-4 sm:px-5 py-2 text-sm font-semibold rounded-full transition-all cursor-pointer ${
+                      resourcesDropdown || location.pathname === '/about' || location.pathname === '/case-studies' || location.pathname === '/compare'
+                        ? 'bg-white text-[#004098] shadow-xs' 
+                        : 'text-slate-700 hover:text-[#004098] hover:bg-white/70'
+                    }`}
+                  >
+                    <span>Resources</span>
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${resourcesDropdown ? 'rotate-180 text-[#004098]' : 'text-slate-400'}`} />
+                  </button>
+
+                  {/* Dropdown Card */}
+                  {resourcesDropdown && (
+                    <div 
+                      className="absolute top-full right-0 mt-3 w-80 sm:w-88 bg-white rounded-2xl shadow-xl border border-slate-200/90 p-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150"
+                      onMouseEnter={handleResMouseEnter}
+                      onMouseLeave={handleResMouseLeave}
+                    >
+                      <div className="space-y-1">
+                        {resourceItems.map((item) => {
+                          const Icon = item.icon
+                          const isActive = location.pathname === item.href
+                          return (
+                            <Link
+                              key={item.name}
+                              to={item.href}
+                              onClick={() => setResourcesDropdown(false)}
+                              className={`flex items-start gap-3 p-2.5 rounded-xl transition-all group ${
+                                isActive 
+                                  ? 'bg-blue-50/80 text-[#004098]' 
+                                  : 'hover:bg-slate-50 text-slate-800 hover:text-[#004098]'
+                              }`}
+                            >
+                              <div className={`p-2 rounded-lg shrink-0 transition-colors ${
+                                isActive 
+                                  ? 'bg-blue-100 text-[#004098]' 
+                                  : 'bg-slate-100 text-slate-600 group-hover:bg-blue-100 group-hover:text-[#004098]'
+                              }`}>
+                                <Icon className="w-4 h-4" strokeWidth={2.2} />
+                              </div>
+                              <div className="min-w-0">
+                                <div className="text-sm font-bold leading-snug group-hover:text-[#004098] transition-colors">
+                                  {item.name}
+                                </div>
+                                <div className="text-xs text-slate-500 font-normal leading-relaxed mt-0.5">
+                                  {item.desc}
+                                </div>
+                              </div>
+                            </Link>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </div>
 
               </nav>
             </div>
@@ -303,17 +400,43 @@ export const Navbar: React.FC = () => {
               <Link 
                 to="/blog" 
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg flex items-center justify-between"
-              >
-                <span>Blog & Growth Guides</span>
-              </Link>
-              <Link 
-                to="/about" 
-                onClick={() => setIsOpen(false)}
                 className="block px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
               >
-                About Us
+                Blog & Growth Guides
               </Link>
+
+              {/* Mobile Resources Section */}
+              <div className="pt-2">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-3 pb-1">
+                  Resources
+                </div>
+                <div className="space-y-0.5">
+                  <Link 
+                    to="/about" 
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
+                  >
+                    <Building2 className="w-4 h-4 text-[#004098]" />
+                    <span>About</span>
+                  </Link>
+                  <Link 
+                    to="/case-studies" 
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
+                  >
+                    <TrendingUp className="w-4 h-4 text-[#004098]" />
+                    <span>Case Study</span>
+                  </Link>
+                  <Link 
+                    to="/compare" 
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
+                  >
+                    <ArrowLeftRight className="w-4 h-4 text-[#004098]" />
+                    <span>Features Comparison</span>
+                  </Link>
+                </div>
+              </div>
             </div>
 
             <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">

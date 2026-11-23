@@ -21,6 +21,7 @@ import { AiCoachingGrowthPage } from './pages/AiCoachingGrowthPage'
 import { BlogIndexPage } from './pages/BlogIndexPage'
 import { BlogPostPage } from './pages/BlogPostPage'
 import { ComparePage } from './pages/ComparePage'
+import { CaseStudiesPage } from './pages/CaseStudiesPage'
 import { CanonicalTag } from './components/seo/CanonicalTag'
 import { DemoModalProvider } from './context/DemoModalContext'
 
@@ -64,6 +65,9 @@ export function App() {
               <Route path="/white-label-apps" element={<WhiteLabelAppsPage />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/case-studies" element={<CaseStudiesPage />} />
+              <Route path="/case-study" element={<Navigate to="/case-studies" replace />} />
+              <Route path="/features-comparison" element={<Navigate to="/compare" replace />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/book-demo" element={<BookDemoPage />} />
               <Route path="/admin/leads" element={<LeadsAdminPage />} />

@@ -98,13 +98,13 @@ export const Footer: React.FC = () => {
 
           {/* Company & Resources */}
           <div>
-            <h4 className="text-sm font-bold text-white mb-5 tracking-wide">Company</h4>
+            <h4 className="text-sm font-bold text-white mb-5 tracking-wide">Company & Resources</h4>
             <ul className="space-y-3.5 text-sm">
               <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/case-studies" className="hover:text-white transition-colors">Case Studies</Link></li>
+              <li><Link to="/compare" className="hover:text-white transition-colors">Features Comparison</Link></li>
               <li><Link to="/blog" className="hover:text-white transition-colors">EdTech Blog</Link></li>
-              <li><Link to="/free-tools" className="hover:text-white transition-colors">Free Growth Tools</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-colors">Contact Support</Link></li>
-              <li><Link to="/careers" className="hover:text-white transition-colors flex items-center gap-2">Careers <span className="bg-[#173F8A] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">Hiring</span></Link></li>
             </ul>
           </div>
         </div>
