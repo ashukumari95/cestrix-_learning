@@ -4,7 +4,7 @@ export interface BlogPost {
   subtitle: string
   metaDescription: string
   keywords: string[]
-  category: 'Fee Recovery' | 'Security & DRM' | 'Growth & Admissions' | 'Offline to Online'
+  category: 'Fee Recovery' | 'Security & DRM' | 'Growth & Admissions' | 'Offline to Online' | 'Exams & CBT' | 'Campus Operations'
   readTime: string
   publishedAt: string
   author: {
@@ -15,7 +15,119 @@ export interface BlogPost {
   featuredImage: string
   excerpt: string
   content: string
+  isFeatured?: boolean
 }
+
+export interface FreeToolkit {
+  id: string
+  title: string
+  badge: string
+  description: string
+  downloadType: 'copy' | 'link'
+  linkUrl?: string
+  contentSnippet?: string
+}
+
+export interface CoachingCaseStudy {
+  id: string
+  instituteName: string
+  city: string
+  director: string
+  metric: string
+  metricLabel: string
+  title: string
+  summary: string
+  results: string[]
+}
+
+export const FREE_TOOLKITS: FreeToolkit[] = [
+  {
+    id: 'whatsapp-fee-scripts',
+    title: '5 WhatsApp Fee Reminder Scripts (Hindi & English)',
+    badge: 'Copy-Paste Scripts',
+    description: 'Polite, formal, and high-recovery WhatsApp messages designed specifically for Indian parents without sounding rude.',
+    downloadType: 'copy',
+    contentSnippet: `Script 1 (3 Days Before Due Date - Polite):
+"Namaste [Parent Name] Ji, [Student Name] ki [Month] tuition installment [Due Date] ko due hai. Classes uninterrupted chalte rahein, iske liye aap niche diye gaye secure UPI link se direct pay kar sakte hain: [UPI Link]. - [Institute Name]"
+
+Script 2 (On Due Date - Friendly Reminder):
+"Namaste [Parent Name] Ji, aaj [Student Name] ki coaching installment ki due date hai. Computerized receipt turant WhatsApp par paane ke liye yahan pay karein: [UPI Link]. Kisi query ke liye humein call karein: [Phone]. - [Institute Name]"
+
+Script 3 (5 Days Overdue - Formal):
+"Respected [Parent Name] Ji, [Student Name] ki tuition installment due date se pending hai. Kripya aaj hi clear karke attendance records update karwayein: [UPI Link]. Dhanyawad. - Office, [Institute Name]"`
+  },
+  {
+    id: 'admission-inquiry-form',
+    title: 'Walk-In Student Admission Inquiry Form (PDF/Printable)',
+    badge: 'Front-Desk Template',
+    description: 'Professional reception intake sheet to capture student details, previous marks, target exams (JEE/NEET/Boards), and counseling history.',
+    downloadType: 'copy',
+    contentSnippet: `WALK-IN ADMISSION INQUIRY FORM - [INSTITUTE NAME]
+────────────────────────────────────────────────────
+Date: _________    Counselor: ____________________
+Student Name: _____________________________________
+Father's Name: _________________ Mobile: ___________
+Mother's Name: _________________ Mobile: ___________
+Address: __________________________________________
+Current School/College: ___________________________
+Current Grade/Class: [ ] 9th [ ] 10th [ ] 11th [ ] 12th [ ] Dropper
+Target Course: [ ] JEE Main/Adv [ ] NEET [ ] Foundation [ ] Board Exam
+Previous Year Percentage/Marks: _______%
+Source of Inquiry: [ ] Hoarding [ ] Friend/Reference [ ] Social Media [ ] Walk-by
+Demo Class Preferred Date: _________________________
+Counselor Remarks & Follow-up Commitment: _________`
+  },
+  {
+    id: 'fee-receipt-tool',
+    title: 'Free GST Coaching Fee Receipt Generator',
+    badge: 'Instant Web Tool',
+    description: 'Create professional, GST-compliant fee receipts with automatic number series, amount in words, and 1-click WhatsApp delivery.',
+    downloadType: 'link',
+    linkUrl: '/free-fee-receipt-generator'
+  },
+  {
+    id: 'excel-student-master',
+    title: 'Coaching Student & Batch Master (Excel Sheet Format)',
+    badge: 'Spreadsheet Template',
+    description: 'Standardized column layout for importing students, phone numbers, batch schedules, and fee balance ledgers into Cestrix.',
+    downloadType: 'copy',
+    contentSnippet: `Standard Excel Import Columns for Cestrix:
+Roll_Number | Full_Name | Gender | Father_Name | Primary_WhatsApp_No | Secondary_Mobile | Course_Enrolled | Batch_Name | Total_Fee_Agreed | Paid_Amount | Due_Amount | Next_Due_Date | Biometric_ID | Blood_Group | Home_Address`
+  }
+]
+
+export const CASE_STUDIES: CoachingCaseStudy[] = [
+  {
+    id: 'resonance-jaipur',
+    instituteName: 'Resonance Science Academy',
+    city: 'Jaipur, Rajasthan',
+    director: 'Er. Sandeep Mittal',
+    metric: '₹4.2 Lakhs',
+    metricLabel: 'Overdue Fees Recovered in 14 Days',
+    title: 'How a 450-student institute eliminated awkward collection phone calls',
+    summary: 'Before Cestrix, front-desk staff spent 3 hours every day dialing parents for pending installment fees. By switching to automated WhatsApp due alerts with PhonePe/GPay direct links, 82% of pending fees were settled within 48 hours.',
+    results: [
+      'Zero manual calling required by teachers or counselors',
+      'Instant GST PDF receipts delivered on WhatsApp within 3 seconds',
+      'Parent disputes over historical payment proof reduced to 0%'
+    ]
+  },
+  {
+    id: 'lakshya-patna',
+    instituteName: 'Lakshya Prep Institute',
+    city: 'Patna, Bihar',
+    director: 'Dr. R. K. Kashyap',
+    metric: '650+',
+    metricLabel: 'Students Shifted to NTA CBT in 1 Week',
+    title: 'Replacing paper OMR sheets with authentic computer-based JEE/NEET tests',
+    summary: 'Spending ₹32,000 monthly on Xerox paper printing and manual OMR scanning was slowing down test discussions. Cestrix NTA CBT simulator allowed students to attempt tests on institute tablets and phones with instant All-India percentiles.',
+    results: [
+      'Saved ₹35,000+ monthly on Xerox paper and printing overheads',
+      'Instant student mistake notebook highlighted negative marks within 1 second',
+      'Parent satisfaction increased with instant WhatsApp rank cards'
+    ]
+  }
+]
 
 export const BLOG_POSTS: BlogPost[] = [
   {
@@ -33,6 +145,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Fee Recovery',
     readTime: '6 min read',
     publishedAt: 'October 16, 2026',
+    isFeatured: true,
     author: {
       name: 'Er. Rajesh Verma',
       role: 'EdTech Specialist & Former Coaching Director',
@@ -104,6 +217,129 @@ Agar aap roz subah 2 ghante fee collection ke register check karne me waste kar 
     `
   },
   {
+    slug: 'coaching-admission-season-walk-in-enquiries-double-kaise-karein',
+    title: 'March-April Admission Season Mein Walk-In Enquiries 2X Kaise Karein? (Complete Growth Guide)',
+    subtitle: 'Naye academic session me student admissions badhane ke 6 practical offline + digital frameworks jo top coaching centers follow karte hain.',
+    metaDescription: 'Coaching admission season me student walk-in inquiries 2x kaise karein? Jane offline banner distribution, scholarship entrance tests (VSAT), Google Maps optimization, aur automated WhatsApp counseling.',
+    keywords: [
+      'coaching admissions growth tips',
+      'how to increase coaching walk-ins',
+      'scholarship test marketing for coaching',
+      'coaching banner and flyer strategy',
+      'admissions crm for coaching institutes'
+    ],
+    category: 'Growth & Admissions',
+    readTime: '7 min read',
+    publishedAt: 'October 19, 2026',
+    author: {
+      name: 'Vikas Agarwal',
+      role: 'Growth Consultant, 50+ Coaching Institutes',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    featuredImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
+    excerpt: 'Admission season saal me sirf ek baar aata hai. Agar aapne April-June me batches full nahi kiye, toh poora saal empty classroom seats dekhna padega. Jane 2x walk-in leads generate karne ka secret.',
+    content: `
+## Admission Season: Saal Ka Sabse Critical 60 Din Ka Window
+
+Har coaching director janta hai: **March se June** ke beech saal ke 80% admissions finalize hote hain. Jo coaching center is window me aggressive aur organized follow-up karta hai, uske saare batches full ho jate hain.
+
+Lekin 90% institutes wahi puraana galti karte hain:
+* Shehar bhar me newspaper inserts baant kar baith jate hain.
+* Reception par aane wale walk-ins ka record register me likhkar chhod dete hain.
+* Parents ko 3 din baad call karte hain, jabki parent pehle hi kisi doosri coaching me admission le chuka hota hai.
+
+Aaiye samajhte hain un 5 modern methods ko jinse successful institutes apne walk-in inquiries ko double karte hain:
+
+---
+
+### 1. Scholarship & Talent Search Exam (VSAT Model)
+Kewal "Admission Open" likhne se parents nahi aate. Parents ko apne bachhe ka academic level evaluate karna pasand hai:
+* **"All-City Talent Search Examination"** conduct karein with up to 100% scholarship on tuition fees.
+* Exam registration fee free ya nominal (₹50) rakhein.
+* Isse aapke paas 500 se 1,500 qualified high-intent students ka verified phone number aur parent contact data aa jata hai.
+
+---
+
+### 2. 10-Second Automated WhatsApp Prospectus
+Jab parent walk-in kare ya enquiry form bhare, unke phone par reception se uthne se pehle hi ek rich WhatsApp brochure deliver ho jana chahiye:
+* Institute ka verified profile logo.
+* Pichle saal ke top rankers ke photos aur marks.
+* Faculty credentials aur upcoming batch starting dates.
+
+Jab parent ghar laut kar discuss karta hai, unke mobile me aapki coaching ka professional document sabse pehle dikhta hai.
+
+---
+
+### 3. Google Business Profile & Local Maps Optimization
+85% parents school ya coaching dhoondhne ke liye Google par search karte hain: *"Best coaching for Class 11 Science near me"*.
+* Apne Google Maps listing par 50+ real parent and student reviews collect karein.
+* Photos of clean classrooms, biometric gate, and projector rooms upload karein.
+* Maps se aane wale direct WhatsApp inquiry button ko Cestrix CRM se connect karein taaki ek bhi lead miss na ho.
+
+---
+
+### 4. Counselor Follow-Up Cadence (Within 24 Hours)
+Rule of admissions: **Lead 24 ghante me 50% cold ho jati hai.**
+* Day 1: Thank-you message + syllabus preview on WhatsApp.
+* Day 2: Academic counselor phone call for demo class confirmation.
+* Day 4: Demo class attendance reminder.
+* Day 5: Special early-bird fee token deadline alert.
+    `
+  },
+  {
+    slug: 'pen-paper-se-nta-cbt-mock-tests-par-shift-kaise-karein',
+    title: 'Pen-Paper Se Real NTA Computer-Based Mock Tests Par Shift Hone Ka Step-by-Step Guide',
+    subtitle: 'Kyun JEE aur NEET ke bache physical OMR par practice karke exam hall me panic hote hain, aur digital test series setup kaise karein.',
+    metaDescription: 'Offline coaching institutes pen-paper se NTA CBT computer based test series par kaise shift karein? Jane question paper generation, negative marking calibration, aur mobile CBT app setup.',
+    keywords: [
+      'nta cbt exam simulator for coaching',
+      'how to conduct online test for coaching',
+      'jee neet computer based test software',
+      'shift from omr to cbt mock tests',
+      'online exam paper generator'
+    ],
+    category: 'Exams & CBT',
+    readTime: '6 min read',
+    publishedAt: 'October 18, 2026',
+    author: {
+      name: 'Dr. Alok Nath',
+      role: 'Academic Director, Ex-Kota Faculty',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80'
+    },
+    featuredImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80',
+    excerpt: 'Paper OMR sheet par 600 score karne wala bacha NTA computer screen par 480 par kyun simat jata hai? Digital exam interface ka darr kaise khatam karein.',
+    content: `
+## OMR Sheet Ka Zamana Gaya: Real Exams Ab Screens Par Hote Hain
+
+JEE Main, JEE Advanced, CUET, BITSAT, aur kayi State CET exams ab 100% Computer-Based Tests (CBT) hain. NEET me bhi digital format ki baat chal rahi hai.
+
+Lekin 85% offline coaching centers abhi bhi students ko **physical paper photocopy aur pen-paper OMR sheets** par test dilwate hain.
+
+Nuksaan kya hota hai?
+* Student ko screen par question padhne ki aadat nahi hoti.
+* Unhe "Mark for Review", "Question Palette", aur "Countdown Timer" ka stress manage karna nahi aata.
+* Exam hall me mouse use karne aur scroll karne me unke 20-30 critical minutes waste ho jate hain.
+
+Aaiye dekhte hain ki aapki coaching bina lakho rupaye ke computer lab lagaye CBT testing kaise start kar sakti hai:
+
+---
+
+### Step 1: Students Ke Apne Smartphone Ko CBT Terminal Banayein
+Aapko 100 computers khareedne ki zaroorat nahi hai:
+* Aapke institute ke branded mobile app me **100% NTA-identical CBT mode** chalta hai.
+* Test start hote hi phone "Lockdown Mode" me chala jata hai — student screen switch ya Google search nahi kar sakta.
+* Screen par real NTA pattern ke color palettes: Green (Answered), Red (Unanswered), Purple (Marked for Review) dikhte hain.
+
+---
+
+### Step 2: Test Khatam Hote Hi Instant All-India Rank Card
+Teachers ko 3 din tak OMR sheets check karne ki koi zaroorat nahi:
+* Submit button dabte hi 1 second me accurate score, negative marks (-1), aur accuracy rate calculate ho jati hai.
+* Parents ko instant WhatsApp par rank card PDF chala jata hai.
+* Students ko unki silly mistakes aur time wasted per question ka instant feedback milta hai.
+    `
+  },
+  {
     slug: 'online-video-lectures-piracy-screen-recording-kaise-roke',
     title: 'Video Lectures Ki Piracy Aur Screen Recording Kaise Rokein? (Anti-Piracy DRM Guide)',
     subtitle: 'Apne mehenge recorded lectures aur test series ko Telegram channels aur YouTube par leak hone se 100% protect karne ka complete technical guide.',
@@ -163,11 +399,6 @@ Bohot se students ek account kharid kar 5 doston me password share kar dete hain
 * Cestrix app me **Device Fingerprinting** hoti hai. Ek student ka login uske registered device se bind ho jata hai.
 * Agar wo kisi dusre phone par login karega, toh pehle phone se automatic logout ho jayega aur OTP verification trigger hoga.
 * Rooted ya jailbroken devices (jahan security bypassed hoti hai) par app automatically block ho jati hai.
-
----
-
-### Conclusion: Don't Compromise on Content Security
-YouTube unlisted videos ya basic Vimeo links par padhana band karein. Agar aapka content premium hai, toh aapko **military-grade DRM encryption** chahiye jo Cestrix ke Pro aur Enterprise plans me built-in aati hai.
     `
   },
   {
@@ -232,15 +463,6 @@ Agar aapka center mahine me ₹5,00,000 collect kar raha hai, toh saal ka **₹3
 * 0% platform commission leta hai.
 * App aapke apne Google Play Developer Console par publish karta hai.
 * Biometric machine sync aur offline cash ledgers natively support karta hai.
-
----
-
-### Step 4: 5 Din Me Apna Branded App Kaise Launch Karein
-1. **Branding Submit Karein:** Apna coaching logo, color theme, aur faculty list provide karein.
-2. **Student Import:** Apne purane Excel sheets se active student records 1 click me import karwayein.
-3. **Play Store Publishing:** 5 working days ke andar aapka custom Android app live ho jata hai.
-
-Apne shehar ke market leader bano. Technology se daro mat, use apna sabse bada weapon banao.
     `
   }
 ]
