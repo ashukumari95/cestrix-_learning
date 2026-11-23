@@ -1,121 +1,62 @@
-import React, { useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { 
-  Users, Fingerprint, CheckSquare, 
-  CreditCard, Smartphone, Sparkles, 
-  ArrowRight, CheckCircle2, ShieldCheck, 
-  MessageSquare, Zap
+  ArrowRight, Sparkles, CheckCircle2, ShieldCheck, 
+  MessageSquare, Zap, Search, Users, Globe,
+  CheckSquare, BookOpen, Video, Fingerprint,
+  Bell, Calendar, GraduationCap, CreditCard,
+  Receipt, Building2, Smartphone, Check
 } from 'lucide-react'
+import { featuresDetailData } from '../data/featuresDetailData'
+
+// Icon mapping per slug
+const slugIcons: Record<string, React.ElementType> = {
+  'admissions-crm': Search,
+  'batch-management': Users,
+  'coaching-website': Globe,
+  'whatsapp-leads': MessageSquare,
+  'cbt-exam-simulator': CheckSquare,
+  'ai-question-paper-studio': Sparkles,
+  'student-mistake-notebook': BookOpen,
+  'video-lms': Video,
+  'biometric-attendance': Fingerprint,
+  'whatsapp-attendance-alerts': Bell,
+  'timetable-scheduling': Calendar,
+  'faculty-management': GraduationCap,
+  'fee-erp': CreditCard,
+  'fee-receipts': Receipt,
+  'multi-branch': Building2,
+  'mobile-app': Smartphone
+}
 
 export const FeaturesPage: React.FC = () => {
-  const location = useLocation()
+  const [selectedCategory, setSelectedCategory] = useState<'All' | 'Admissions & Growth' | 'Academic & Exams' | 'Campus Operations' | 'Finance & Controls'>('All')
 
-  // Handle smooth scroll to anchor when landed with a hash like #crm or #fees
-  useEffect(() => {
-    if (location.hash) {
-      const element = document.querySelector(location.hash)
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
-      }
-    } else {
-      window.scrollTo(0, 0)
-    }
-  }, [location])
+  const allFeatures = Object.values(featuresDetailData)
 
-  const coreFeatures = [
-    {
-      id: 'crm',
-      title: 'Smart Admissions & CRM',
-      desc: 'Capture walk-in inquiries, track admissions pipeline, and organize batches with automated follow-ups.',
-      icon: Users,
-      badge: 'Admissions',
-      points: [
-        'Walk-in inquiry management & follow-ups',
-        'Batch, course, and timetable allocation',
-        'Digital student ID cards & admission receipts',
-        'Integrated WhatsApp inquiry responses'
-      ]
-    },
-    {
-      id: 'biometric',
-      title: 'Biometric Attendance Sync',
-      desc: 'Connect your biometric or facial recognition machine to the cloud. Parents get instant WhatsApp arrival alerts.',
-      icon: Fingerprint,
-      badge: 'Attendance',
-      points: [
-        'Real-time biometric & face punch sync',
-        'Instant WhatsApp arrival alert to parents',
-        'Daily absentee lists & automated SMS',
-        'Faculty and staff attendance tracking'
-      ]
-    },
-    {
-      id: 'cbt',
-      title: 'NTA-Standard CBT Exams',
-      desc: 'Conduct real NTA-pattern mock tests for JEE, NEET, and Board exams with instant rank cards and AI mistake analysis.',
-      icon: CheckSquare,
-      badge: 'Exams & Tests',
-      points: [
-        'Authentic NTA computer-based exam UI',
-        'Instant auto-grading and All-India rank cards',
-        'Student mistake notebook & weak area analytics',
-        'Question paper bank with chapter-wise tests'
-      ]
-    },
-    {
-      id: 'fees',
-      title: 'Fee ERP & WhatsApp Receipts',
-      desc: 'Manage fee installments, automate pending fee reminders on WhatsApp, and collect tuition with 0% platform commission.',
-      icon: CreditCard,
-      badge: 'Finance',
-      points: [
-        'Installment schedules & due date tracking',
-        'Automated WhatsApp payment reminder links',
-        'Instant GST-ready fee receipts (PDF & WhatsApp)',
-        '0% platform cut on tuition collections'
-      ]
-    },
-    {
-      id: 'app',
-      title: 'Your Branded Mobile App',
-      desc: 'Launch your coaching institute’s official Android app on Google Play Store with your own logo and brand name.',
-      icon: Smartphone,
-      badge: 'Mobile App',
-      points: [
-        'Your logo & name on Google Play Store',
-        'Secure video lecture streaming & DRM protection',
-        'Study material, DPP notes & test series',
-        'Direct push notifications to students'
-      ]
-    },
-    {
-      id: 'lms',
-      aliases: ['ai', 'mistake', 'website'],
-      title: 'AI Doubt Solver & Video LMS',
-      desc: 'Empower students to scan questions with their camera for instant 24/7 step-by-step verified video and text solutions.',
-      icon: Sparkles,
-      badge: 'AI Learning',
-      points: [
-        'Instant photo scan doubt solver for Math & Science',
-        'Organized video lectures by chapter & topic',
-        'Digital homework & DPP submission portal',
-        'Student performance improvement tracking'
-      ]
-    }
+  const filteredFeatures = selectedCategory === 'All'
+    ? allFeatures
+    : allFeatures.filter(f => f.category === selectedCategory)
+
+  const categories = [
+    { label: 'All Modules (16)', value: 'All' as const },
+    { label: 'Admissions & Growth (4)', value: 'Admissions & Growth' as const },
+    { label: 'Academic & Exams (4)', value: 'Academic & Exams' as const },
+    { label: 'Campus Operations (4)', value: 'Campus Operations' as const },
+    { label: 'Finance & Controls (4)', value: 'Finance & Controls' as const }
   ]
 
   return (
     <div className="bg-white min-h-screen text-slate-900 font-sans antialiased selection:bg-[#004098]/10 selection:text-[#004098]">
       
       {/* ── 1. Hero Section ── */}
-      <section className="relative pt-20 pb-16 lg:pt-28 lg:pb-20 overflow-hidden bg-slate-50/70 border-b border-slate-200/80">
-        <div className="absolute inset-0 subtle-grid opacity-40 pointer-events-none" />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <section className="relative pt-16 pb-16 lg:pt-24 lg:pb-20 overflow-hidden bg-slate-50/70 border-b border-slate-200/80">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-2xs">
             <Sparkles size={14} className="text-[#004098]" />
             <span className="text-xs font-semibold text-slate-700 tracking-wide">
-              Complete Feature Suite • Built for Coaching Institutes
+              Complete Feature Suite • 16 Core Specialized Modules
             </span>
           </div>
 
@@ -127,7 +68,7 @@ export const FeaturesPage: React.FC = () => {
           </h1>
 
           <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Replace 5 scattered tools with one simple, unified platform. From student inquiries and biometric attendance to CBT exams, fee ERP, and your own branded mobile app.
+            Explore our modular coaching operating system. Select any module below for deep-dive workflows, live previews, and automated solutions.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
@@ -150,52 +91,60 @@ export const FeaturesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 2. Core 6 Features Grid ── */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            6 Core Pillars of Modern Institute Management
-          </h2>
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Every feature is designed specifically for coaching centers, tuition academies, and test prep institutes.
-          </p>
+      {/* ── 2. Category Filter Bar ── */}
+      <section className="py-8 bg-white border-b border-slate-200 sticky top-16 z-30 shadow-2xs backdrop-blur-md bg-white/95">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none sm:justify-center">
+            {categories.map(cat => (
+              <button
+                key={cat.value}
+                onClick={() => setSelectedCategory(cat.value)}
+                className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
+                  selectedCategory === cat.value
+                    ? 'bg-[#004098] text-white shadow-xs'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900'
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
         </div>
+      </section>
 
+      {/* ── 3. Features Cards Grid (16 Modules) ── */}
+      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {coreFeatures.map((feat) => {
-            const Icon = feat.icon
+          {filteredFeatures.map((feat) => {
+            const Icon = slugIcons[feat.slug] || Sparkles
             return (
               <div 
-                key={feat.title}
-                id={feat.id}
-                className="scroll-mt-28 bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between group relative"
+                key={feat.slug}
+                className="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between group"
               >
-                {feat.aliases?.map(alias => (
-                  <span key={alias} id={alias} className="absolute -top-28" />
-                ))}
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#004098] flex items-center justify-center font-bold group-hover:bg-[#004098] group-hover:text-white transition-colors">
                       <Icon className="w-6 h-6" />
                     </div>
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#009FA8] bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">
-                      {feat.badge}
+                      {feat.category}
                     </span>
                   </div>
 
                   <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#004098] transition-colors">
-                    {feat.title}
+                    {feat.name}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {feat.desc}
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-3">
+                    {feat.description}
                   </p>
 
                   <div className="pt-2 border-t border-slate-100 space-y-2">
-                    {feat.points.map((pt) => (
-                      <div key={pt} className="flex items-start gap-2 text-xs text-slate-700">
+                    {feat.bullets.slice(0, 2).map((pt, pIdx) => (
+                      <div key={pIdx} className="flex items-start gap-2 text-xs text-slate-700">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>{pt}</span>
+                        <span className="line-clamp-2">{pt}</span>
                       </div>
                     ))}
                   </div>
@@ -203,11 +152,11 @@ export const FeaturesPage: React.FC = () => {
 
                 <div className="pt-6 mt-6 border-t border-slate-100">
                   <Link
-                    to="/book-demo"
-                    className="text-xs font-bold text-[#004098] hover:text-[#009FA8] inline-flex items-center gap-1 group/btn"
+                    to={`/features/${feat.slug}`}
+                    className="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-[#004098] text-slate-700 hover:text-white text-xs font-bold border border-slate-200 hover:border-transparent transition-all flex items-center justify-between group/link"
                   >
-                    <span>See this live in demo</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                    <span>View Dedicated Page & Demo</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -216,7 +165,7 @@ export const FeaturesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 3. Why Coaching Institutes Love Cestrix ── */}
+      {/* ── 4. Why Coaching Institutes Love Cestrix ── */}
       <section className="py-16 bg-slate-50 border-y border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
@@ -262,7 +211,7 @@ export const FeaturesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 4. Bottom CTA ── */}
+      {/* ── 5. Bottom CTA ── */}
       <section className="py-20 bg-gradient-to-br from-[#002D62] via-[#004098] to-[#071326] text-white relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">

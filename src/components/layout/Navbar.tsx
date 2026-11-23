@@ -13,37 +13,37 @@ const featureCategories = [
   {
     title: 'Admissions & Growth',
     items: [
-      { name: 'Walk-In Admissions CRM', href: '/features#crm', icon: Search },
-      { name: 'Course & Batch Allocations', href: '/features#crm', icon: Users },
-      { name: 'Free Coaching Website', href: '/features#website', icon: Globe },
-      { name: 'WhatsApp Lead Inquiries', href: '/features#crm', icon: MessageSquare }
+      { name: 'Walk-In Admissions CRM', href: '/features/admissions-crm', icon: Search },
+      { name: 'Course & Batch Allocations', href: '/features/batch-management', icon: Users },
+      { name: 'Free Coaching Website', href: '/features/coaching-website', icon: Globe },
+      { name: 'WhatsApp Lead Inquiries', href: '/features/whatsapp-leads', icon: MessageSquare }
     ]
   },
   {
     title: 'Academic & Exams',
     items: [
-      { name: 'NTA CBT Exam Simulator', href: '/features#cbt', icon: CheckSquare },
-      { name: 'AI Question Studio', href: '/features#ai', icon: Sparkles },
-      { name: 'Student Mistake Notebook', href: '/features#mistake', icon: BookOpen },
-      { name: 'Video LMS & DPP Notes', href: '/features#lms', icon: Video }
+      { name: 'NTA CBT Exam Simulator', href: '/features/cbt-exam-simulator', icon: CheckSquare },
+      { name: 'AI Question Studio', href: '/features/ai-question-paper-studio', icon: Sparkles },
+      { name: 'Student Mistake Notebook', href: '/features/student-mistake-notebook', icon: BookOpen },
+      { name: 'Video LMS & DPP Notes', href: '/features/video-lms', icon: Video }
     ]
   },
   {
     title: 'Campus Operations',
     items: [
-      { name: 'Biometric Attendance Sync', href: '/features#biometric', icon: Fingerprint },
-      { name: 'Automated WhatsApp Alerts', href: '/features#biometric', icon: Bell },
-      { name: 'Timetable & Room Conflicts', href: '/features#scheduling', icon: Calendar },
-      { name: 'Faculty & Staff Workspace', href: '/features#faculty', icon: GraduationCap }
+      { name: 'Biometric Attendance Sync', href: '/features/biometric-attendance', icon: Fingerprint },
+      { name: 'Automated WhatsApp Alerts', href: '/features/whatsapp-attendance-alerts', icon: Bell },
+      { name: 'Timetable & Room Conflicts', href: '/features/timetable-scheduling', icon: Calendar },
+      { name: 'Faculty & Staff Workspace', href: '/features/faculty-management', icon: GraduationCap }
     ]
   },
   {
     title: 'Finance & Controls',
     items: [
-      { name: 'Fee ERP & Installments', href: '/features#fees', icon: CreditCard },
-      { name: 'GST Invoice & Receipts', href: '/free-fee-receipt-generator', icon: Receipt },
-      { name: 'Multi-Branch HQ Control', href: '/features#multi-branch', icon: Building2 },
-      { name: 'Branded Mobile App', href: '/white-label-apps', icon: Smartphone }
+      { name: 'Fee ERP & Installments', href: '/features/fee-erp', icon: CreditCard },
+      { name: 'GST Invoice & Receipts', href: '/features/fee-receipts', icon: Receipt },
+      { name: 'Multi-Branch HQ Control', href: '/features/multi-branch', icon: Building2 },
+      { name: 'Branded Mobile App', href: '/features/mobile-app', icon: Smartphone }
     ]
   }
 ]

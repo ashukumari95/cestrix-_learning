@@ -4,6 +4,7 @@ import { Navbar } from './components/layout/Navbar'
 import { Footer } from './components/layout/Footer'
 import { Home } from './pages/Home'
 import { FeaturesPage } from './pages/FeaturesPage'
+import { FeatureDetailPage } from './pages/FeatureDetailPage'
 import { SolutionsPage } from './pages/SolutionsPage'
 import { SingleBranchPage } from './pages/SingleBranchPage'
 import { MultiBranchPage } from './pages/MultiBranchPage'
@@ -57,6 +58,7 @@ export function App() {
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/features" element={<FeaturesPage />} />
+              <Route path="/features/:slug" element={<FeatureDetailPage />} />
               <Route path="/solutions" element={<SolutionsPage />} />
               <Route path="/solutions/coaching-institutes" element={<SingleBranchPage />} />
               <Route path="/solutions/multi-branch" element={<MultiBranchPage />} />
