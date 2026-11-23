@@ -1,9 +1,6 @@
 import React from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
-import { 
-  Check, ArrowRight, ChevronRight,
-  HelpCircle, CheckCircle2, Zap
-} from 'lucide-react'
+import { Check, ArrowRight, ChevronRight, CheckCircle2 } from 'lucide-react'
 import { featuresDetailData } from '../data/featuresDetailData'
 
 export const FeatureDetailPage: React.FC = () => {
@@ -237,9 +234,9 @@ export const FeatureDetailPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#004098] bg-blue-50 border border-blue-200">
-              <HelpCircle size={13} className="text-[#004098]" />
-              <span>{feature.challengesSection.badge}</span>
+            {/* Tag: Bare clean text without box or icon */}
+            <div className="text-xs sm:text-sm font-bold tracking-wide uppercase text-[#004098]">
+              {feature.challengesSection.badge}
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
@@ -255,14 +252,11 @@ export const FeatureDetailPage: React.FC = () => {
             {feature.challengesSection.cards.map((card, cIdx) => (
               <div 
                 key={cIdx}
-                className="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-2xs hover:shadow-md transition-shadow space-y-3"
+                className="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-2xs hover:shadow-md transition-shadow space-y-2.5"
               >
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#004098]" />
-                  <h3 className="text-base sm:text-lg font-bold text-slate-900">
-                    {card.title}
-                  </h3>
-                </div>
+                <h3 className="text-base sm:text-lg font-bold text-slate-900">
+                  {card.title}
+                </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {card.desc}
                 </p>
@@ -292,12 +286,9 @@ export const FeatureDetailPage: React.FC = () => {
             {feature.capabilities.map((cap, capIdx) => (
               <div 
                 key={capIdx}
-                className="p-6 rounded-2xl border border-slate-200/90 bg-slate-50/50 hover:bg-white hover:shadow-md hover:border-blue-200 transition-all space-y-2.5"
+                className="p-6 rounded-2xl border border-slate-200/90 bg-slate-50/50 hover:bg-white hover:shadow-md hover:border-blue-200 transition-all space-y-2"
               >
-                <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#004098] flex items-center justify-center font-bold">
-                  <Zap className="w-4 h-4" />
-                </div>
-                <h3 className="font-bold text-sm text-slate-900">
+                <h3 className="font-bold text-sm sm:text-base text-slate-900">
                   {cap.title}
                 </h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
