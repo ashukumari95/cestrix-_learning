@@ -11,42 +11,42 @@ const solutions = [
     title: 'Single-Branch Coaching',
     desc: 'Empower independent centers to run like premier academies. Automate daily attendance, CBT tests, and fee collection with zero IT staff.',
     icon: Building2,
-    link: '/solutions/coaching-institutes',
+    link: '/features/admissions-crm',
     badge: 'Popular for Local Leaders'
   },
   {
     title: 'Multi-Branch Institutes',
     desc: 'Centralized administrative controls, consolidated revenue reporting, and standardized curriculum delivery across all franchise centers.',
     icon: Network,
-    link: '/solutions/multi-branch',
+    link: '/features/multi-branch',
     badge: 'Enterprise Architecture'
   },
   {
     title: 'JEE & NEET Coaching',
     desc: 'Specialized NTA-style test interface, negative marking, instant All-India Rank generation, and AI-powered physics/math doubt solving.',
     icon: Target,
-    link: '/solutions',
+    link: '/features/cbt-exam-simulator',
     badge: 'High-Stakes Test Prep'
   },
   {
     title: 'School Tuition Centers',
     desc: 'Track daily attendance, schedule chapter homework, share digitized NCERT study material, and keep parents updated via WhatsApp.',
     icon: BookMarked,
-    link: '/solutions',
+    link: '/features/batch-management',
     badge: 'K-12 & Foundation'
   },
   {
     title: 'Online Coaching Businesses',
     desc: 'Conduct live interactive sessions, protect pre-recorded video lectures with DRM watermarking, and sell digital test series nationwide.',
     icon: Globe,
-    link: '/solutions',
+    link: '/features/video-lms',
     badge: 'Digital Academies'
   },
   {
     title: 'Hybrid Coaching Institutes',
     desc: 'Seamlessly blend offline physical classroom attendance with online digital homework, recorded revision lectures, and CBT mock tests.',
     icon: Laptop,
-    link: '/solutions',
+    link: '/features/mobile-app',
     badge: 'Flexible Delivery'
   }
 ]

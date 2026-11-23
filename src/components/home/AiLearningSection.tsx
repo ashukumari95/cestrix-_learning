@@ -192,10 +192,10 @@ export const AiLearningSection: React.FC = () => {
             </div>
 
             <Link
-              to="/ai-learning"
+              to="/book-demo"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-semibold text-xs transition-colors"
             >
-              <span>Explore AI Capabilities</span>
+              <span>Book a Live Demo</span>
               <ChevronRight className="w-3.5 h-3.5" />
             </Link>
           </div>

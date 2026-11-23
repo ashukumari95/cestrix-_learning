@@ -32,34 +32,10 @@
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://learning.cestrixgroup.com/ai-learning</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
     <loc>https://learning.cestrixgroup.com/book-demo</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/solutions</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/solutions/coaching-institutes</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/solutions/multi-branch</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://learning.cestrixgroup.com/about</loc>
@@ -71,12 +47,6 @@
     <loc>https://learning.cestrixgroup.com/contact</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/ai-coaching-marketing-generator</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>

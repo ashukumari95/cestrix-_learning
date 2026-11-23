@@ -76,11 +76,11 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-sm font-bold text-white mb-5 tracking-wide">Use Cases</h4>
             <ul className="space-y-3.5 text-sm">
-              <li><Link to="/solutions/coaching-institutes" className="hover:text-white transition-colors">For Individual Tutors</Link></li>
-              <li><Link to="/solutions/coaching-institutes" className="hover:text-white transition-colors">For Mid-Size Coaching</Link></li>
-              <li><Link to="/solutions/multi-branch" className="hover:text-white transition-colors">For Multi-Branch Franchise</Link></li>
+              <li><Link to="/features/mobile-app" className="hover:text-white transition-colors">For Individual Tutors</Link></li>
+              <li><Link to="/features/batch-management" className="hover:text-white transition-colors">For Mid-Size Coaching</Link></li>
+              <li><Link to="/features/multi-branch" className="hover:text-white transition-colors">For Multi-Branch Franchise</Link></li>
               <li><Link to="/features/cbt-exam-simulator" className="hover:text-white transition-colors">For JEE / NEET Institutes</Link></li>
-              <li><Link to="/solutions" className="hover:text-white transition-colors">For Schools & Colleges</Link></li>
+              <li><Link to="/features/admissions-crm" className="hover:text-white transition-colors">For Schools & Foundation</Link></li>
             </ul>
           </div>
 
@@ -135,7 +135,7 @@ export const Footer: React.FC = () => {
             <Link to="/coaching-software-in-hyderabad" className="hover:text-blue-400 transition-colors">Hyderabad</Link>
             <Link to="/coaching-software-in-kanpur" className="hover:text-blue-400 transition-colors">Kanpur</Link>
             <Link to="/coaching-software-in-ranchi" className="hover:text-blue-400 transition-colors">Ranchi</Link>
-            <Link to="/solutions" className="text-blue-500 hover:text-blue-400 transition-colors">View all 50+ locations &rarr;</Link>
+            <Link to="/compare" className="text-blue-500 hover:text-blue-400 transition-colors">Compare Platforms &rarr;</Link>
           </div>
         </div>
       </div>

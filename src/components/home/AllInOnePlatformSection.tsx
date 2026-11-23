@@ -77,7 +77,7 @@ const features = [
     title: 'Parent Communication',
     desc: 'Automate WhatsApp and push notifications for attendance, test ranks, fee receipts, and official announcements.',
     icon: MessageCircle,
-    link: '/features#communication',
+    link: '/features/whatsapp-attendance-alerts',
     color: 'text-green-600',
     bg: 'bg-green-50'
   },
@@ -85,7 +85,7 @@ const features = [
     title: 'AI Learning Tools',
     desc: 'AI mathematics doubt resolution, step-by-step formula breakdown, weak topic detection, and adaptive practice.',
     icon: Sparkles,
-    link: '/ai-learning',
+    link: '/features/cbt-exam-simulator',
     color: 'text-teal-600',
     bg: 'bg-teal-50'
   },
@@ -93,7 +93,7 @@ const features = [
     title: 'Multi-Branch Management',
     desc: 'Centralized administrator console for franchises and regional centers with unified roll-ups and permission isolation.',
     icon: Building,
-    link: '/solutions/multi-branch',
+    link: '/features/multi-branch',
     color: 'text-slate-700',
     bg: 'bg-slate-100'
   },

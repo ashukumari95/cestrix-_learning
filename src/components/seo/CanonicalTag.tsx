@@ -31,26 +31,6 @@ const STATIC_ROUTE_SEO: Record<string, RouteSeo> = {
     title: 'Coaching Institute Case Studies & Success Stories — Cestrix Learning',
     description: 'See how premier coaching institutes across India recovered ₹8.5L+ in pending fees, eliminated lecture video piracy, and unified multi-branch campuses with Cestrix.'
   },
-  '/ai-learning': {
-    title: 'AI Doubt Solver & Smart Student Learning Engine — Cestrix Learning',
-    description: '24/7 AI-powered mathematics and science doubt solver for coaching students. Instant step-by-step solutions, personalized revision notebooks, and performance analytics.'
-  },
-  '/features': {
-    title: 'All Features & Capabilities — Cestrix Learning Coaching ERP',
-    description: 'Explore 50+ specialized coaching features: daily biometric attendance, QR student ID cards, automated WhatsApp fee due reminders, NTA CBT exams, and multi-faculty permissions.'
-  },
-  '/solutions': {
-    title: 'Coaching Institute Solutions — Cestrix Learning',
-    description: 'Purpose-built coaching management solutions tailored for single-center institutes, multi-campus coaching centers, and franchise education networks.'
-  },
-  '/solutions/coaching-institutes': {
-    title: 'Single-Branch Coaching Software — Cestrix Learning',
-    description: 'Complete coaching operating system for growing institutes: attendance automation, fee receipts, CBT test engine, and parent communication portal.'
-  },
-  '/solutions/multi-branch': {
-    title: 'Multi-Branch & Franchise Coaching ERP — Cestrix Learning',
-    description: 'Centralized multi-campus administrative control: branch-wise fee ledgers, centralized student databases, and granular staff role permissions.'
-  },
   '/white-label-apps': {
     title: 'White-Label Android & iOS Apps for Coaching — Cestrix Learning',
     description: "Launch your coaching institute's official branded mobile app on Google Play Store and Apple App Store with DRM encrypted video streaming and offline downloads."
@@ -74,10 +54,6 @@ const STATIC_ROUTE_SEO: Record<string, RouteSeo> = {
   '/terms': {
     title: 'Terms of Service & SLA Commitments — Cestrix Learning',
     description: 'Terms of service, platform uptime commitments, and subscription policies for Cestrix Learning coaching management software.'
-  },
-  '/ai-coaching-marketing-generator': {
-    title: 'Free AI Coaching Marketing & Growth Playbook Generator — Cestrix',
-    description: 'Generate high-converting admission campaigns, WhatsApp marketing copies, and social media hooks for your coaching institute in 30 seconds.'
   }
 }
 
@@ -110,8 +86,10 @@ export const CanonicalTag: React.FC = () => {
       cleanPath = '/features/fee-receipts'
     } else if (cleanPath === '/features') {
       cleanPath = '/features/admissions-crm'
-    } else if (cleanPath === '/ai-seo-generator') {
-      cleanPath = '/ai-coaching-marketing-generator'
+    } else if (cleanPath === '/solutions/multi-branch') {
+      cleanPath = '/features/multi-branch'
+    } else if (cleanPath === '/solutions' || cleanPath.startsWith('/solutions/') || cleanPath === '/ai-learning' || cleanPath === '/ai-coaching-marketing-generator' || cleanPath === '/ai-seo-generator') {
+      cleanPath = '/'
     }
 
     const canonicalUrl = cleanPath === '/' ? `${DOMAIN}/` : `${DOMAIN}${cleanPath}`

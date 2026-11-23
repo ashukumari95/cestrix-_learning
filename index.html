@@ -28,12 +28,11 @@
       (function() {
         try {
           var p = (window.location.pathname || '/').toLowerCase().split('?')[0].split('#')[0].replace(/\/+$/, '') || '/';
-          if (p === '/home') p = '/';
+          if (p === '/home' || p === '/solutions' || p.indexOf('/solutions/') === 0 || p === '/ai-learning' || p === '/ai-coaching-marketing-generator' || p === '/ai-seo-generator') p = '/';
           if (p === '/alternatives' || p.indexOf('/compare/') === 0 || p === '/features-comparison') p = '/compare';
           if (p === '/case-study') p = '/case-studies';
           if (p === '/free-fee-receipt-generator') p = '/features/fee-receipts';
           if (p === '/features') p = '/features/admissions-crm';
-          if (p === '/ai-seo-generator') p = '/ai-coaching-marketing-generator';
           var c = document.getElementById('canonical-url');
           if (c) c.href = p === '/' ? 'https://learning.cestrixgroup.com/' : 'https://learning.cestrixgroup.com' + p;
         } catch (e) {}

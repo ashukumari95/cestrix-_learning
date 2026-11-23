@@ -4,10 +4,6 @@ import { Navbar } from './components/layout/Navbar'
 import { Footer } from './components/layout/Footer'
 import { Home } from './pages/Home'
 import { FeatureDetailPage } from './pages/FeatureDetailPage'
-import { SolutionsPage } from './pages/SolutionsPage'
-import { SingleBranchPage } from './pages/SingleBranchPage'
-import { MultiBranchPage } from './pages/MultiBranchPage'
-import { AiLearningPage } from './pages/AiLearningPage'
 import { WhiteLabelAppsPage } from './pages/WhiteLabelAppsPage'
 import { PricingPage } from './pages/PricingPage'
 import { AboutPage } from './pages/AboutPage'
@@ -17,7 +13,6 @@ import { LeadsAdminPage } from './pages/LeadsAdminPage'
 import { PrivacyPage } from './pages/PrivacyPage'
 import { TermsPage } from './pages/TermsPage'
 import { CoachingCityPage } from './pages/CoachingCityPage'
-import { AiCoachingGrowthPage } from './pages/AiCoachingGrowthPage'
 import { BlogIndexPage } from './pages/BlogIndexPage'
 import { BlogPostPage } from './pages/BlogPostPage'
 import { ComparePage } from './pages/ComparePage'
@@ -58,10 +53,10 @@ export function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/features" element={<Navigate to="/features/admissions-crm" replace />} />
               <Route path="/features/:slug" element={<FeatureDetailPage />} />
-              <Route path="/solutions" element={<SolutionsPage />} />
-              <Route path="/solutions/coaching-institutes" element={<SingleBranchPage />} />
-              <Route path="/solutions/multi-branch" element={<MultiBranchPage />} />
-              <Route path="/ai-learning" element={<AiLearningPage />} />
+              <Route path="/solutions" element={<Navigate to="/" replace />} />
+              <Route path="/solutions/coaching-institutes" element={<Navigate to="/" replace />} />
+              <Route path="/solutions/multi-branch" element={<Navigate to="/features/multi-branch" replace />} />
+              <Route path="/ai-learning" element={<Navigate to="/" replace />} />
               <Route path="/white-label-apps" element={<WhiteLabelAppsPage />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/about" element={<AboutPage />} />
@@ -75,10 +70,10 @@ export function App() {
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/compare" element={<ComparePage />} />
 
-              {/* Free Lead Magnet Micro-Tools */}
+              {/* Legacy / Lead Magnet Redirects */}
               <Route path="/free-fee-receipt-generator" element={<Navigate to="/features/fee-receipts" replace />} />
-              <Route path="/ai-coaching-marketing-generator" element={<AiCoachingGrowthPage />} />
-              <Route path="/ai-seo-generator" element={<AiCoachingGrowthPage />} />
+              <Route path="/ai-coaching-marketing-generator" element={<Navigate to="/" replace />} />
+              <Route path="/ai-seo-generator" element={<Navigate to="/" replace />} />
               {/* Pain-Point SEO Blog & Resource Center */}
               <Route path="/blog" element={<BlogIndexPage />} />
               <Route path="/blog/:slug" element={<BlogPostPage />} />
