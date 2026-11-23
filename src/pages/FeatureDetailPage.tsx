@@ -1,9 +1,8 @@
 import React from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { 
-  Check, ArrowRight, Sparkles, ChevronRight,
-  ShieldCheck, HelpCircle, CheckCircle2,
-  Calendar, Layers, Zap
+  Check, ArrowRight, ChevronRight,
+  HelpCircle, CheckCircle2, Zap
 } from 'lucide-react'
 import { featuresDetailData } from '../data/featuresDetailData'
 
@@ -46,10 +45,9 @@ export const FeatureDetailPage: React.FC = () => {
             {/* Left Column: Headline, Bullets, CTAs */}
             <div className="lg:col-span-7 space-y-6">
               
-              {/* Category Pill / Badge */}
-              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-wide uppercase text-[#004098] bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
-                <Sparkles size={13} className="text-[#004098]" />
-                <span>{feature.badge}</span>
+              {/* Category Tag: Bare clean text without box or icon (matching Onsite reference) */}
+              <div className="text-xs sm:text-sm font-bold tracking-wide uppercase text-[#004098]">
+                {feature.badge}
               </div>
 
               {/* H1 Headline */}
@@ -82,7 +80,7 @@ export const FeatureDetailPage: React.FC = () => {
                   to="/book-demo"
                   className="px-7 py-3.5 rounded-xl bg-[#002D62] hover:bg-[#001D45] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2 group"
                 >
-                  <span>Book Free 10-Min Demo</span>
+                  <span>Book a Demo</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
 
@@ -90,7 +88,7 @@ export const FeatureDetailPage: React.FC = () => {
                   to="/pricing"
                   className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm border border-slate-300 shadow-2xs transition-all"
                 >
-                  <span>View Pricing Plans</span>
+                  <span>Check Pricing</span>
                 </Link>
               </div>
 
@@ -328,14 +326,14 @@ export const FeatureDetailPage: React.FC = () => {
               to="/book-demo"
               className="px-8 py-4 rounded-xl bg-white text-[#002D62] hover:bg-slate-50 font-extrabold text-sm shadow-xl shadow-black/20 hover:scale-[1.02] transition-all flex items-center gap-2"
             >
-              <span>Book Your Free 1-on-1 Demo</span>
+              <span>Book a Demo</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               to="/pricing"
               className="px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 backdrop-blur-sm transition-all"
             >
-              <span>View Pricing Plans</span>
+              <span>Check Pricing</span>
             </Link>
           </div>
         </div>
