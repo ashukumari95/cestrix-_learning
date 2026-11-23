@@ -110,6 +110,8 @@ export const CanonicalTag: React.FC = () => {
       cleanPath = '/features/fee-receipts'
     } else if (cleanPath === '/features') {
       cleanPath = '/features/admissions-crm'
+    } else if (cleanPath === '/ai-seo-generator') {
+      cleanPath = '/ai-coaching-marketing-generator'
     }
 
     const canonicalUrl = cleanPath === '/' ? `${DOMAIN}/` : `${DOMAIN}${cleanPath}`

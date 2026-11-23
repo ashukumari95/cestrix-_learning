@@ -174,6 +174,97 @@ const CITIES: Record<string, CityData> = {
       author: 'Gaurav Narang',
       role: 'Founder, Sterling Academy (Delhi)'
     }
+  },
+  kanpur: {
+    name: 'Kanpur',
+    state: 'Uttar Pradesh',
+    hubs: 'Kakadeo, Geeta Nagar, Swaroop Nagar, Gumti No. 5 & Barra',
+    exams: 'IIT-JEE, NEET-UG, UP Board, Banking & SSC Prep',
+    coachingCount: '2,900+',
+    studentCount: '2.1 Lakh+',
+    quote: {
+      text: 'Kakadeo coaching hub is fiercely competitive. Moving our attendance to biometric punch with instant WhatsApp notification gave parents 100% peace of mind, reducing student dropouts.',
+      author: 'Er. Alok Dixit',
+      role: 'Director, Kanpur Science Forum'
+    }
+  },
+  gorakhpur: {
+    name: 'Gorakhpur',
+    state: 'Uttar Pradesh',
+    hubs: 'Golghar, Betiahata, Mohaddipur, Asuran Chowk & Medical College Road',
+    exams: 'NEET-UG, IIT-JEE, CBSE Board & Railway/Police Recruitment',
+    coachingCount: '1,400+',
+    studentCount: '95,000+',
+    quote: {
+      text: 'Collecting fees from students across Purvanchal used to involve hundreds of manual receipt slips. Cestrix automated WhatsApp fee reminders and UPI QR receipts saved our front desk 3 hours daily.',
+      author: 'Dr. Manish Pandey',
+      role: 'Founder, Purvanchal Pre-Medical Institute'
+    }
+  },
+  muzaffarpur: {
+    name: 'Muzaffarpur',
+    state: 'Bihar',
+    hubs: 'Mithanpura, Chhata Chowk, Juran Chapra, Aghoria Bazar & Maripur',
+    exams: 'Class 9-12 Science, NEET Foundation, JEE Main & State Competitions',
+    coachingCount: '1,200+',
+    studentCount: '80,000+',
+    quote: {
+      text: 'Cestrix provides metropolitan coaching infrastructure at a genuine local price. Our students attempt bilingual CBT mock tests on the Cestrix Android app from their home with zero video piracy.',
+      author: 'Prof. R. N. Choudhary',
+      role: 'Director, Tirhut Science Hub (Muzaffarpur)'
+    }
+  },
+  gaya: {
+    name: 'Gaya',
+    state: 'Bihar',
+    hubs: 'AP Colony, Rai Kashinath More, Nutan Nagar, Rampur & GB Road',
+    exams: 'BPSC, SSC GD, Railway, IIT-JEE & Board Exams',
+    coachingCount: '950+',
+    studentCount: '65,000+',
+    quote: {
+      text: 'Biometric fingerprint integration with zero proxy attendance completely transformed discipline in our classrooms. Parents trust us because they get real-time WhatsApp in/out alerts.',
+      author: 'Shashi Bhushan',
+      role: 'Managing Director, Magadh Career Point (Gaya)'
+    }
+  },
+  bhopal: {
+    name: 'Bhopal',
+    state: 'Madhya Pradesh',
+    hubs: 'MP Nagar Zone 2, Indrapuri, New Market, Kolar Road & Arera Colony',
+    exams: 'MPPSC, NEET-UG, JEE Main, Vyapam & Commerce Academies',
+    coachingCount: '1,800+',
+    studentCount: '1.3 Lakh+',
+    quote: {
+      text: 'Managing branch batches across MP Nagar and Indrapuri was seamless. Centralized accounts and staff permission roles give our board full visibility over collections.',
+      author: 'Anurag Saxena',
+      role: 'Director, Zenith Academy (Bhopal)'
+    }
+  },
+  pune: {
+    name: 'Pune',
+    state: 'Maharashtra',
+    hubs: 'FC Road, Narayan Peth, Kothrud, Shivaji Nagar & Hadapsar',
+    exams: 'MHT-CET, NEET, JEE, UPSC & Engineering Tuitions',
+    coachingCount: '3,100+',
+    studentCount: '2.4 Lakh+',
+    quote: {
+      text: 'Replacing high-commission app aggregators with our own white-label Android and iOS app saved us more than ₹4 Lakhs last year. 0% commission is a game changer for coaching founders.',
+      author: 'Prashant Kulkarni',
+      role: 'Founder, Apex CET Academy (Pune)'
+    }
+  },
+  hyderabad: {
+    name: 'Hyderabad',
+    state: 'Telangana',
+    hubs: 'Dilsukhnagar, Ameerpet, Himayatnagar, Kukatpally & Madhapur',
+    exams: 'EAMCET, IIT-JEE, NEET, TSPSC & Software Certifications',
+    coachingCount: '4,600+',
+    studentCount: '3.8 Lakh+',
+    quote: {
+      text: 'Dilsukhnagar students demand speed and accuracy. Cestrix NTA CBT exam simulation and DRM lecture security give our students the highest quality digital test prep experience.',
+      author: 'K. Venkat Reddy',
+      role: 'Head Coordinator, Telangana Career Vision'
+    }
   }
 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core Brand & Platform Pages -->
+  <!-- Core Brand & Platform Pages (15 Verified URLs) -->
   <url>
     <loc>https://learning.cestrixgroup.com/</loc>
     <lastmod>2026-11-23</lastmod>
@@ -190,7 +190,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Blog & Growth Knowledge Hub (Active Verified Articles) -->
+  <!-- Blog & Growth Knowledge Hub (3 Active Verified Articles + Hub) -->
   <url>
     <loc>https://learning.cestrixgroup.com/blog</loc>
     <lastmod>2026-11-23</lastmod>
@@ -216,161 +216,113 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- High-Intent Programmatic City SEO Pages -->
+  <!-- High-Intent Programmatic City SEO Pages (18 Handcrafted, Rich Localized Hubs) -->
   <url>
     <loc>https://learning.cestrixgroup.com/coaching-software-in-patna</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://learning.cestrixgroup.com/coaching-software-in-kota</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://learning.cestrixgroup.com/coaching-software-in-jaipur</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://learning.cestrixgroup.com/coaching-software-in-sikar</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-motihari</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-lucknow</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-indore</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-prayagraj</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-varanasi</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-ranchi</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://learning.cestrixgroup.com/coaching-software-in-delhi</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-hyderabad</loc>
+    <loc>https://learning.cestrixgroup.com/coaching-software-in-lucknow</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-pune</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-bhopal</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://learning.cestrixgroup.com/coaching-software-in-kanpur</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://learning.cestrixgroup.com/coaching-software-in-prayagraj</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://learning.cestrixgroup.com/coaching-software-in-varanasi</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://learning.cestrixgroup.com/coaching-software-in-gorakhpur</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://learning.cestrixgroup.com/coaching-software-in-ranchi</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://learning.cestrixgroup.com/coaching-software-in-motihari</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://learning.cestrixgroup.com/coaching-software-in-muzaffarpur</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://learning.cestrixgroup.com/coaching-software-in-gaya</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-bhagalpur</loc>
+    <loc>https://learning.cestrixgroup.com/coaching-software-in-indore</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-jodhpur</loc>
+    <loc>https://learning.cestrixgroup.com/coaching-software-in-bhopal</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-ajmer</loc>
+    <loc>https://learning.cestrixgroup.com/coaching-software-in-pune</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-udaipur</loc>
+    <loc>https://learning.cestrixgroup.com/coaching-software-in-hyderabad</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-meerut</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-agra</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-gwalior</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://learning.cestrixgroup.com/coaching-software-in-jabalpur</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
 </urlset>
