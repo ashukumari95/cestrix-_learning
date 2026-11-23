@@ -22,6 +22,58 @@ import {
 } from 'lucide-react'
 import { SchemaMarkup } from '../components/seo/SchemaMarkup'
 
+import classplusLogo from '../assets/competitors/classplus.png'
+import teachmintLogo from '../assets/competitors/teachmint.png'
+import classproLogo from '../assets/competitors/classpro.png'
+
+const CompetitorLogo: React.FC<{ id: string; name: string }> = ({ id, name }) => {
+  switch (id) {
+    case 'classplus':
+      return (
+        <div className="w-10 h-10 rounded-xl bg-white border border-slate-200/90 shadow-xs flex items-center justify-center p-1 overflow-hidden shrink-0">
+          <img 
+            src={classplusLogo} 
+            alt="Classplus" 
+            className="w-full h-full object-contain rounded-lg" 
+          />
+        </div>
+      )
+    case 'teachmint':
+      return (
+        <div className="w-10 h-10 rounded-xl bg-white border border-slate-200/90 shadow-xs flex items-center justify-center p-1.5 overflow-hidden shrink-0">
+          <img 
+            src={teachmintLogo} 
+            alt="Teachmint" 
+            className="w-full h-full object-contain" 
+          />
+        </div>
+      )
+    case 'classpro':
+      return (
+        <div className="w-10 h-10 rounded-xl bg-white border border-slate-200/90 shadow-xs flex items-center justify-center p-1 overflow-hidden shrink-0">
+          <img 
+            src={classproLogo} 
+            alt="Classpro" 
+            className="w-full h-full object-contain" 
+          />
+        </div>
+      )
+    case 'graphy':
+      return (
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9] shadow-xs flex items-center justify-center p-2 overflow-hidden shrink-0">
+          <svg viewBox="0 0 12 20" fill="none" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
+            <path 
+              d="m10.2492 10c0-.4735-.0086-.918-.0259-1.329h-5.21525v2.8636h2.43495c-.10794 1.9701-.44469 3.3237-.99946 4.0229-.4749.5963-1.00376.5963-1.31893.5963-.70587 0-2.35723 0-2.35723-6.1538 0-6.15375 1.65136-6.15375 2.35723-6.15375.5483 0 1.68374 0 2.15001 2.94399h2.79548c-.14683-1.14141-.38428-2.08179-.72966-2.87475-1.0491-2.42354-2.87099-2.932824-4.21583-2.932824-1.34483 0-3.16888.509284-4.215821 2.932824-.61953 1.43179-.908789 3.36393-.908789 6.08451 0 2.7207.289259 4.6528.908789 6.0846 1.049101 2.4235 2.870991 2.9328 4.215821 2.9328 1.34484 0 3.16889-.5093 4.21583-2.9328.61953-1.4296.90876-3.3639.90876-6.0846z" 
+              fill="white" 
+            />
+          </svg>
+        </div>
+      )
+    default:
+      return null
+  }
+}
+
 interface CompetitorCard {
   id: string
   name: string
@@ -196,14 +248,17 @@ export const ComparePage: React.FC = () => {
                 className="bg-white rounded-3xl p-7 sm:p-8 text-slate-900 shadow-xl border border-slate-100 flex flex-col justify-between space-y-6 hover:shadow-2xl transition-all"
               >
                 <div className="space-y-4">
-                  {/* Competitor Logo Badge */}
-                  <div className="flex items-center gap-3">
-                    <span className={`w-9 h-9 rounded-xl ${item.badgeColor} text-white font-black text-xs flex items-center justify-center shadow-xs`}>
-                      {item.logoBadge}
-                    </span>
-                    <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                      {item.shortTag}
-                    </span>
+                  {/* Competitor Logo & Identity */}
+                  <div className="flex items-center gap-3.5">
+                    <CompetitorLogo id={item.id} name={item.name} />
+                    <div>
+                      <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
+                        {item.shortTag}
+                      </span>
+                      <span className="text-xs font-semibold text-slate-600">
+                        Official {item.name} Alternative
+                      </span>
+                    </div>
                   </div>
 
                   {/* Title */}
@@ -491,18 +546,21 @@ export const ComparePage: React.FC = () => {
           <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-6">
             
             <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-              <div>
-                <h3 className="text-xl sm:text-2xl font-black text-slate-900">
-                  Cestrix vs {selectedModalItem.name}
-                </h3>
-                <p className="text-xs text-slate-500 mt-0.5">
-                  Detailed feature-by-feature operational breakdown
-                </p>
+              <div className="flex items-center gap-3.5">
+                <CompetitorLogo id={selectedModalItem.id} name={selectedModalItem.name} />
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-900">
+                    Cestrix vs {selectedModalItem.name}
+                  </h3>
+                  <p className="text-xs text-slate-500 mt-0.5">
+                    Detailed feature-by-feature operational breakdown
+                  </p>
+                </div>
               </div>
               <button
                 type="button"
                 onClick={() => setSelectedModalItem(null)}
-                className="p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100"
+                className="p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 cursor-pointer"
               >
                 <X size={20} />
               </button>
